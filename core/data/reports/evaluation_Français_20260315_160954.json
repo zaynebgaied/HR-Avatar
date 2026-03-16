@@ -1,0 +1,60 @@
+{
+    "meta": {
+        "date_entretien": "2026-03-15 15:59:41",
+        "langue": "Français",
+        "duree": "N/A",
+        "date_rapport": "2026-03-15 16:07:26",
+        "source_interview": "C:\\internship_spark\\backend\\core\\data\\interview_20260315_155939.txt"
+    },
+    "scores_par_phase": {
+        "presentation_parcours": {
+            "obtenu": 8,
+            "max": 10,
+            "commentaire": "Présentation claire mais peu détaillée sur le parcours professionnel."
+        },
+        "pertinence_projets": {
+            "obtenu": 16,
+            "max": 20,
+            "commentaire": "Réponses pertinentes et liées à la mission du poste."
+        },
+        "competences_techniques": {
+            "obtenu": 35,
+            "max": 40,
+            "commentaire": "Compétences techniques solides, mais besoin d'ajustements pour FastAPI et Docker."
+        },
+        "soft_skills_culture_fit": {
+            "obtenu": 18,
+            "max": 20,
+            "commentaire": "Bonne capacité de communication interdisciplinaire, mais besoin d'amélioration dans la culture d’entreprise."
+        },
+        "curiosite_motivation": {
+            "obtenu": 9,
+            "max": 10,
+            "commentaire": "Motivation claire et curiosité démontrée pour le poste."
+        }
+    },
+    "score_technique": 72,
+    "score_communication": 85,
+    "score_global": 76,
+    "competences_detectees": [
+        "Conception d’agents conversationnels",
+        "Utilisation de Docker et FastAPI",
+        "Analyse des intentions utilisateurs"
+    ],
+    "lacunes_identifiees": [
+        "Amélioration nécessaire dans la culture d’entreprise",
+        "Ajustements possibles pour FastAPI et Docker"
+    ],
+    "analyse_motivation": "La candidate montre une forte motivation pour le poste et est prête à travailler sur des projets diversifiés.",
+    "analyse_soft_skills": "Bonne capacité de communication interdisciplinaire, mais besoin d’intégration plus profonde dans la culture d’entreprise.",
+    "points_forts": [
+        "Compétences techniques solides",
+        "Motivation et curiosité pour le poste"
+    ],
+    "points_amelioration": [
+        "Amélioration de la connaissance des outils FastAPI et Docker",
+        "Intégration plus profonde dans la culture d’entreprise"
+    ],
+    "verdict_final": "A REVOIR",
+    "recommandation_detail": "La candidate montre un potentiel élevé pour le poste, mais nécessite quelques ajustements. Une formation supplémentaire sur FastAPI et Docker serait bénéfique, ainsi qu’une meilleure intégration dans la culture d’entreprise."
+}

@@ -1,0 +1,30 @@
+# ============================================================
+# INSTRUCTIONS POUR LANCER L'APPLICATION
+# ============================================================
+#
+# 1. Installe Docker Desktop : https://www.docker.com/products/docker-desktop
+# 2. Installe Ollama : https://ollama.com/download
+# 3. Télécharge le modèle IA (dans un terminal) :
+#       ollama pull qwen2.5
+# 4. Place ce fichier dans un dossier vide
+# 5. Dans ce dossier, ouvre un terminal et lance :
+#       docker-compose -f docker-compose.share.yml up
+# 6. Ouvre ton navigateur sur : http://localhost:8000
+#
+# ============================================================
+
+services:
+  app:
+    image: zaynebgaied/internship_spark-app:latest
+    container_name: internship_spark_app
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./core/data:/app/core/data
+      - ./core/temp_audio:/app/core/temp_audio
+    environment:
+      - PYTHONUNBUFFERED=1
+      - OLLAMA_HOST=http://host.docker.internal:11434
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped

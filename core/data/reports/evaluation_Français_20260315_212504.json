@@ -1,0 +1,62 @@
+{
+    "meta": {
+        "date_entretien": "2026-03-15 21:11:19",
+        "langue": "Français",
+        "duree": "N/A",
+        "date_rapport": "2026-03-15 21:22:05",
+        "source_interview": "C:\\internship_spark\\backend\\core\\data\\interview_20260315_211116.txt"
+    },
+    "scores_par_phase": {
+        "presentation_parcours": {
+            "obtenu": 8,
+            "max": 10,
+            "commentaire": "La présentation était claire mais pourrait être plus détaillée et structurée."
+        },
+        "pertinence_projets": {
+            "obtenu": 17,
+            "max": 20,
+            "commentaire": "Les compétences en apprentissage automatique et NLP ont été bien expliquées. Il y a un potentiel pour une utilisation dans le projet d'avatar RH interactif."
+        },
+        "competences_techniques": {
+            "obtenu": 35,
+            "max": 40,
+            "commentaire": "Les compétences techniques sont solides et pertinentes. Des améliorations peuvent être apportées dans la gestion des erreurs de reconnaissance vocale."
+        },
+        "soft_skills_culture_fit": {
+            "obtenu": 18,
+            "max": 20,
+            "commentaire": "Les soft skills sont satisfaisantes mais pourraient être renforcées en termes d'adaptabilité et d'ouverture aux nouvelles technologies."
+        },
+        "curiosite_motivation": {
+            "obtenu": 9,
+            "max": 10,
+            "commentaire": "La motivation est présente, mais il y a un intérêt à développer davantage la curiosité pour les nouveaux défis technologiques."
+        }
+    },
+    "score_technique": 35,
+    "score_communication": 82,
+    "score_global": 76,
+    "competences_detectees": [
+        "Apprentissage automatique",
+        "Traitement du langage naturel (NLP)",
+        "Reconnaissance vocale (STT)",
+        "Synthèse vocale (TTS)"
+    ],
+    "lacunes_identifiees": [
+        "Gestion des erreurs de reconnaissance vocale",
+        "Amélioration de l'adaptabilité et de la curiosité technologique"
+    ],
+    "analyse_motivation": "La candidate montre une bonne motivation pour le poste, mais il y a un intérêt à développer davantage sa curiosité pour les nouveaux défis technologiques.",
+    "analyse_soft_skills": "Les soft skills sont satisfaisantes, mais pourraient être renforcées en termes d'adaptabilité et de flexibilité dans l'approche des problèmes techniques.",
+    "points_forts": [
+        "Compétences techniques solides",
+        "Motivation pour le poste",
+        "Expérience pertinente avec les technologies NLP"
+    ],
+    "points_amelioration": [
+        "Amélioration de la gestion des erreurs de reconnaissance vocale",
+        "Développement de l'adaptabilité et de la curiosité technologique"
+    ],
+    "verdict_final": "A REVOIR",
+    "recommandation_detail": "La candidate montre un potentiel fort pour le poste, mais quelques améliorations sont nécessaires dans certaines domaines. Une formation supplémentaire ou des projets de développement personnel pourraient aider à renforcer ses compétences et sa motivation."
+}

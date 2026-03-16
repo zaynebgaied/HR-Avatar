@@ -1,0 +1,60 @@
+{
+    "meta": {
+        "date_entretien": "2026-03-15 15:59:41",
+        "langue": "Français",
+        "duree": "N/A",
+        "date_rapport": "2026-03-15 16:04:58",
+        "source_interview": "data/interview_20260315_155939.txt"
+    },
+    "scores_par_phase": {
+        "presentation_parcours": {
+            "obtenu": 9,
+            "max": 10,
+            "commentaire": "La candidate a présenté clairement son parcours et ses motivations."
+        },
+        "pertinence_projets": {
+            "obtenu": 18,
+            "max": 20,
+            "commentaire": "Les projets mentionnés sont pertinents pour le poste mais pourraient être plus détaillés."
+        },
+        "competences_techniques": {
+            "obtenu": 35,
+            "max": 40,
+            "commentaire": "La candidate a une bonne compréhension des technologies mentionnées mais pourrait bénéficier d'un peu plus de pratique."
+        },
+        "soft_skills_culture_fit": {
+            "obtenu": 17,
+            "max": 20,
+            "commentaire": "La candidate montre une bonne capacité à collaborer avec des équipes diversifiées."
+        },
+        "curiosite_motivation": {
+            "obtenu": 9,
+            "max": 10,
+            "commentaire": "La candidate est motivée et curieuse mais pourrait exprimer davantage sa passion pour le domaine."
+        }
+    },
+    "score_technique": 72,
+    "score_communication": 85,
+    "score_global": 76,
+    "competences_detectees": [
+        "Conception d'agents conversationnels",
+        "Utilisation de Docker et FastAPI",
+        "Collaboration interdisciplinaire"
+    ],
+    "lacunes_identifiees": [
+        "Manque de détails sur les projets",
+        "Besoin de plus de pratique technique"
+    ],
+    "analyse_motivation": "La candidate semble motivée pour le poste et est prête à contribuer activement.",
+    "analyse_soft_skills": "La candidate montre une bonne capacité à communiquer avec des équipes diversifiées mais pourrait améliorer sa confiance en elle.",
+    "points_forts": [
+        "Compétences techniques solides",
+        "Motivation et curiosité"
+    ],
+    "points_amelioration": [
+        "Plus de détails sur les projets",
+        "Amélioration de la confiance en soi pour la communication technique"
+    ],
+    "verdict_final": "A REVOIR",
+    "recommandation_detail": "La candidate montre un potentiel fort et serait bénéfique dans une équipe. Nous recommandons d'organiser une formation supplémentaire pour renforcer ses compétences techniques et sa confiance en elle."
+}

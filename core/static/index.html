@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Avatar RH — Entretien Intelligent</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<style>
+/* ═══ VARIABLES & RESET ═══════════════════════════════════════ */
+:root {
+  --bg:       #07080d;
+  --surface:  #0e1018;
+  --surface2: #141720;
+  --border:   rgba(255,255,255,0.07);
+  --accent:   #4f8eff;
+  --accent2:  #a78bfa;
+  --accent3:  #34d399;
+  --danger:   #f87171;
+  --warn:     #fbbf24;
+  --text:     #e8eaf0;
+  --muted:    #6b7280;
+  --fh:       'Syne', sans-serif;
+  --fb:       'DM Sans', sans-serif;
+  --r:        16px;
+  --rs:       8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:15px}
+body{background:var(--bg);color:var(--text);font-family:var(--fb);min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:0}
+
+/* ═══ SCREENS ═════════════════════════════════════════════════ */
+.screen{display:none;min-height:100vh;position:relative;z-index:1}
+.screen.active{display:flex}
+
+/* ═══ SCREEN 1 — SETUP ════════════════════════════════════════ */
+#screen-setup{flex-direction:column;align-items:center;justify-content:center;padding:2rem;gap:2rem;overflow-y:auto}
+
+.logo-area{text-align:center;animation:fadeUp .8s ease both}
+.badge-ai{display:inline-block;font-family:var(--fh);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(79,142,255,.3);padding:4px 14px;border-radius:99px;margin-bottom:1rem}
+.logo-area h1{font-family:var(--fh);font-size:clamp(2.2rem,5vw,3.8rem);font-weight:800;line-height:1.1;background:linear-gradient(135deg,#fff 30%,var(--accent) 70%,var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.logo-area p{color:var(--muted);font-size:1rem;margin-top:.6rem;font-weight:300}
+
+.setup-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:2rem;width:100%;max-width:820px;animation:fadeUp .8s .15s ease both;box-shadow:0 0 40px rgba(79,142,255,.12)}
+
+.setup-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+@media(max-width:600px){.setup-grid{grid-template-columns:1fr}}
+
+.field-group label{display:block;font-size:.78rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+.field-group select,.field-group input[type="number"]{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:var(--rs);color:var(--text);font-family:var(--fb);font-size:1rem;padding:.75rem 1rem;outline:none;transition:border-color .2s,box-shadow .2s;appearance:none}
+.field-group select:focus,.field-group input[type="number"]:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(79,142,255,.15)}
+
+/* Drop zones CV / Offre */
+.drop-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
+@media(max-width:600px){.drop-row{grid-template-columns:1fr}}
+
+.dropzone{border:2px dashed rgba(255,255,255,.1);border-radius:var(--r);padding:1.5rem 1rem;text-align:center;cursor:pointer;transition:all .25s;position:relative;background:var(--surface2)}
+.dropzone:hover,.dropzone.drag-over{border-color:var(--accent);background:rgba(79,142,255,.05);box-shadow:0 0 20px rgba(79,142,255,.1)}
+.dropzone.uploaded{border-color:var(--accent3);background:rgba(52,211,153,.05)}
+.dropzone input[type="file"]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.dropzone .dz-icon{font-size:2rem;margin-bottom:.5rem;display:block}
+.dropzone .dz-label{font-family:var(--fh);font-size:.85rem;font-weight:600;color:var(--text);margin-bottom:.25rem}
+.dropzone .dz-hint{font-size:.72rem;color:var(--muted)}
+.dropzone .dz-status{margin-top:.5rem;font-size:.78rem;color:var(--accent3);font-weight:500;display:none}
+.dropzone.uploaded .dz-status{display:block}
+
+/* KB entreprise */
+.kb-section{margin-top:1.5rem;border-top:1px solid var(--border);padding-top:1.5rem}
+.kb-title{font-size:.78rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}
+.kb-pill{background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.25);color:var(--accent2);border-radius:99px;padding:1px 8px;font-size:.68rem}
+.kb-count-badge{background:rgba(52,211,153,.15);border:1px solid rgba(52,211,153,.3);color:var(--accent3);border-radius:99px;padding:1px 8px;font-size:.68rem;display:none}
+.kb-count-badge.visible{display:inline-block}
+
+.dz-company{border:2px dashed rgba(167,139,250,.2);border-radius:var(--r);padding:1rem 1.2rem;cursor:pointer;transition:all .25s;position:relative;background:rgba(167,139,250,.03);display:flex;align-items:center;gap:1rem}
+.dz-company:hover,.dz-company.drag-over{border-color:var(--accent2);background:rgba(167,139,250,.07)}
+.dz-company input[type="file"]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.dz-company .dz-icon{font-size:1.5rem;flex-shrink:0}
+.dz-company .dz-label{font-family:var(--fh);font-size:.82rem;font-weight:600;color:var(--text)}
+.dz-company .dz-hint{font-size:.71rem;color:var(--muted);margin-top:2px}
+
+.kb-docs{margin-top:.75rem;display:flex;flex-direction:column;gap:.4rem;max-height:200px;overflow-y:auto}
+.kb-docs::-webkit-scrollbar{width:3px}
+.kb-docs::-webkit-scrollbar-thumb{background:var(--border);border-radius:99px}
+.kb-doc-item{display:flex;align-items:center;justify-content:space-between;background:var(--surface2);border:1px solid var(--border);border-radius:var(--rs);padding:.45rem .75rem;font-size:.78rem;animation:fadeUp .25s ease both}
+.kb-doc-item .doc-name{display:flex;align-items:center;gap:.5rem;color:var(--text);min-width:0}
+.kb-doc-item .doc-name span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:280px}
+.kb-doc-item .doc-size{color:var(--muted);font-size:.7rem;flex-shrink:0}
+.kb-doc-item .doc-del{background:none;border:none;cursor:pointer;color:var(--muted);font-size:.9rem;padding:2px 6px;border-radius:4px;transition:color .2s,background .2s;flex-shrink:0}
+.kb-doc-item .doc-del:hover{color:var(--danger);background:rgba(248,113,113,.1)}
+.kb-empty{font-size:.78rem;color:var(--muted);font-style:italic;padding:.25rem 0}
+
+.ext-badge{font-size:.62rem;font-weight:700;letter-spacing:.06em;padding:1px 5px;border-radius:3px;text-transform:uppercase;flex-shrink:0}
+.ext-badge.pdf{background:rgba(248,113,113,.15);color:var(--danger)}
+.ext-badge.docx{background:rgba(79,142,255,.15);color:var(--accent)}
+.ext-badge.txt{background:rgba(251,191,36,.15);color:var(--warn)}
+
+.btn-start{margin-top:2rem;width:100%;padding:1rem;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;border-radius:var(--rs);color:#fff;font-family:var(--fh);font-size:1rem;font-weight:700;letter-spacing:.05em;cursor:pointer;transition:opacity .2s,transform .2s,box-shadow .2s;box-shadow:0 4px 24px rgba(79,142,255,.3)}
+.btn-start:hover{opacity:.9;transform:translateY(-2px);box-shadow:0 8px 32px rgba(79,142,255,.4)}
+.btn-start:disabled{opacity:.4;cursor:not-allowed;transform:none}
+
+/* ═══ SCREEN 2 — INTERVIEW ════════════════════════════════════ */
+#screen-interview{flex-direction:row;height:100vh;overflow:hidden}
+
+.panel-avatar{width:320px;min-width:240px;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;align-items:center;padding:1.75rem 1.5rem;gap:1rem;position:relative;overflow:hidden;overflow-y:auto}
+.panel-avatar::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:300px;height:300px;background:radial-gradient(circle,rgba(79,142,255,.12) 0%,transparent 70%);pointer-events:none}
+
+.avatar-container{position:relative;width:160px;height:160px;flex-shrink:0}
+.avatar-ring{position:absolute;inset:-8px;border-radius:50%;border:2px solid transparent;background:linear-gradient(135deg,var(--accent),var(--accent2)) border-box;-webkit-mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);-webkit-mask-composite:destination-out;mask-composite:exclude;animation:spin 8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.avatar-img{width:160px;height:160px;border-radius:50%;background:var(--surface2);overflow:hidden;position:relative}
+.avatar-img svg{width:100%;height:100%}
+.avatar-pulse{position:absolute;inset:-4px;border-radius:50%;border:3px solid var(--accent3);opacity:0;transition:opacity .3s}
+.avatar-pulse.talking{opacity:1;animation:pulse-ring 1.2s ease-out infinite}
+@keyframes pulse-ring{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.25);opacity:0}}
+
+.avatar-name{font-family:var(--fh);font-size:1.05rem;font-weight:700;text-align:center}
+.avatar-name small{display:block;font-family:var(--fb);font-size:.72rem;font-weight:400;color:var(--muted);margin-top:2px}
+
+.emotion-badge{display:flex;align-items:center;gap:.4rem;background:var(--surface2);border:1px solid var(--border);border-radius:99px;padding:.3rem .9rem;font-size:.78rem;color:var(--muted);font-weight:500;transition:all .4s}
+.emotion-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent3);animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+.phase-pill{font-family:var(--fh);font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);background:rgba(79,142,255,.1);border:1px solid rgba(79,142,255,.2);border-radius:99px;padding:4px 14px}
+
+.timer-wrap{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:var(--rs);padding:.7rem 1rem}
+.timer-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:.35rem}
+.timer-bar-bg{height:4px;background:var(--surface);border-radius:99px;overflow:hidden}
+.timer-bar{height:100%;background:linear-gradient(90deg,var(--accent3),var(--accent));border-radius:99px;width:100%;transition:width 1s linear}
+.timer-value{font-family:var(--fh);font-size:1.4rem;font-weight:700;margin-top:.3rem}
+.timer-value span{font-size:.8rem;color:var(--muted);font-weight:400}
+
+.kb-sources{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:var(--rs);padding:.6rem .9rem}
+.kb-sources-title{font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:.5rem;display:flex;align-items:center;justify-content:space-between}
+.kb-src-row{display:flex;align-items:center;justify-content:space-between;font-size:.75rem;padding:3px 0;gap:.5rem}
+.kb-src-name{color:var(--muted);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.kb-src-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.1);flex-shrink:0;transition:background .3s,box-shadow .3s}
+.kb-src-dot.active{background:var(--accent3);box-shadow:0 0 6px rgba(52,211,153,.5)}
+.kb-company-list{margin-top:.4rem;display:flex;flex-direction:column;gap:2px;max-height:90px;overflow-y:auto}
+.kb-company-list::-webkit-scrollbar{width:2px}
+.kb-company-list::-webkit-scrollbar-thumb{background:var(--border)}
+.kb-company-doc{font-size:.68rem;color:var(--muted);padding:2px 0 2px 12px;display:flex;align-items:center;gap:.35rem}
+.kb-company-doc::before{content:'·';color:var(--accent3)}
+.kb-company-doc .ext-mini{font-size:.6rem;font-weight:700;padding:1px 4px;border-radius:2px;text-transform:uppercase}
+.kb-company-doc .ext-mini.pdf{background:rgba(248,113,113,.15);color:var(--danger)}
+.kb-company-doc .ext-mini.docx{background:rgba(79,142,255,.15);color:var(--accent)}
+.kb-company-doc .ext-mini.txt{background:rgba(251,191,36,.15);color:var(--warn)}
+
+.panel-chat{flex:1;display:flex;flex-direction:column;overflow:hidden}
+
+.chat-header{padding:.9rem 1.5rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:var(--surface);flex-shrink:0}
+.chat-header-title{font-family:var(--fh);font-size:.95rem;font-weight:700}
+.chat-header-right{display:flex;align-items:center;gap:.6rem}
+.chat-header-lang{font-size:.75rem;color:var(--muted);background:var(--surface2);border:1px solid var(--border);padding:3px 10px;border-radius:99px}
+.rag-badges{display:flex;gap:.35rem}
+.rag-badge{font-size:.65rem;font-weight:600;padding:2px 7px;border-radius:99px;border:1px solid;letter-spacing:.04em;transition:all .3s}
+.rag-badge.cv{color:#6b7280;border-color:rgba(107,114,128,.3)}
+.rag-badge.cv.on{color:var(--accent3);border-color:rgba(52,211,153,.4);background:rgba(52,211,153,.08)}
+.rag-badge.job{color:#6b7280;border-color:rgba(107,114,128,.3)}
+.rag-badge.job.on{color:var(--accent);border-color:rgba(79,142,255,.4);background:rgba(79,142,255,.08)}
+.rag-badge.kb{color:#6b7280;border-color:rgba(107,114,128,.3)}
+.rag-badge.kb.on{color:var(--accent2);border-color:rgba(167,139,250,.4);background:rgba(167,139,250,.08)}
+
+.chat-messages{flex:1;overflow-y:auto;padding:1.5rem;display:flex;flex-direction:column;gap:1rem;scroll-behavior:smooth}
+.chat-messages::-webkit-scrollbar{width:4px}
+.chat-messages::-webkit-scrollbar-thumb{background:var(--border);border-radius:99px}
+
+.msg{display:flex;gap:.75rem;max-width:82%;animation:msgIn .3s ease both}
+@keyframes msgIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.msg.avatar{align-self:flex-start}
+.msg.user{align-self:flex-end;flex-direction:row-reverse}
+.msg-av{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0}
+.msg.user .msg-av{background:linear-gradient(135deg,var(--accent3),#14b8a6)}
+.msg-bubble{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r);padding:.75rem 1rem;font-size:.9rem;line-height:1.55}
+.msg.avatar .msg-bubble{border-top-left-radius:4px}
+.msg.user .msg-bubble{background:rgba(79,142,255,.1);border-color:rgba(79,142,255,.25);border-top-right-radius:4px}
+.msg-meta{font-size:.68rem;color:var(--muted);margin-top:.3rem;padding:0 .25rem}
+
+.typing-indicator{display:none;align-items:center;gap:4px;padding:.75rem 1rem;background:var(--surface2);border:1px solid var(--border);border-radius:var(--r);border-top-left-radius:4px;width:fit-content}
+.typing-indicator.visible{display:flex}
+.typing-indicator span{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:typingDot 1.2s infinite}
+.typing-indicator span:nth-child(2){animation-delay:.2s}
+.typing-indicator span:nth-child(3){animation-delay:.4s}
+@keyframes typingDot{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-6px)}}
+
+.chat-input-area{border-top:1px solid var(--border);padding:1rem 1.5rem;background:var(--surface);display:flex;gap:.75rem;align-items:flex-end;flex-shrink:0}
+.chat-input-area textarea{flex:1;background:var(--surface2);border:1px solid var(--border);border-radius:var(--rs);color:var(--text);font-family:var(--fb);font-size:.9rem;padding:.7rem 1rem;resize:none;max-height:120px;outline:none;transition:border-color .2s;line-height:1.5}
+.chat-input-area textarea:focus{border-color:var(--accent)}
+.chat-input-area textarea::placeholder{color:var(--muted)}
+
+.btn-icon{width:44px;height:44px;border:none;border-radius:var(--rs);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:all .2s;flex-shrink:0}
+.btn-mic{background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.3);color:var(--accent3)}
+.btn-mic:hover{background:rgba(52,211,153,.2)}
+.btn-mic.recording{background:rgba(248,113,113,.15);border-color:var(--danger);color:var(--danger);animation:micPulse 1s ease-in-out infinite}
+@keyframes micPulse{0%,100%{box-shadow:0 0 0 0 rgba(248,113,113,.3)}50%{box-shadow:0 0 0 8px rgba(248,113,113,0)}}
+.btn-send{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border:none}
+.btn-send:hover{opacity:.85;transform:scale(1.05)}
+.btn-send:disabled{opacity:.35;cursor:not-allowed;transform:none}
+
+/* ═══ SCREEN 3 — REPORT ═══════════════════════════════════════ */
+#screen-report{flex-direction:column;align-items:center;padding:3rem 1.5rem;overflow-y:auto;gap:2rem}
+
+.report-header{text-align:center;animation:fadeUp .6s ease both}
+.report-header h2{font-family:var(--fh);font-size:2rem;font-weight:800}
+.report-header p{color:var(--muted);margin-top:.4rem}
+
+.report-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.75rem;width:100%;max-width:740px;animation:fadeUp .6s .1s ease both}
+.report-card h3{font-family:var(--fh);font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:1.2rem;padding-bottom:.6rem;border-bottom:1px solid var(--border)}
+
+.scores-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.score-circle{text-align:center;padding:1rem;background:var(--surface2);border-radius:var(--r);border:1px solid var(--border)}
+.score-number{font-family:var(--fh);font-size:1.9rem;font-weight:800;line-height:1}
+.score-number.tech{color:var(--accent)}
+.score-number.comm{color:var(--accent2)}
+.score-number.global{color:var(--accent3)}
+.score-label{font-size:.72rem;color:var(--muted);margin-top:.3rem}
+
+.phase-row{display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem}
+.phase-row-label{width:185px;font-size:.8rem;color:var(--muted);flex-shrink:0}
+.phase-bar-bg{flex:1;height:6px;background:var(--surface2);border-radius:99px;overflow:hidden}
+.phase-bar-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:99px;width:0;transition:width 1s .3s ease}
+.phase-row-score{font-size:.78rem;color:var(--text);font-weight:600;width:60px;text-align:right}
+
+.tags-wrap{display:flex;flex-wrap:wrap;gap:.5rem}
+.tag{font-size:.75rem;padding:4px 12px;border-radius:99px;border:1px solid var(--border);background:var(--surface2);color:var(--text)}
+.tag.green{border-color:rgba(52,211,153,.4);color:var(--accent3);background:rgba(52,211,153,.07)}
+.tag.red{border-color:rgba(248,113,113,.4);color:var(--danger);background:rgba(248,113,113,.07)}
+
+.rag-source-item{display:flex;align-items:center;gap:.6rem;padding:.4rem 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.rag-source-item:last-child{border-bottom:none}
+.rag-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.rag-dot.on{background:var(--accent3);box-shadow:0 0 5px rgba(52,211,153,.4)}
+.rag-dot.off{background:rgba(255,255,255,.15)}
+.rag-source-label{font-size:.82rem;color:var(--text)}
+.rag-source-sub{font-size:.72rem;color:var(--muted);margin-left:.2rem}
+
+.verdict-box{padding:1.25rem 1.5rem;border-radius:var(--r);border:2px solid;text-align:center;font-family:var(--fh);font-size:1.2rem;font-weight:800;letter-spacing:.05em}
+.verdict-box.EMBAUCHE{border-color:var(--accent3);color:var(--accent3);background:rgba(52,211,153,.07)}
+.verdict-box.REJET{border-color:var(--danger);color:var(--danger);background:rgba(248,113,113,.07)}
+.verdict-box.default{border-color:var(--accent2);color:var(--accent2);background:rgba(167,139,250,.07)}
+.reco-text{margin-top:.75rem;font-size:.85rem;color:var(--muted);line-height:1.7}
+
+.btn-restart{padding:.85rem 2.5rem;background:var(--surface2);border:1px solid var(--border);border-radius:var(--rs);color:var(--text);font-family:var(--fh);font-size:.9rem;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:.05em}
+.btn-restart:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ═══ ANIMATIONS ══════════════════════════════════════════════ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+
+/* ═══ TOAST ═══════════════════════════════════════════════════ */
+.toast{position:fixed;bottom:2rem;right:2rem;background:var(--surface2);border:1px solid var(--border);border-radius:var(--rs);padding:.8rem 1.2rem;font-size:.85rem;z-index:9999;transform:translateY(80px);opacity:0;transition:all .35s cubic-bezier(.34,1.56,.64,1);max-width:340px;box-shadow:0 8px 32px rgba(0,0,0,.4)}
+.toast.show{transform:translateY(0);opacity:1}
+.toast.success{border-color:rgba(52,211,153,.4);color:var(--accent3)}
+.toast.error{border-color:rgba(248,113,113,.4);color:var(--danger)}
+.toast.warn{border-color:rgba(251,191,36,.4);color:var(--warn)}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ SCREEN 1 : SETUP ═══════════════ -->
+<div id="screen-setup" class="screen active">
+  <div class="logo-area">
+    <div class="badge-ai"></div>
+    <h1>Avatar RH<br/>Interactif</h1>
+    <p>Entretien intelligent assisté par IA </p>
+  </div>
+
+  <div class="setup-card">
+    <div class="setup-grid">
+      <div class="field-group">
+        <label>Langue de l'entretien</label>
+        <select id="sel-lang">
+          <option value="Français">🇫🇷  Français</option>
+          <option value="Anglais">🇬🇧  Anglais</option>
+          <option value="Arabe">🇸🇦  Arabe</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Durée (minutes)</label>
+        <input type="number" id="inp-duration" value="20" min="5" max="90"/>
+      </div>
+    </div>
+
+    <div class="drop-row">
+      <div class="dropzone" id="dz-cv">
+        <input type="file" id="file-cv" accept=".pdf,.docx"/>
+        <span class="dz-icon">📄</span>
+        <div class="dz-label">CV du candidat</div>
+        <div class="dz-hint">PDF ou DOCX — glissez ou cliquez</div>
+        <div class="dz-status" id="cv-status">✓ Chargé</div>
+      </div>
+      <div class="dropzone" id="dz-offre">
+        <input type="file" id="file-offre" accept=".pdf,.docx"/>
+        <span class="dz-icon">💼</span>
+        <div class="dz-label">Offre d'emploi</div>
+        <div class="dz-hint">PDF ou DOCX — glissez ou cliquez</div>
+        <div class="dz-status" id="offre-status">✓ Chargée</div>
+      </div>
+    </div>
+
+    <div class="kb-section">
+      <div class="kb-title">
+        🏢 Base de connaissance entreprise
+        <span class="kb-pill">RAG interne · optionnel</span>
+        <span class="kb-count-badge" id="kb-count-badge">0 doc</span>
+      </div>
+      <div class="dz-company" id="dz-company">
+        <input type="file" id="file-company" accept=".pdf,.docx,.txt" multiple/>
+        <span class="dz-icon">🗂️</span>
+        <div>
+          <div class="dz-label">Culture · Valeurs · FAQ · Stack technique · Avantages…</div>
+          <div class="dz-hint">📕 PDF · 📘 DOCX · 📝 TXT — plusieurs fichiers acceptés</div>
+        </div>
+      </div>
+      <div class="kb-docs" id="kb-docs-list">
+        <div class="kb-empty" id="kb-empty">Aucun document entreprise chargé</div>
+      </div>
+    </div>
+
+    <button class="btn-start" id="btn-start" disabled>
+      Démarrer l'entretien →
+    </button>
+  </div>
+</div>
+
+<!-- ═══════════════ SCREEN 2 : INTERVIEW ═══════════════ -->
+<div id="screen-interview" class="screen">
+
+  <!-- Panel avatar (Vision supprimée) -->
+  <div class="panel-avatar">
+    <div class="avatar-container">
+      <div class="avatar-ring"></div>
+      <div class="avatar-img">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="bg-g" cx="50%" cy="50%"><stop offset="0%" stop-color="#1e2535"/><stop offset="100%" stop-color="#0e1018"/></radialGradient>
+            <radialGradient id="skin" cx="50%" cy="40%"><stop offset="0%" stop-color="#f5c5a3"/><stop offset="100%" stop-color="#e8a88a"/></radialGradient>
+          </defs>
+          <circle cx="100" cy="100" r="100" fill="url(#bg-g)"/>
+          <ellipse cx="100" cy="185" rx="55" ry="35" fill="#1a2340"/>
+          <rect x="58" y="155" width="84" height="40" rx="20" fill="#1a2340"/>
+          <rect x="88" y="130" width="24" height="28" rx="8" fill="url(#skin)"/>
+          <ellipse cx="100" cy="105" rx="42" ry="47" fill="url(#skin)"/>
+          <ellipse cx="100" cy="68" rx="42" ry="22" fill="#2d1b69"/>
+          <rect x="58" y="68" width="84" height="16" fill="#2d1b69"/>
+          <ellipse id="eye-l" cx="84" cy="108" rx="7" ry="8" fill="#fff"/>
+          <ellipse id="eye-r" cx="116" cy="108" rx="7" ry="8" fill="#fff"/>
+          <circle cx="86" cy="109" r="4.5" fill="#2c3e6e"/>
+          <circle cx="118" cy="109" r="4.5" fill="#2c3e6e"/>
+          <circle cx="87" cy="108" r="1.5" fill="#fff"/>
+          <circle cx="119" cy="108" r="1.5" fill="#fff"/>
+          <path id="brow-l" d="M76 98 Q84 94 92 98" stroke="#5a3e28" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path id="brow-r" d="M108 98 Q116 94 124 98" stroke="#5a3e28" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path id="mouth" d="M88 128 Q100 136 112 128" stroke="#c07a5a" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="M70 155 L85 168 L100 155 L115 168 L130 155" stroke="#4f8eff" stroke-width="3" fill="none"/>
+        </svg>
+      </div>
+      <div class="avatar-pulse" id="avatar-pulse"></div>
+    </div>
+
+    <div class="avatar-name">Sophia<small id="avatar-role">Recruteur IA</small></div>
+    <div class="emotion-badge" id="emotion-badge"><div class="dot"></div><span id="emotion-text">Prête</span></div>
+    <div class="phase-pill" id="phase-pill">INTRO</div>
+
+    <div class="timer-wrap">
+      <div class="timer-label">Temps restant</div>
+      <div class="timer-value"><span id="timer-display">—</span> <span>min</span></div>
+      <div class="timer-bar-bg"><div class="timer-bar" id="timer-bar"></div></div>
+    </div>
+
+    <!-- Sources RAG actives -->
+    <div class="kb-sources">
+      <div class="kb-sources-title">Sources RAG actives</div>
+      <div class="kb-src-row">
+        <span class="kb-src-name">CV candidat</span>
+        <div class="kb-src-dot" id="src-cv"></div>
+      </div>
+      <div class="kb-src-row">
+        <span class="kb-src-name">Offre d'emploi</span>
+        <div class="kb-src-dot" id="src-job"></div>
+      </div>
+      <div class="kb-src-row">
+        <span class="kb-src-name" id="src-kb-label">KB entreprise</span>
+        <div class="kb-src-dot" id="src-kb"></div>
+      </div>
+      <div class="kb-company-list" id="kb-company-list" style="display:none"></div>
+    </div>
+
+    <!-- NOTE : Vision désactivée — STT/TTS/RAG mode test -->
+    <div style="width:100%;background:rgba(251,191,36,.06);border:1px solid rgba(251,191,36,.2);border-radius:var(--rs);padding:.6rem .9rem">
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--warn);margin-bottom:.25rem">Mode test actif</div>
+      <div style="font-size:.72rem;color:var(--muted)">Vision désactivée · STT · TTS · RAG · Évaluation</div>
+    </div>
+  </div>
+
+  <!-- Panel chat -->
+  <div class="panel-chat">
+    <div class="chat-header">
+      <div class="chat-header-title">Entretien en cours</div>
+      <div class="chat-header-right">
+        <div class="rag-badges">
+          <span class="rag-badge cv"  id="hdr-cv">CV</span>
+          <span class="rag-badge job" id="hdr-job">Offre</span>
+          <span class="rag-badge kb"  id="hdr-kb">KB</span>
+        </div>
+        <div class="chat-header-lang" id="header-lang">Français</div>
+      </div>
+    </div>
+
+    <div class="chat-messages" id="chat-messages">
+      <div class="typing-indicator" id="typing">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <div class="chat-input-area">
+      <textarea id="user-input" placeholder="Tapez votre réponse ou utilisez le micro…" rows="1"></textarea>
+      <button class="btn-icon btn-mic" id="btn-mic" title="Micro">🎤</button>
+      <button class="btn-icon btn-send" id="btn-send" title="Envoyer">➤</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ SCREEN 3 : REPORT ═══════════════ -->
+<div id="screen-report" class="screen">
+  <div class="report-header">
+    <h2>Rapport d'Évaluation</h2>
+    <p id="report-meta">Analyse NLU complète de l'entretien</p>
+  </div>
+
+  <div class="report-card">
+    <h3>Scores globaux</h3>
+    <div class="scores-row">
+      <div class="score-circle"><div class="score-number tech"   id="r-tech">—</div><div class="score-label">Technique</div></div>
+      <div class="score-circle"><div class="score-number comm"   id="r-comm">—</div><div class="score-label">Communication</div></div>
+      <div class="score-circle"><div class="score-number global" id="r-global">—</div><div class="score-label">Score Global</div></div>
+    </div>
+  </div>
+
+  <div class="report-card">
+    <h3>Détail par phase</h3>
+    <div id="phases-bars"></div>
+  </div>
+
+  <div class="report-card">
+    <h3>Sources RAG utilisées</h3>
+    <div id="r-rag-sources"></div>
+  </div>
+
+  <!-- Vision card supprimée — section r-vision retirée -->
+
+  <div class="report-card">
+    <h3>Compétences détectées</h3>
+    <div class="tags-wrap" id="r-competences"></div>
+    <h3 style="margin-top:1.5rem">Lacunes identifiées</h3>
+    <div class="tags-wrap" id="r-lacunes"></div>
+  </div>
+
+  <div class="report-card">
+    <h3>Points forts</h3>
+    <div class="tags-wrap" id="r-forts"></div>
+    <h3 style="margin-top:1.5rem">Points à améliorer</h3>
+    <div class="tags-wrap" id="r-amelio"></div>
+  </div>
+
+  <div class="report-card">
+    <h3>Analyse motivation &amp; soft skills</h3>
+    <p id="r-motivation" style="color:var(--muted);font-size:.9rem;line-height:1.7;margin-bottom:.75rem"></p>
+    <p id="r-softskills" style="color:var(--muted);font-size:.9rem;line-height:1.7"></p>
+  </div>
+
+  <div class="report-card">
+    <h3>Verdict final</h3>
+    <div class="verdict-box default" id="r-verdict">—</div>
+    <p class="reco-text" id="r-reco"></p>
+  </div>
+
+  <button class="btn-restart" onclick="restartApp()">↩ Nouvel entretien</button>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+/* ══════════════════════════════════════════════
+   STATE
+══════════════════════════════════════════════ */
+const state = {
+  sessionId:     null,
+  lang:          'Français',
+  duration:      20,
+  totalDuration: 20,
+  isRecording:   false,
+  isTalking:     false,
+  mediaRecorder: null,
+  audioChunks:   [],
+  timerInterval: null,
+  currentAudio:  null,
+  cvUploaded:    false,
+  offreUploaded: false,
+  ragSources:    { cv: [], job_offer: [], company_docs: [] },
+  ws:            null,
+  wsSTT:         null,      // WebSocket dedie STT streaming
+  wsStreamBuf:   '',
+  wsStreamEl:    null,
+  // Audio queue pour lecture sans gap inter-phrases
+  audioQueue:    [],
+  audioPlaying:  false,
+  // Web Audio API pour capture PCM
+  audioCtx:      null,
+  audioProcessor: null,
+  audioSource:   null,
+  // VAD natif : detection silence
+  vadSilenceMs:  0,
+  vadSpeaking:   false,
+  vadTimer:      null,
+};
+
+/* ══════════════════════════════════════════════
+   UTILS
+══════════════════════════════════════════════ */
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function toast(msg, type = 'info') {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = `toast ${type} show`;
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('show'), 3800);
+}
+
+function extBadge(filename) {
+  const ext = filename.split('.').pop().toLowerCase();
+  const icons = { pdf: '📕', docx: '📘', txt: '📝' };
+  return `<span class="ext-badge ${ext}">${ext}</span>${icons[ext] || '📄'}`;
+}
+
+function extMini(filename) {
+  const ext = filename.split('.').pop().toLowerCase();
+  return `<span class="ext-mini ${ext}">${ext}</span>`;
+}
+
+/* ══════════════════════════════════════════════
+   AVATAR — ÉMOTION & PHASE
+══════════════════════════════════════════════ */
+function setEmotion(emotion) {
+  const map = {
+    joy:      { icon: '😊', label: 'Enthousiaste', color: 'var(--accent3)' },
+    neutral:  { icon: '😐', label: 'Neutre',       color: 'var(--muted)' },
+    thinking: { icon: '🤔', label: 'Réflexion',    color: 'var(--accent2)' },
+    empathy:  { icon: '🤝', label: 'Empathique',   color: 'var(--accent)' },
+    serious:  { icon: '🎯', label: 'Concentré',    color: 'var(--danger)' },
+  };
+  const e = map[emotion] || map.neutral;
+  document.getElementById('emotion-text').textContent = `${e.icon} ${e.label}`;
+  document.querySelector('.emotion-badge .dot').style.background = e.color;
+  applyAvatarEmotion(emotion);
+}
+
+function applyAvatarEmotion(emotion) {
+  const poses = {
+    joy:      { mouth:'M86 126 Q100 138 114 126', bl:'M76 96 Q84 92 92 96',  br:'M108 96 Q116 92 124 96' },
+    neutral:  { mouth:'M88 128 Q100 132 112 128', bl:'M76 98 Q84 94 92 98',  br:'M108 98 Q116 94 124 98' },
+    thinking: { mouth:'M88 130 Q100 128 112 126', bl:'M76 96 Q84 92 93 97',  br:'M107 94 Q116 94 124 98' },
+    empathy:  { mouth:'M87 127 Q100 134 113 127', bl:'M76 97 Q84 93 92 97',  br:'M108 97 Q116 93 124 97' },
+    serious:  { mouth:'M89 130 Q100 126 111 130', bl:'M76 99 Q84 95 92 100', br:'M108 100 Q116 95 124 99' },
+  };
+  const p = poses[emotion] || poses.neutral;
+  document.getElementById('mouth')?.setAttribute('d', p.mouth);
+  document.getElementById('brow-l')?.setAttribute('d', p.bl);
+  document.getElementById('brow-r')?.setAttribute('d', p.br);
+}
+
+function setPhase(phase) {
+  const labels = {
+    INTRO_ETUDES:'INTRO', MAPPING_PROJETS_OFFRE:'PROJETS',
+    VALIDATION_HARD_SKILLS:'TECH', SOFT_SKILLS_RH:'SOFT',
+    QUESTIONS_CANDIDAT:'Q&A', CONCLUSION:'CONCLUSION',
+  };
+  document.getElementById('phase-pill').textContent = labels[phase] || phase;
+}
+
+function updateTimer(timeLeft) {
+  const pct = Math.min(100, (timeLeft / state.totalDuration) * 100);
+  document.getElementById('timer-display').textContent = timeLeft.toFixed(1);
+  const bar = document.getElementById('timer-bar');
+  bar.style.width = pct + '%';
+  bar.style.background = pct < 20
+    ? 'var(--danger)'
+    : 'linear-gradient(90deg,var(--accent3),var(--accent))';
+}
+
+/* ══════════════════════════════════════════════
+   RAG INDICATORS
+══════════════════════════════════════════════ */
+function updateRagIndicators(rag) {
+  const normalised = {
+    cv:           rag.cv           || [],
+    job_offer:    rag.job_offer    || [],
+    company_docs: rag.company_docs || rag.company_info || [],
+  };
+  state.ragSources = normalised;
+
+  const cvOk   = normalised.cv.length > 0;
+  const jobOk  = normalised.job_offer.length > 0;
+  const kbDocs = normalised.company_docs;
+  const kbOk   = kbDocs.length > 0;
+
+  document.getElementById('src-cv') .classList.toggle('active', cvOk);
+  document.getElementById('src-job').classList.toggle('active', jobOk);
+  document.getElementById('src-kb') .classList.toggle('active', kbOk);
+  document.getElementById('src-kb-label').textContent = kbOk
+    ? `KB entreprise (${kbDocs.length} doc${kbDocs.length > 1 ? 's' : ''})`
+    : 'KB entreprise';
+
+  const kbList = document.getElementById('kb-company-list');
+  if (kbOk) {
+    kbList.style.display = 'flex';
+    kbList.innerHTML = kbDocs.map(d =>
+      `<div class="kb-company-doc">${extMini(d)} ${d}</div>`
+    ).join('');
+  } else {
+    kbList.style.display = 'none';
+    kbList.innerHTML = '';
+  }
+
+  document.getElementById('hdr-cv') .classList.toggle('on', cvOk);
+  document.getElementById('hdr-job').classList.toggle('on', jobOk);
+  document.getElementById('hdr-kb') .classList.toggle('on', kbOk);
+  document.getElementById('hdr-kb').textContent = kbOk ? `KB (${kbDocs.length})` : 'KB';
+}
+
+/* ══════════════════════════════════════════════
+   UPLOAD CV / OFFRE
+══════════════════════════════════════════════ */
+function checkStartReady() {
+  document.getElementById('btn-start').disabled = !(state.cvUploaded && state.offreUploaded);
+}
+
+async function uploadFile(file, endpoint, dzId, statusId, stateKey) {
+  const fd = new FormData();
+  fd.append('file', file);
+  try {
+    const res  = await fetch(endpoint, { method: 'POST', body: fd });
+    const data = await res.json();
+    if (data.status === 'ok') {
+      document.getElementById(dzId).classList.add('uploaded');
+      document.getElementById(statusId).textContent = `✓ ${file.name}`;
+      state[stateKey] = true;
+      checkStartReady();
+      toast(`${file.name} chargé (${data.size_kb} Ko)`, 'success');
+    } else {
+      toast(data.error || 'Erreur upload', 'error');
+    }
+  } catch { toast('Serveur inaccessible', 'error'); }
+}
+
+function bindDropzone(dzId, fileId, endpoint, statusId, stateKey) {
+  const dz  = document.getElementById(dzId);
+  const inp = document.getElementById(fileId);
+  dz.addEventListener('dragover',  e => { e.preventDefault(); dz.classList.add('drag-over'); });
+  dz.addEventListener('dragleave', () => dz.classList.remove('drag-over'));
+  dz.addEventListener('drop', e => {
+    e.preventDefault(); dz.classList.remove('drag-over');
+    const f = e.dataTransfer.files[0];
+    if (f) uploadFile(f, endpoint, dzId, statusId, stateKey);
+  });
+  inp.addEventListener('change', e => {
+    const f = e.target.files[0];
+    if (f) uploadFile(f, endpoint, dzId, statusId, stateKey);
+  });
+}
+
+bindDropzone('dz-cv',    'file-cv',    '/upload/cv',    'cv-status',    'cvUploaded');
+bindDropzone('dz-offre', 'file-offre', '/upload/offre', 'offre-status', 'offreUploaded');
+
+/* ══════════════════════════════════════════════
+   UPLOAD KB ENTREPRISE
+══════════════════════════════════════════════ */
+const dzCompany   = document.getElementById('dz-company');
+const fileCompany = document.getElementById('file-company');
+
+dzCompany.addEventListener('dragover',  e => { e.preventDefault(); dzCompany.classList.add('drag-over'); });
+dzCompany.addEventListener('dragleave', () => dzCompany.classList.remove('drag-over'));
+dzCompany.addEventListener('drop', async e => {
+  e.preventDefault(); dzCompany.classList.remove('drag-over');
+  if (e.dataTransfer.files.length) await uploadCompanyFiles(e.dataTransfer.files);
+});
+fileCompany.addEventListener('change', async e => {
+  if (e.target.files.length) await uploadCompanyFiles(e.target.files);
+  e.target.value = '';
+});
+
+async function uploadCompanyFiles(fileList) {
+  const fd = new FormData();
+  for (const f of fileList) fd.append('files', f);
+  try {
+    const res  = await fetch('/upload/company', { method: 'POST', body: fd });
+    const data = await res.json();
+    let ok = 0;
+    for (const r of data.uploaded) {
+      if (r.status === 'ok') {
+        ok++;
+        addKbDocItem(r.filename, r.size_kb);
+      } else {
+        toast(`❌ ${r.filename} : ${r.error}`, 'error');
+      }
+    }
+    if (ok) toast(`✓ ${ok} doc(s) KB ajouté(s)`, 'success');
+    updateKbCountBadge();
+  } catch { toast('Erreur upload KB entreprise', 'error'); }
+}
+
+function updateKbCountBadge() {
+  const items = document.querySelectorAll('#kb-docs-list .kb-doc-item').length;
+  const badge = document.getElementById('kb-count-badge');
+  badge.textContent = `${items} doc${items > 1 ? 's' : ''}`;
+  badge.classList.toggle('visible', items > 0);
+}
+
+function addKbDocItem(filename, sizeKb) {
+  const list  = document.getElementById('kb-docs-list');
+  const empty = document.getElementById('kb-empty');
+  if (empty) empty.remove();
+  if (document.getElementById(`kbdoc-${CSS.escape(filename)}`)) return;
+  const item = document.createElement('div');
+  item.className = 'kb-doc-item';
+  item.id = `kbdoc-${filename}`;
+  item.innerHTML = `
+    <div class="doc-name">
+      ${extBadge(filename)}
+      <span title="${filename}">${filename}</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:.5rem">
+      <span class="doc-size">${sizeKb} Ko</span>
+      <button class="doc-del" onclick="deleteKbDoc('${filename.replace(/'/g,"\\'")}',this)" title="Supprimer">✕</button>
+    </div>`;
+  list.appendChild(item);
+  updateKbCountBadge();
+}
+
+async function deleteKbDoc(filename, btn) {
+  try {
+    const res = await fetch(`/upload/company/${encodeURIComponent(filename)}`, { method: 'DELETE' });
+    if (res.ok) {
+      btn.closest('.kb-doc-item').remove();
+      toast(`🗑️ ${filename} supprimé`, 'success');
+      const list = document.getElementById('kb-docs-list');
+      if (!list.querySelector('.kb-doc-item'))
+        list.innerHTML = '<div class="kb-empty" id="kb-empty">Aucun document entreprise chargé</div>';
+      updateKbCountBadge();
+    } else {
+      toast('Erreur suppression', 'error');
+    }
+  } catch { toast('Erreur suppression', 'error'); }
+}
+
+async function loadExistingKbDocs() {
+  try {
+    const res  = await fetch('/upload/company/list');
+    const data = await res.json();
+    for (const doc of data.documents) addKbDocItem(doc.filename, doc.size_kb);
+    if (data.count > 0) toast(`📚 ${data.count} doc(s) KB déjà en base`, 'success');
+  } catch {}
+}
+loadExistingKbDocs();
+
+/* ══════════════════════════════════════════════
+   DÉMARRAGE SESSION
+══════════════════════════════════════════════ */
+document.getElementById('btn-start').addEventListener('click', async () => {
+  state.lang          = document.getElementById('sel-lang').value;
+  state.duration      = parseInt(document.getElementById('inp-duration').value) || 20;
+  state.totalDuration = state.duration;
+
+  const btn = document.getElementById('btn-start');
+  btn.disabled    = true;
+  btn.textContent = '⏳ Initialisation RAG…';
+  document.getElementById('header-lang').textContent = state.lang;
+
+  const fd = new FormData();
+  fd.append('lang',     state.lang);
+  fd.append('duration', state.duration);
+
+  try {
+    const res  = await fetch('/session/start', { method: 'POST', body: fd });
+    const data = await res.json();
+
+    if (data.session_id) {
+      state.sessionId = data.session_id;
+      showScreen('screen-interview');
+      updateTimer(data.time_left || state.duration);
+      setPhase(data.phase || 'INTRO_ETUDES');
+      updateRagIndicators(data.rag_sources || { cv: [], job_offer: [], company_docs: [] });
+      connectWebSocket();       // WebSocket LLM/entretien
+      connectSTTWebSocket();    // WebSocket STT streaming PCM
+      appendMessage('avatar', data.greeting, 'joy');
+      if (data.audio_url) playAudio(data.audio_url, data.duration_s);
+
+      const kbDocs = (data.rag_sources || {}).company_docs || [];
+      if (kbDocs.length === 0) {
+        toast('⚠️ Aucune KB entreprise — RAG limité à CV + Offre', 'warn');
+      } else {
+        toast(`🏢 KB injectée : ${kbDocs.length} doc(s)`, 'success');
+      }
+    } else {
+      toast(data.error || 'Erreur démarrage session', 'error');
+      btn.disabled    = false;
+      btn.textContent = "Démarrer l'entretien →";
+    }
+  } catch {
+    toast('Impossible de joindre le serveur', 'error');
+    btn.disabled    = false;
+    btn.textContent = "Démarrer l'entretien →";
+  }
+});
+
+/* ══════════════════════════════════════════════
+   CHAT
+══════════════════════════════════════════════ */
+function appendMessage(role, text, emotion) {
+  const container = document.getElementById('chat-messages');
+  const typing    = document.getElementById('typing');
+  const div       = document.createElement('div');
+  div.className   = `msg ${role}`;
+  const now       = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  div.innerHTML   = `
+    <div class="msg-av">${role === 'avatar' ? '🤖' : '👤'}</div>
+    <div>
+      <div class="msg-bubble">${text}</div>
+      <div class="msg-meta">${now}${emotion ? ' · ' + emotion : ''}</div>
+    </div>`;
+  container.insertBefore(div, typing);
+  container.scrollTop = container.scrollHeight;
+}
+
+function showTyping(show) {
+  document.getElementById('typing').classList.toggle('visible', show);
+  const c = document.getElementById('chat-messages');
+  c.scrollTop = c.scrollHeight;
+}
+
+async function sendMessage(text) {
+  if (!text.trim() || !state.sessionId) return;
+
+  appendMessage('user', text);
+  document.getElementById('user-input').value  = '';
+  document.getElementById('btn-send').disabled = true;
+  document.getElementById('btn-mic').disabled  = true;
+
+  // ── WebSocket disponible → streaming ───────────────────────────
+  if (state.ws && state.ws.readyState === WebSocket.OPEN) {
+    // Prépare la bulle de streaming vide
+    state.wsStreamBuf = '';
+    state.wsStreamEl  = appendStreamingBubble();
+    showTyping(false); // on remplace l'indicateur par la bulle live
+
+    state.ws.send(JSON.stringify({ action: 'text_message', text }));
+    return; // la suite est gérée dans ws.onmessage
+  }
+
+  // ── Fallback HTTP si WebSocket non disponible ──────────────────
+  showTyping(true);
+  try {
+    const fd = new FormData();
+    fd.append('user_text', text);
+    const res  = await fetch(`/session/${state.sessionId}/respond`, { method: 'POST', body: fd });
+    const data = await res.json();
+
+    showTyping(false);
+    appendMessage('avatar', data.text);
+    setPhase(data.phase);
+    updateTimer(data.time_left);
+    if (data.audio_url) playAudio(data.audio_url, data.duration_s);
+    if (data.interview_ended) setTimeout(() => endInterview(data.report), 1500);
+  } catch {
+    showTyping(false);
+    toast('Erreur de connexion', 'error');
+  } finally {
+    document.getElementById('btn-send').disabled = false;
+    document.getElementById('btn-mic').disabled  = false;
+  }
+}
+
+document.getElementById('btn-send').addEventListener('click', () =>
+  sendMessage(document.getElementById('user-input').value));
+
+document.getElementById('user-input').addEventListener('keydown', e => {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(e.target.value); }
+});
+
+document.getElementById('user-input').addEventListener('input', function() {
+  this.style.height = 'auto';
+  this.style.height = Math.min(this.scrollHeight, 120) + 'px';
+});
+
+/* ══════════════════════════════════════════════
+   MICROPHONE / STT — Streaming PCM WebSocket + VAD natif
+   Flux : getUserMedia → Web Audio API → PCM Float32 → WS → Whisper
+   VAD natif : analyse RMS pour detecter silence et declencher auto
+══════════════════════════════════════════════ */
+document.getElementById('btn-mic').addEventListener('click', () =>
+  state.isRecording ? stopRecordingManual() : startRecording());
+
+// ── Connexion WebSocket STT (ouverte une fois par session) ────────────
+function connectSTTWebSocket() {
+  if (state.wsSTT && state.wsSTT.readyState === WebSocket.OPEN) return;
+  const wsUrl   = `ws://${location.host}/ws/stt/${state.sessionId}`;
+  state.wsSTT   = new WebSocket(wsUrl);
+  state.wsSTT.binaryType = 'arraybuffer';
+
+  state.wsSTT.onmessage = (event) => {
+    try {
+      const data = JSON.parse(event.data);
+      showTyping(false);
+      if (data.success && data.text?.trim()) {
+        // Auto-envoi immediat au LLM sans attendre clic Envoyer
+        sendMessage(data.text);
+        toast('Transcrit : "' + data.text.substring(0, 50) + '..."', 'success');
+      } else if (!data.success && data.error) {
+        toast(data.error || 'Transcription vide', 'warn');
+      }
+    } catch {}
+  };
+
+  state.wsSTT.onerror = () => {
+    toast('STT WebSocket erreur — fallback HTTP', 'warn');
+    state.wsSTT = null;
+  };
+
+  state.wsSTT.onclose = () => {
+    state.wsSTT = null;
+  };
+}
+
+// ── Demarrage enregistrement avec Web Audio API + VAD ────────────────
+async function startRecording() {
+  if (!state.sessionId) return;
+
+  // Ouvrir le WS STT si pas encore fait
+  connectSTTWebSocket();
+
+  try {
+    const stream   = await navigator.mediaDevices.getUserMedia({
+      audio: { sampleRate: 16000, channelCount: 1, echoCancellation: true, noiseSuppression: true }
+    });
+
+    // Web Audio API : capture PCM Float32 directement
+    state.audioCtx    = new (window.AudioContext || window.webkitAudioContext)({ sampleRate: 16000 });
+    state.audioSource = state.audioCtx.createMediaStreamSource(stream);
+
+    // ScriptProcessor : buffer de 4096 samples (~256ms a 16kHz)
+    const processor   = state.audioCtx.createScriptProcessor(4096, 1, 1);
+    state.audioProcessor = processor;
+
+    // VAD : seuil RMS pour detecter parole vs silence
+    const RMS_THRESHOLD   = 0.01;   // ajuster selon micro
+    const SILENCE_TIMEOUT = 900;    // ms de silence avant envoi auto
+
+    processor.onaudioprocess = (e) => {
+      if (!state.isRecording) return;
+
+      const samples = e.inputBuffer.getChannelData(0); // Float32Array
+
+      // Calcul RMS pour VAD
+      let sum = 0;
+      for (let i = 0; i < samples.length; i++) sum += samples[i] * samples[i];
+      const rms = Math.sqrt(sum / samples.length);
+
+      const isVoice = rms > RMS_THRESHOLD;
+
+      if (isVoice) {
+        state.vadSpeaking = true;
+        clearTimeout(state.vadTimer);
+        state.vadTimer = null;
+        // Envoyer chunk PCM au serveur via WebSocket
+        if (state.wsSTT && state.wsSTT.readyState === WebSocket.OPEN) {
+          state.wsSTT.send(samples.buffer);
+        }
+      } else if (state.vadSpeaking && !state.vadTimer) {
+        // Silence detecte apres parole : timer avant envoi
+        state.vadTimer = setTimeout(() => {
+          if (state.isRecording && state.vadSpeaking) {
+            triggerTranscription();
+          }
+        }, SILENCE_TIMEOUT);
+      }
+    };
+
+    state.audioSource.connect(processor);
+    processor.connect(state.audioCtx.destination);
+
+    state.isRecording  = true;
+    state.vadSpeaking  = false;
+    state.vadTimer     = null;
+
+    // Garder reference au stream pour fermeture
+    state._micStream = stream;
+
+    const btn = document.getElementById('btn-mic');
+    btn.classList.add('recording');
+    btn.textContent = '⏹';
+    toast('Parlez — arret automatique apres silence…');
+
+  } catch(e) {
+    toast('Micro inaccessible : ' + e.message, 'error');
+  }
+}
+
+// ── Declenche la transcription (VAD auto ou clic stop) ───────────────
+function triggerTranscription() {
+  if (!state.isRecording) return;
+  state.vadSpeaking = false;
+  clearTimeout(state.vadTimer);
+  state.vadTimer = null;
+
+  // Signaler fin au serveur
+  if (state.wsSTT && state.wsSTT.readyState === WebSocket.OPEN) {
+    state.wsSTT.send('end');
+    showTyping(true);
+    toast('Transcription en cours…');
+  } else {
+    toast('STT WebSocket non disponible', 'warn');
+  }
+
+  // Reinitialiser l enregistrement mais garder le micro actif pour la prochaine replique
+  state.vadSpeaking = false;
+}
+
+// ── Arret manuel par clic bouton ──────────────────────────────────────
+function stopRecordingManual() {
+  triggerTranscription();
+
+  // Fermer le micro et le Web Audio context
+  _closeMic();
+
+  state.isRecording = false;
+  const btn = document.getElementById('btn-mic');
+  btn.classList.remove('recording');
+  btn.textContent = '🎤';
+}
+
+function _closeMic() {
+  if (state.audioProcessor) {
+    state.audioProcessor.disconnect();
+    state.audioProcessor = null;
+  }
+  if (state.audioSource) {
+    state.audioSource.disconnect();
+    state.audioSource = null;
+  }
+  if (state.audioCtx) {
+    state.audioCtx.close();
+    state.audioCtx = null;
+  }
+  if (state._micStream) {
+    state._micStream.getTracks().forEach(t => t.stop());
+    state._micStream = null;
+  }
+}
+
+// ── Fallback HTTP transcription (si WS STT indisponible) ─────────────
+async function transcribeAudioHTTP(blob) {
+  toast('Transcription STT (HTTP)…');
+  showTyping(true);
+  const fd = new FormData();
+  fd.append('audio', blob, 'recording.webm');
+  try {
+    const res  = await fetch(`/session/${state.sessionId}/transcribe`, { method: 'POST', body: fd });
+    const data = await res.json();
+    showTyping(false);
+    if (data.success && data.text?.trim()) {
+      sendMessage(data.text);
+      toast('Transcrit : "' + data.text.substring(0, 50) + '..."', 'success');
+    } else {
+      toast(data.error || 'Transcription vide', 'error');
+    }
+  } catch {
+    showTyping(false);
+    toast('Erreur transcription', 'error');
+  }
+}
+
+/* ══════════════════════════════════════════════
+   AUDIO PLAYBACK SANS GAP — Web Audio API
+   ─────────────────────────────────────────────
+   Principe :
+   1. Un seul AudioContext partagé pour toute la session.
+   2. Chaque URL est fetch+décodée en AudioBuffer dès qu'elle arrive
+      (pendant que la phrase précédente joue encore).
+   3. Chaque buffer est schedulé via ctx.currentTime de façon
+      contiguë : startAt[N+1] = startAt[N] + buffer[N].duration
+      → gap entre phrases = 0 ms côté audio.
+   4. Lip-sync : un seul setInterval qui suit nextStartTime.
+══════════════════════════════════════════════ */
+
+// ── Contexte Audio unique ─────────────────────────────────────────
+let _actx          = null;   // AudioContext
+let _nextStartTime = 0;      // timestamp AudioContext de la prochaine phrase
+let _queueEmpty    = true;   // true quand rien ne joue / n'est en file
+
+// Nœuds actifs : pour pouvoir couper net en cas de stopAvatarAudio()
+let _activeNodes   = [];
+
+// Buffer d'accumulation pour le flux binaire TTS en cours
+let _ttsCurrentChunks = null;  // null = pas de flux actif, sinon tableau de Blob
+let _ttsCurrentIndex  = -1;
+
+// Interaction requise avant premier play (politique autoplay navigateurs)
+let _userInteracted = false;
+let _pendingQueue   = [];    // ArrayBuffer en attente d'interaction
+
+function _markInteracted() {
+  if (_userInteracted) return;
+  _userInteracted = true;
+  const q = _pendingQueue.splice(0);
+  q.forEach(item => {
+    if (item.__fetchPromise) {
+      item.__fetchPromise.then(buf => _decodeAndSchedule(buf)).catch(() => {});
+    } else if (item.arrayBuf) {
+      _decodeAndSchedule(item.arrayBuf);
+    }
+  });
+}
+document.addEventListener('click',      _markInteracted, { capture: true });
+document.addEventListener('keydown',    _markInteracted, { capture: true });
+document.addEventListener('touchstart', _markInteracted, { capture: true });
+
+// ── Initialise ou réutilise l'AudioContext ────────────────────────
+function _getACtx() {
+  if (!_actx || _actx.state === 'closed') {
+    _actx = new (window.AudioContext || window.webkitAudioContext)();
+  }
+  if (_actx.state === 'suspended') _actx.resume();
+  return _actx;
+}
+
+// ── Décode un ArrayBuffer MP3 et le schedule sans gap ────────────
+async function _decodeAndSchedule(arrayBuf) {
+  const ctx = _getACtx();
+  let buffer;
+  try {
+    buffer = await ctx.decodeAudioData(arrayBuf);
+  } catch(e) {
+    console.error('[Audio] Décodage échoué :', e);
+    return;
+  }
+
+  const now      = ctx.currentTime;
+  const startAt  = Math.max(now + 0.03, _nextStartTime);
+  _nextStartTime = startAt + buffer.duration;
+  _queueEmpty    = false;
+  state.audioPlaying = true;
+
+  const source = ctx.createBufferSource();
+  source.buffer = buffer;
+  source.connect(ctx.destination);
+  _activeNodes.push(source);
+
+  const pulse         = document.getElementById('avatar-pulse');
+  const msUntilStart  = Math.max(0, (startAt - ctx.currentTime) * 1000);
+  const msDuration    = buffer.duration * 1000;
+
+  setTimeout(() => { pulse.classList.add('talking'); animateLipSync(true); }, msUntilStart);
+  setTimeout(() => {
+    if (ctx.currentTime >= _nextStartTime - 0.08) {
+      pulse.classList.remove('talking');
+      animateLipSync(false);
+      state.audioPlaying = false;
+      _queueEmpty = true;
+    }
+  }, msUntilStart + msDuration);
+
+  source.onended = () => { _activeNodes = _activeNodes.filter(n => n !== source); };
+  source.start(startAt);
+  console.log(`[Audio] +${(startAt - now).toFixed(3)}s dur=${buffer.duration.toFixed(2)}s`);
+}
+
+// ── fetch → decode → schedule (pour URL fichier, greeting + fallback) ─
+async function _fetchAndSchedule(url) {
+  try {
+    const resp = await fetch(url);
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const buf = await resp.arrayBuffer();
+    await _decodeAndSchedule(buf);
+  } catch(e) {
+    console.error('[Audio] fetch échoué :', url, e);
+  }
+}
+
+// ── API publique ──────────────────────────────────────────────────
+
+// Lecture depuis URL (greeting HTTP + fallback)
+function enqueueAudio(url, durationS) {
+  if (!url) return;
+  if (_userInteracted) {
+    _fetchAndSchedule(url);
+  } else {
+    // Stocke l'URL et fetch+decode dès l'interaction
+    const pending = fetch(url).then(r => r.arrayBuffer());
+    _pendingQueue.push({ __fetchPromise: pending });
+    // Redéfinir _markInteracted pour gérer les deux cas
+  }
+}
+
+// Alias pour compatibilité
+function playAudio(url, durationS) {
+  enqueueAudio(url, durationS);
+}
+
+// Coupe tout immédiatement et vide la file
+function stopAvatarAudio() {
+  _pendingQueue     = [];
+  _nextStartTime    = 0;
+  _queueEmpty       = true;
+  _ttsCurrentChunks = null;
+  _ttsCurrentIndex  = -1;
+  state.audioPlaying = false;
+
+  _activeNodes.forEach(n => { try { n.stop(); } catch(_) {} });
+  _activeNodes = [];
+
+  document.getElementById('avatar-pulse').classList.remove('talking');
+  animateLipSync(false);
+}
+
+// Rétrocompatibilité : certains endroits posent encore state.currentAudio
+Object.defineProperty(state, 'currentAudio', {
+  get() { return null; },
+  set(_) {},   // silencieusement ignoré
+  configurable: true,
+});
+
+let lipSyncInterval = null;
+function animateLipSync(active) {
+  clearInterval(lipSyncInterval);
+  const mouth = document.getElementById('mouth');
+  if (!mouth) return;
+  if (!active) { mouth.setAttribute('d', 'M88 128 Q100 132 112 128'); return; }
+  let toggle = false;
+  lipSyncInterval = setInterval(() => {
+    mouth.setAttribute('d', toggle ? 'M87 126 Q100 140 113 126' : 'M88 128 Q100 132 112 128');
+    toggle = !toggle;
+  }, 180);
+}
+
+/* ══════════════════════════════════════════════
+   TIMER POLL — Vision polling SUPPRIMÉ
+══════════════════════════════════════════════ */
+/* ── WebSocket : connexion + gestion des événements ────────────── */
+function connectWebSocket() {
+  if (state.ws) { state.ws.close(); state.ws = null; }
+
+  const wsUrl = `ws://${location.host}/ws/${state.sessionId}`;
+  const ws    = new WebSocket(wsUrl);
+  ws.binaryType = 'arraybuffer';   // reçoit les chunks MP3 comme ArrayBuffer
+  state.ws    = ws;
+
+  ws.onopen = () => {
+    console.log('🔌 WebSocket connecté');
+    toast('🔌 Connexion temps réel active', 'success');
+    // ping toutes les 10s pour garder le timer à jour
+    state.timerInterval = setInterval(() => {
+      if (ws.readyState === WebSocket.OPEN)
+        ws.send(JSON.stringify({ action: 'ping' }));
+    }, 10000);
+  };
+
+  ws.onmessage = (event) => {
+    // ── Messages binaires : chunks MP3 d'une phrase en cours ──────
+    if (event.data instanceof ArrayBuffer || event.data instanceof Blob) {
+      if (_ttsCurrentChunks !== null) {
+        // Accumule les bytes dans le buffer de la phrase courante
+        const blobify = event.data instanceof Blob
+          ? event.data
+          : new Blob([event.data], { type: 'audio/mpeg' });
+        _ttsCurrentChunks.push(blobify);
+      }
+      return;
+    }
+
+    // ── Messages JSON ──────────────────────────────────────────────
+    const msg = JSON.parse(event.data);
+
+    if (msg.type === 'token') {
+      state.wsStreamBuf += msg.token;
+      if (state.wsStreamEl) {
+        state.wsStreamEl.textContent = state.wsStreamBuf;
+        const c = document.getElementById('chat-messages');
+        c.scrollTop = c.scrollHeight;
+      }
+    }
+
+    else if (msg.type === 'stream_done') {
+      if (state.wsStreamEl) {
+        state.wsStreamEl.textContent = msg.full_text || state.wsStreamBuf;
+        const metaEl = state.wsStreamEl.closest('.msg')?.querySelector('.msg-meta');
+        if (metaEl) metaEl.textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      }
+    }
+
+    else if (msg.type === 'tts_start') {
+      // Début d'un flux MP3 pour la phrase msg.index
+      // On ouvre un nouveau buffer d'accumulation
+      _ttsCurrentChunks = [];
+      _ttsCurrentIndex  = msg.index;
+    }
+
+    else if (msg.type === 'tts_end') {
+      // Fin du flux MP3 pour cette phrase — on décode et schedule
+      const chunks = _ttsCurrentChunks;
+      _ttsCurrentChunks = null;
+      _ttsCurrentIndex  = -1;
+      if (chunks && chunks.length > 0) {
+        const blob = new Blob(chunks, { type: 'audio/mpeg' });
+        blob.arrayBuffer().then(buf => _decodeAndSchedule(buf));
+      }
+    }
+
+    else if (msg.type === 'tts_ready') {
+      // Compatibilité avec le greeting HTTP (URL de fichier)
+      enqueueAudio(msg.audio_url, msg.duration_s);
+    }
+
+    else if (msg.type === 'meta') {
+      if (state.wsStreamEl) {
+        state.wsStreamEl.textContent = msg.full_text || state.wsStreamBuf;
+        state.wsStreamEl  = null;
+        state.wsStreamBuf = '';
+      }
+      if (msg.phase)     setPhase(msg.phase);
+      if (msg.time_left !== undefined) updateTimer(msg.time_left);
+      if (msg.scores)    updateScores(msg.scores);
+      showTyping(false);
+      document.getElementById('btn-send').disabled = false;
+      document.getElementById('btn-mic').disabled  = false;
+      if (msg.interview_ended) setTimeout(() => endInterview(null), 1500);
+    }
+
+    else if (msg.type === 'pong') {
+      if (msg.time_left !== undefined) updateTimer(msg.time_left);
+      if (msg.phase) setPhase(msg.phase);
+    }
+
+    else if (msg.type === 'report') { endInterview(msg); }
+
+    else if (msg.type === 'error') {
+      showTyping(false);
+      document.getElementById('btn-send').disabled = false;
+      document.getElementById('btn-mic').disabled  = false;
+      toast('Erreur serveur : ' + msg.message, 'error');
+    }
+  };
+
+  ws.onerror = (err) => {
+    console.error('WebSocket error', err);
+    toast('⚠️ WebSocket déconnecté — bascule HTTP', 'warn');
+  };
+
+  ws.onclose = () => {
+    clearInterval(state.timerInterval);
+    state.ws = null;
+    console.log('🔌 WebSocket fermé');
+  };
+}
+
+/* ── Ajoute une bulle de streaming vide (sera remplie token par token) ─ */
+function appendStreamingBubble() {
+  const container = document.getElementById('chat-messages');
+  const typing    = document.getElementById('typing');
+  const div       = document.createElement('div');
+  div.className   = 'msg avatar';
+  const now       = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  const bubble    = document.createElement('div');
+  bubble.className = 'msg-bubble streaming-bubble';
+  bubble.style.cssText = 'min-height:1.4em;';
+  div.innerHTML = `<div class="msg-av">🤖</div>`;
+  div.appendChild(document.createElement('div'));
+  div.lastChild.appendChild(bubble);
+  const meta = document.createElement('div');
+  meta.className = 'msg-meta';
+  meta.textContent = now + ' · en cours…';
+  div.lastChild.appendChild(meta);
+  container.insertBefore(div, typing);
+  container.scrollTop = container.scrollHeight;
+  return bubble;
+}
+
+/* ── Mise à jour scores dans le header ───────────────────────── */
+function updateScores(scores) {
+  // scores = { INTRO_ETUDES: 7, MAPPING_PROJETS_OFFRE: null, ... }
+  // affichage optionnel si un élément #scores-bar existe
+  const el = document.getElementById('scores-bar');
+  if (!el) return;
+  const total = Object.values(scores).filter(v => v !== null).reduce((a,b) => a+b, 0);
+  el.textContent = 'Score : ' + total;
+}
+
+function startTimerPoll() {
+  // Conservé pour fallback HTTP uniquement — le WS gère le timer via ping
+}
+
+/* ══════════════════════════════════════════════
+   FIN ENTRETIEN → RAPPORT
+══════════════════════════════════════════════ */
+async function endInterview(inlineReport) {
+  clearInterval(state.timerInterval);
+  toast('Génération du rapport NLU…');
+  let report = inlineReport;
+  if (!report) {
+    try {
+      const res  = await fetch(`/session/${state.sessionId}/evaluate`);
+      const data = await res.json();
+      report = data.report;
+    } catch { toast('Erreur génération rapport', 'error'); return; }
+  }
+  if (report) renderReport(report);
+  showScreen('screen-report');
+}
+
+/* ══════════════════════════════════════════════
+   RENDER REPORT (sans section Vision)
+══════════════════════════════════════════════ */
+function renderReport(r) {
+  const meta = r.meta || {};
+  document.getElementById('report-meta').textContent =
+    [meta.date_entretien || r.date, meta.langue || r.langue, meta.duree || r.duree_minutes + ' min']
+      .filter(Boolean).join(' · ');
+
+  document.getElementById('r-tech').textContent   = (r.score_technique     ?? r.pourcentage ?? '—') + (r.score_technique     != null ? '/100' : '%');
+  document.getElementById('r-comm').textContent   = (r.score_communication ?? '—')                  + (r.score_communication != null ? '/100' : '');
+  document.getElementById('r-global').textContent = (r.score_global        ?? r.pourcentage ?? '—') + (r.score_global        != null ? '/100' : '%');
+
+  const phasesEl = document.getElementById('phases-bars');
+  phasesEl.innerHTML = '';
+  const phases    = r.scores_par_phase || {};
+  const phasesArr = r.phases           || [];
+
+  if (Object.keys(phases).length > 0) {
+    for (const [key, val] of Object.entries(phases)) {
+      const pct   = val.max ? Math.round((val.obtenu / val.max) * 100) : 0;
+      const label = key.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+      phasesEl.innerHTML += `
+        <div class="phase-row">
+          <div class="phase-row-label">${label}</div>
+          <div class="phase-bar-bg"><div class="phase-bar-fill" style="width:${pct}%"></div></div>
+          <div class="phase-row-score">${val.obtenu}/${val.max}</div>
+        </div>
+        ${val.commentaire ? `<p style="font-size:.74rem;color:var(--muted);margin:-0.3rem 0 .7rem 185px">${val.commentaire}</p>` : ''}`;
+    }
+  } else if (phasesArr.length > 0) {
+    for (const p of phasesArr) {
+      phasesEl.innerHTML += `
+        <div class="phase-row">
+          <div class="phase-row-label">${p.phase}</div>
+          <div class="phase-bar-bg"><div class="phase-bar-fill" style="width:${p.pct}%"></div></div>
+          <div class="phase-row-score">${p.score}/${p.max}</div>
+        </div>`;
+    }
+  }
+
+  // Sources RAG
+  const ragEl   = document.getElementById('r-rag-sources');
+  ragEl.innerHTML = '';
+  const sources = r.sources_rag || {};
+  const cvDocs  = sources.cv           || state.ragSources.cv           || [];
+  const jobDocs = sources.job_offer    || state.ragSources.job_offer    || [];
+  const kbDocs  = sources.company_info || sources.company_docs
+                  || state.ragSources.company_docs || [];
+
+  function addRagRow(label, docs) {
+    const active = Array.isArray(docs) ? docs.length > 0 : !!docs;
+    const sub    = Array.isArray(docs) && docs.length > 0 ? ` — ${docs.join(', ')}` : '';
+    const d = document.createElement('div');
+    d.className = 'rag-source-item';
+    d.innerHTML = `
+      <div class="rag-dot ${active ? 'on' : 'off'}"></div>
+      <div>
+        <span class="rag-source-label">${label}</span>
+        <span class="rag-source-sub">${sub}</span>
+      </div>`;
+    ragEl.appendChild(d);
+  }
+  addRagRow('CV candidat', cvDocs);
+  addRagRow("Offre d'emploi", jobDocs);
+  if (Array.isArray(kbDocs) && kbDocs.length > 0) {
+    kbDocs.forEach(d => addRagRow(`KB : ${d}`, [d]));
+  } else {
+    addRagRow('KB entreprise', []);
+  }
+
+  // Tags
+  renderTags('r-competences', r.competences_detectees || [], 'green');
+  renderTags('r-lacunes',     r.lacunes_identifiees   || [], 'red');
+  renderTags('r-forts',       r.points_forts          || [], 'green');
+  renderTags('r-amelio',      r.points_amelioration   || r.points_faibles || []);
+
+  document.getElementById('r-motivation').textContent = r.analyse_motivation || '—';
+  document.getElementById('r-softskills').textContent = r.analyse_soft_skills || '';
+
+  const verdict = r.verdict_final || (
+    (r.pourcentage || 0) >= 65 ? 'EMBAUCHE' :
+    (r.pourcentage || 0) >= 45 ? 'A REVOIR' : 'REJET'
+  );
+  const vEl   = document.getElementById('r-verdict');
+  vEl.textContent = verdict;
+  vEl.className   = 'verdict-box ' + (
+    verdict === 'EMBAUCHE' ? 'EMBAUCHE' : verdict === 'REJET' ? 'REJET' : 'default'
+  );
+  document.getElementById('r-reco').textContent =
+    r.recommandation_detail || r.recommandation || '';
+}
+
+function renderTags(id, items, type = '') {
+  const el = document.getElementById(id);
+  el.innerHTML = items.length
+    ? items.map(i => `<span class="tag ${type}">${i}</span>`).join('')
+    : '<span style="color:var(--muted);font-size:.8rem">Aucun élément</span>';
+}
+
+/* ══════════════════════════════════════════════
+   RESTART
+══════════════════════════════════════════════ */
+function restartApp() {
+  if (state.sessionId)
+    fetch(`/session/${state.sessionId}`, { method: 'DELETE' }).catch(() => {});
+
+  clearInterval(state.timerInterval);
+
+  // Fermer le WebSocket STT et le micro si actifs
+  if (state.wsSTT) { state.wsSTT.close(); state.wsSTT = null; }
+  if (state.isRecording) _closeMic();
+
+  // Vider la queue audio Web Audio API
+  stopAvatarAudio();
+  _pendingQueue  = [];
+  _nextStartTime = 0;
+  if (_actx && _actx.state !== 'closed') { _actx.close(); _actx = null; }
+  _userInteracted = false;
+
+  Object.assign(state, {
+    sessionId: null, isRecording: false, isTalking: false,
+    mediaRecorder: null, audioChunks: [], cvUploaded: false,
+    offreUploaded: false, currentAudio: null,
+    ragSources: { cv: [], job_offer: [], company_docs: [] },
+    vadSpeaking: false, vadTimer: null,
+    _pendingGreeting: null,
+  });
+
+  document.getElementById('chat-messages').innerHTML =
+    '<div class="typing-indicator" id="typing"><span></span><span></span><span></span></div>';
+  ['dz-cv', 'dz-offre'].forEach(id => document.getElementById(id).classList.remove('uploaded'));
+  document.getElementById('cv-status').textContent    = '✓ Chargé';
+  document.getElementById('offre-status').textContent = '✓ Chargée';
+  document.getElementById('btn-start').disabled       = true;
+  document.getElementById('btn-start').textContent    = "Démarrer l'entretien →";
+  document.getElementById('user-input').value         = '';
+  ['src-cv', 'src-job', 'src-kb'].forEach(id =>
+    document.getElementById(id)?.classList.remove('active'));
+  document.getElementById('kb-company-list').style.display = 'none';
+  ['hdr-cv', 'hdr-job', 'hdr-kb'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) { el.classList.remove('on'); }
+  });
+  document.getElementById('hdr-kb').textContent = 'KB';
+  document.getElementById('src-kb-label').textContent = 'KB entreprise';
+
+  showScreen('screen-setup');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+--extra-index-url https://download.pytorch.org/whl/cu118
+
+# --- Core ML & GPU ---
+torch>=2.2.0
+torchvision>=0.17.0
+torchaudio>=2.2.0
+
+# --- Backend ---
+fastapi>=0.110.0
+uvicorn>=0.27.0
+pydantic>=2.7.0
+python-multipart>=0.0.9
+flask-socketio>=5.3.6
+websockets>=12.0
+
+# --- LLM / RAG ---
+langchain>=0.1.0
+langchain-community>=0.0.10
+langchain-core>=0.1.0
+langchain-huggingface>=0.0.1
+langchain-chroma>=0.1.0
+langchain-experimental
+sentence-transformers>=2.7.0
+ollama>=0.2.0
+chromadb>=0.5.0
+pandas>=2.2.1
+
+# --- STT ---
+faster-whisper>=1.0.1
+sounddevice>=0.5.0
+scipy>=1.12.0
+
+# --- Vision ---
+deepface>=0.0.93
+opencv-python>=4.9.0
+mediapipe>=0.10.11
+tf-keras>=2.16.0
+
+# --- Utils ---
+numpy>=1.26.4,<2.0
+tqdm
+psutil
+GPUtil
+pypdf
+docx2txt
+python-docx
+
+# --- Audio / TTS ---
+edge-tts>=6.1.9
+pydub>=0.25.1
+pyaudio>=0.2.14
