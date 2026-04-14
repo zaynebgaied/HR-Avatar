@@ -1,0 +1,25 @@
+HR INTERVIEW — Anglais
+Date    : 2026-04-04 18:53:34
+Duration: 20 minutes
+[2026-04-04 18:56:33] [OPENING] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Hello, thank you for having me. I’m really glad to be here.
+
+My name is Zayneb Gaied. I’m currently in my final year of engineering in Data Science and Decision Systems at ENET’Com.
+
+During my studies, I developed strong skills in machine learning, deep learning, and data engineering, using tools like Python, TensorFlow, and SQL.
+
+I’ve completed several internships where I worked on applied AI projects. For example, I built a conversational AI system using LLaMA and RAG, and also worked on a sales prediction and recommendation system using models like XGBoost and Prophet.
+
+What motivated me to apply for this position is that it combines AI engineering with real-world impact, especially in a project like the AI-based HR avatar, which involves NLP, real-time interaction, and system design.
+
+بصراحة، هذا النوع من المشاريع اللي فيها AI + impact réel هو أكثر شيء يحمسني، especially when it involves solving real user problems.
+
+I’d be happy to go into more detail about any of my projects
+[2026-04-04 18:57:04] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Building on that, how did you integrate these components?
+[2026-04-04 18:57:40] [JOB_ALIGNED_EXPLORATION] Candidate [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=[]]: .....
+[2026-04-04 18:57:50] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Why did you choose Python over other programming languages for this project?
+[2026-04-04 18:58:32] [JOB_ALIGNED_EXPLORATION] Candidate [quality=GOOD] [behavioral=False] [decision=True] [weak_signals=[]]: I chose Python mainly because it has a very strong ecosystem for AI and machine learning.
+
+Most of the tools I used — like TensorFlow, PyTorch, Hugging Face, and Pandas — are best supported in Python
+It also allowed me to integrate multiple components easily (STT, LLM, TTS) within the same environment
+Python is very efficient for rapid prototyping, which was important for testing different approaches quickly
+[2026-04-04 18:58:44] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you give an example of a complex problem you solved using Python's ecosystem in this project?

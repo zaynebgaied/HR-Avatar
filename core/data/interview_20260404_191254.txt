@@ -1,0 +1,16 @@
+HR INTERVIEW — Anglais
+Date    : 2026-04-04 19:12:54
+Duration: 20 minutes
+[2026-04-04 19:15:01] [OPENING] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Hello, thank you for having me. I’m really glad to be here.
+
+My name is Zayneb Gaied. I’m currently in my final year of engineering in Data Science and Decision Systems at ENET’Com.
+
+During my studies, I developed strong skills in machine learning, deep learning, and data engineering, using tools like Python, TensorFlow, and SQL.
+
+I’ve completed several internships where I worked on applied AI projects. For example, I built a conversational AI system using LLaMA and RAG, and also worked on a sales prediction and recommendation system using models like XGBoost and Prophet.
+
+What motivated me to apply for this position is that it combines AI engineering with real-world impact, especially in a project like the AI-based HR avatar, which involves NLP, real-time interaction, and system design.
+
+بصراحة، هذا النوع من المشاريع اللي فيها AI + impact réel هو أكثر شيء يحمسني، especially when it involves solving real user problems.
+
+I’d be happy to go into more detail about any of my projects

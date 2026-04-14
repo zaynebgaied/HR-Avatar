@@ -1,0 +1,82 @@
+{
+  "date": "2026-03-31 22:01",
+  "langue": "Anglais",
+  "duree_minutes": 20,
+  "meta": {
+    "date_entretien": "2026-03-31 21:37:58",
+    "langue": "N/A",
+    "duree": "N/A",
+    "date_rapport": "2026-03-31 21:58:28",
+    "source_interview": "C:\\internship_spark\\core\\data\\interview_20260331_213758.txt"
+  },
+  "phases": [],
+  "score_total": 0,
+  "score_max": 100,
+  "pourcentage": 0,
+  "scores_par_phase": {
+    "presentation_parcours": {
+      "obtenu": 0,
+      "max": 10,
+      "statut": "NON ÉVALUÉ",
+      "commentaire": "Sujet non couvert par l'entretien"
+    },
+    "pertinence_projets": {
+      "obtenu": 0,
+      "max": 20,
+      "statut": "NON ÉVALUÉ",
+      "commentaire": "Sujet non couvert par l'entretien"
+    },
+    "competences_techniques": {
+      "obtenu": 0,
+      "max": 25,
+      "statut": "NON ÉVALUÉ",
+      "commentaire": "Sujet non couvert par l'entretien"
+    },
+    "soft_skills_culture_fit": {
+      "obtenu": 0,
+      "max": 30,
+      "statut": "NON ÉVALUÉ",
+      "commentaire": "Sujet non couvert par l'entretien"
+    },
+    "curiosite_motivation": {
+      "obtenu": 0,
+      "max": 15,
+      "statut": "NON ÉVALUÉ",
+      "commentaire": "Sujet non couvert par l'entretien"
+    }
+  },
+  "score_technique": 0,
+  "score_communication": 0,
+  "score_global": 0,
+  "competences_detectees": [],
+  "lacunes_identifiees": [
+    "Présentation & Parcours — NON ÉVALUÉ",
+    "Pertinence des Projets — NON ÉVALUÉ",
+    "Compétences Techniques — NON ÉVALUÉ",
+    "Soft Skills & Culture Fit — NON ÉVALUÉ",
+    "Curiosité & Motivation — NON ÉVALUÉ"
+  ],
+  "analyse_motivation": "Motivation non évaluée car aucun sujet lié à la motivation n'a été abordé.",
+  "analyse_soft_skills": "Soft skills non évaluées car aucune question sur ce sujet n'a été posée.",
+  "points_forts": [],
+  "points_amelioration": [],
+  "verdict_final": "À COMPLÉTER",
+  "recommandation_detail": "Évaluation partielle — Le candidat n'a pas eu l'occasion d'évoquer ses compétences et expériences. Un 2ème entretien est recommandé pour évaluer ces aspects.",
+  "recommandation": "",
+  "sources_rag": {
+    "cv": [
+      "cv.pdf"
+    ],
+    "job_offer": [
+      "offre.pdf"
+    ],
+    "company_info": []
+  },
+  "analyse_emotion_vision": {
+    "disponible": true,
+    "timeline": [],
+    "emotion_dominante": "neutre",
+    "pics_stress": [],
+    "evolution": []
+  }
+}

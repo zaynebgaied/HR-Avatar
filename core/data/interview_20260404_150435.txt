@@ -1,0 +1,117 @@
+HR INTERVIEW — Anglais
+Date    : 2026-04-04 15:04:35
+Duration: 20 minutes
+RAG     : Hybrid BM25+Vector (alpha=0.6) + CrossEncoder=True + SemanticChunking=True
+
+[2026-04-04 15:09:02] [OPENING] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Hello, thank you for having me. I’m really happy to be here.
+
+My name is Zayneb Gaied. I’m currently in my final year of an engineering degree in Data Science and Decision Systems at ENET’Com.
+
+During my studies, I developed strong skills in machine learning, deep learning, and data engineering, using tools like Python, TensorFlow, and SQL.
+
+I’ve also completed several internships where I worked on real-world AI projects. For example, I developed a conversational AI system using LLaMA and RAG, and also built a sales prediction and recommendation system using models like XGBoost and Prophet.
+
+What motivated me to apply for this position is that it combines both AI engineering and real business impact, especially in a context like HR innovation. The project of building an AI-driven HR avatar for recruitment really interests me, because it involves NLP, real-time interaction, and system architecture — which aligns well with my experience.
+
+بصراحة، هذا النوع من المشاريع “AI applied to real use cases” هو اللي يحمسني أكثر، especially when it has a direct impact on users.
+
+I’d be happy to go deeper into any of my projects or technical experience
+[2026-04-04 15:09:21] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Building on that, how did you handle real-time interaction and sentiment analysis in that project?
+[2026-04-04 15:15:21] [JOB_ALIGNED_EXPLORATION] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=['understatement']]: Of course.
+
+In that project, I handled real-time interaction by designing a pipeline that connects speech input → processing → response generation → speech output.
+
+I used Whisper for speech-to-text (STT) to capture user input
+Then processed the text using a LLM (LLaMA with RAG) to generate contextual responses
+Finally, I used gTTS for text-to-speech (TTS) to respond in real time
+
+To ensure responsiveness, I focused on lightweight APIs (FastAPI) and efficient orchestration between modules.
+
+For sentiment analysis:
+
+I integrated a module that analyzes the user’s tone from the input text
+This helped adapt responses (for example, more neutral or supportive tone if needed)
+
+Conclusion:
+So the system combined real-time pipeline + NLP + sentiment detection to create a more natural and interactive experience.
+
+بشكل عام، الهدف كان نخلي التفاعل “smooth و intelligent” قدر الإمكان 👍
+[2026-04-04 15:15:33] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you provide an example of how you optimized the response generation process to ensure smooth and intelligent interaction in your project?
+[2026-04-04 15:16:29] [JOB_ALIGNED_EXPLORATION] Candidate [quality=STRONG] [behavioral=False] [decision=False] [weak_signals=['understatement']]: Of course.
+
+One example was optimizing the response pipeline around the LLM so the system would stay reactive in real time.
+
+What I did was:
+
+Keep the retrieval step focused, so the model only received the most relevant context from the RAG system
+Use prompt engineering to make responses shorter, clearer, and more aligned with the interview scenario
+Separate the modules clearly — STT, LLM, sentiment analysis, and TTS — so each part could run efficiently without blocking the others
+Deploy the backend with FastAPI and Docker, which helped keep the system structured and easier to test and scale
+
+This improved both latency and response quality. So instead of generating long or noisy answers, the system produced replies that were more relevant and smoother for the user.
+
+بشكل مختصر، the idea was to make the avatar fast, context-aware, and natural in interaction.
+[2026-04-04 15:16:39] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you walk me through a specific instance where you had to balance latency with response quality under real-time constraints?
+[2026-04-04 15:17:31] [JOB_ALIGNED_EXPLORATION] Candidate [quality=STRONG] [behavioral=False] [decision=False] [weak_signals=[]]: Of course.
+
+One concrete case was in the conversational AI project for the video game internship, where I had to keep the interaction responsive while still generating relevant answers.
+
+The challenge was that if I sent too much context to the LLM + RAG pipeline, the answer quality improved, but latency also increased. So I had to find a balance.
+
+What I did was:
+
+Limit retrieval to only the most relevant chunks
+Use more focused prompts to avoid long generations
+Keep the response length controlled for faster output
+Separate the pipeline clearly: STT → LLM → TTS, so each step stayed efficient
+
+As a result, we got responses that were still contextual and useful, but faster and smoother for the user.
+
+بصراحة، the key was not to aim for the “longest” answer, but for the most relevant answer with acceptable latency.
+[2026-04-04 15:17:43] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you quantify the impact of these optimizations? Specifically, how much did you reduce latency and improve response quality in terms of accuracy metrics?
+[2026-04-04 15:18:44] [JOB_ALIGNED_EXPLORATION] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=['understatement']]: Of course.
+
+After these optimizations, we observed a noticeable improvement on both latency and response quality:
+
+Latency:
+We reduced the average response time from around 2.5–3 seconds to about 1.5–2 seconds, so roughly a 30–40% improvement
+Response quality:
+We improved NLU accuracy (intent understanding) from حوالي 75% to 85%+
+The responses became more relevant and less noisy, especially due to better RAG filtering and prompt design
+[2026-04-04 15:18:55] [SOFT_SKILLS_BEHAVIORAL] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you give an example of a situation where the improved response quality led to better user satisfaction in the system?
+[2026-04-04 15:19:30] [SOFT_SKILLS_BEHAVIORAL] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: Of course.
+
+One example was during testing with a guided interview scenario, where the system had to ask questions and respond to candidate answers.
+
+Before optimization:
+
+Some responses were too generic or slightly off-context
+This created confusion and broke the flow of the interaction
+[2026-04-04 15:19:39] [SOFT_SKILLS_BEHAVIORAL] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Given that context, can you provide a specific example of how you addressed this issue during optimization?
+[2026-04-04 15:20:17] [SOFT_SKILLS_BEHAVIORAL] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Of course.
+
+One specific issue we faced was that the system sometimes gave generic answers that didn’t fully match the user’s input during the interview scenario.
+
+How I addressed it:
+
+First, I improved the RAG retrieval step by filtering and selecting only the most relevant context, instead of sending too much information to the model
+Second, I refined the prompt design:
+I added clearer instructions like: “answer concisely and stay aligned with the interview context”
+This reduced irrelevant or overly long responses
+Third, I introduced a simple intent check before generation, to make sure the system understood the user’s input correctly
+[2026-04-04 15:20:17] [CANDIDATE_QUESTIONS] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Before we move to the end, do you have any questions about the role, the team, or the hiring process?
+[2026-04-04 15:20:49] [CANDIDATE_QUESTIONS] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Yes, thank you.
+
+👉 I’d like to understand how you evaluate success for this project — for example, which metrics are most important: latency, NLU accuracy, user satisfaction, or overall system adoption?
+
+That would help me better align my approach with your priorities.
+[2026-04-04 15:21:23] [CANDIDATE_QUESTIONS] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: For this project, success will be evaluated based on several key metrics:
+
+1. **Latency**: Ensuring real-time interaction with low latency is crucial for a smooth user experience.
+2. **NLU Accuracy**: High accuracy in understanding candidate inputs to ensure effective communication and assessment.
+3. **User Satisfaction**: Positive feedback from both candidates and recruiters regarding the system's usability and effectiveness.
+4. **Overall System Adoption**: Widespread use of the system by recruitment teams, as indicated by usage statistics.
+
+These metrics will help us gauge how well the project meets its objectives. Any other questions? Do you have any other questions?
+[2026-04-04 15:21:46] [CANDIDATE_QUESTIONS] Candidate [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=[]]: no thank you
+[2026-04-04 15:21:53] [CLOSING] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you explain how your experience with integrating real-time pipelines and NLP contributed to improving user interaction?. Thank you for your time. We will get back to you with feedback within the next few days.

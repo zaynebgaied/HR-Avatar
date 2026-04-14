@@ -1,0 +1,9 @@
+HR INTERVIEW — Français
+Date    : 2026-04-14 12:32:51
+Duration: 20 minutes
+[2026-04-14 12:36:13] [OPENING] Candidat [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: Bonjour, merci beaucoup pour cette opportunité. Je me présente Tana Gaye, étudiante en 3ème année en ingénierie des données et systèmes de sociologie à la MEDCOR, école d'électronique et télécommunication. Et j'aime beaucoup contribuer à votre entourisme.
+[2026-04-14 12:36:50] [JOB_ALIGNED_EXPLORATION] Recruteur [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Avez-vous eu l'occasion de travailler avec des technologies de reconnaissance vocale (STT) et de synthèse vocale (TTS) dans le cadre de vos stages précédents ?
+[2026-04-14 12:37:38] [JOB_ALIGNED_EXPLORATION] Candidat [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: Ah oui, j'ai appliqué des techniques dans mon dernier stage de vidéo. J'ai été un agent pour un jeu vidéo, un agent multi-langue conversationnel pour aider le joueur dans le jeu vidéo.
+[2026-04-14 12:37:53] [JOB_ALIGNED_EXPLORATION] Recruteur [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Avez-vous eu l'occasion de travailler avec des modules STT ou TTS pendant votre stage ?
+[2026-04-14 12:38:48] [JOB_ALIGNED_EXPLORATION] Candidat [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: Est-ce que tu m'as acheté un teléfono, est-ce que tu m'as acheté un teléfono? Est-ce que tu m'as acheté un teléfono? Est-ce que tu m'as acheté un teléfono? Est-ce que tu m'as acheté un teléfono?
+[2026-04-14 12:38:48] [CANDIDATE_QUESTIONS] Recruteur [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Avant de conclure cette partie, avez-vous des questions sur le poste, l'équipe ou le déroulement du processus ?

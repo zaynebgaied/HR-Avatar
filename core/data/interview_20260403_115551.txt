@@ -1,0 +1,5 @@
+HR INTERVIEW — Anglais
+Date    : 2026-04-03 11:55:51
+Duration: 20 minutes
+RAG     : Hybrid BM25+Vector (alpha=0.6) + CrossEncoder=True + SemanticChunking=True
+

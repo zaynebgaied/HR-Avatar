@@ -1,0 +1,23 @@
+{
+    "score_technique": 85,
+    "score_communication": 70,
+    "competences_detectees": [
+        "Connaissance approfondie en Data Engineering et AI",
+        "Expérience dans le développement de conversational agents",
+        "Compétence en architecture backend avec FastAPI",
+        "Utilisation de Docker pour la gestion des conteneurs",
+        "Expérience en NLU (Intent Recognition) et évaluation de l'exactitude",
+        "Connaissance en optimisation de latence"
+    ],
+    "lacunes_identifiees": [
+        "Manque d'exemple concret sur la mise en place du logging pour le débogage",
+        "Pas de mention d'une expérience avec des GPU pour l'inference LLM, même si cette information a été apportée par l'Avatar RH"
+    ],
+    "analyse_motivation": "La candidate montre une motivation claire pour travailler sur les systèmes basés sur l'intelligence artificielle et a donné un exemple pertinent de son expérience professionnelle.",
+    "points_forts": [
+        "Expérience pratique en développement d'agents conversationnels",
+        "Compétences techniques solides dans FastAPI, Docker et NLU",
+        "Capacité à expliquer clairement ses méthodes et outils utilisés"
+    ],
+    "verdict_final": "EMBAUCHE"
+}

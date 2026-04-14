@@ -1,0 +1,1908 @@
+{
+  "date": "2026-04-05 13:47",
+  "langue": "Anglais",
+  "duree_minutes": 20,
+  "meta": {},
+  "phases": [],
+  "score_total": 0,
+  "score_max": 100,
+  "pourcentage": 0,
+  "scores_par_phase": {},
+  "score_technique": 0,
+  "score_communication": 0,
+  "score_global": 0,
+  "competences_detectees": [],
+  "lacunes_identifiees": [],
+  "analyse_motivation": "",
+  "analyse_soft_skills": "",
+  "points_forts": [],
+  "points_amelioration": [],
+  "verdict_final": "",
+  "recommandation_detail": "",
+  "recommandation": "",
+  "sources_rag": {
+    "cv": [
+      "cv.pdf"
+    ],
+    "job_offer": [
+      "offre.pdf"
+    ],
+    "company_info": []
+  },
+  "analyse_emotion_vision": {
+    "disponible": true,
+    "emotion_dominante": "anxieux",
+    "pics_stress": [
+      "OPENING @ 2026-04-05 13:29:09",
+      "OPENING @ 2026-04-05 13:29:14",
+      "OPENING @ 2026-04-05 13:29:19",
+      "OPENING @ 2026-04-05 13:29:24",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:31:29",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:31:32",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:31:34",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:31:37",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:31:39",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:31:42",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:31:44",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:31:47",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:31:49",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:31:52",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:31:54",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:31:57",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:31:59",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:32:02",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:32:04",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:32:07",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:32:10",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:32:12",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:32:15",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:32:17",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:32:20",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:32:22",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:32:25",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:32:27",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:32:30",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:32:32",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:32:35",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:32:37",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:32:40",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:32:42",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:32:45",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:32:48",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:32:50",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:32:53",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:32:55",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:32:58",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:33:00",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:33:08",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:33:13",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:33:23",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:33:33",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:33:48",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:33:53",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:33:59",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:34:06",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:34:11",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:34:14",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:34:16",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:34:19",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:34:39",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:34:41",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:34:44",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:34:46",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:34:49",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:34:54",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:34:59",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:35:02",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:35:04",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:35:45",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:35:47",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:35:50",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:35:55",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:36:05",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:36:07",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:36:30",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:36:43",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:36:45",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:37:03",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:37:05",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:37:10",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:37:13",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:37:15",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:37:18",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:37:20",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:37:23",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:37:26",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:37:28",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:37:31",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:37:33",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:37:38",
+      "JOB_ALIGNED_EXPLORATION @ 2026-04-05 13:37:41",
+      "PROJECT_DEEP_DIVE @ 2026-04-05 13:38:01",
+      "PROJECT_DEEP_DIVE @ 2026-04-05 13:38:03",
+      "PROJECT_DEEP_DIVE @ 2026-04-05 13:38:14",
+      "PROJECT_DEEP_DIVE @ 2026-04-05 13:38:16",
+      "PROJECT_DEEP_DIVE @ 2026-04-05 13:38:24",
+      "PROJECT_DEEP_DIVE @ 2026-04-05 13:38:26",
+      "PROJECT_DEEP_DIVE @ 2026-04-05 13:38:44",
+      "PROJECT_DEEP_DIVE @ 2026-04-05 13:38:46",
+      "PROJECT_DEEP_DIVE @ 2026-04-05 13:38:49",
+      "PROJECT_DEEP_DIVE @ 2026-04-05 13:38:51",
+      "PROJECT_DEEP_DIVE @ 2026-04-05 13:38:54",
+      "PROJECT_DEEP_DIVE @ 2026-04-05 13:38:56",
+      "PROJECT_DEEP_DIVE @ 2026-04-05 13:38:59",
+      "PROJECT_DEEP_DIVE @ 2026-04-05 13:39:02",
+      "PROJECT_DEEP_DIVE @ 2026-04-05 13:39:07",
+      "PROJECT_DEEP_DIVE @ 2026-04-05 13:39:14",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:39:34",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:39:37",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:39:57",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:40:00",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:40:02",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:40:05",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:40:07",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:40:10",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:40:12",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:40:15",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:40:17",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:40:20",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:40:22",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:40:25",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:40:28",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:40:30",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:40:33",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:40:35",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:40:38",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:40:40",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:40:43",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:40:45",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:40:48",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:40:50",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:40:53",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:40:55",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:40:58",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:41:01",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:41:03",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:41:08",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:41:23",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:42:26",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:42:44",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:43:19",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:43:24",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:43:27",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:43:37",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:43:42",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:43:45",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:43:47",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:43:55",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:43:57",
+      "TECHNICAL_DEPTH @ 2026-04-05 13:44:00",
+      "SOFT_SKILLS_BEHAVIORAL @ 2026-04-05 13:44:56",
+      "SOFT_SKILLS_BEHAVIORAL @ 2026-04-05 13:45:28",
+      "SOFT_SKILLS_BEHAVIORAL @ 2026-04-05 13:45:31",
+      "SOFT_SKILLS_BEHAVIORAL @ 2026-04-05 13:45:33",
+      "SOFT_SKILLS_BEHAVIORAL @ 2026-04-05 13:45:36",
+      "SOFT_SKILLS_BEHAVIORAL @ 2026-04-05 13:45:49",
+      "SOFT_SKILLS_BEHAVIORAL @ 2026-04-05 13:45:51",
+      "CANDIDATE_QUESTIONS @ 2026-04-05 13:45:59",
+      "CANDIDATE_QUESTIONS @ 2026-04-05 13:46:01",
+      "CANDIDATE_QUESTIONS @ 2026-04-05 13:46:09",
+      "CANDIDATE_QUESTIONS @ 2026-04-05 13:46:16",
+      "CANDIDATE_QUESTIONS @ 2026-04-05 13:46:19",
+      "CANDIDATE_QUESTIONS @ 2026-04-05 13:46:32"
+    ],
+    "confiance_globale": 85.7,
+    "evolution": "tendu → anxieux → détendu → anxieux → détendu → découragé → détendu → anxieux → découragé → anxieux → découragé → surpris → découragé → neutre → anxieux → neutre → découragé → anxieux → découragé → anxieux → découragé → anxieux → surpris → neutre → découragé → anxieux → découragé → neutre → découragé → détendu → neutre → découragé → anxieux → neutre → détendu → neutre → anxieux → découragé → neutre → découragé → anxieux → découragé → détendu → anxieux → découragé → neutre → découragé → anxieux → découragé → anxieux → découragé → anxieux → découragé → anxieux → découragé → anxieux → découragé → neutre → anxieux → neutre → tendu → anxieux → neutre → anxieux → neutre → anxieux → neutre → anxieux → neutre → anxieux → neutre → anxieux → neutre → découragé → neutre → détendu → découragé → neutre → découragé → neutre → anxieux → neutre → découragé → détendu → découragé → anxieux → détendu → anxieux → détendu → découragé → neutre → détendu → découragé → neutre → anxieux → neutre → découragé",
+    "nb_frames": 244,
+    "timeline": [
+      {
+        "timestamp": "2026-04-05 13:29:09",
+        "phase": "OPENING",
+        "emotion": "tendu",
+        "raw": "angry",
+        "confidence": 98.2
+      },
+      {
+        "timestamp": "2026-04-05 13:29:14",
+        "phase": "OPENING",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 79.1
+      },
+      {
+        "timestamp": "2026-04-05 13:29:16",
+        "phase": "OPENING",
+        "emotion": "détendu",
+        "raw": "happy",
+        "confidence": 99.4
+      },
+      {
+        "timestamp": "2026-04-05 13:29:19",
+        "phase": "OPENING",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 85.5
+      },
+      {
+        "timestamp": "2026-04-05 13:29:21",
+        "phase": "OPENING",
+        "emotion": "détendu",
+        "raw": "happy",
+        "confidence": 99.9
+      },
+      {
+        "timestamp": "2026-04-05 13:29:24",
+        "phase": "OPENING",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 78.7
+      },
+      {
+        "timestamp": "2026-04-05 13:29:26",
+        "phase": "OPENING",
+        "emotion": "détendu",
+        "raw": "happy",
+        "confidence": 91.7
+      },
+      {
+        "timestamp": "2026-04-05 13:29:29",
+        "phase": "OPENING",
+        "emotion": "détendu",
+        "raw": "happy",
+        "confidence": 99.9
+      },
+      {
+        "timestamp": "2026-04-05 13:31:29",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.4
+      },
+      {
+        "timestamp": "2026-04-05 13:31:32",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.5
+      },
+      {
+        "timestamp": "2026-04-05 13:31:34",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.4
+      },
+      {
+        "timestamp": "2026-04-05 13:31:37",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.7
+      },
+      {
+        "timestamp": "2026-04-05 13:31:39",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.5
+      },
+      {
+        "timestamp": "2026-04-05 13:31:42",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.6
+      },
+      {
+        "timestamp": "2026-04-05 13:31:44",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.6
+      },
+      {
+        "timestamp": "2026-04-05 13:31:47",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.2
+      },
+      {
+        "timestamp": "2026-04-05 13:31:49",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.6
+      },
+      {
+        "timestamp": "2026-04-05 13:31:52",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.6
+      },
+      {
+        "timestamp": "2026-04-05 13:31:54",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.7
+      },
+      {
+        "timestamp": "2026-04-05 13:31:57",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.7
+      },
+      {
+        "timestamp": "2026-04-05 13:31:59",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.8
+      },
+      {
+        "timestamp": "2026-04-05 13:32:02",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.4
+      },
+      {
+        "timestamp": "2026-04-05 13:32:04",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.2
+      },
+      {
+        "timestamp": "2026-04-05 13:32:07",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.0
+      },
+      {
+        "timestamp": "2026-04-05 13:32:10",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.3
+      },
+      {
+        "timestamp": "2026-04-05 13:32:12",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.7
+      },
+      {
+        "timestamp": "2026-04-05 13:32:15",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.8
+      },
+      {
+        "timestamp": "2026-04-05 13:32:17",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.7
+      },
+      {
+        "timestamp": "2026-04-05 13:32:20",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.7
+      },
+      {
+        "timestamp": "2026-04-05 13:32:22",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.6
+      },
+      {
+        "timestamp": "2026-04-05 13:32:25",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.8
+      },
+      {
+        "timestamp": "2026-04-05 13:32:27",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.1
+      },
+      {
+        "timestamp": "2026-04-05 13:32:30",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.6
+      },
+      {
+        "timestamp": "2026-04-05 13:32:32",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.1
+      },
+      {
+        "timestamp": "2026-04-05 13:32:35",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.8
+      },
+      {
+        "timestamp": "2026-04-05 13:32:37",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.4
+      },
+      {
+        "timestamp": "2026-04-05 13:32:40",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.2
+      },
+      {
+        "timestamp": "2026-04-05 13:32:42",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.3
+      },
+      {
+        "timestamp": "2026-04-05 13:32:45",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 100.0
+      },
+      {
+        "timestamp": "2026-04-05 13:32:48",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 76.3
+      },
+      {
+        "timestamp": "2026-04-05 13:32:50",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 85.4
+      },
+      {
+        "timestamp": "2026-04-05 13:32:53",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 88.1
+      },
+      {
+        "timestamp": "2026-04-05 13:32:55",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 88.6
+      },
+      {
+        "timestamp": "2026-04-05 13:32:58",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 96.6
+      },
+      {
+        "timestamp": "2026-04-05 13:33:00",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 70.4
+      },
+      {
+        "timestamp": "2026-04-05 13:33:08",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 97.5
+      },
+      {
+        "timestamp": "2026-04-05 13:33:13",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 67.0
+      },
+      {
+        "timestamp": "2026-04-05 13:33:18",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 63.9
+      },
+      {
+        "timestamp": "2026-04-05 13:33:23",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 77.0
+      },
+      {
+        "timestamp": "2026-04-05 13:33:33",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 79.6
+      },
+      {
+        "timestamp": "2026-04-05 13:33:48",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 100.0
+      },
+      {
+        "timestamp": "2026-04-05 13:33:51",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "surpris",
+        "raw": "surprise",
+        "confidence": 90.9
+      },
+      {
+        "timestamp": "2026-04-05 13:33:53",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 100.0
+      },
+      {
+        "timestamp": "2026-04-05 13:33:56",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 100.0
+      },
+      {
+        "timestamp": "2026-04-05 13:33:59",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 93.5
+      },
+      {
+        "timestamp": "2026-04-05 13:34:01",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 89.8
+      },
+      {
+        "timestamp": "2026-04-05 13:34:04",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 76.0
+      },
+      {
+        "timestamp": "2026-04-05 13:34:06",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 100.0
+      },
+      {
+        "timestamp": "2026-04-05 13:34:11",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 99.6
+      },
+      {
+        "timestamp": "2026-04-05 13:34:14",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 81.1
+      },
+      {
+        "timestamp": "2026-04-05 13:34:16",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 86.1
+      },
+      {
+        "timestamp": "2026-04-05 13:34:19",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 71.3
+      },
+      {
+        "timestamp": "2026-04-05 13:34:39",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 99.1
+      },
+      {
+        "timestamp": "2026-04-05 13:34:41",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 99.4
+      },
+      {
+        "timestamp": "2026-04-05 13:34:44",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 99.2
+      },
+      {
+        "timestamp": "2026-04-05 13:34:46",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 95.7
+      },
+      {
+        "timestamp": "2026-04-05 13:34:49",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 100.0
+      },
+      {
+        "timestamp": "2026-04-05 13:34:54",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 68.9
+      },
+      {
+        "timestamp": "2026-04-05 13:34:57",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 58.0
+      },
+      {
+        "timestamp": "2026-04-05 13:34:59",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 74.8
+      },
+      {
+        "timestamp": "2026-04-05 13:35:02",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 67.7
+      },
+      {
+        "timestamp": "2026-04-05 13:35:04",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.8
+      },
+      {
+        "timestamp": "2026-04-05 13:35:07",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "surpris",
+        "raw": "surprise",
+        "confidence": 99.7
+      },
+      {
+        "timestamp": "2026-04-05 13:35:09",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 99.1
+      },
+      {
+        "timestamp": "2026-04-05 13:35:12",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 99.9
+      },
+      {
+        "timestamp": "2026-04-05 13:35:14",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 88.3
+      },
+      {
+        "timestamp": "2026-04-05 13:35:45",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 69.7
+      },
+      {
+        "timestamp": "2026-04-05 13:35:47",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 79.7
+      },
+      {
+        "timestamp": "2026-04-05 13:35:50",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 99.3
+      },
+      {
+        "timestamp": "2026-04-05 13:35:52",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 64.1
+      },
+      {
+        "timestamp": "2026-04-05 13:35:55",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 70.2
+      },
+      {
+        "timestamp": "2026-04-05 13:35:57",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "détendu",
+        "raw": "happy",
+        "confidence": 77.8
+      },
+      {
+        "timestamp": "2026-04-05 13:36:00",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 73.6
+      },
+      {
+        "timestamp": "2026-04-05 13:36:02",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 58.4
+      },
+      {
+        "timestamp": "2026-04-05 13:36:05",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 75.8
+      },
+      {
+        "timestamp": "2026-04-05 13:36:07",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 77.8
+      },
+      {
+        "timestamp": "2026-04-05 13:36:30",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.9
+      },
+      {
+        "timestamp": "2026-04-05 13:36:32",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 86.8
+      },
+      {
+        "timestamp": "2026-04-05 13:36:35",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "détendu",
+        "raw": "happy",
+        "confidence": 100.0
+      },
+      {
+        "timestamp": "2026-04-05 13:36:38",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 98.6
+      },
+      {
+        "timestamp": "2026-04-05 13:36:40",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 93.5
+      },
+      {
+        "timestamp": "2026-04-05 13:36:43",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 72.4
+      },
+      {
+        "timestamp": "2026-04-05 13:36:45",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 92.5
+      },
+      {
+        "timestamp": "2026-04-05 13:36:48",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 59.6
+      },
+      {
+        "timestamp": "2026-04-05 13:37:03",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 99.8
+      },
+      {
+        "timestamp": "2026-04-05 13:37:05",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 100.0
+      },
+      {
+        "timestamp": "2026-04-05 13:37:10",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 81.3
+      },
+      {
+        "timestamp": "2026-04-05 13:37:13",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 95.3
+      },
+      {
+        "timestamp": "2026-04-05 13:37:15",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 70.0
+      },
+      {
+        "timestamp": "2026-04-05 13:37:18",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 95.0
+      },
+      {
+        "timestamp": "2026-04-05 13:37:20",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.6
+      },
+      {
+        "timestamp": "2026-04-05 13:37:23",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 96.6
+      },
+      {
+        "timestamp": "2026-04-05 13:37:26",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 100.0
+      },
+      {
+        "timestamp": "2026-04-05 13:37:28",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 95.5
+      },
+      {
+        "timestamp": "2026-04-05 13:37:31",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 98.5
+      },
+      {
+        "timestamp": "2026-04-05 13:37:33",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 99.9
+      },
+      {
+        "timestamp": "2026-04-05 13:37:36",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "détendu",
+        "raw": "happy",
+        "confidence": 82.6
+      },
+      {
+        "timestamp": "2026-04-05 13:37:38",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.8
+      },
+      {
+        "timestamp": "2026-04-05 13:37:41",
+        "phase": "JOB_ALIGNED_EXPLORATION",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 79.9
+      },
+      {
+        "timestamp": "2026-04-05 13:38:01",
+        "phase": "PROJECT_DEEP_DIVE",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 99.8
+      },
+      {
+        "timestamp": "2026-04-05 13:38:03",
+        "phase": "PROJECT_DEEP_DIVE",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 84.7
+      },
+      {
+        "timestamp": "2026-04-05 13:38:08",
+        "phase": "PROJECT_DEEP_DIVE",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 77.5
+      },
+      {
+        "timestamp": "2026-04-05 13:38:11",
+        "phase": "PROJECT_DEEP_DIVE",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 61.4
+      },
+      {
+        "timestamp": "2026-04-05 13:38:14",
+        "phase": "PROJECT_DEEP_DIVE",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 100.0
+      },
+      {
+        "timestamp": "2026-04-05 13:38:16",
+        "phase": "PROJECT_DEEP_DIVE",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 96.2
+      },
+      {
+        "timestamp": "2026-04-05 13:38:24",
+        "phase": "PROJECT_DEEP_DIVE",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 80.9
+      },
+      {
+        "timestamp": "2026-04-05 13:38:26",
+        "phase": "PROJECT_DEEP_DIVE",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 65.4
+      },
+      {
+        "timestamp": "2026-04-05 13:38:44",
+        "phase": "PROJECT_DEEP_DIVE",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 69.4
+      },
+      {
+        "timestamp": "2026-04-05 13:38:46",
+        "phase": "PROJECT_DEEP_DIVE",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 91.8
+      },
+      {
+        "timestamp": "2026-04-05 13:38:49",
+        "phase": "PROJECT_DEEP_DIVE",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 100.0
+      },
+      {
+        "timestamp": "2026-04-05 13:38:51",
+        "phase": "PROJECT_DEEP_DIVE",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 98.6
+      },
+      {
+        "timestamp": "2026-04-05 13:38:54",
+        "phase": "PROJECT_DEEP_DIVE",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 75.2
+      },
+      {
+        "timestamp": "2026-04-05 13:38:56",
+        "phase": "PROJECT_DEEP_DIVE",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.8
+      },
+      {
+        "timestamp": "2026-04-05 13:38:59",
+        "phase": "PROJECT_DEEP_DIVE",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.7
+      },
+      {
+        "timestamp": "2026-04-05 13:39:02",
+        "phase": "PROJECT_DEEP_DIVE",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 78.6
+      },
+      {
+        "timestamp": "2026-04-05 13:39:04",
+        "phase": "PROJECT_DEEP_DIVE",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 63.3
+      },
+      {
+        "timestamp": "2026-04-05 13:39:07",
+        "phase": "PROJECT_DEEP_DIVE",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 87.8
+      },
+      {
+        "timestamp": "2026-04-05 13:39:14",
+        "phase": "PROJECT_DEEP_DIVE",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 81.3
+      },
+      {
+        "timestamp": "2026-04-05 13:39:34",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 67.3
+      },
+      {
+        "timestamp": "2026-04-05 13:39:37",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 99.9
+      },
+      {
+        "timestamp": "2026-04-05 13:39:39",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 94.0
+      },
+      {
+        "timestamp": "2026-04-05 13:39:42",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 96.1
+      },
+      {
+        "timestamp": "2026-04-05 13:39:44",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 55.4
+      },
+      {
+        "timestamp": "2026-04-05 13:39:47",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 84.6
+      },
+      {
+        "timestamp": "2026-04-05 13:39:50",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 71.4
+      },
+      {
+        "timestamp": "2026-04-05 13:39:52",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 72.3
+      },
+      {
+        "timestamp": "2026-04-05 13:39:55",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 87.5
+      },
+      {
+        "timestamp": "2026-04-05 13:39:57",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "tendu",
+        "raw": "angry",
+        "confidence": 90.1
+      },
+      {
+        "timestamp": "2026-04-05 13:40:00",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 94.6
+      },
+      {
+        "timestamp": "2026-04-05 13:40:02",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 96.2
+      },
+      {
+        "timestamp": "2026-04-05 13:40:05",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 95.4
+      },
+      {
+        "timestamp": "2026-04-05 13:40:07",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 94.7
+      },
+      {
+        "timestamp": "2026-04-05 13:40:10",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 94.3
+      },
+      {
+        "timestamp": "2026-04-05 13:40:12",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 96.9
+      },
+      {
+        "timestamp": "2026-04-05 13:40:15",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 97.4
+      },
+      {
+        "timestamp": "2026-04-05 13:40:17",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 96.3
+      },
+      {
+        "timestamp": "2026-04-05 13:40:20",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 96.3
+      },
+      {
+        "timestamp": "2026-04-05 13:40:22",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 95.0
+      },
+      {
+        "timestamp": "2026-04-05 13:40:25",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 95.4
+      },
+      {
+        "timestamp": "2026-04-05 13:40:28",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 95.0
+      },
+      {
+        "timestamp": "2026-04-05 13:40:30",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 96.3
+      },
+      {
+        "timestamp": "2026-04-05 13:40:33",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 95.4
+      },
+      {
+        "timestamp": "2026-04-05 13:40:35",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 96.1
+      },
+      {
+        "timestamp": "2026-04-05 13:40:38",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 95.2
+      },
+      {
+        "timestamp": "2026-04-05 13:40:40",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 95.7
+      },
+      {
+        "timestamp": "2026-04-05 13:40:43",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 93.7
+      },
+      {
+        "timestamp": "2026-04-05 13:40:45",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 90.1
+      },
+      {
+        "timestamp": "2026-04-05 13:40:48",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 91.3
+      },
+      {
+        "timestamp": "2026-04-05 13:40:50",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 86.3
+      },
+      {
+        "timestamp": "2026-04-05 13:40:53",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 88.9
+      },
+      {
+        "timestamp": "2026-04-05 13:40:55",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 88.5
+      },
+      {
+        "timestamp": "2026-04-05 13:40:58",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 82.5
+      },
+      {
+        "timestamp": "2026-04-05 13:41:01",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 85.6
+      },
+      {
+        "timestamp": "2026-04-05 13:41:03",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 87.8
+      },
+      {
+        "timestamp": "2026-04-05 13:41:08",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 86.1
+      },
+      {
+        "timestamp": "2026-04-05 13:41:13",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 57.7
+      },
+      {
+        "timestamp": "2026-04-05 13:41:18",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 71.7
+      },
+      {
+        "timestamp": "2026-04-05 13:41:23",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 65.2
+      },
+      {
+        "timestamp": "2026-04-05 13:41:28",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 61.1
+      },
+      {
+        "timestamp": "2026-04-05 13:41:33",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 56.2
+      },
+      {
+        "timestamp": "2026-04-05 13:41:53",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 56.4
+      },
+      {
+        "timestamp": "2026-04-05 13:42:08",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 68.9
+      },
+      {
+        "timestamp": "2026-04-05 13:42:11",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 63.7
+      },
+      {
+        "timestamp": "2026-04-05 13:42:14",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 58.3
+      },
+      {
+        "timestamp": "2026-04-05 13:42:16",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 62.2
+      },
+      {
+        "timestamp": "2026-04-05 13:42:19",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 59.4
+      },
+      {
+        "timestamp": "2026-04-05 13:42:21",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 68.0
+      },
+      {
+        "timestamp": "2026-04-05 13:42:26",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 71.2
+      },
+      {
+        "timestamp": "2026-04-05 13:42:29",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 64.9
+      },
+      {
+        "timestamp": "2026-04-05 13:42:34",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 62.0
+      },
+      {
+        "timestamp": "2026-04-05 13:42:41",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 56.0
+      },
+      {
+        "timestamp": "2026-04-05 13:42:44",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 68.6
+      },
+      {
+        "timestamp": "2026-04-05 13:42:52",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 56.7
+      },
+      {
+        "timestamp": "2026-04-05 13:42:57",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 56.4
+      },
+      {
+        "timestamp": "2026-04-05 13:43:04",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 57.4
+      },
+      {
+        "timestamp": "2026-04-05 13:43:07",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 62.5
+      },
+      {
+        "timestamp": "2026-04-05 13:43:19",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 71.2
+      },
+      {
+        "timestamp": "2026-04-05 13:43:22",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 62.6
+      },
+      {
+        "timestamp": "2026-04-05 13:43:24",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 66.8
+      },
+      {
+        "timestamp": "2026-04-05 13:43:27",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 65.2
+      },
+      {
+        "timestamp": "2026-04-05 13:43:32",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 81.7
+      },
+      {
+        "timestamp": "2026-04-05 13:43:37",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 74.5
+      },
+      {
+        "timestamp": "2026-04-05 13:43:40",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 97.4
+      },
+      {
+        "timestamp": "2026-04-05 13:43:42",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 96.7
+      },
+      {
+        "timestamp": "2026-04-05 13:43:45",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 91.6
+      },
+      {
+        "timestamp": "2026-04-05 13:43:47",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 100.0
+      },
+      {
+        "timestamp": "2026-04-05 13:43:50",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 82.5
+      },
+      {
+        "timestamp": "2026-04-05 13:43:52",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "détendu",
+        "raw": "happy",
+        "confidence": 79.7
+      },
+      {
+        "timestamp": "2026-04-05 13:43:55",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 71.9
+      },
+      {
+        "timestamp": "2026-04-05 13:43:57",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 89.9
+      },
+      {
+        "timestamp": "2026-04-05 13:44:00",
+        "phase": "TECHNICAL_DEPTH",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 94.1
+      },
+      {
+        "timestamp": "2026-04-05 13:44:20",
+        "phase": "SOFT_SKILLS_BEHAVIORAL",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 95.3
+      },
+      {
+        "timestamp": "2026-04-05 13:44:23",
+        "phase": "SOFT_SKILLS_BEHAVIORAL",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 92.2
+      },
+      {
+        "timestamp": "2026-04-05 13:44:25",
+        "phase": "SOFT_SKILLS_BEHAVIORAL",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 98.5
+      },
+      {
+        "timestamp": "2026-04-05 13:44:28",
+        "phase": "SOFT_SKILLS_BEHAVIORAL",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 96.2
+      },
+      {
+        "timestamp": "2026-04-05 13:44:30",
+        "phase": "SOFT_SKILLS_BEHAVIORAL",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 71.9
+      },
+      {
+        "timestamp": "2026-04-05 13:44:33",
+        "phase": "SOFT_SKILLS_BEHAVIORAL",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 96.4
+      },
+      {
+        "timestamp": "2026-04-05 13:44:35",
+        "phase": "SOFT_SKILLS_BEHAVIORAL",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 91.4
+      },
+      {
+        "timestamp": "2026-04-05 13:44:38",
+        "phase": "SOFT_SKILLS_BEHAVIORAL",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 99.0
+      },
+      {
+        "timestamp": "2026-04-05 13:44:43",
+        "phase": "SOFT_SKILLS_BEHAVIORAL",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 84.8
+      },
+      {
+        "timestamp": "2026-04-05 13:44:45",
+        "phase": "SOFT_SKILLS_BEHAVIORAL",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 96.7
+      },
+      {
+        "timestamp": "2026-04-05 13:44:48",
+        "phase": "SOFT_SKILLS_BEHAVIORAL",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 63.3
+      },
+      {
+        "timestamp": "2026-04-05 13:44:50",
+        "phase": "SOFT_SKILLS_BEHAVIORAL",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 74.4
+      },
+      {
+        "timestamp": "2026-04-05 13:44:53",
+        "phase": "SOFT_SKILLS_BEHAVIORAL",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 97.9
+      },
+      {
+        "timestamp": "2026-04-05 13:44:56",
+        "phase": "SOFT_SKILLS_BEHAVIORAL",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 84.1
+      },
+      {
+        "timestamp": "2026-04-05 13:44:58",
+        "phase": "SOFT_SKILLS_BEHAVIORAL",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 92.9
+      },
+      {
+        "timestamp": "2026-04-05 13:45:26",
+        "phase": "SOFT_SKILLS_BEHAVIORAL",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 93.7
+      },
+      {
+        "timestamp": "2026-04-05 13:45:28",
+        "phase": "SOFT_SKILLS_BEHAVIORAL",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 98.1
+      },
+      {
+        "timestamp": "2026-04-05 13:45:31",
+        "phase": "SOFT_SKILLS_BEHAVIORAL",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.2
+      },
+      {
+        "timestamp": "2026-04-05 13:45:33",
+        "phase": "SOFT_SKILLS_BEHAVIORAL",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.5
+      },
+      {
+        "timestamp": "2026-04-05 13:45:36",
+        "phase": "SOFT_SKILLS_BEHAVIORAL",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 99.9
+      },
+      {
+        "timestamp": "2026-04-05 13:45:38",
+        "phase": "SOFT_SKILLS_BEHAVIORAL",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 97.8
+      },
+      {
+        "timestamp": "2026-04-05 13:45:41",
+        "phase": "SOFT_SKILLS_BEHAVIORAL",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 58.5
+      },
+      {
+        "timestamp": "2026-04-05 13:45:43",
+        "phase": "SOFT_SKILLS_BEHAVIORAL",
+        "emotion": "détendu",
+        "raw": "happy",
+        "confidence": 98.3
+      },
+      {
+        "timestamp": "2026-04-05 13:45:49",
+        "phase": "SOFT_SKILLS_BEHAVIORAL",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 94.2
+      },
+      {
+        "timestamp": "2026-04-05 13:45:51",
+        "phase": "SOFT_SKILLS_BEHAVIORAL",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 81.9
+      },
+      {
+        "timestamp": "2026-04-05 13:45:54",
+        "phase": "SOFT_SKILLS_BEHAVIORAL",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 59.5
+      },
+      {
+        "timestamp": "2026-04-05 13:45:59",
+        "phase": "CANDIDATE_QUESTIONS",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 68.4
+      },
+      {
+        "timestamp": "2026-04-05 13:46:01",
+        "phase": "CANDIDATE_QUESTIONS",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 66.9
+      },
+      {
+        "timestamp": "2026-04-05 13:46:04",
+        "phase": "CANDIDATE_QUESTIONS",
+        "emotion": "détendu",
+        "raw": "happy",
+        "confidence": 55.6
+      },
+      {
+        "timestamp": "2026-04-05 13:46:06",
+        "phase": "CANDIDATE_QUESTIONS",
+        "emotion": "détendu",
+        "raw": "happy",
+        "confidence": 99.3
+      },
+      {
+        "timestamp": "2026-04-05 13:46:09",
+        "phase": "CANDIDATE_QUESTIONS",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 75.0
+      },
+      {
+        "timestamp": "2026-04-05 13:46:11",
+        "phase": "CANDIDATE_QUESTIONS",
+        "emotion": "détendu",
+        "raw": "happy",
+        "confidence": 78.7
+      },
+      {
+        "timestamp": "2026-04-05 13:46:16",
+        "phase": "CANDIDATE_QUESTIONS",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 90.6
+      },
+      {
+        "timestamp": "2026-04-05 13:46:19",
+        "phase": "CANDIDATE_QUESTIONS",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 76.3
+      },
+      {
+        "timestamp": "2026-04-05 13:46:21",
+        "phase": "CANDIDATE_QUESTIONS",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 79.6
+      },
+      {
+        "timestamp": "2026-04-05 13:46:24",
+        "phase": "CANDIDATE_QUESTIONS",
+        "emotion": "détendu",
+        "raw": "happy",
+        "confidence": 93.4
+      },
+      {
+        "timestamp": "2026-04-05 13:46:27",
+        "phase": "CANDIDATE_QUESTIONS",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 61.3
+      },
+      {
+        "timestamp": "2026-04-05 13:46:32",
+        "phase": "CANDIDATE_QUESTIONS",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 69.4
+      },
+      {
+        "timestamp": "2026-04-05 13:47:17",
+        "phase": "CANDIDATE_QUESTIONS",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 68.3
+      },
+      {
+        "timestamp": "2026-04-05 13:47:22",
+        "phase": "CANDIDATE_QUESTIONS",
+        "emotion": "anxieux",
+        "raw": "fear",
+        "confidence": 59.8
+      },
+      {
+        "timestamp": "2026-04-05 13:47:32",
+        "phase": "CANDIDATE_QUESTIONS",
+        "emotion": "neutre",
+        "raw": "neutral",
+        "confidence": 87.5
+      },
+      {
+        "timestamp": "2026-04-05 13:47:34",
+        "phase": "CANDIDATE_QUESTIONS",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 63.1
+      },
+      {
+        "timestamp": "2026-04-05 13:47:55",
+        "phase": "CLOSING",
+        "emotion": "découragé",
+        "raw": "sad",
+        "confidence": 55.5
+      }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+Date   : 2026-03-29 14:00:00
+Language : English
+Duration : 20 min
+Mode     : PFE simulation
+
+Candidate context : Data Engineer with 7 years of experience across Tunisie Telecom, Capgemini Tunisia and Orange Tunisia. Hands-on work with Spark, Airflow, AWS, MLflow, Docker, XGBoost, data lake design and mentoring 4 junior engineers.
+Target role       : Lead Data Engineer focused on data platform, cloud cost optimization, MLOps, pipeline industrialization and technical leadership.
+
+[10:06:23] [INTRO] Interviewer: Hello thank you for joining the interview.
+
+[10:07:12] [INTRO] Candidate: Hello thank you. I am Data Engineer with 7 years maybe a bit more. I worked in telecom,
+consulting and Orange Tunisia. I use Spark, Airflow, AWS and also Airflow a lot.
+
+[10:08:41] [MAPPING] Interviewer: Very good. Can you explain a project with Spark, Airflow, AWS and cost optimization?
+
+[10:11:27] [MAPPING] Candidate: Yes. We processed 5TB daily, maybe sometimes 3TB depending on period. We built a data
+lake with S3, Redshift, Glue and Docker. It reduced cost by 30% or maybe 40%, generally a good result.
+
+[10:11:27] [VALIDATION] Interviewer: Great, 30% or 40% is a strong impact. How exactly did you do it?
+
+[10:12:43] [VALIDATION] Candidate: We removed old data, added lifecycle, used Glue and sometimes EC2. I designed the
+architecture and also did management and some security discussion. Exact number was around 35 I think.
+
+[10:12:43] [VALIDATION] Interviewer: And MLflow?
+
+[10:14:33] [VALIDATION] Candidate: We used MLflow for tracking and Docker for deploy. Sometimes deployment works,
+sometimes it needs relaunch. Airflow was triggering Airflow jobs for retraining.
+
+[10:14:33] [SOFT] Interviewer: Can you give me a concrete example? Can you give me a concrete example?
+
+[10:16:17] [SOFT] Candidate: Two engineers disagreed. I talked with them. Then it became better and project continued.
+
+[10:16:17] [QUESTIONS] Interviewer: Do you have questions? Do you have questions?
+
+[10:18:03] [QUESTIONS] Candidate: Yes, team size?
+
+[10:18:03] [QUESTIONS] Interviewer: I do not have this information exactly now, but we can maybe answer later if needed.
+
+[10:20:02] [CONCLUSION] Candidate: Okay thanks.
+
+[10:20:02] [CONCLUSION] Interviewer: Thank you we will return later with feedback soon.

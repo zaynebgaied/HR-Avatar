@@ -1,0 +1,93 @@
+{
+  "date": "2026-03-30 14:26",
+  "langue": "Anglais",
+  "duree_minutes": 20,
+  "meta": {
+    "date_entretien": "2026-03-30 14:14:04",
+    "langue": "Anglais",
+    "duree": "20 minutes",
+    "date_rapport": "2026-03-30 14:22:47",
+    "source_interview": "C:\\internship_spark\\core\\data\\interview_20260330_141404.txt"
+  },
+  "phases": [],
+  "score_total": 0,
+  "score_max": 100,
+  "pourcentage": 0,
+  "scores_par_phase": {
+    "presentation_parcours": {
+      "obtenu": 8,
+      "max": 10,
+      "statut": "ÉVALUÉ",
+      "commentaire": "Candidate provides relevant experience with building scalable data pipelines at Orange Tunisie. However, more details on her educational background and previous roles are missing."
+    },
+    "pertinence_projets": {
+      "obtenu": 15,
+      "max": 20,
+      "statut": "ÉVALUÉ",
+      "commentaire": "Candidate discusses experience with AWS Data Lake project at Orange. However, specific details on cost optimization and collaboration are lacking."
+    },
+    "competences_techniques": {
+      "obtenu": 18,
+      "max": 25,
+      "statut": "ÉVALUÉ",
+      "commentaire": "Candidate provides detailed explanations of reliability, scalability, monitoring, and cost optimization. However, more technical details on architecture decisions are missing."
+    },
+    "soft_skills_culture_fit": {
+      "obtenu": 24,
+      "max": 30,
+      "statut": "ÉVALUÉ",
+      "commentaire": "Candidate demonstrates good teamwork and collaboration skills but lacks specific examples of how she integrated these in the project."
+    },
+    "curiosite_motivation": {
+      "obtenu": 12,
+      "max": 15,
+      "statut": "ÉVALUÉ",
+      "commentaire": "Candidate shows interest in the role and relevance of her experience but could provide more specific examples of how she stays updated with new technologies."
+    }
+  },
+  "score_technique": 63,
+  "score_communication": 75,
+  "score_global": 69,
+  "competences_detectees": [
+    "Airflow",
+    "AWS",
+    "Docker",
+    "GCP",
+    "Kafka"
+  ],
+  "lacunes_identifiees": [
+    "Educational background — NON ÉVALUÉ",
+    "Specific cost optimization details — LACUNE AVÉRÉE",
+    "Technical architecture decisions — LACUNE AVÉRÉE",
+    "Detailed examples of collaboration and teamwork — LACUNE AVÉRÉE"
+  ],
+  "analyse_motivation": "Candidate's motivation is clear, but more specific examples would strengthen her application.",
+  "analyse_soft_skills": "Candidate demonstrates good soft skills but could provide more concrete examples to support her claims.",
+  "points_forts": [
+    "Relevant experience with building scalable data pipelines and cloud-based platforms",
+    "Good communication skills"
+  ],
+  "points_amelioration": [
+    "More detailed technical explanations, especially on architecture decisions and cost optimization",
+    "Provide specific examples of collaboration and teamwork in the project"
+  ],
+  "verdict_final": "À REVOIR",
+  "recommandation_detail": "Candidate has a strong background relevant to the role but lacks some specific details. A second interview is recommended to explore these gaps further, particularly on technical architecture decisions and cost optimization strategies.",
+  "recommandation": "",
+  "sources_rag": {
+    "cv": [
+      "cv.pdf"
+    ],
+    "job_offer": [
+      "offre.pdf"
+    ],
+    "company_info": []
+  },
+  "analyse_emotion_vision": {
+    "disponible": true,
+    "timeline": [],
+    "emotion_dominante": "neutre",
+    "pics_stress": [],
+    "evolution": []
+  }
+}

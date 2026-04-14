@@ -1,0 +1,103 @@
+HR INTERVIEW — Anglais
+Date    : 2026-04-05 12:55:06
+Duration: 20 minutes
+[2026-04-05 12:58:17] [OPENING] Candidate [quality=STRONG] [behavioral=False] [decision=False] [weak_signals=[]]: Thank you for the introduction.
+
+My name is Mehdi Trabelsi, and I’m a maintenance engineer with about eight years of experience in the manufacturing industry, mainly in mechanical and textile environments.
+
+I hold a Bachelor’s degree in Industrial Maintenance from ISET Sousse, and I’ve strengthened my technical skills through certifications in Siemens TIA Portal, as well as training in AMDEC, RCM, and Lean Maintenance methodologies.
+
+Currently, I am working as a Maintenance Manager at Groupe Sopal, where I lead a team of 10 technicians across mechanical, electrical, and automation fields. In this role, I’m responsible for implementing preventive maintenance strategies using SAP PM, managing a maintenance budget, and ensuring equipment reliability. One of my key achievements was reducing equipment breakdowns by 32% over two years and improving MTTR by 20% through continuous improvement initiatives like 5S.
+[2026-04-05 12:58:37] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you elaborate on the specific actions and tools you used to achieve those reductions in equipment breakdowns and improvements in MTTR?
+[2026-04-05 12:58:59] [JOB_ALIGNED_EXPLORATION] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=['hedged_ownership']]: Of course.
+
+In my current role, improving equipment reliability and reducing MTTR was a structured effort combining methodology, tools, and team engagement.
+
+First, to reduce equipment breakdowns, I focused on strengthening the preventive and predictive maintenance strategy. I implemented a detailed preventive maintenance plan in SAP PM, where we redefined maintenance frequencies based on equipment criticality using an AMDEC approach. This allowed us to prioritize high-risk components and avoid unnecessary maintenance on non-critical assets.
+
+I also introduced condition-based monitoring for key equipment — for example, vibration checks on rotating machines, temperature monitoring, and regular inspection routines. These were simple but effective predictive actions that helped us detect failures before they occurred.
+
+In parallel, we worked on root cause analysis. Every major breakdown was analyzed using methods like the “5 Whys” and cause-and-effect diagrams. This helped us eliminate recurring issues rather than just fixing symptoms. Over time, this significantly reduced repetitive failures.
+[2026-04-05 12:59:11] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: On that note, can you walk me through a specific instance where you used AMDEC to prevent a major equipment failure?
+[2026-04-05 13:00:38] [JOB_ALIGNED_EXPLORATION] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=['understatement']]: So, um… in that case, I think I used AMDEC, but honestly it was not very structured. We didn’t really do the analysis before the failure… we kind of reacted after the machine stopped.
+
+I remember the hydraulic press had a problem, and instead of identifying all the failure modes, we just assumed it was coming from the pump. So we replaced it directly without doing a full breakdown of components or evaluating severity or occurrence properly.
+
+Also, we didn’t really calculate the AMDEC scores… like severity, occurrence, detectability… we just filled them quickly because we had pressure from production to restart the machine.
+
+And… we didn’t put in place strong preventive actions after that. We didn’t change the maintenance plan or add monitoring tools, so the same failure happened again later.
+
+So, yeah… I would say in that situation AMDEC was not really used correctly, and it didn’t help us prevent the issue.
+[2026-04-05 13:00:53] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Given that context, can you provide more details on why the pressure from production to restart the machine was so urgent that it overshadowed a thorough AMDEC analysis?
+[2026-04-05 13:02:18] [JOB_ALIGNED_EXPLORATION] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=['understatement']]: Yes… so, the urgency mainly came from the fact that this hydraulic press was on the critical production path, and when it stopped, the whole line was basically down, which created immediate delivery risks and pressure from management.
+
+But… honestly, I think we maybe overestimated the urgency. In reality, we didn’t really check if there were alternative solutions like reallocating production or using backup equipment. We just assumed everything had to restart immediately.
+
+Also, the pressure was not only from production but also because we didn’t have a clear maintenance process. So instead of following AMDEC properly, we kind of skipped steps and focused only on restarting, even if it meant taking random actions without full analysis.
+[2026-04-05 13:02:32] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you give me a specific example of how you addressed production pressure without fully following the AMDEC process?
+[2026-04-05 13:02:59] [JOB_ALIGNED_EXPLORATION] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Yes… for example, during one breakdown on the hydraulic press, production was pushing strongly to restart within the same shift because we had delayed orders.
+
+So, instead of going through a full AMDEC analysis, we directly focused on the most visible symptom, which was a drop in pressure. We assumed the issue was coming from the hydraulic pump and decided to replace it immediately.
+
+We didn’t take time to analyze all possible failure modes or check things like oil quality or valve conditions. Also, we skipped the scoring part of AMDEC completely.
+
+After restarting, the machine worked, so production was satisfied in the short term… but actually the root cause was not clearly identified, and the same issue appeared again later.
+[2026-04-05 13:03:13] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: On that note, can you explain how this experience with the hydraulic press influenced your approach to using RCM in future maintenance strategies?
+[2026-04-05 13:03:37] [JOB_ALIGNED_EXPLORATION] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Uh—yes… so, after that situation, I… I realized that maybe we were not using the right approach, especially with RCM.
+
+I think… with RCM, the idea is to be more structured and focus on critical equipment, but at that time I didn’t really apply it correctly. I was still reacting a lot to breakdowns instead of anticipating them.
+
+So… after that, I tried to, uh… identify critical assets better and… define maintenance tasks based on failures, but honestly it was not always consistent. Sometimes we still skipped steps because of production pressure.
+
+I would say… this experience showed me that RCM is important, but in practice it was difficult to apply fully, and I’m still improving on that.
+[2026-04-05 13:03:51] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Given that context, can you give an example of how you systematically identified critical assets using RCM principles in a subsequent project?
+[2026-04-05 13:06:59] [JOB_ALIGNED_EXPLORATION] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Uh—yes… so, in a later project, I tried to apply RCM more… systematically.
+
+We started by identifying critical equipment based on impact on production, like machines that could stop the whole line, so for example main presses and some automated lines. That part was… more structured, using criteria like downtime impact and safety.
+
+But… to be honest, we didn’t fully follow all RCM steps. We didn’t always go deep into functional analysis or all failure modes. Sometimes we just listed the equipment and assumed they were critical without detailed evaluation.
+
+Also, the selection of maintenance tasks was not always based on full RCM logic… sometimes we reused existing preventive plans instead of redefining them properly.
+
+So… it was partially structured, but not fully aligned with RCM methodology.
+[2026-04-05 13:07:15] [PROJECT_DEEP_DIVE] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Building on that, can you provide an example of how you ensured critical equipment was properly identified using RCM criteria in your subsequent projects?
+[2026-04-05 13:08:03] [PROJECT_DEEP_DIVE] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Yes, of course.
+
+In a subsequent project, I applied RCM more rigorously by following a structured criticality analysis.
+
+First, we listed all equipment on the production line and grouped them by function. Then, we defined clear criteria based on RCM principles: impact on production (downtime), impact on safety, maintenance cost, and failure frequency.
+
+Each piece of equipment was scored against these criteria. For example, machines that could stop the entire line or create safety risks were classified as highly critical.
+
+Then, for the most critical assets, we conducted a deeper functional analysis: defining the main functions, functional failures, and associated failure modes. This allowed us to link each failure mode to a specific maintenance strategy — whether preventive, predictive, or condition-based.
+
+We also validated the results with production and HSE teams to ensure alignment with operational priorities.
+
+As a result, we had a clear prioritization of assets, and we focused our maintenance resources on the most critical equipment, which improved reliability and reduced unexpected downtime.
+[2026-04-05 13:08:23] [PROJECT_DEEP_DIVE] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: On that note, can you walk me through how you validated the criticality scores with the production and HSE teams to ensure alignment?
+[2026-04-05 13:12:43] [PROJECT_DEEP_DIVE] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Yes, of course.
+
+After establishing the criticality scores, I organized cross-functional review meetings with both production and HSE teams.
+
+First, I presented the evaluation criteria we used — such as impact on production downtime, safety risks, cost, and failure frequency — to make sure everyone understood the methodology.
+
+Then, we reviewed the equipment ranking together. For example, when a machine was classified as highly critical, I asked production to confirm the real impact on output and whether there were any workarounds in case of failure. In some cases, production helped us adjust the score if there was hidden flexibility or, on the contrary, a stronger dependency than expected.
+
+With the HSE team, we focused more on safety and environmental risks. They validated whether certain failure modes could lead to unsafe situations, and in some cases, they helped us increase the criticality level of specific equipment that we initially underestimated.
+[2026-04-05 13:13:00] [SOFT_SKILLS_BEHAVIORAL] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Given that context, can you provide an example of how you handled a situation where production and HSE teams had conflicting views during one of these cross-functional meetings?
+[2026-04-05 13:13:47] [SOFT_SKILLS_BEHAVIORAL] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Yes, that situation actually happened during the classification of a hydraulic press.
+
+From the production side, they wanted to keep the criticality at a medium level because they had a workaround — they could temporarily shift production to another line, even if it reduced capacity.
+
+However, the HSE team raised concerns because this equipment was operating under high pressure, and a failure could potentially create a safety risk, especially related to hydraulic leaks.
+
+To handle this, I facilitated the discussion by separating the criteria. I acknowledged production’s point regarding operational flexibility, but I also emphasized that in RCM, safety has a higher priority and cannot be compromised.
+[2026-04-05 13:14:03] [SOFT_SKILLS_BEHAVIORAL] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Building on that, can you provide an example of how you resolved a similar conflict in another project where safety and production priorities clashed?
+[2026-04-05 13:14:20] [SOFT_SKILLS_BEHAVIORAL] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Yes, of course.
+
+In another project, we had a similar situation with a conveyor system used to transport materials between two production stages.
+
+Production considered it highly critical because any stoppage would block the entire flow. However, they were pushing to reduce maintenance time to maximize availability. On the other hand, the HSE team raised concerns about worn-out safety guards and emergency stop devices, which required immediate intervention and downtime.
+[2026-04-05 13:14:20] [CANDIDATE_QUESTIONS] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Before we move to the end, do you have any questions about the role, the team, or the hiring process?
+[2026-04-05 13:14:41] [CANDIDATE_QUESTIONS] Candidate [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=[]]: no thank you
+[2026-04-05 13:14:49] [CLOSING] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Thank you for your time. We will get back to you with feedback within the next few days.

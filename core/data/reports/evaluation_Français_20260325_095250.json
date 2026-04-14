@@ -1,0 +1,59 @@
+{
+    "meta": {
+        "date_entretien": "2026-03-25 09:37:30",
+        "langue": "Français",
+        "duree": "N/A",
+        "date_rapport": "2026-03-25 09:49:53",
+        "source_interview": "C:\\internship_spark\\core\\data\\interview_20260325_093728.txt"
+    },
+    "scores_par_phase": {
+        "presentation_parcours": {
+            "obtenu": 8,
+            "max": 10,
+            "commentaire": "La candidature a une formation académique pertinente. La répétition de certaines informations est due à l'absence d'une diversité des questions sur ce sujet."
+        },
+        "pertinence_projets": {
+            "obtenu": 6,
+            "max": 20,
+            "commentaire": "Le candidat a parlé d'un projet de transformation dans le secteur automobile. Il n'a pas pu aborder un projet lié à la chimie ou à la réglementation HSE."
+        },
+        "competences_techniques": {
+            "obtenu": 15,
+            "max": 25,
+            "commentaire": "Les compétences techniques ont été évaluées sur l'expérience en gestion des compétences et le suivi des formations. La réglementation HSE n'a pas pu être testée."
+        },
+        "soft_skills_culture_fit": {
+            "obtenu": 28,
+            "max": 30,
+            "commentaire": "Le candidat montre une bonne capacité d'adaptation et de collaboration avec les différents services. Il a montré une certaine curiosité pour apprendre rapidement sur la réglementation HSE."
+        },
+        "curiosite_motivation": {
+            "obtenu": 12,
+            "max": 15,
+            "commentaire": "Le candidat montre de l'intérêt pour le poste et a des questions pertinentes. Il n'a pas pu exprimer sa motivation sur la réglementation HSE en détail."
+        }
+    },
+    "score_technique": 30,
+    "score_communication": 75,
+    "score_global": 62,
+    "competences_detectees": [
+        "Gestion des compétences",
+        "Suivi des formations"
+    ],
+    "lacunes_identifiees": [
+        "Réglementation HSE — NOTE: non testé en entretien si applicable",
+        "Expérience de projet de digitalisation ou transformation dans le domaine des RH"
+    ],
+    "analyse_motivation": "La motivation du candidat est globalement positive, mais il n'a pas pu exprimer sa connaissance et sa compréhension spécifique sur la réglementation HSE.",
+    "analyse_soft_skills": "Le candidat montre une bonne capacité d'adaptation et de collaboration. Il a montré un intérêt pour apprendre rapidement sur des sujets nouveaux, ce qui est un atout dans le domaine des RH.",
+    "points_forts": [
+        "Formation académique pertinente",
+        "Capacité à s’adapter et collaborer avec différents services"
+    ],
+    "points_amelioration": [
+        "Expérience de projet de digitalisation ou transformation dans le domaine des RH",
+        "Connaissance approfondie de la réglementation HSE"
+    ],
+    "verdict_final": "A REVOIR",
+    "recommandation_detail": "Le candidat montre un potentiel fort et une bonne compréhension globale du poste. Il est recommandé d'organiser un deuxième entretien pour approfondir ses connaissances sur la réglementation HSE et évaluer davantage ses compétences techniques."
+}

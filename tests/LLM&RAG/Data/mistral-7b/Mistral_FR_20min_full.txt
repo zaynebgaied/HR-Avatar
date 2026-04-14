@@ -1,0 +1,53 @@
+Date   : 2026-03-29 14:00:00
+Langue : Français
+Durée  : 20 min
+Mode   : Simulation PFE
+
+Contexte candidat : Ingénieur data avec 7 ans d'expérience, passé par Tunisie Telecom, Capgemini Tunisie et Orange Tunisie. Expérience en Spark, Airflow, AWS, MLflow, Docker, XGBoost, data lake et management de 4 juniors.
+Offre cible       : Lead Data Engineer orienté data platform, optimisation de coûts cloud, MLOps, industrialisation des pipelines et leadership technique.
+
+[10:06:23] [INTRO_ETUDES] Avatar: Bonjour, merci d'être là aujourd'hui. Pouvez-vous vous présenter rapidement ?
+
+[10:07:12] [INTRO_ETUDES] Candidate: Bonjour. Je suis ingénieur data avec environ 7 ans d'expérience. J'ai travaillé
+dans le telecom, puis dans le conseil, et maintenant dans la data engineering chez Orange Tunisie. J'aime bien les
+sujets data platform, cloud et industrialisation.
+
+[10:08:41] [MAPPING_PROJETS_OFFRE] Avatar: Très bien. Pouvez-vous me parler d'un projet récent où vous avez travaillé
+sur Spark, Airflow et AWS ?
+
+[10:11:27] [MAPPING_PROJETS_OFFRE] Candidate: Oui, nous avons mis en place un data lake sur AWS avec S3, Spark et
+Airflow. L'objectif était de centraliser les données et de rendre la plateforme plus scalable. Nous avons aussi essayé
+de réduire les coûts en optimisant le stockage et certains traitements.
+
+[10:11:27] [VALIDATION_HARD_SKILLS] Avatar: D'accord. Quand vous dites "réduire les coûts", de quel ordre de grandeur
+parlez-vous et comment l'avez-vous validé ?
+
+[10:12:43] [VALIDATION_HARD_SKILLS] Candidate: On a réduit les coûts d'environ 30 à 35%, selon la période qu'on
+compare. Nous avons surtout joué sur le storage lifecycle et la suppression de traitements peu utiles. J'étais lead
+sur le projet, donc je suivais à la fois l'architecture et la coordination avec les autres équipes.
+
+[10:12:43] [VALIDATION_HARD_SKILLS] Avatar: Vous avez aussi évoqué MLflow. Comment l'avez-vous utilisé avec votre
+équipe ?
+
+[10:14:33] [VALIDATION_HARD_SKILLS] Candidate: Nous avons utilisé MLflow pour le tracking des expériences et le
+versioning des modèles. Avant, les équipes partageaient parfois les modèles de façon peu structurée. Après la mise en
+place, nous avions une meilleure traçabilité. J'ai également expliqué aux juniors comment utiliser les runs, les
+metrics et le registry.
+
+[10:14:33] [SOFT_SKILLS_RH] Avatar: Parlez-moi maintenant d'un conflit ou d'une difficulté humaine dans votre équipe.
+
+[10:16:17] [SOFT_SKILLS_RH] Candidate: J'ai eu un cas où deux collaborateurs n'étaient pas alignés sur le niveau de
+qualité attendu avant livraison. J'ai fait des points individuels puis une réunion commune. On a clarifié les règles,
+et ça a fini par mieux fonctionner.
+
+[10:16:17] [QUESTIONS_CANDIDAT] Avatar: Avez-vous des questions sur le poste ?
+
+[10:18:03] [QUESTIONS_CANDIDAT] Candidate: Oui, j'aimerais savoir si l'équipe travaille plutôt en mode produit ou en
+mode projet.
+
+[10:18:03] [QUESTIONS_CANDIDAT] Avatar: Je n'ai pas cette information exacte ici, mais nous pourrons la confirmer
+ensuite. Avez-vous d'autres questions ?
+
+[10:20:02] [CONCLUSION] Candidate: Non, merci.
+
+[10:20:02] [CONCLUSION] Avatar: Merci pour votre temps. Nous reviendrons vers vous prochainement.

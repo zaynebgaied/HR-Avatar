@@ -12,6 +12,7 @@ pydantic>=2.7.0
 python-multipart>=0.0.9
 flask-socketio>=5.3.6
 websockets>=12.0
+langdetect==1.0.9
 
 # --- LLM / RAG ---
 langchain>=0.1.0

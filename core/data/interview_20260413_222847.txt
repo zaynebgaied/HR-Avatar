@@ -1,0 +1,7 @@
+HR INTERVIEW — Français
+Date    : 2026-04-13 22:28:47
+Duration: 20 minutes
+[2026-04-13 22:31:35] [OPENING] Candidat [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=[]]: Bonjour, tout d'abord merci beaucoup à vous attendez.
+[2026-04-13 22:32:08] [JOB_ALIGNED_EXPLORATION] Recruteur [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Comment avez-vous intégré ces technologies dans vos projets précédents ?
+[2026-04-13 22:32:11] [JOB_ALIGNED_EXPLORATION] Candidat [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=[]]: Bonjour, tout d'abord merci beaucoup à vous attendez.
+[2026-04-13 22:32:22] [JOB_ALIGNED_EXPLORATION] Recruteur [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Pourquoi avez-vous choisi FastAPI pour le backend de votre système d'entretien vocal ?

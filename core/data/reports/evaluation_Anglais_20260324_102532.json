@@ -1,0 +1,62 @@
+{
+    "meta": {
+        "date_entretien": "2026-03-24 10:13:15",
+        "langue": "Anglais",
+        "duree": "N/A",
+        "date_rapport": "2026-03-24 10:22:59",
+        "source_interview": "data/interview_20260324_101313.txt"
+    },
+    "scores_par_phase": {
+        "presentation_parcours": {
+            "obtenu": 7,
+            "max": 10,
+            "commentaire": "The candidate's presentation was clear but could have been more structured and detailed."
+        },
+        "pertinence_projets": {
+            "obtenu": 12,
+            "max": 20,
+            "commentaire": "The candidate mentioned relevant projects but struggled to provide specific details on how they aligned with the current role requirements."
+        },
+        "competences_techniques": {
+            "obtenu": 35,
+            "max": 40,
+            "commentaire": "The candidate demonstrated good technical skills from previous projects but had some gaps in explaining their relevance to GCT's needs."
+        },
+        "soft_skills_culture_fit": {
+            "obtenu": 16,
+            "max": 20,
+            "commentaire": "The candidate showed a willingness to adapt and learn but lacked confidence in expressing how they fit the company culture."
+        },
+        "curiosite_motivation": {
+            "obtenu": 8,
+            "max": 10,
+            "commentaire": "The candidate expressed interest in the role but could have been more enthusiastic about the opportunity."
+        }
+    },
+    "score_technique": 35,
+    "score_communication": 62,
+    "score_global": 49,
+    "competences_detectees": [
+        "SAP SuccessFactors",
+        "Digital Transformation",
+        "Reporting Systems"
+    ],
+    "lacunes_identifiees": [
+        "Lack of specific alignment with GCT's current SIRH project",
+        "Inadequate explanation of technical relevance to the role",
+        "Limited cultural fit and confidence in communication"
+    ],
+    "analyse_motivation": "The candidate showed a clear interest in contributing to HR initiatives but could have been more enthusiastic about the opportunity.",
+    "analyse_soft_skills": "While the candidate demonstrated a willingness to adapt, there was room for improvement in expressing their soft skills and cultural fit with GCT.",
+    "points_forts": [
+        "Relevant project experience",
+        "Willingness to learn and adapt"
+    ],
+    "points_amelioration": [
+        "Clarify specific alignment of projects with current role requirements",
+        "Enhance communication skills, particularly in expressing technical relevance and cultural fit",
+        "Show more enthusiasm for the opportunity"
+    ],
+    "verdict_final": "A REVOIR",
+    "recommandation_detail": "The candidate has relevant experience but requires further clarification on how their past projects align specifically with GCT's current SIRH project. Additional training or coaching in communication and cultural fit would be beneficial before moving forward."
+}

@@ -1,0 +1,5 @@
+HR INTERVIEW — Français
+Date    : 2026-04-13 13:54:57
+Duration: 20 minutes
+[2026-04-13 13:59:33] [OPENING] Candidat [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=[]]: bonjour merc beaucoup pour cette opportunite
+[2026-04-13 14:02:09] [JOB_ALIGNED_EXPLORATION] Recruteur [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Donnez-moi un exemple concret d'utilisation d'une technologie clé de ce poste.

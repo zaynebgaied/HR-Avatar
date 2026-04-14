@@ -1,0 +1,15 @@
+HR INTERVIEW — Anglais
+Date    : 2026-04-06 22:29:06
+Duration: 10 minutes
+[2026-04-06 22:32:34] [OPENING] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Thank you for the opportunity.
+
+I’m currently a final-year engineering student specializing in Data Science and Decision Systems at ENET’Com in Tunisia. My academic background has given me a solid foundation in machine learning, deep learning, and data engineering, and I’ve developed strong programming skills in Python, SQL, and R.
+
+During my studies, I’ve completed several internships that are closely aligned with this position. For example, I worked on a conversational AI system for a video game, where I integrated speech-to-text using Whisper, implemented a RAG pipeline with LLaMA for multilingual response generation, and deployed the system using FastAPI and Docker. This experience gave me hands-on exposure to LLMs, real-time interaction, and backend AI orchestration.
+
+I also worked on a sales prediction and recommendation system, where I used models like XGBoost, ARIMA, and Prophet, and even applied reinforcement learning for recommendations. Additionally, I developed dashboards using Streamlit to make insights accessible.
+
+What particularly motivated me to apply for this position is the opportunity to work on an interactive AI avatar for recruitment. I’m especially interested in the combination of speech technologies, LLMs, and real-time interaction systems, which directly matches my previous experience with conversational AI, speech processing, and system deployment. I’m also excited about designing interview flows, evaluation systems, and working on end-to-end AI architecture.
+
+Overall, I’m passionate about building impactful AI systems, especially those that interact naturally with users, and I’m very motivated to contribute to this project while continuing to learn and grow.
+[2026-04-06 22:33:19] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Building on that, how did you handle real-time processing and integration with other backend services?

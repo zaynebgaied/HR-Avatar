@@ -1,0 +1,5 @@
+HR INTERVIEW — Anglais
+Date    : 2026-04-14 14:20:52
+Duration: 15 minutes
+[2026-04-14 14:24:25] [OPENING] Candidate [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=[]]: Thank you.
+[2026-04-14 14:24:50] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: How did it contribute to the systems you developed?

@@ -1,0 +1,32 @@
+HR INTERVIEW — Français
+Date    : 2026-04-13 14:41:09
+Duration: 20 minutes
+[2026-04-13 14:44:05] [OPENING] Candidat [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Hello, thank you for the opportunity.
+
+My name is Youssef Dridi. I hold a Bachelor’s degree in Communication Sciences from ISCOM Tunis, and I have about three years of experience as a Community Manager in a communication agency based in Sousse.
+
+In my current role at Creativ’360, I manage social media accounts for several SME clients across sectors like fashion, real estate, and food. My responsibilities include creating visual content using Canva and CapCut, planning editorial calendars, writing captions in both French and Arabic, and managing Meta Ads campaigns with monthly budgets ranging from 500 to 2,000 TND. I also handle basic performance tracking and reporting through Meta Business Suite.
+
+Before that, I completed a long-term internship at Tunisair, where I supported internal communication through newsletters, intranet content, and event coordination. That experience helped me build a solid foundation in structured communication and teamwork.
+
+What motivated me to apply for this position is my strong interest in moving from an execution-focused role to a more strategic marketing position, especially within a growing brand like yours in the fashion and e-commerce space. I’m particularly excited by the opportunity to work on full-funnel marketing topics — from acquisition to conversion and retention — and to manage larger-scale campaigns while developing my skills in areas like performance marketing, email automation, and analytics.
+
+I’m aware that I still have gaps, especially in tools like Google Ads, email marketing platforms, and advanced analytics, but I’m highly motivated to learn quickly and take advantage of your training resources to step up to this level.
+
+I’d be happy to tell you more about specific projects or campaigns I’ve worked on.
+[2026-04-13 14:44:22] [JOB_ALIGNED_EXPLORATION] Recruteur [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Pouvez-vous me donner plus de détails sur les campagnes de SEO et SEA que vous avez menées pour vos clients dans votre agence ?
+[2026-04-13 14:46:13] [JOB_ALIGNED_EXPLORATION] Candidat [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Dans mon expérience chez Creativ’360, je n’étais pas SEO manager à temps plein, mais j’ai participé à plusieurs actions d’optimisation :
+
+Optimisation des textes de publications (Instagram, Facebook) avec des mots-clés liés aux secteurs des clients (mode, immobilier, restauration)
+Rédaction de captions structurées pour améliorer la lisibilité et la portée organique
+Contribution à la cohérence entre le contenu des réseaux sociaux et celui du site web pour certains clients
+Suggestions simples d’amélioration de contenu (titres, descriptions, hashtags stratégiques)
+[2026-04-13 14:46:31] [JOB_ALIGNED_EXPLORATION] Recruteur [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Pouvez-vous me donner des exemples de mesures concrètes que vous avez prises pour améliorer la visibilité organique de vos publications sur les réseaux sociaux ?
+[2026-04-13 14:47:50] [JOB_ALIGNED_EXPLORATION] Candidat [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: J’ai commencé à structurer les descriptions avec :
+une accroche forte au début
+des phrases plus courtes pour améliorer la lecture
+un appel à l’action clair (commentaire, message, clic)
+J’intégrais aussi des mots-clés liés au secteur (mode, immobilier, restauration) pour améliorer la découverte des posts via la recherche.
+
+👉 Résultat : augmentation de l’engagement sur certains posts (plus de commentaires et partages sur les contenus storytelling).
+[2026-04-13 14:48:04] [JOB_ALIGNED_EXPLORATION] Recruteur [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Donnez-moi un exemple concret d'utilisation d'une technologie clé de ce poste.

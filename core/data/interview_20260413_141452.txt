@@ -1,0 +1,9 @@
+HR INTERVIEW — Français
+Date    : 2026-04-13 14:14:52
+Duration: 20 minutes
+[2026-04-13 14:15:44] [OPENING] Candidat [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=[]]: bonjour merci beucoup pour cette opportunite
+[2026-04-13 14:15:48] [JOB_ALIGNED_EXPLORATION] Recruteur [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Donnez-moi un exemple concret d'utilisation d'une technologie clé de ce poste.
+[2026-04-13 14:16:16] [JOB_ALIGNED_EXPLORATION] Candidat [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=[]]: google ads et canva
+[2026-04-13 14:16:18] [JOB_ALIGNED_EXPLORATION] Recruteur [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Quelle technologie du poste maîtrisez-vous le mieux ?
+[2026-04-13 14:16:26] [JOB_ALIGNED_EXPLORATION] Candidat [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=[]]: google ads
+[2026-04-13 14:16:28] [JOB_ALIGNED_EXPLORATION] Recruteur [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Quelle technologie du poste maîtrisez-vous le mieux ?

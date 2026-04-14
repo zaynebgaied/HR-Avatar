@@ -1,0 +1,141 @@
+HR INTERVIEW — Anglais
+Date    : 2026-04-05 13:28:57
+Duration: 20 minutes
+[2026-04-05 13:31:14] [OPENING] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Thank you, it’s a pleasure to be here.
+
+My name is Mehdi Trabelsi. I have a Bachelor’s degree in Industrial Maintenance from ISET Sousse, and I have around eight years of experience in the manufacturing industry, mainly in mechanical and textile sectors.
+
+I started my career as a maintenance technician, which helped me build strong hands-on technical skills, especially in troubleshooting and industrial equipment. Then I progressed to a team leader position at Tunisie Cables, where I supervised maintenance activities on automated production lines and contributed to performance improvement projects like SMED.
+
+Currently, I am working as a Maintenance Manager at Groupe Sopal. I manage a team of technicians and oversee preventive and corrective maintenance using SAP PM. I’m also responsible for improving equipment reliability, managing the maintenance budget, and leading continuous improvement initiatives such as 5S and MTTR reduction.
+[2026-04-05 13:31:27] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you provide an example of how you used SAP PM to improve maintenance efficiency at Tunisie Cables?
+[2026-04-05 13:33:35] [JOB_ALIGNED_EXPLORATION] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=['hedged_ownership']]: Yes, of course.
+
+At Tunisie Cables, my use of SAP PM was still at an intermediate level, but I contributed to improving how maintenance activities were organized and tracked.
+
+For example, we had an issue with repeated corrective interventions on extrusion lines, mainly due to lack of structured follow-up. Maintenance requests were sometimes informal, and history was not always well recorded.
+
+To improve this, I encouraged the team to systematically create and close work orders in SAP PM for every intervention. This allowed us to build a reliable history of failures.
+[2026-04-05 13:33:48] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: On that note, can you describe a specific instance where implementing this structured approach in SAP PM led to a significant improvement in maintenance efficiency?
+[2026-04-05 13:34:24] [JOB_ALIGNED_EXPLORATION] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: Yes, certainly.
+
+One specific example was on an extrusion line where we were facing frequent unplanned stoppages due to overheating issues.
+
+Before using SAP PM in a structured way, interventions were mostly reactive, and we didn’t have clear traceability of past failures. So, we started systematically recording every breakdown through work orders, including failure description, root cause, and actions taken.
+
+After a few weeks, we analyzed the data in SAP PM and identified a recurring pattern related to cooling system inefficiencies — mainly clogged filters and insufficient preventive checks.
+
+Based on this, we updated the preventive maintenance plan by introducing regular inspection and cleaning tasks for the cooling system, and we scheduled them directly in SAP PM with clear frequencies.
+
+We also used SAP PM to plan these tasks during low-production periods to avoid unnecessary downtime.
+
+As a result, we significantly reduced the number of overheating-related breakdowns, and the line became more stable. This also reduced emergency interventions and improved overall maintenance efficiency.
+[2026-04-05 13:34:37] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Given that context, can you quantify the reduction in unplanned stoppages after implementing these changes in SAP PM?
+[2026-04-05 13:35:29] [JOB_ALIGNED_EXPLORATION] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=['understatement']]: Uh… yes, so… I don’t have the exact numbers, to be honest.
+
+I think… the stoppages were reduced, but we didn’t really track it precisely in SAP PM at that time. We mainly observed that there were fewer calls from production, so we assumed it improved.
+
+If I had to estimate… maybe around 10% or… 15%, but I’m not completely sure because we didn’t extract detailed KPI reports.
+
+So… yeah, it was more based on observation than exact measurement.
+[2026-04-05 13:35:44] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you provide a specific example of how you measured or tracked any improvements in maintenance efficiency when using Siemens S7 systems?
+[2026-04-05 13:36:11] [JOB_ALIGNED_EXPLORATION] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=['hedged_ownership']]: Yes… so, regarding Siemens S7 systems, we did use some indicators to track improvements, but it was not always very structured.
+
+For example, on one automated line, we monitored the number of faults detected on the S7 PLC, like alarms related to sensors or drives. We noticed that after some adjustments in the program and better maintenance of sensors, the number of alarms decreased.
+
+We also used diagnostic tools like TIA Portal to check fault history and identify recurring issues… which helped us react faster.
+
+But, to be honest, we didn’t always formalize these improvements into clear KPIs like MTBF or efficiency rates. It was more based on reduced alarms and quicker troubleshooting rather than a fully quantified performance tracking system.
+[2026-04-05 13:36:27] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you give me an example of a specific adjustment you made to the S7 PLC program that led to a reduction in alarms?
+[2026-04-05 13:36:50] [JOB_ALIGNED_EXPLORATION] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=['understatement']]: Yes… uh, one example was related to sensor faults on an automated line.
+
+We had repeated alarms coming from a position sensor, and instead of deeply analyzing the root cause, I adjusted the PLC program by increasing the delay time before triggering the alarm.
+
+So basically, I added a timer in the S7 logic to ignore short signal losses… which reduced the number of alarms displayed.
+
+But… to be honest, this didn’t really solve the real issue, because the sensor was still unstable. It just made the alarms less frequent, not necessarily the system more reliable.
+[2026-04-05 13:37:02] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: How did this adjustment impact the overall system reliability in the long term?
+[2026-04-05 13:37:43] [JOB_ALIGNED_EXPLORATION] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: Uh… yes… so, in the long term, I think the impact was… not very positive.
+
+At the beginning, it looked like an improvement because the number of alarms decreased, and production was less disturbed. But actually, since we didn’t fix the root cause, the sensor issue was still there.
+
+Over time, this created a risk because real faults could be detected later than they should… due to the delay we added in the PLC.
+
+So… reliability didn’t really improve. It maybe even decreased slightly, because we were masking the problem instead of solving it properly.
+
+I realized after that it’s better to fix the physical issue rather than just adjusting the PLC logic.
+[2026-04-05 13:37:59] [PROJECT_DEEP_DIVE] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you provide a specific example of how you addressed a root cause in a similar situation to avoid masking the problem?
+[2026-04-05 13:38:27] [PROJECT_DEEP_DIVE] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: Yes, of course.
+
+In a similar situation on another line, we had repeated alarms from a proximity sensor used for position detection.
+
+Instead of modifying the PLC logic, we decided to investigate the root cause more thoroughly. We observed that the issue was actually due to misalignment and vibration, which caused unstable signals.
+
+So, the first action was mechanical — we redesigned the sensor mounting to make it more rigid and reduce vibration impact. We also adjusted the positioning to ensure a stable detection range.
+
+Then, we checked the electrical side and found some noise in the signal wiring, so we improved cable shielding and routing.
+
+After these corrections, the alarms stopped without needing to modify the PLC program.
+
+This time, the solution improved the real reliability of the system, not just the appearance of it, and we avoided masking the issue.
+[2026-04-05 13:38:41] [PROJECT_DEEP_DIVE] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you quantify the improvement in system reliability after making these mechanical and electrical adjustments?
+[2026-04-05 13:39:14] [PROJECT_DEEP_DIVE] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=['hedged_ownership']]: es.
+
+On that specific case, we mainly measured the improvement through two practical indicators: the number of repeated alarms on that station and the number of maintenance callouts linked to the sensor.
+
+After the mechanical reinforcement and the wiring correction, the sensor-related alarms dropped to almost zero during the following weeks, and we stopped having repeated interventions on the same issue. So, from an operational point of view, the reliability improved clearly because the problem did not come back in the same way.
+
+I want to be precise, though: on that exact example, we did not formalize the result into a full MTBF calculation. It was tracked more through recurrence elimination and line stability than through a full KPI study.
+[2026-04-05 13:39:32] [TECHNICAL_DEPTH] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Given that context, let's keep it simple: can you walk me through how you formalized the improvements in reliability for that specific sensor issue without relying on a full MTBF calculation?
+[2026-04-05 13:44:02] [TECHNICAL_DEPTH] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: es, absolutely.
+
+For that specific sensor issue, I formalized the improvement in a simpler operational way.
+
+First, we defined a short observation period before and after the corrective action. Then we tracked three concrete points: the number of sensor alarms, the number of maintenance interventions on that station, and whether the line was stopping because of that fault.
+
+Before the correction, the same alarm was appearing repeatedly and maintenance was being called often for the same problem. After the mechanical fixing and wiring improvement, we monitored the line for the following days and weeks and saw that those alarms had almost disappeared, there were no repeated callouts on that sensor, and the station was running normally.
+
+So even without a full MTBF calculation, we formalized the result through recurrence tracking, intervention history, and production stability. For me, that was enough to confirm that the action had improved reliability in a practical and measurable way.
+[2026-04-05 13:44:18] [SOFT_SKILLS_BEHAVIORAL] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Let's keep it simple: give me a specific example of a technical disagreement with a colleague.
+[2026-04-05 13:45:08] [SOFT_SKILLS_BEHAVIORAL] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: Sure.
+
+One example was with an electrical technician regarding a recurring fault on a motor drive.
+
+He believed the issue was coming from the PLC program and wanted to modify the logic, while I was convinced it was a hardware issue, specifically related to the power supply and possible voltage fluctuations.
+
+We had a short disagreement because modifying the program was faster, but I insisted on doing basic electrical checks first. After measuring the voltage and checking the connections, we found instability in the power supply.
+
+In the end, we fixed the electrical issue without changing the PLC program, and the fault was resolved.
+[2026-04-05 13:45:24] [SOFT_SKILLS_BEHAVIORAL] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: On that note, can you tell me more about how you ensured that both you and your colleague were aligned on the hardware issue before making any changes?
+[2026-04-05 13:45:56] [SOFT_SKILLS_BEHAVIORAL] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: Yes.
+
+To ensure alignment, I focused on using facts rather than opinions.
+
+First, I suggested that we perform basic electrical measurements together — like checking voltage stability and connections — so we could both see the data directly instead of debating assumptions.
+
+During the checks, I involved him step by step, explaining what I was looking for and why. When we observed the voltage fluctuation together, it became clear that the issue was not coming from the PLC.
+
+I also acknowledged his point — that software could be a cause — but I proposed to validate hardware first before making any program changes, to avoid unnecessary risks.
+
+So, by working together on real measurements and keeping the discussion objective, we were able to align quickly and move forward with the right solution.
+[2026-04-05 13:45:56] [CANDIDATE_QUESTIONS] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Before we move to the end, do you have any questions about the role, the team, or the hiring process?
+[2026-04-05 13:46:34] [CANDIDATE_QUESTIONS] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: Yes, thank you.
+
+I have a couple of questions:
+
+First, regarding the role, how is maintenance performance currently measured in your organization? For example, which KPIs are the most important — is it more focused on TRS, MTBF, MTTR, or cost optimization?
+
+Second, about the team, could you tell me more about its structure and current challenges? For instance, is the priority more on improving reliability, developing team skills, or supporting new investments?
+
+And finally, regarding the evolution, you mentioned possible growth toward a Technical Director position — could you share what the typical timeline or expectations are for that progression?
+
+Thank you.
+[2026-04-05 13:47:15] [CANDIDATE_QUESTIONS] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Regarding maintenance performance, KPIs such as TRS (Time Reliability Score), MTBF (Mean Time Between Failures), and MTTR (Mean Time To Repair) are crucial. Cost optimization is also considered important but not prioritized over the reliability metrics.
+
+The team structure consists of 12 technicians specializing in mechanical, electrical, and automation maintenance. The priority currently lies on improving equipment availability and reducing downtime, while also supporting new investments and enhancing team skills.
+
+For the progression to a Technical Director position, there isn't a specific timeline mentioned. However, it typically requires demonstrating strong leadership, continuous improvement initiatives, and strategic contributions to the company's goals. 
+
+Any other questions? Do you have any other questions?
+[2026-04-05 13:47:44] [CANDIDATE_QUESTIONS] Candidate [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=[]]: no thank you
+[2026-04-05 13:47:53] [CLOSING] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Thank you for your time. We will get back to you with feedback within the next few days.

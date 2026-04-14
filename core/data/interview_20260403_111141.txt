@@ -1,0 +1,188 @@
+HR INTERVIEW — Arabe
+Date    : 2026-04-03 11:11:41
+Duration: 20 minutes
+RAG     : Hybrid BM25+Vector (alpha=0.6) + CrossEncoder=True + SemanticChunking=True
+
+[2026-04-03 11:14:26] [OPENING] Candidate [quality=STRONG] [behavioral=False] [decision=False] [weak_signals=[]]: هلا، شكراً لكم على الاستضافة، سعيد جداً بفرصة المقابلة اليوم.
+
+أنا مهدي الترابلسي، أشتغل حالياً كـ Maintenance Manager وعندي تقريباً 8 سنوات خبرة في industrial manufacturing، خصوصاً في قطاع mechanical و textile. بدايتي كانت كـ Senior Maintenance Technician، وبعدها تطورت إلى Team Leader، وحالياً مسؤول عن فريق مكون من 10 فنيين في مجالات mechanical, electrical, automation.
+
+من ناحية التعليم، عندي Licence في Industrial Maintenance، وكملت بعده عدة دورات متخصصة، مثل Siemens TIA Portal و AMDEC / RCM و Lean Maintenance.
+
+في شغلي الحالي، ركزت كثير على equipment reliability وتقليل downtime. من أهم إنجازاتي إني طبقت structured preventive maintenance program باستخدام SAP PM، ونجحنا نقلل الأعطال بنسبة تقريباً 32% خلال سنتين. كذلك اشتغلت على تحسين MTTR وتنفيذ مشاريع 5S و SMED لتحسين الأداء التشغيلي.
+
+بالنسبة لاهتمامي بالمنصب عندكم، شفت إنه فيه تركيز كبير على structured maintenance، continuous improvement، و SAP-based management، وهذا يتطابق جداً مع خبرتي الحالية. كذلك حجم العمليات عندكم وإدارة أكثر من موقع يعطيني فرصة أطور نفسي أكثر وأقدم impact أكبر على مستوى equipment availability و TRS.
+
+وبصراحة، أنا متحمس أكون جزء من شركة تستثمر في التطوير والتحديث مثل SOTUMAG
+[2026-04-03 11:14:41] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: كيف قياسك لتحسين MTTR وكيف أثر ذلك على كفاءة الأجهزة؟
+[2026-04-03 11:15:16] [JOB_ALIGNED_EXPLORATION] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=['vague_impact']]: بالنسبة لقياس MTTR (Mean Time To Repair)، كنا نعتمد بشكل أساسي على SAP PM لتتبع كل الأعطال من وقت الإبلاغ إلى وقت رجوع المعدة للعمل. كنا نحسبه كالتالي:
+
+وقت بداية العطل (breakdown start)
+إلى وقت انتهاء الإصلاح (equipment back to operation)
+
+ومنها نحصل على متوسط MTTR لكل خط إنتاج أو لكل نوع معدة.
+
+كيف حسّناه؟
+
+اشتغلنا على عدة محاور:
+
+Standard troubleshooting procedures
+سوينا خطوات واضحة للتشخيص لكل نوع عطل، وهذا قلل وقت البحث والتحليل.
+Spare parts availability
+حسّنا إدارة قطع الغيار، خصوصاً للأجزاء critical، بحيث تكون متوفرة مباشرة بدون تأخير.
+Team training
+دربنا الفريق على الأعطال المتكررة وطرق التعامل معها بسرعة.
+Root cause analysis (RCA)
+بعد كل عطل كبير، نحلل السبب الجذري عشان ما يتكرر.
+
+النتيجة:
+
+قدرنا نقلل الـ MTTR بحوالي 20%.
+
+التأثير على كفاءة ا
+[2026-04-03 11:15:28] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: كيف تقيسون تحسيناتكم في إدارة قطع الغيار باستخدام AMDEC؟
+[2026-04-03 11:16:41] [JOB_ALIGNED_EXPLORATION] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: إحنا كنا نقيس التحسين من خلال ربط نتائج AMDEC (FMEA) مع أداء قطع الغيار في الواقع، كالتالي:
+
+1. تحديد القطع الحرجة (Critical Spare Parts)
+من خلال AMDEC، كنا نحدد المكونات اللي عندها:
+
+High severity (تأثير كبير على الإنتاج)
+High occurrence (تتكرر كثير)
+
+هذي القطع نصنفها كـ critical spares
+
+2. مؤشرات الأداء (KPIs)
+
+كنا نتابع عدة مؤشرات:
+
+Stock availability rate
+هل القطع الحرجة متوفرة وقت الحاجة؟
+Stock-out frequency
+كم مرة توقفنا بسبب عدم توفر قطعة
+Downtime بسبب spare parts
+وقت التوقف الناتج عن نقص قطع الغيار
+MTTR impact
+هل توفر القطع ساعد في تقليل وقت الإصلاح
+
+3. قبل وبعد AMDEC
+
+قبل:
+
+قطع غير مصنفة بشكل واضح
+مخزون عشوائي (overstock / stock-out)
+
+بعد تطبيق AMDEC:
+
+تركيز على القطع ذات high risk
+تحسين مستوى المخزون للقطع الحرجة
+تقليل التوقفات بسبب نقص القطع
+
+4. النتائج (Impact)
+
+انخفاض واضح في stock-out للحالات الحرجة
+تقليل downtime المرتبط بقطع الغيار
+تحسين MTTR لأن القطع صارت متوفرة بسرعة
+تقليل التكلفة لأننا أوقفنا التخزين العشوائي
+[2026-04-03 11:16:55] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: كيف تقيسون فعالية الأنظمة الوقائية التي تم تطبيقها من خلال AMDEC على أداء المعدات؟
+[2026-04-03 11:18:06] [JOB_ALIGNED_EXPLORATION] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: نقيس فعالية الأنظمة الوقائية الناتجة من AMDEC من خلال عدة KPIs رئيسية:
+
+MTBF: إذا زاد، يعني الأعطال قلت
+Failure rate: نتابع هل الأعطال المتكررة انخفضت
+Planned vs unplanned maintenance: زيادة الصيانة الوقائية مقابل الطارئة
+MTTR: هل وقت الإصلاح تحسن
+TRS / OEE: هل أداء الإنتاج تحسن
+[2026-04-03 11:18:17] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: أعطني مثالاً عملياً على استخدامك لإحدى التقنيات الأساسية في هذا الدور؟
+[2026-04-03 11:18:44] [JOB_ALIGNED_EXPLORATION] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: أحد الأمثلة العملية هو استخدامي لـ SAP PM في تطبيق preventive maintenance program.
+
+في البداية، كان عندنا مشاكل أعطال متكررة في production line بسبب اعتمادنا على reactive maintenance. اشتغلت على:
+
+تحديد المعدات الحرجة (critical equipment)
+إنشاء maintenance plans داخل SAP PM
+جدولة preventive tasks بناءً على تاريخ الأعطال و AMDEC
+
+كذلك ربطت النظام مع KPIs مثل MTBF و MTTR لمتابعة الأداء.
+[2026-04-03 11:19:02] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: كيف قياسك لفعالية المهام الوقائية التي تم جدولةتها في SAP PM وكيف تأكدت من أنها كانت متوافقة مع KPIs مثل MTBF و MTTR؟
+[2026-04-03 11:20:11] [JOB_ALIGNED_EXPLORATION] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: نقيس فعالية المهام الوقائية في SAP PM من خلال:
+
+Compliance rate: تنفيذ المهام في وقتها
+MTBF: هل زاد بعد التطبيق
+MTTR: هل انخفض وقت الإصلاح
+Breakdowns: هل عدد الأعطال قل
+
+وإذا ما تحسنت الـ KPIs، نرجع نعدل خطة الصيانة.
+
+الخلاصة:
+الفعالية تُقاس بتأثيرها المباشر على MTBF ↑ و MTTR ↓ والأعطال ↓
+[2026-04-03 11:20:25] [PROJECT_DEEP_DIVE] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: هل يمكنك给我一个具体的例子，比如在某个项目中你是如何通过调整预防性维护计划来提高MTBF的？؟
+[2026-04-03 11:21:30] [PROJECT_DEEP_DIVE] Candidate [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=[]]: ......
+[2026-04-03 11:21:44] [PROJECT_DEEP_DIVE] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: وش قرار architecture امتلكته أنت شخصياً في هذا المشروع؟
+[2026-04-03 11:22:19] [PROJECT_DEEP_DIVE] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: أهم architecture decision أخذته شخصياً في هذا المشروع كان إني ما أخلي SAP PM مجرد tool لتسجيل الأعطال، بل أبنيه كـ structured maintenance system مبني على equipment criticality.
+
+يعني قراري كان:
+
+تقسيم الأصول والمعدات داخل النظام بشكل واضح حسب criticality
+ربط كل معدة بـ preventive tasks مناسبة لها
+ربط الخطة الوقائية مع AMDEC results وليس فقط مع manufacturer recommendations
+متابعة الأداء من خلال KPIs مثل MTBF و MTTR
+
+هذا القرار كان مهم لأنه نقلنا من reactive maintenance model إلى risk-based و proactive maintenance architecture.
+[2026-04-03 11:22:40] [PROJECT_DEEP_DIVE] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: وما هي العوامل التي استندت إليها في تحديد الأولويات للمعدات؟
+[2026-04-03 11:23:26] [PROJECT_DEEP_DIVE] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: في تحديد أولويات المعدات، اعتمدت على عدة عوامل رئيسية:
+
+Impact on production
+هل المعدة تعتبر bottleneck أو توقف الخط كامل؟
+Failure frequency
+كم مرة تتعطل (historical data من SAP PM)
+Downtime impact
+كم الوقت اللي تخسره الشركة إذا توقفت؟
+Safety & HSE risk
+هل فيها خطر على السلامة أو البيئة؟
+Maintenance cost
+تكلفة الإصلاح أو استبدال القطع
+Detectability (من AMDEC)
+هل نقدر نكتشف العطل قبل ما يصير؟
+
+بعدها نستخدم هذي العوامل في AMDEC scoring (Severity, Occurrence, Detection) لتحديد criticality level لكل معدة
+[2026-04-03 11:23:41] [CANDIDATE_QUESTIONS] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: هل ممكن تعطيني مثالاً عملياً على ذلك؟
+[2026-04-03 11:24:30] [CANDIDATE_QUESTIONS] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: كان عندنا hydraulic press في خط الإنتاج تعتبر bottleneck — إذا توقفت، الخط كامل يوقف.
+
+من خلال البيانات في SAP PM لاحظنا:
+
+أعطال متكررة في hydraulic system
+downtime عالي لكل عطل
+وتأثير مباشر على الإنتاج
+
+سوينا لها AMDEC analysis وطلع عندها:
+
+High severity (توقف الخط)
+High occurrence (أعطال متكررة)
+
+بالتالي صنفناها كـ critical equipment.
+
+الإجراءات اللي اتخذناها:
+
+زدنا تكرار preventive inspections
+طبقنا condition monitoring (حرارة / ضغط)
+وفرنا critical spare parts بشكل دائم
+جهزنا standard troubleshooting procedure
+
+النتيجة:
+
+انخفاض الأعطال بشكل واضح
+تقليل downtime
+تحسن في MTBF و availability
+[2026-04-03 11:24:49] [CANDIDATE_QUESTIONS] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: كيف قياسك لتأثير هذه الإجراءات على كفاءة المعدات بشكل مباشر؟ ما هي المؤشرات التي استخدمتها لتتبع تحسينات MTBF و Availability؟
+[2026-04-03 11:25:17] [CANDIDATE_QUESTIONS] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: قست التأثير بشكل مباشر من خلال before/after comparison على نفس المعدة أو نفس production line.
+
+أهم المؤشرات اللي استخدمناها:
+
+MTBF: هل الفترة بين الأعطال زادت بعد الإجراءات
+Availability: هل وقت جاهزية المعدة ارتفع
+Breakdown frequency: هل عدد الأعطال انخفض
+Downtime hours: هل ساعات التوقف قلت
+MTTR: هل الإصلاح صار أسرع
+
+كنا نسحب البيانات من SAP PM ونتابعها بشكل دوري، غالباً أسبوعي أو شهري، ونقارنها بالفترة السابقة.
+[2026-04-03 11:25:37] [CANDIDATE_QUESTIONS] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: هل ممكن تعطيني مثالاً عملياً على ذلك؟
+[2026-04-03 11:25:50] [CANDIDATE_QUESTIONS] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: إذا لقينا إن الأعطال قلت، وMTBF ارتفع، وAvailability تحسنت، فهذا دليل واضح إن الإجراءات الوقائية كانت فعالة.
+[2026-04-03 11:26:04] [FINAL_CHECK] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: هل ممكن تعطيني مثالاً عملياً على ذلك؟

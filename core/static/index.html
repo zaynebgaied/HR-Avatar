@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Avatar RH — Entretien Intelligent</title>
+<title>Avatar RH — Entretien Vocal</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
 <style>
@@ -95,6 +95,17 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .ext-badge.docx{background:rgba(79,142,255,.15);color:var(--accent)}
 .ext-badge.txt{background:rgba(251,191,36,.15);color:var(--warn)}
 
+/* ═══ ÉVALUATION POINTS — TECHNIQUE & COMMUNICATION ═══════════ */
+.eval-point-row{display:flex;align-items:flex-start;gap:.75rem;padding:.6rem .75rem;border-radius:var(--rs);margin-bottom:.4rem;background:var(--surface2);border:1px solid var(--border);transition:background .2s}
+.eval-point-row:hover{background:rgba(255,255,255,.03)}
+.eval-status-icon{font-size:1.1rem;flex-shrink:0;margin-top:.05rem;line-height:1}
+.eval-point-label{flex:1;font-size:.85rem;font-weight:500;color:var(--text);line-height:1.4}
+.eval-point-detail{font-size:.73rem;color:var(--muted);margin-top:.15rem}
+.eval-status-badge{font-size:.68rem;font-weight:700;letter-spacing:.06em;padding:2px 8px;border-radius:99px;flex-shrink:0;align-self:center;text-transform:uppercase}
+.eval-status-badge.answered{background:rgba(52,211,153,.15);color:var(--accent3);border:1px solid rgba(52,211,153,.3)}
+.eval-status-badge.partial{background:rgba(251,191,36,.12);color:var(--warn);border:1px solid rgba(251,191,36,.3)}
+.eval-status-badge.missing{background:rgba(248,113,113,.12);color:var(--danger);border:1px solid rgba(248,113,113,.25)}
+
 .btn-start{margin-top:2rem;width:100%;padding:1rem;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;border-radius:var(--rs);color:#fff;font-family:var(--fh);font-size:1rem;font-weight:700;letter-spacing:.05em;cursor:pointer;transition:opacity .2s,transform .2s,box-shadow .2s;box-shadow:0 4px 24px rgba(79,142,255,.3)}
 .btn-start:hover{opacity:.9;transform:translateY(-2px);box-shadow:0 8px 32px rgba(79,142,255,.4)}
 .btn-start:disabled{opacity:.4;cursor:not-allowed;transform:none}
@@ -160,6 +171,21 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .rag-badge.job.on{color:var(--accent);border-color:rgba(79,142,255,.4);background:rgba(79,142,255,.08)}
 .rag-badge.kb{color:#6b7280;border-color:rgba(107,114,128,.3)}
 .rag-badge.kb.on{color:var(--accent2);border-color:rgba(167,139,250,.4);background:rgba(167,139,250,.08)}
+.mic-status{font-size:.7rem;background:var(--surface2);padding:4px 10px;border-radius:99px;color:var(--accent3);display:flex;align-items:center;gap:6px;border:1px solid rgba(52,211,153,.3);transition:background .3s,border-color .3s,color .3s}
+.mic-status.active{background:rgba(52,211,153,.15);border-color:rgba(52,211,153,.5);color:var(--accent3)}
+.mic-status.speaking{background:rgba(52,211,153,.28);border-color:rgba(52,211,153,.8);color:#fff}
+.mic-status.transcribing{background:rgba(251,191,36,.12);border-color:rgba(251,191,36,.5);color:var(--warn)}
+/* dot d'animation */
+.mic-dot{width:7px;height:7px;border-radius:50%;background:currentColor;display:inline-block;flex-shrink:0}
+.mic-status.active     .mic-dot{animation:micPulse 1.2s ease-in-out infinite}
+.mic-status.speaking   .mic-dot{animation:micPulse .5s ease-in-out infinite}
+.mic-status.transcribing .mic-dot{animation:micSpin .8s linear infinite}
+@keyframes micPulse{0%,100%{opacity:.4;transform:scale(.75)}50%{opacity:1;transform:scale(1.25)}}
+@keyframes micSpin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+/* barre de niveau sonore */
+#rms-bar-wrap{width:40px;height:4px;background:rgba(255,255,255,.08);border-radius:99px;overflow:hidden;display:none}
+.mic-status.active #rms-bar-wrap,.mic-status.speaking #rms-bar-wrap{display:block}
+#rms-bar{height:100%;width:0%;background:var(--accent3);border-radius:99px;transition:width .08s linear}
 
 .chat-messages{flex:1;overflow-y:auto;padding:1.5rem;display:flex;flex-direction:column;gap:1rem;scroll-behavior:smooth}
 .chat-messages::-webkit-scrollbar{width:4px}
@@ -183,19 +209,14 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .typing-indicator span:nth-child(3){animation-delay:.4s}
 @keyframes typingDot{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-6px)}}
 
-.chat-input-area{border-top:1px solid var(--border);padding:1rem 1.5rem;background:var(--surface);display:flex;gap:.75rem;align-items:flex-end;flex-shrink:0}
-.chat-input-area textarea{flex:1;background:var(--surface2);border:1px solid var(--border);border-radius:var(--rs);color:var(--text);font-family:var(--fb);font-size:.9rem;padding:.7rem 1rem;resize:none;max-height:120px;outline:none;transition:border-color .2s;line-height:1.5}
-.chat-input-area textarea:focus{border-color:var(--accent)}
-.chat-input-area textarea::placeholder{color:var(--muted)}
+.thinking-bubble{display:flex;align-items:center;gap:5px;padding:.6rem 1rem !important}
+.th-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);opacity:.4;animation:thinkDot 1.4s infinite ease-in-out}
+.th-dot:nth-child(2){animation-delay:.2s}
+.th-dot:nth-child(3){animation-delay:.4s}
+@keyframes thinkDot{0%,80%,100%{opacity:.2;transform:scale(.8)}40%{opacity:1;transform:scale(1.2)}}
 
-.btn-icon{width:44px;height:44px;border:none;border-radius:var(--rs);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:all .2s;flex-shrink:0}
-.btn-mic{background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.3);color:var(--accent3)}
-.btn-mic:hover{background:rgba(52,211,153,.2)}
-.btn-mic.recording{background:rgba(248,113,113,.15);border-color:var(--danger);color:var(--danger);animation:micPulse 1s ease-in-out infinite}
-@keyframes micPulse{0%,100%{box-shadow:0 0 0 0 rgba(248,113,113,.3)}50%{box-shadow:0 0 0 8px rgba(248,113,113,0)}}
-.btn-send{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border:none}
-.btn-send:hover{opacity:.85;transform:scale(1.05)}
-.btn-send:disabled{opacity:.35;cursor:not-allowed;transform:none}
+/* ═══ MASQUER L'INPUT TEXTE ═══════════════════════════════════ */
+.chat-input-area{display:none !important;}
 
 /* ═══ SCREEN 3 — REPORT ═══════════════════════════════════════ */
 #screen-report{flex-direction:column;align-items:center;padding:3rem 1.5rem;overflow-y:auto;gap:2rem}
@@ -261,7 +282,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   <div class="logo-area">
     <div class="badge-ai"></div>
     <h1>Avatar RH<br/>Interactif</h1>
-    <p>Entretien intelligent assisté par IA </p>
+    <p>Entretien intelligent assisté par IA — 100% vocal</p>
   </div>
 
   <div class="setup-card">
@@ -325,7 +346,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 <!-- ═══════════════ SCREEN 2 : INTERVIEW ═══════════════ -->
 <div id="screen-interview" class="screen">
 
-  <!-- Panel avatar (Vision supprimée) -->
+  <!-- Panel avatar -->
   <div class="panel-avatar">
     <div class="avatar-container">
       <div class="avatar-ring"></div>
@@ -350,7 +371,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
           <circle cx="119" cy="108" r="1.5" fill="#fff"/>
           <path id="brow-l" d="M76 98 Q84 94 92 98" stroke="#5a3e28" stroke-width="2.5" fill="none" stroke-linecap="round"/>
           <path id="brow-r" d="M108 98 Q116 94 124 98" stroke="#5a3e28" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-          <path id="mouth" d="M88 128 Q100 136 112 128" stroke="#c07a5a" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path id="mouth" d="M88 128 Q100 132 112 128" stroke="#c07a5a" stroke-width="2" fill="none" stroke-linecap="round"/>
           <path d="M70 155 L85 168 L100 155 L115 168 L130 155" stroke="#4f8eff" stroke-width="3" fill="none"/>
         </svg>
       </div>
@@ -367,28 +388,28 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
       <div class="timer-bar-bg"><div class="timer-bar" id="timer-bar"></div></div>
     </div>
 
-    <!-- Sources RAG actives -->
-    <div class="kb-sources">
-      <div class="kb-sources-title">Sources RAG actives</div>
-      <div class="kb-src-row">
-        <span class="kb-src-name">CV candidat</span>
-        <div class="kb-src-dot" id="src-cv"></div>
+    <!-- Webcam candidat -->
+    <div id="vision-preview-wrap" style="display:none;width:100%;position:relative;border-radius:var(--r);overflow:hidden;background:#000;border:1px solid var(--border);aspect-ratio:1/1">
+      <video id="vision-preview" autoplay muted playsinline style="width:100%;height:100%;object-fit:cover;display:block"></video>
+      <div id="candidate-emotion-wrap" style="display:none;position:absolute;bottom:0;left:0;right:0;padding:.5rem .75rem;background:linear-gradient(transparent,rgba(0,0,0,.72));backdrop-filter:blur(2px)">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <div style="display:flex;align-items:center;gap:.45rem">
+            <span id="candidate-emotion-icon" style="font-size:1.05rem;line-height:1">😐</span>
+            <span id="candidate-emotion-label" style="font-size:.8rem;font-weight:600;color:#fff">—</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:.4rem">
+            <span id="candidate-emotion-conf" style="font-size:.7rem;color:rgba(255,255,255,.6)"></span>
+            <div id="candidate-emotion-dot" style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3);transition:background .4s,box-shadow .4s"></div>
+          </div>
+        </div>
       </div>
-      <div class="kb-src-row">
-        <span class="kb-src-name">Offre d'emploi</span>
-        <div class="kb-src-dot" id="src-job"></div>
+      <div style="position:absolute;top:7px;left:9px;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.4);pointer-events:none">Candidat</div>
+      <div id="vision-mic-dot" style="position:absolute;top:8px;right:9px;width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.2)"></div>
+      <div style="display:none">
+        <div id="src-cv"></div><div id="src-job"></div>
+        <div id="src-kb"></div><div id="kb-company-list"></div>
+        <span id="src-kb-label"></span>
       </div>
-      <div class="kb-src-row">
-        <span class="kb-src-name" id="src-kb-label">KB entreprise</span>
-        <div class="kb-src-dot" id="src-kb"></div>
-      </div>
-      <div class="kb-company-list" id="kb-company-list" style="display:none"></div>
-    </div>
-
-    <!-- NOTE : Vision désactivée — STT/TTS/RAG mode test -->
-    <div style="width:100%;background:rgba(251,191,36,.06);border:1px solid rgba(251,191,36,.2);border-radius:var(--rs);padding:.6rem .9rem">
-      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--warn);margin-bottom:.25rem">Mode test actif</div>
-      <div style="font-size:.72rem;color:var(--muted)">Vision désactivée · STT · TTS · RAG · Évaluation</div>
     </div>
   </div>
 
@@ -403,6 +424,11 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
           <span class="rag-badge kb"  id="hdr-kb">KB</span>
         </div>
         <div class="chat-header-lang" id="header-lang">Français</div>
+        <div class="mic-status" id="mic-status">
+          <span class="mic-dot"></span>
+          <span id="mic-status-text">⏳ En attente…</span>
+          <span id="rms-bar-wrap"><span id="rms-bar"></span></span>
+        </div>
       </div>
     </div>
 
@@ -412,7 +438,14 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
       </div>
     </div>
 
-    <div class="chat-input-area">
+    <!-- Zone de transcript live (texte en cours de reconnaissance) -->
+    <div id="live-transcript" style="display:none;margin:0 1rem .5rem;padding:.6rem 1rem;background:rgba(79,142,255,.08);border:1px solid rgba(79,142,255,.2);border-radius:10px;font-size:.85rem;color:var(--accent);font-style:italic;min-height:2rem;transition:opacity .2s;">
+      <span style="font-size:.7rem;opacity:.6;display:block;margin-bottom:2px;">🎤 En cours…</span>
+      <span id="live-transcript-text"></span>
+    </div>
+
+    <!-- L'input text est masqué via CSS, on garde les éléments pour compatibilité JS -->
+    <div class="chat-input-area" style="display:none;">
       <textarea id="user-input" placeholder="Tapez votre réponse ou utilisez le micro…" rows="1"></textarea>
       <button class="btn-icon btn-mic" id="btn-mic" title="Micro">🎤</button>
       <button class="btn-icon btn-send" id="btn-send" title="Envoyer">➤</button>
@@ -446,7 +479,15 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
     <div id="r-rag-sources"></div>
   </div>
 
-  <!-- Vision card supprimée — section r-vision retirée -->
+  <div class="report-card" id="r-vision-card" style="display:none">
+    <h3>Analyse émotionnelle (vision)</h3>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1rem">
+      <div class="score-circle"><div class="score-number" id="r-emotion-dom" style="font-size:1.1rem">—</div><div class="score-label">Émotion dominante</div></div>
+      <div class="score-circle"><div class="score-number" id="r-vision-conf">—</div><div class="score-label">Confiance moy.</div></div>
+    </div>
+    <div style="margin-bottom:.5rem"><strong>Évolution :</strong> <span id="r-emotion-evo" style="color:var(--muted);font-size:.85rem">—</span></div>
+    <div id="r-stress-pics"></div>
+  </div>
 
   <div class="report-card">
     <h3>Compétences détectées</h3>
@@ -460,6 +501,35 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
     <div class="tags-wrap" id="r-forts"></div>
     <h3 style="margin-top:1.5rem">Points à améliorer</h3>
     <div class="tags-wrap" id="r-amelio"></div>
+  </div>
+
+  <!-- ═══ ÉVALUATION TECHNIQUE DÉTAILLÉE ═══ -->
+  <div class="report-card" id="r-eval-tech-card">
+    <h3>Évaluation technique — Points couverts</h3>
+    <p style="font-size:.78rem;color:var(--muted);margin-bottom:1rem">
+      Chaque compétence/outil attendu par le poste est évalué selon la profondeur de la réponse du candidat.
+    </p>
+    <div id="r-eval-tech-points"></div>
+  </div>
+
+  <!-- ═══ ÉVALUATION COMMUNICATION DÉTAILLÉE ═══ -->
+  <div class="report-card" id="r-eval-comm-card">
+    <h3>Évaluation communication — Points couverts</h3>
+    <p style="font-size:.78rem;color:var(--muted);margin-bottom:1rem">
+      Évaluation de la qualité de communication du candidat durant l'entretien.
+    </p>
+    <div id="r-eval-comm-points"></div>
+  </div>
+
+  <!-- ═══ SYNTHÈSE POINTS DÉTECTÉS / MANQUANTS ═══ -->
+  <div class="report-card">
+    <h3>✅ Points détectés <span id="r-detectes-count" style="font-size:.75rem;color:var(--accent3);font-weight:400"></span></h3>
+    <div class="tags-wrap" id="r-points-detectes" style="margin-bottom:1.5rem"></div>
+    <h3>❌ Points manquants <span id="r-manquants-count" style="font-size:.75rem;color:var(--danger);font-weight:400"></span></h3>
+    <p style="font-size:.78rem;color:var(--muted);margin-bottom:.75rem">
+      Points que le candidat n'a pas abordés ou n'a pas répondu à la question posée.
+    </p>
+    <div class="tags-wrap" id="r-points-manquants"></div>
   </div>
 
   <div class="report-card">
@@ -482,7 +552,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 
 <script>
 /* ══════════════════════════════════════════════
-   STATE
+   STATE — Version vocale automatique
 ══════════════════════════════════════════════ */
 const state = {
   sessionId:     null,
@@ -499,20 +569,20 @@ const state = {
   offreUploaded: false,
   ragSources:    { cv: [], job_offer: [], company_docs: [] },
   ws:            null,
-  wsSTT:         null,      // WebSocket dedie STT streaming
+  wsSTT:         null,
+  wsVision:      null,
+  visionActive:  false,
   wsStreamBuf:   '',
   wsStreamEl:    null,
-  // Audio queue pour lecture sans gap inter-phrases
   audioQueue:    [],
   audioPlaying:  false,
-  // Web Audio API pour capture PCM
   audioCtx:      null,
   audioProcessor: null,
   audioSource:   null,
-  // VAD natif : detection silence
   vadSilenceMs:  0,
   vadSpeaking:   false,
   vadTimer:      null,
+  waitingForResponse: false,   // Nouveau : vrai pendant que le LLM répond
 };
 
 /* ══════════════════════════════════════════════
@@ -590,6 +660,34 @@ function updateTimer(timeLeft) {
   bar.style.background = pct < 20
     ? 'var(--danger)'
     : 'linear-gradient(90deg,var(--accent3),var(--accent))';
+}
+
+function updateMicStatus(state_str) {
+  const el   = document.getElementById('mic-status');
+  const txt  = document.getElementById('mic-status-text');
+  if (!el || !txt) return;
+  el.classList.remove('active', 'speaking', 'transcribing');
+  if (state_str === 'active' || state_str === true) {
+    el.classList.add('active');
+    txt.textContent = '🎤 Écoute…';
+  } else if (state_str === 'speaking') {
+    el.classList.add('speaking');
+    txt.textContent = '🗣 Voix détectée';
+  } else if (state_str === 'transcribing') {
+    el.classList.add('transcribing');
+    txt.textContent = '🔄 Transcription…';
+  } else {
+    txt.textContent = '⏳ En attente…';
+  }
+}
+
+function _setRmsBar(rms) {
+  const bar = document.getElementById('rms-bar');
+  if (!bar) return;
+  // rms est typiquement entre 0 et 0.1 ; on normalise sur 100%
+  const pct = Math.min(100, Math.round(rms * 1200));
+  bar.style.width = pct + '%';
+  bar.style.background = pct > 70 ? 'var(--accent3)' : pct > 35 ? 'var(--accent)' : 'var(--accent3)';
 }
 
 /* ══════════════════════════════════════════════
@@ -795,7 +893,7 @@ document.getElementById('btn-start').addEventListener('click', async () => {
       setPhase(data.phase || 'INTRO_ETUDES');
       updateRagIndicators(data.rag_sources || { cv: [], job_offer: [], company_docs: [] });
       connectWebSocket();       // WebSocket LLM/entretien
-      connectSTTWebSocket();    // WebSocket STT streaming PCM
+      connectVisionWebSocket(); // WebSocket vision émotions
       appendMessage('avatar', data.greeting, 'joy');
       if (data.audio_url) playAudio(data.audio_url, data.duration_s);
 
@@ -804,6 +902,11 @@ document.getElementById('btn-start').addEventListener('click', async () => {
         toast('⚠️ Aucune KB entreprise — RAG limité à CV + Offre', 'warn');
       } else {
         toast(`🏢 KB injectée : ${kbDocs.length} doc(s)`, 'success');
+      }
+
+      // Démarrer automatiquement le micro après le greeting
+      if (!state.ended && !state.waitingForResponse) {
+        startAutoMic();
       }
     } else {
       toast(data.error || 'Erreur démarrage session', 'error');
@@ -847,21 +950,31 @@ async function sendMessage(text) {
 
   appendMessage('user', text);
   document.getElementById('user-input').value  = '';
+  // Désactiver les boutons (bien que cachés)
   document.getElementById('btn-send').disabled = true;
   document.getElementById('btn-mic').disabled  = true;
 
-  // ── WebSocket disponible → streaming ───────────────────────────
   if (state.ws && state.ws.readyState === WebSocket.OPEN) {
-    // Prépare la bulle de streaming vide
     state.wsStreamBuf = '';
     state.wsStreamEl  = appendStreamingBubble();
-    showTyping(false); // on remplace l'indicateur par la bulle live
+    showTyping(false);
+
+    state._wsWatchdog = setTimeout(() => {
+      console.warn('[WS] Watchdog: aucun token reçu en 120s');
+      if (state.wsStreamEl) {
+        state.wsStreamEl.textContent = '⚠️ Le modèle prend du temps à répondre…';
+      }
+      document.getElementById('btn-send').disabled = false;
+      document.getElementById('btn-mic').disabled  = false;
+      // Réactiver le micro après timeout
+      if (!state.ended) startAutoMic();
+    }, 120_000);
 
     state.ws.send(JSON.stringify({ action: 'text_message', text }));
-    return; // la suite est gérée dans ws.onmessage
+    return;
   }
 
-  // ── Fallback HTTP si WebSocket non disponible ──────────────────
+  // Fallback HTTP (rare)
   showTyping(true);
   try {
     const fd = new FormData();
@@ -881,168 +994,294 @@ async function sendMessage(text) {
   } finally {
     document.getElementById('btn-send').disabled = false;
     document.getElementById('btn-mic').disabled  = false;
+    if (!state.ended) startAutoMic();
   }
 }
 
-document.getElementById('btn-send').addEventListener('click', () =>
-  sendMessage(document.getElementById('user-input').value));
-
-document.getElementById('user-input').addEventListener('keydown', e => {
-  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(e.target.value); }
-});
-
-document.getElementById('user-input').addEventListener('input', function() {
-  this.style.height = 'auto';
-  this.style.height = Math.min(this.scrollHeight, 120) + 'px';
-});
-
 /* ══════════════════════════════════════════════
-   MICROPHONE / STT — Streaming PCM WebSocket + VAD natif
-   Flux : getUserMedia → Web Audio API → PCM Float32 → WS → Whisper
-   VAD natif : analyse RMS pour detecter silence et declencher auto
+   MICROPHONE / STT — Version vocale automatique
 ══════════════════════════════════════════════ */
-document.getElementById('btn-mic').addEventListener('click', () =>
-  state.isRecording ? stopRecordingManual() : startRecording());
+async function startAutoMic() {
+  if (!state.sessionId) return;
+  if (state.waitingForResponse) return;
+  if (state.isRecording) return;
+  if (state.ended) return;
+  await startRecording();
+}
 
-// ── Connexion WebSocket STT (ouverte une fois par session) ────────────
+// Connexion WebSocket STT — retourne une Promise résolue quand le WS est prêt
 function connectSTTWebSocket() {
-  if (state.wsSTT && state.wsSTT.readyState === WebSocket.OPEN) return;
+  // Fermer proprement toute connexion précédente
+  if (state.wsSTT) {
+    if (state.wsSTT.readyState === WebSocket.OPEN || state.wsSTT.readyState === WebSocket.CONNECTING) {
+      state.wsSTT.onclose = null;
+      state.wsSTT.close();
+    }
+    state.wsSTT = null;
+  }
+
   const wsUrl   = `ws://${location.host}/ws/stt/${state.sessionId}`;
   state.wsSTT   = new WebSocket(wsUrl);
   state.wsSTT.binaryType = 'arraybuffer';
 
+  const langMap = { 'Français':'fr','Anglais':'en','Arabe':'ar','French':'fr','English':'en','Arabic':'ar' };
+  const sttLang = langMap[state.lang] || 'fr';
+  state.sttLang = sttLang;
+
+  // ── handlers permanents ───────────────────────────────────────────────────
   state.wsSTT.onmessage = (event) => {
     try {
       const data = JSON.parse(event.data);
-      showTyping(false);
       if (data.success && data.text?.trim()) {
-        // Auto-envoi immediat au LLM sans attendre clic Envoyer
-        sendMessage(data.text);
-        toast('Transcrit : "' + data.text.substring(0, 50) + '..."', 'success');
-      } else if (!data.success && data.error) {
-        toast(data.error || 'Transcription vide', 'warn');
+        _showLiveTranscript(data.text, !!data.final);
+        if (data.final) {
+          showTyping(false);
+          _hideLiveTranscript();
+          sendMessage(data.text);
+          toast('✅ Transcrit : "' + data.text.substring(0, 50) + (data.text.length > 50 ? '…"' : '"'), 'success');
+        }
+      } else if (data.error && !data.final) {
+        toast(data.error, 'warn');
+      } else if (data.final && !data.success) {
+        // Transcription finale vide — réactiver le micro sans envoyer au LLM
+        _hideLiveTranscript();
+        showTyping(false);
+        updateMicStatus('active');
+        state.waitingForResponse = false;
+        if (!state.ended) startAutoMic();
       }
     } catch {}
   };
 
   state.wsSTT.onerror = () => {
-    toast('STT WebSocket erreur — fallback HTTP', 'warn');
+    console.error('[STT] WebSocket erreur');
+    toast('STT WebSocket erreur', 'warn');
     state.wsSTT = null;
   };
 
-  state.wsSTT.onclose = () => {
-    state.wsSTT = null;
-  };
+  state.wsSTT.onclose = () => { state.wsSTT = null; };
+
+  // ── Promise résolue à l'ouverture (pour await dans startRecording) ────────
+  return new Promise((resolve, reject) => {
+    const deadline = setTimeout(() => reject(new Error('STT WebSocket timeout')), 3000);
+    state.wsSTT.onopen = () => {
+      clearTimeout(deadline);
+      state.wsSTT.send(JSON.stringify({ action: 'set_lang', lang: sttLang }));
+      resolve();
+    };
+    // Surcharger onerror pour rejeter aussi la promesse
+    const baseOnerror = state.wsSTT.onerror;
+    state.wsSTT.onerror = (e) => {
+      clearTimeout(deadline);
+      if (baseOnerror) baseOnerror(e);
+      reject(new Error('STT WebSocket erreur'));
+    };
+  });
 }
 
-// ── Demarrage enregistrement avec Web Audio API + VAD ────────────────
+// ── Démarrage enregistrement avec VAD ────────────────────────────────────────
 async function startRecording() {
   if (!state.sessionId) return;
+  if (state.waitingForResponse) return;
+  if (state.isRecording) return;
 
-  // Ouvrir le WS STT si pas encore fait
-  connectSTTWebSocket();
+  // Attendre que le WebSocket STT soit prêt avant de démarrer l'audio
+  try {
+    await connectSTTWebSocket();
+  } catch (err) {
+    toast('Connexion STT impossible : ' + err.message, 'error');
+    return;
+  }
 
   try {
     const stream   = await navigator.mediaDevices.getUserMedia({
       audio: { sampleRate: 16000, channelCount: 1, echoCancellation: true, noiseSuppression: true }
     });
 
-    // Web Audio API : capture PCM Float32 directement
     state.audioCtx    = new (window.AudioContext || window.webkitAudioContext)({ sampleRate: 16000 });
     state.audioSource = state.audioCtx.createMediaStreamSource(stream);
 
-    // ScriptProcessor : buffer de 4096 samples (~256ms a 16kHz)
-    const processor   = state.audioCtx.createScriptProcessor(4096, 1, 1);
-    state.audioProcessor = processor;
+    const VAD_SILENCE_MS  = 900;   // 900ms de silence avant de déclencher (comme ancienne version)
+    const RMS_THRESHOLD   = 0.01;  // seuil permissif — capte les voix douces et arabophones
+    const MIN_SPEECH_MS   = 200;   // durée minimale de parole avant d'envoyer à Whisper
+    let   speechStartTime = null;  // timestamp début de parole en cours
 
-    // VAD : seuil RMS pour detecter parole vs silence
-    const RMS_THRESHOLD   = 0.01;   // ajuster selon micro
-    const SILENCE_TIMEOUT = 900;    // ms de silence avant envoi auto
-
-    processor.onaudioprocess = (e) => {
-      if (!state.isRecording) return;
-
-      const samples = e.inputBuffer.getChannelData(0); // Float32Array
-
-      // Calcul RMS pour VAD
-      let sum = 0;
-      for (let i = 0; i < samples.length; i++) sum += samples[i] * samples[i];
-      const rms = Math.sqrt(sum / samples.length);
-
-      const isVoice = rms > RMS_THRESHOLD;
-
-      if (isVoice) {
-        state.vadSpeaking = true;
-        clearTimeout(state.vadTimer);
-        state.vadTimer = null;
-        // Envoyer chunk PCM au serveur via WebSocket
-        if (state.wsSTT && state.wsSTT.readyState === WebSocket.OPEN) {
-          state.wsSTT.send(samples.buffer);
+    const workletCode = `
+      class VadProcessor extends AudioWorkletProcessor {
+        constructor() {
+          super();
+          this._buf = [];
         }
-      } else if (state.vadSpeaking && !state.vadTimer) {
-        // Silence detecte apres parole : timer avant envoi
-        state.vadTimer = setTimeout(() => {
-          if (state.isRecording && state.vadSpeaking) {
-            triggerTranscription();
+        process(inputs) {
+          const ch = inputs[0][0];
+          if (!ch) return true;
+          this._buf.push(ch.slice());
+          if (this._buf.length >= 2) {
+            const merged = new Float32Array(this._buf.reduce((a,b)=>a+b.length,0));
+            let off = 0;
+            for (const b of this._buf) { merged.set(b, off); off += b.length; }
+            this.port.postMessage(merged.buffer, [merged.buffer]);
+            this._buf = [];
           }
-        }, SILENCE_TIMEOUT);
+          return true;
+        }
       }
-    };
+      registerProcessor('vad-processor', VadProcessor);
+    `;
+    const blob    = new Blob([workletCode], { type: 'application/javascript' });
+    const blobUrl = URL.createObjectURL(blob);
 
-    state.audioSource.connect(processor);
-    processor.connect(state.audioCtx.destination);
+    try {
+      await state.audioCtx.audioWorklet.addModule(blobUrl);
+      URL.revokeObjectURL(blobUrl);
+
+      const workletNode = new AudioWorkletNode(state.audioCtx, 'vad-processor');
+      state.audioProcessor = workletNode;
+
+      workletNode.port.onmessage = (e) => {
+        if (!state.isRecording) return;
+        const samples = new Float32Array(e.data);
+        let sum = 0;
+        for (let i = 0; i < samples.length; i++) sum += samples[i] * samples[i];
+        const rms = Math.sqrt(sum / samples.length);
+        const isVoice = rms > RMS_THRESHOLD;
+
+        _setRmsBar(rms);
+
+        if (isVoice) {
+          if (!state.vadSpeaking) {
+            updateMicStatus('speaking');
+            speechStartTime = Date.now();
+          }
+          state.vadSpeaking = true;
+          clearTimeout(state.vadTimer);
+          state.vadTimer = null;
+          if (state.wsSTT && state.wsSTT.readyState === WebSocket.OPEN) {
+            state.wsSTT.send(samples.buffer);
+          }
+        } else {
+          if (state.vadSpeaking && !state.vadTimer) {
+            updateMicStatus('active');
+            state.vadTimer = setTimeout(() => {
+              if (!state.isRecording || !state.vadSpeaking) return;
+              // N'envoyer à Whisper que si la parole a duré MIN_SPEECH_MS
+              const spokenMs = speechStartTime ? Date.now() - speechStartTime : 0;
+              if (spokenMs >= MIN_SPEECH_MS) {
+                triggerTranscription();
+              } else {
+                // Trop court — probablement un bruit, réinitialiser sans transcrire
+                state.vadSpeaking = false;
+                if (state.wsSTT && state.wsSTT.readyState === WebSocket.OPEN)
+                  state.wsSTT.send('cancel');
+              }
+            }, VAD_SILENCE_MS);
+          }
+        }
+      };
+
+      state.audioSource.connect(workletNode);
+    } catch (workletErr) {
+      // Fallback ScriptProcessor
+      console.warn('[Audio] AudioWorklet non supporté, fallback ScriptProcessor:', workletErr);
+      const processor = state.audioCtx.createScriptProcessor(4096, 1, 1);  // 4096 comme ancienne version
+      state.audioProcessor = processor;
+      processor.onaudioprocess = (e) => {
+        if (!state.isRecording) return;
+        const samples = e.inputBuffer.getChannelData(0);
+        let sum = 0;
+        for (let i = 0; i < samples.length; i++) sum += samples[i] * samples[i];
+        const rms = Math.sqrt(sum / samples.length);
+        const isVoice = rms > RMS_THRESHOLD;
+        _setRmsBar(rms);
+        if (isVoice) {
+          if (!state.vadSpeaking) {
+            updateMicStatus('speaking');
+            speechStartTime = Date.now();
+          }
+          state.vadSpeaking = true;
+          clearTimeout(state.vadTimer); state.vadTimer = null;
+          if (state.wsSTT && state.wsSTT.readyState === WebSocket.OPEN)
+            state.wsSTT.send(samples.buffer);
+        } else if (state.vadSpeaking && !state.vadTimer) {
+          updateMicStatus('active');
+          state.vadTimer = setTimeout(() => {
+            if (!state.isRecording || !state.vadSpeaking) return;
+            const spokenMs = speechStartTime ? Date.now() - speechStartTime : 0;
+            if (spokenMs >= MIN_SPEECH_MS) {
+              triggerTranscription();
+            } else {
+              state.vadSpeaking = false;
+              if (state.wsSTT && state.wsSTT.readyState === WebSocket.OPEN)
+                state.wsSTT.send('cancel');
+            }
+          }, VAD_SILENCE_MS);
+        }
+      };
+      state.audioSource.connect(processor);
+      processor.connect(state.audioCtx.destination);
+    }
 
     state.isRecording  = true;
     state.vadSpeaking  = false;
     state.vadTimer     = null;
-
-    // Garder reference au stream pour fermeture
     state._micStream = stream;
 
     const btn = document.getElementById('btn-mic');
     btn.classList.add('recording');
     btn.textContent = '⏹';
-    toast('Parlez — arret automatique apres silence…');
-
+    updateMicStatus('active');
+    toast('🎤 Parlez — arrêt automatique après silence');
   } catch(e) {
     toast('Micro inaccessible : ' + e.message, 'error');
   }
 }
 
-// ── Declenche la transcription (VAD auto ou clic stop) ───────────────
-function triggerTranscription() {
+function _showLiveTranscript(text, isFinal) {
+  const box  = document.getElementById('live-transcript');
+  const span = document.getElementById('live-transcript-text');
+  if (!box || !span) return;
+  span.textContent = text;
+  box.style.display = 'block';
+  box.style.opacity = isFinal ? '0.5' : '1';
+}
+
+function _hideLiveTranscript() {
+  const box = document.getElementById('live-transcript');
+  if (box) { box.style.display = 'none'; }
+  const span = document.getElementById('live-transcript-text');
+  if (span) span.textContent = '';
+}
+
+async function triggerTranscription() {
   if (!state.isRecording) return;
   state.vadSpeaking = false;
   clearTimeout(state.vadTimer);
   state.vadTimer = null;
 
-  // Signaler fin au serveur
   if (state.wsSTT && state.wsSTT.readyState === WebSocket.OPEN) {
+    // ① Fermer le mic D'ABORD pour forcer le flush des derniers chunks audio
+    _closeMic();
+    state.isRecording = false;
+    const btn = document.getElementById('btn-mic');
+    btn.classList.remove('recording');
+    btn.textContent = '🎤';
+
+    // ② Attendre 150ms pour laisser les derniers messages WebSocket partir
+    await new Promise(r => setTimeout(r, 150));
+
+    // ③ Envoyer 'end' seulement après — tous les chunks sont arrivés au serveur
     state.wsSTT.send('end');
     showTyping(true);
+    updateMicStatus('transcribing');
     toast('Transcription en cours…');
   } else {
     toast('STT WebSocket non disponible', 'warn');
   }
-
-  // Reinitialiser l enregistrement mais garder le micro actif pour la prochaine replique
-  state.vadSpeaking = false;
-}
-
-// ── Arret manuel par clic bouton ──────────────────────────────────────
-function stopRecordingManual() {
-  triggerTranscription();
-
-  // Fermer le micro et le Web Audio context
-  _closeMic();
-
-  state.isRecording = false;
-  const btn = document.getElementById('btn-mic');
-  btn.classList.remove('recording');
-  btn.textContent = '🎤';
+  state.waitingForResponse = true;
 }
 
 function _closeMic() {
+  _setRmsBar(0);
   if (state.audioProcessor) {
     state.audioProcessor.disconnect();
     state.audioProcessor = null;
@@ -1061,57 +1300,22 @@ function _closeMic() {
   }
 }
 
-// ── Fallback HTTP transcription (si WS STT indisponible) ─────────────
-async function transcribeAudioHTTP(blob) {
-  toast('Transcription STT (HTTP)…');
-  showTyping(true);
-  const fd = new FormData();
-  fd.append('audio', blob, 'recording.webm');
-  try {
-    const res  = await fetch(`/session/${state.sessionId}/transcribe`, { method: 'POST', body: fd });
-    const data = await res.json();
-    showTyping(false);
-    if (data.success && data.text?.trim()) {
-      sendMessage(data.text);
-      toast('Transcrit : "' + data.text.substring(0, 50) + '..."', 'success');
-    } else {
-      toast(data.error || 'Transcription vide', 'error');
-    }
-  } catch {
-    showTyping(false);
-    toast('Erreur transcription', 'error');
-  }
+// Fonction appelée après la réponse du LLM pour réactiver le micro
+function reactivateMicAfterResponse() {
+  if (state.ended) return;
+  state.waitingForResponse = false;
+  updateMicStatus('active');
+  startAutoMic();
 }
 
 /* ══════════════════════════════════════════════
-   AUDIO PLAYBACK SANS GAP — Web Audio API
-   ─────────────────────────────────────────────
-   Principe :
-   1. Un seul AudioContext partagé pour toute la session.
-   2. Chaque URL est fetch+décodée en AudioBuffer dès qu'elle arrive
-      (pendant que la phrase précédente joue encore).
-   3. Chaque buffer est schedulé via ctx.currentTime de façon
-      contiguë : startAt[N+1] = startAt[N] + buffer[N].duration
-      → gap entre phrases = 0 ms côté audio.
-   4. Lip-sync : un seul setInterval qui suit nextStartTime.
+   AUDIO PLAYBACK (sans gap)
 ══════════════════════════════════════════════ */
-
-// ── Contexte Audio unique ─────────────────────────────────────────
-let _actx          = null;   // AudioContext
-let _nextStartTime = 0;      // timestamp AudioContext de la prochaine phrase
-let _queueEmpty    = true;   // true quand rien ne joue / n'est en file
-
-// Nœuds actifs : pour pouvoir couper net en cas de stopAvatarAudio()
+let _actx          = null;
+let _nextStartTime = 0;
 let _activeNodes   = [];
-
-// Buffer d'accumulation pour le flux binaire TTS en cours
-let _ttsCurrentChunks = null;  // null = pas de flux actif, sinon tableau de Blob
-let _ttsCurrentIndex  = -1;
-
-// Interaction requise avant premier play (politique autoplay navigateurs)
 let _userInteracted = false;
-let _pendingQueue   = [];    // ArrayBuffer en attente d'interaction
-
+let _pendingQueue   = [];
 function _markInteracted() {
   if (_userInteracted) return;
   _userInteracted = true;
@@ -1128,7 +1332,6 @@ document.addEventListener('click',      _markInteracted, { capture: true });
 document.addEventListener('keydown',    _markInteracted, { capture: true });
 document.addEventListener('touchstart', _markInteracted, { capture: true });
 
-// ── Initialise ou réutilise l'AudioContext ────────────────────────
 function _getACtx() {
   if (!_actx || _actx.state === 'closed') {
     _actx = new (window.AudioContext || window.webkitAudioContext)();
@@ -1137,7 +1340,6 @@ function _getACtx() {
   return _actx;
 }
 
-// ── Décode un ArrayBuffer MP3 et le schedule sans gap ────────────
 async function _decodeAndSchedule(arrayBuf) {
   const ctx = _getACtx();
   let buffer;
@@ -1151,7 +1353,6 @@ async function _decodeAndSchedule(arrayBuf) {
   const now      = ctx.currentTime;
   const startAt  = Math.max(now + 0.03, _nextStartTime);
   _nextStartTime = startAt + buffer.duration;
-  _queueEmpty    = false;
   state.audioPlaying = true;
 
   const source = ctx.createBufferSource();
@@ -1169,16 +1370,13 @@ async function _decodeAndSchedule(arrayBuf) {
       pulse.classList.remove('talking');
       animateLipSync(false);
       state.audioPlaying = false;
-      _queueEmpty = true;
     }
   }, msUntilStart + msDuration);
 
   source.onended = () => { _activeNodes = _activeNodes.filter(n => n !== source); };
   source.start(startAt);
-  console.log(`[Audio] +${(startAt - now).toFixed(3)}s dur=${buffer.duration.toFixed(2)}s`);
 }
 
-// ── fetch → decode → schedule (pour URL fichier, greeting + fallback) ─
 async function _fetchAndSchedule(url) {
   try {
     const resp = await fetch(url);
@@ -1190,48 +1388,26 @@ async function _fetchAndSchedule(url) {
   }
 }
 
-// ── API publique ──────────────────────────────────────────────────
-
-// Lecture depuis URL (greeting HTTP + fallback)
 function enqueueAudio(url, durationS) {
   if (!url) return;
   if (_userInteracted) {
     _fetchAndSchedule(url);
   } else {
-    // Stocke l'URL et fetch+decode dès l'interaction
     const pending = fetch(url).then(r => r.arrayBuffer());
     _pendingQueue.push({ __fetchPromise: pending });
-    // Redéfinir _markInteracted pour gérer les deux cas
   }
 }
+function playAudio(url, durationS) { enqueueAudio(url, durationS); }
 
-// Alias pour compatibilité
-function playAudio(url, durationS) {
-  enqueueAudio(url, durationS);
-}
-
-// Coupe tout immédiatement et vide la file
 function stopAvatarAudio() {
   _pendingQueue     = [];
   _nextStartTime    = 0;
-  _queueEmpty       = true;
-  _ttsCurrentChunks = null;
-  _ttsCurrentIndex  = -1;
   state.audioPlaying = false;
-
   _activeNodes.forEach(n => { try { n.stop(); } catch(_) {} });
   _activeNodes = [];
-
   document.getElementById('avatar-pulse').classList.remove('talking');
   animateLipSync(false);
 }
-
-// Rétrocompatibilité : certains endroits posent encore state.currentAudio
-Object.defineProperty(state, 'currentAudio', {
-  get() { return null; },
-  set(_) {},   // silencieusement ignoré
-  configurable: true,
-});
 
 let lipSyncInterval = null;
 function animateLipSync(active) {
@@ -1247,32 +1423,126 @@ function animateLipSync(active) {
 }
 
 /* ══════════════════════════════════════════════
-   TIMER POLL — Vision polling SUPPRIMÉ
+   VISION WebSocket
 ══════════════════════════════════════════════ */
-/* ── WebSocket : connexion + gestion des événements ────────────── */
+let _visionInterval = null;
+let _visionCanvas   = null;
+let _visionVideo    = null;
+
+async function connectVisionWebSocket() {
+  if (!state.sessionId) return;
+
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ video: { width:320, height:240 } });
+    _visionVideo = document.getElementById('vision-preview');
+    _visionVideo.srcObject = stream;
+    document.getElementById('vision-preview-wrap').style.display = 'block';
+
+    _visionCanvas = document.createElement('canvas');
+    _visionCanvas.width  = 320;
+    _visionCanvas.height = 240;
+
+    await new Promise(resolve => {
+      _visionVideo.oncanplay = resolve;
+      _visionVideo.play().catch(() => {});
+    });
+
+    state.visionActive = true;
+  } catch {
+    console.info('Vision : accès webcam refusé ou indisponible — analyse désactivée.');
+    return;
+  }
+
+  const proto  = location.protocol === 'https:' ? 'wss:' : 'ws:';
+  const wsUrl  = `${proto}//${location.host}/ws/vision/${state.sessionId}`;
+  state.wsVision = new WebSocket(wsUrl);
+
+  state.wsVision.onopen = () => {
+    console.info('Vision WebSocket ouvert');
+    _visionInterval = setInterval(() => _captureAndSendFrame(), 2500);
+  };
+
+  state.wsVision.onmessage = (ev) => {
+    try {
+      const d = JSON.parse(ev.data);
+      if (d.valid && d.emotion) {
+        _updateCandidateEmotionBadge(d.emotion, d.confidence);
+      }
+    } catch {}
+  };
+
+  state.wsVision.onclose = () => {
+    if (_visionInterval) { clearInterval(_visionInterval); _visionInterval = null; }
+  };
+}
+
+function _captureAndSendFrame() {
+  if (!_visionCanvas || !_visionVideo || !state.wsVision
+      || state.wsVision.readyState !== WebSocket.OPEN) return;
+  try {
+    const ctx = _visionCanvas.getContext("2d");
+    ctx.drawImage(_visionVideo, 0, 0, 320, 240);
+    const b64 = _visionCanvas.toDataURL("image/jpeg", 0.6).split(",")[1];
+    state.wsVision.send(JSON.stringify({ frame: b64 }));
+  } catch (e) {
+    console.warn("Vision capture erreur:", e);
+  }
+}
+
+function _updateCandidateEmotionBadge(emotion, confidence) {
+  const map = {
+    'anxieux':   { icon: '😰', color: '#ef4444',  glow: 'rgba(239,68,68,.35)' },
+    'tendu':     { icon: '😤', color: '#f97316',  glow: 'rgba(249,115,22,.35)' },
+    'découragé': { icon: '😞', color: '#8b5cf6',  glow: 'rgba(139,92,246,.35)' },
+    'surpris':   { icon: '😲', color: '#06b6d4',  glow: 'rgba(6,182,212,.35)' },
+    'détendu':   { icon: '😊', color: '#22c55e',  glow: 'rgba(34,197,94,.35)' },
+    'neutre':    { icon: '😐', color: '#6b7280',  glow: 'transparent' },
+  };
+  const e = map[emotion] || map['neutre'];
+  const conf = Math.round(confidence || 0);
+
+  const wrap = document.getElementById('candidate-emotion-wrap');
+  if (wrap) wrap.style.display = 'block';
+  const vw = document.getElementById('vision-preview-wrap');
+  if (vw && vw.style.display === 'none') vw.style.display = 'block';
+
+  const iconEl  = document.getElementById('candidate-emotion-icon');
+  const labelEl = document.getElementById('candidate-emotion-label');
+  const confEl  = document.getElementById('candidate-emotion-conf');
+  const dotEl   = document.getElementById('candidate-emotion-dot');
+
+  if (iconEl)  iconEl.textContent  = e.icon;
+  if (labelEl) { labelEl.textContent = emotion; labelEl.style.color = e.color; }
+  if (confEl)  confEl.textContent  = conf + '%';
+  if (dotEl)   {
+    dotEl.style.background = e.color;
+    dotEl.style.boxShadow  = `0 0 6px ${e.glow}`;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   WEBSOCKET LLM
+══════════════════════════════════════════════ */
 function connectWebSocket() {
   if (state.ws) { state.ws.close(); state.ws = null; }
 
   const wsUrl = `ws://${location.host}/ws/${state.sessionId}`;
   const ws    = new WebSocket(wsUrl);
-  ws.binaryType = 'arraybuffer';   // reçoit les chunks MP3 comme ArrayBuffer
+  ws.binaryType = 'arraybuffer';
   state.ws    = ws;
 
   ws.onopen = () => {
     console.log('🔌 WebSocket connecté');
     toast('🔌 Connexion temps réel active', 'success');
-    // ping toutes les 10s pour garder le timer à jour
     state.timerInterval = setInterval(() => {
       if (ws.readyState === WebSocket.OPEN)
         ws.send(JSON.stringify({ action: 'ping' }));
-    }, 10000);
+    }, 5000);
   };
 
   ws.onmessage = (event) => {
-    // ── Messages binaires : chunks MP3 d'une phrase en cours ──────
     if (event.data instanceof ArrayBuffer || event.data instanceof Blob) {
       if (_ttsCurrentChunks !== null) {
-        // Accumule les bytes dans le buffer de la phrase courante
         const blobify = event.data instanceof Blob
           ? event.data
           : new Blob([event.data], { type: 'audio/mpeg' });
@@ -1281,10 +1551,16 @@ function connectWebSocket() {
       return;
     }
 
-    // ── Messages JSON ──────────────────────────────────────────────
+    if (state._wsWatchdog) { clearTimeout(state._wsWatchdog); state._wsWatchdog = null; }
+
     const msg = JSON.parse(event.data);
 
     if (msg.type === 'token') {
+      if (state.wsStreamEl && state.wsStreamEl.dataset.thinking === 'true') {
+        state.wsStreamEl.dataset.thinking = 'false';
+        state.wsStreamEl.classList.remove('thinking-bubble');
+        state.wsStreamEl.textContent = '';
+      }
       state.wsStreamBuf += msg.token;
       if (state.wsStreamEl) {
         state.wsStreamEl.textContent = state.wsStreamBuf;
@@ -1302,14 +1578,11 @@ function connectWebSocket() {
     }
 
     else if (msg.type === 'tts_start') {
-      // Début d'un flux MP3 pour la phrase msg.index
-      // On ouvre un nouveau buffer d'accumulation
       _ttsCurrentChunks = [];
       _ttsCurrentIndex  = msg.index;
     }
 
     else if (msg.type === 'tts_end') {
-      // Fin du flux MP3 pour cette phrase — on décode et schedule
       const chunks = _ttsCurrentChunks;
       _ttsCurrentChunks = null;
       _ttsCurrentIndex  = -1;
@@ -1320,7 +1593,6 @@ function connectWebSocket() {
     }
 
     else if (msg.type === 'tts_ready') {
-      // Compatibilité avec le greeting HTTP (URL de fichier)
       enqueueAudio(msg.audio_url, msg.duration_s);
     }
 
@@ -1336,6 +1608,12 @@ function connectWebSocket() {
       showTyping(false);
       document.getElementById('btn-send').disabled = false;
       document.getElementById('btn-mic').disabled  = false;
+
+      if (!msg.interview_ended) {
+        // Réactiver le micro après la réponse du LLM
+        reactivateMicAfterResponse();
+      }
+
       if (msg.interview_ended) setTimeout(() => endInterview(null), 1500);
     }
 
@@ -1351,6 +1629,7 @@ function connectWebSocket() {
       document.getElementById('btn-send').disabled = false;
       document.getElementById('btn-mic').disabled  = false;
       toast('Erreur serveur : ' + msg.message, 'error');
+      if (!state.ended) reactivateMicAfterResponse();
     }
   };
 
@@ -1366,7 +1645,9 @@ function connectWebSocket() {
   };
 }
 
-/* ── Ajoute une bulle de streaming vide (sera remplie token par token) ─ */
+let _ttsCurrentChunks = null;
+let _ttsCurrentIndex  = -1;
+
 function appendStreamingBubble() {
   const container = document.getElementById('chat-messages');
   const typing    = document.getElementById('typing');
@@ -1374,8 +1655,9 @@ function appendStreamingBubble() {
   div.className   = 'msg avatar';
   const now       = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   const bubble    = document.createElement('div');
-  bubble.className = 'msg-bubble streaming-bubble';
-  bubble.style.cssText = 'min-height:1.4em;';
+  bubble.className = 'msg-bubble streaming-bubble thinking-bubble';
+  bubble.dataset.thinking = 'true';
+  bubble.innerHTML = '<span class="th-dot"></span><span class="th-dot"></span><span class="th-dot"></span>';
   div.innerHTML = `<div class="msg-av">🤖</div>`;
   div.appendChild(document.createElement('div'));
   div.lastChild.appendChild(bubble);
@@ -1388,18 +1670,11 @@ function appendStreamingBubble() {
   return bubble;
 }
 
-/* ── Mise à jour scores dans le header ───────────────────────── */
 function updateScores(scores) {
-  // scores = { INTRO_ETUDES: 7, MAPPING_PROJETS_OFFRE: null, ... }
-  // affichage optionnel si un élément #scores-bar existe
   const el = document.getElementById('scores-bar');
   if (!el) return;
   const total = Object.values(scores).filter(v => v !== null).reduce((a,b) => a+b, 0);
   el.textContent = 'Score : ' + total;
-}
-
-function startTimerPoll() {
-  // Conservé pour fallback HTTP uniquement — le WS gère le timer via ping
 }
 
 /* ══════════════════════════════════════════════
@@ -1418,10 +1693,12 @@ async function endInterview(inlineReport) {
   }
   if (report) renderReport(report);
   showScreen('screen-report');
+  // Arrêter le micro définitivement
+  if (state.isRecording) _closeMic();
 }
 
 /* ══════════════════════════════════════════════
-   RENDER REPORT (sans section Vision)
+   RENDER REPORT (identique à l'original)
 ══════════════════════════════════════════════ */
 function renderReport(r) {
   const meta = r.meta || {};
@@ -1461,7 +1738,6 @@ function renderReport(r) {
     }
   }
 
-  // Sources RAG
   const ragEl   = document.getElementById('r-rag-sources');
   ragEl.innerHTML = '';
   const sources = r.sources_rag || {};
@@ -1491,11 +1767,79 @@ function renderReport(r) {
     addRagRow('KB entreprise', []);
   }
 
-  // Tags
   renderTags('r-competences', r.competences_detectees || [], 'green');
   renderTags('r-lacunes',     r.lacunes_identifiees   || [], 'red');
   renderTags('r-forts',       r.points_forts          || [], 'green');
   renderTags('r-amelio',      r.points_amelioration   || r.points_faibles || []);
+
+  const evalTechEl = document.getElementById('r-eval-tech-points');
+  evalTechEl.innerHTML = '';
+  const techPoints = r.evaluation_technique_points || [];
+  if (techPoints.length > 0) {
+    techPoints.forEach(pt => {
+      const row = document.createElement('div');
+      row.className = 'eval-point-row';
+      const icon = pt.status === 'answered' ? '✅' : pt.status === 'partial' ? '⚠️' : '❌';
+      const badgeLabel = pt.status === 'answered' ? 'Répondu' : pt.status === 'partial' ? 'Partiel' : 'Manquant';
+      const detail = pt.explored_by_interviewer
+        ? (pt.mentioned_by_candidate ? 'Exploré et abordé par le candidat' : 'Questionné mais non répondu')
+        : 'Non abordé durant l\'entretien';
+      row.innerHTML = `
+        <div class="eval-status-icon">${icon}</div>
+        <div style="flex:1">
+          <div class="eval-point-label">${pt.point}</div>
+          <div class="eval-point-detail">${detail}</div>
+        </div>
+        <div class="eval-status-badge ${pt.status}">${badgeLabel}</div>`;
+      evalTechEl.appendChild(row);
+    });
+    document.getElementById('r-eval-tech-card').style.display = 'block';
+  } else {
+    evalTechEl.innerHTML = '<p style="color:var(--muted);font-size:.82rem">Aucune donnée technique disponible</p>';
+  }
+
+  const evalCommEl = document.getElementById('r-eval-comm-points');
+  evalCommEl.innerHTML = '';
+  const commPoints = r.evaluation_communication_points || [];
+  if (commPoints.length > 0) {
+    commPoints.forEach(pt => {
+      const row = document.createElement('div');
+      row.className = 'eval-point-row';
+      const icon = pt.status === 'answered' ? '✅' : pt.status === 'partial' ? '⚠️' : '❌';
+      const badgeLabel = pt.status === 'answered' ? 'Répondu' : pt.status === 'partial' ? 'Partiel' : 'Manquant';
+      row.innerHTML = `
+        <div class="eval-status-icon">${icon}</div>
+        <div style="flex:1">
+          <div class="eval-point-label">${pt.point}</div>
+          <div class="eval-point-detail">${pt.detail || ''}</div>
+        </div>
+        <div class="eval-status-badge ${pt.status}">${badgeLabel}</div>`;
+      evalCommEl.appendChild(row);
+    });
+    document.getElementById('r-eval-comm-card').style.display = 'block';
+  } else {
+    evalCommEl.innerHTML = '<p style="color:var(--muted);font-size:.82rem">Aucune donnée de communication disponible</p>';
+  }
+
+  const pointsDetectes  = r.points_detectes  || [];
+  const pointsManquants = r.points_manquants || [];
+
+  document.getElementById('r-detectes-count').textContent = `(${pointsDetectes.length})`;
+  document.getElementById('r-manquants-count').textContent = `(${pointsManquants.length})`;
+
+  const detectesEl = document.getElementById('r-points-detectes');
+  detectesEl.innerHTML = pointsDetectes.length
+    ? pointsDetectes.map(p => {
+        const isPartial = p.includes('(~)');
+        const label = p.replace(' ✓', '').replace(' (~)', '');
+        return `<span class="tag ${isPartial ? '' : 'green'}" style="${isPartial ? 'border:1px solid rgba(251,191,36,.4);color:var(--warn);background:rgba(251,191,36,.08)' : ''}">${label}${isPartial ? ' ⚠️' : ' ✓'}</span>`;
+      }).join('')
+    : '<span style="color:var(--muted);font-size:.8rem">Aucun point détecté</span>';
+
+  const manquantsEl = document.getElementById('r-points-manquants');
+  manquantsEl.innerHTML = pointsManquants.length
+    ? pointsManquants.map(p => `<span class="tag red">${p}</span>`).join('')
+    : '<span style="color:var(--accent3);font-size:.8rem">✓ Aucun point manquant — excellent !</span>';
 
   document.getElementById('r-motivation').textContent = r.analyse_motivation || '—';
   document.getElementById('r-softskills').textContent = r.analyse_soft_skills || '';
@@ -1511,6 +1855,20 @@ function renderReport(r) {
   );
   document.getElementById('r-reco').textContent =
     r.recommandation_detail || r.recommandation || '';
+
+  const vis = r.analyse_emotion_vision;
+  if (vis && vis.disponible && vis.nb_frames > 0) {
+    document.getElementById('r-vision-card').style.display = 'block';
+    document.getElementById('r-emotion-dom').textContent  = vis.emotion_dominante || '—';
+    document.getElementById('r-vision-conf').textContent  = (vis.confiance_globale ?? '—') + (vis.confiance_globale != null ? '%' : '');
+    document.getElementById('r-emotion-evo').textContent  = vis.evolution || '—';
+    const picsEl = document.getElementById('r-stress-pics');
+    picsEl.innerHTML = '';
+    if (vis.pics_stress && vis.pics_stress.length > 0) {
+      picsEl.innerHTML = '<strong>Pics de stress :</strong> '
+        + vis.pics_stress.map(p => `<span class="tag red" style="font-size:.72rem">${p}</span>`).join(' ');
+    }
+  }
 }
 
 function renderTags(id, items, type = '') {
@@ -1527,13 +1885,22 @@ function restartApp() {
   if (state.sessionId)
     fetch(`/session/${state.sessionId}`, { method: 'DELETE' }).catch(() => {});
 
+  if (_visionInterval) { clearInterval(_visionInterval); _visionInterval = null; }
+  if (state.wsVision)  { state.wsVision.close(); state.wsVision = null; }
+  if (_visionVideo && _visionVideo.srcObject) {
+    _visionVideo.srcObject.getTracks().forEach(t => t.stop());
+    _visionVideo.srcObject = null;
+    const pw = document.getElementById('vision-preview-wrap'); if(pw) pw.style.display = 'none';
+  }
+  const candidateWrap = document.getElementById('candidate-emotion-wrap');
+  if (candidateWrap) candidateWrap.style.display = 'none';
+  state.visionActive = false;
+
   clearInterval(state.timerInterval);
 
-  // Fermer le WebSocket STT et le micro si actifs
   if (state.wsSTT) { state.wsSTT.close(); state.wsSTT = null; }
   if (state.isRecording) _closeMic();
 
-  // Vider la queue audio Web Audio API
   stopAvatarAudio();
   _pendingQueue  = [];
   _nextStartTime = 0;
@@ -1546,7 +1913,7 @@ function restartApp() {
     offreUploaded: false, currentAudio: null,
     ragSources: { cv: [], job_offer: [], company_docs: [] },
     vadSpeaking: false, vadTimer: null,
-    _pendingGreeting: null,
+    waitingForResponse: false,
   });
 
   document.getElementById('chat-messages').innerHTML =

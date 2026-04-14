@@ -1,0 +1,43 @@
+Date   : 2026-03-29 14:00:00
+Langue : Arabe saoudien
+Durée  : 20 min
+Mode   : Simulation PFE
+
+سياق المرشح : أنا كريم، مهندس بيانات عندي 7 سنوات خبرة بين Tunisie Telecom وCapgemini Tunisie وOrange Tunisie. اشتغلت على Spark وAirflow وAWS وMLflow وDocker وXGBoost، وعندي تجربة في data lake وقيادة 4 مهندسين جونيور.
+الوظيفة المستهدفة : الوظيفة: Lead Data Engineer يركز على data platform وتقليل تكلفة الـ cloud وMLOps ورفع نضج الـ pipelines والقيادة التقنية.
+
+[10:06:23] [INTRO] Avatar: هلا، يعطيك العافية. عرّفنا بنفسك بشكل سريع.
+
+[10:07:12] [INTRO] Candidate: أنا مهندس بيانات عندي تقريباً 7 سنوات خبرة بين telecom والاستشارة وdata engineering.
+حالياً أشتغل على pipelines وcloud architecture وأيضاً mentoring لبعض الجونيورز.
+
+[10:08:41] [MAPPING] Avatar: حدثني عن مشروع حديث استخدمت فيه Spark وAirflow وAWS.
+
+[10:11:27] [MAPPING] Candidate: سوّينا data lake على AWS باستخدام S3 وSpark وAirflow، وكان الهدف نوحّد البيانات
+ونرفع scalability. كذلك اشتغلنا على تقليل التكلفة من خلال تحسين التخزين وبعض المعالجات.
+
+[10:11:27] [VALIDATION] Avatar: طيب، لما تقول تقليل تكلفة، عن أي مستوى تقريباً؟ وكيف تأكدتم من النتيجة؟
+
+[10:12:43] [VALIDATION] Candidate: تقريباً بين 30% و35% حسب الفترة اللي نقارنها. أكثر شيء أفادنا كان lifecycle
+policies وتنظيف بعض الـ jobs المكلفة وتحسين partitioning. وأنا كنت أقود المشروع وأنسق بين الفرق.
+
+[10:12:43] [VALIDATION] Avatar: وكيف استخدمتوا MLflow مع الفريق؟
+
+[10:14:33] [VALIDATION] Candidate: استخدمناه في tracking التجارب وversioning النماذج. قبلها كان فيه مشاركة غير
+منظمة للنماذج. بعد التطبيق صار عندنا traceability أحسن، وشرحت للجونيورز كيف يستخدمون الـ runs والـ metrics
+والـ registry.
+
+[10:14:33] [SOFT] Avatar: حدثني عن موقف صعب أو خلاف داخل الفريق.
+
+[10:16:17] [SOFT] Candidate: كان فيه اختلاف بين شخصين على مستوى الجودة قبل التسليم. تكلمت مع كل واحد لحاله، وبعدها
+جلسنا كلنا ووضحنا الطريقة. بعدها التعاون صار أفضل.
+
+[10:16:17] [QUESTIONS] Avatar: هل عندك أسئلة؟
+
+[10:18:03] [QUESTIONS] Candidate: نعم، هل الفريق يشتغل أكثر بأسلوب product ولا project؟
+
+[10:18:03] [QUESTIONS] Avatar: ما عندي الإجابة الدقيقة الآن، لكن نقدر نوضحها لك لاحقاً. عندك سؤال ثاني؟
+
+[10:20:02] [CONCLUSION] Candidate: لا، شكراً.
+
+[10:20:02] [CONCLUSION] Avatar: شكراً لوقتك، ونتواصل معك قريب.

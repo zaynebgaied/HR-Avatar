@@ -1,0 +1,253 @@
+HR INTERVIEW — Anglais
+Date    : 2026-04-03 17:09:48
+Duration: 20 minutes
+RAG     : Hybrid BM25+Vector (alpha=0.6) + CrossEncoder=True + SemanticChunking=True
+
+[2026-04-03 17:12:59] [OPENING] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Hello, thank you for having me. I’m glad to be here.
+
+My name is Youssef Dridi. I hold a degree in Communication Sciences, and I have around 3 years of experience as a Community Manager in a communication agency, where I managed social media accounts for multiple clients, mainly in fashion, real estate, and food industries.
+
+In my current role, I focus on content creation, social media management, and Meta Ads campaigns. I build content calendars, create visuals using tools like Canva and CapCut, and manage paid campaigns with a performance mindset — tracking metrics like CTR, CPC, and engagement to continuously optimize results.
+
+What motivated me to apply for this position is my desire to move from an execution-focused agency role to a more strategic, in-house marketing role, where I can contribute more directly to brand growth and business performance.
+
+I’m particularly interested in your company because of its strong positioning in fashion and its growing e-commerce presence, which aligns with my experience and also with the skills I’m currently developing, especially in performance marketing and analytics.
+
+I’d be happy to go into more detail about my experience or specific projects.
+[2026-04-03 17:13:15] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you provide an example of a Canva project you worked on and how it impacted the engagement or performance of your clients' social media accounts?
+[2026-04-03 17:13:52] [JOB_ALIGNED_EXPLORATION] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=['understatement']]: Of course.
+
+One example is a Canva project I worked on for a fashion client during a new collection launch.
+
+Before the campaign, the visuals were not very consistent and engagement was relatively stable. I created a set of standardized Canva templates with a clear color palette, consistent typography, and structured layouts for posts, carousels, and stories.
+
+I also introduced more engaging formats, especially carousel posts with storytelling (for example: outfit combinations and step-by-step looks), and optimized all visuals for mobile viewing.
+
+As a result:
+
+Engagement increased by around 30–35%
+We saw higher saves and shares, especially on carousel content
+The overall page looked more coherent and professional, which also helped with follower growth
+
+So in this case, Canva was not just a design tool — it helped improve both content consistency and performance
+[2026-04-03 17:14:03] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: On that note, can you quantify the impact of the carousel posts specifically? Were they a significant driver of the increased engagement?
+[2026-04-03 17:14:54] [JOB_ALIGNED_EXPLORATION] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=['understatement']]: Yes, they were actually one of the main drivers of the increase.
+
+For example, when comparing carousel posts to single-image posts during the same campaign:
+
+Saves increased by around +40–50% on carousel posts
+Shares were about +30–40% higher
+The save rate went from roughly 3–4% (static posts) to about 6–7% (carousels)
+
+In terms of engagement rate:
+
+Carousel posts consistently performed above the campaign average (around 4–4.5%), while static posts were closer to the baseline (~3%)
+[2026-04-03 17:15:06] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Given that context, given those results, can you explain why you think carousel posts performed better than static posts in this particular campaign?
+[2026-04-03 17:15:50] [JOB_ALIGNED_EXPLORATION] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: Yes, absolutely.
+
+I believe carousel posts performed better mainly because they provided more value and interaction opportunities compared to static posts.
+
+First, carousels allow for storytelling. Instead of showing just one product, we could present:
+
+Outfit combinations
+Step-by-step styling
+Multiple angles or details
+
+This makes the content more useful and encourages users to spend more time on the post.
+
+Second, carousels naturally drive more interaction:
+
+Users swipe through slides → higher engagement signals
+Content becomes more “saveable”, especially for inspiration
+
+Third, from a user behavior perspective, in fashion, people are often looking for ideas, not just products. Carousels respond better to that need.
+[2026-04-03 17:16:01] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you provide a specific number of saves or interactions for carousel posts compared to static posts during this campaign?
+[2026-04-03 17:16:39] [JOB_ALIGNED_EXPLORATION] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=['understatement']]: Yes, of course.
+
+During that campaign, when comparing average performance per post:
+
+Static posts:
+Saves: around 20–25 per post
+Total interactions: around 100–120
+Carousel posts:
+Saves: around 30–40 per post
+Total interactions: around 140–170
+
+So in concrete terms:
+
+Saves increased by roughly +40–50%
+Total interactions increased by around +30–40%
+[2026-04-03 17:16:51] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: On that note, given those numbers, can you explain how you measured these interactions and saves for both types of posts?
+[2026-04-03 17:17:39] [JOB_ALIGNED_EXPLORATION] Candidate [quality=GOOD] [behavioral=False] [decision=True] [weak_signals=[]]: Yes, of course.
+
+I measured these metrics using Instagram Insights and Meta Business Suite, which provide detailed performance data for each post.
+
+How I tracked interactions:
+
+For each post, I looked at:
+Likes
+Comments
+Shares
+Saves
+These are available directly in Meta Business Suite under post performance
+
+How I compared carousel vs static posts:
+
+I selected posts from the same campaign period
+Ensured similar conditions:
+Same audience
+Similar posting frequency
+Then I calculated an average per post for each format (carousel vs static)
+
+For saves specifically:
+
+I extracted the number of saves per post
+Then compared:
+Static posts → ~20–25 saves
+Carousel posts → ~30–40 saves
+
+Why this method is reliable:
+
+Same time period → avoids seasonal bias
+Same account → same audience
+Multiple posts → more accurate average
+
+Conclusion:
+By using Meta Business Suite data and consistent comparison conditions, I was able to accurately measure and compare the performance of carousel vs static posts
+[2026-04-03 17:17:52] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you walk me through how you adjusted your strategy based on the insights from these metrics to optimize future campaigns?
+[2026-04-03 17:18:29] [JOB_ALIGNED_EXPLORATION] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Of course.
+
+Based on these insights, I adjusted the strategy at three main levels: format, content, and production process.
+
+First, on format, since carousel posts clearly outperformed static ones, I increased their share in the content calendar — especially for product showcases and styling content.
+
+Second, on content structure, I made carousels more intentional:
+
+First slide as a strong hook
+Following slides delivering value (outfits, tips, combinations)
+
+This helped maximize saves and engagement.
+
+Third, on the production side, I created Canva templates specifically for carousels, which allowed us to:
+
+Keep visual consistency
+Produce content faster despite the higher complexity
+[2026-04-03 17:18:42] [PROJECT_DEEP_DIVE] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you provide an example of a specific campaign where you increased the share of carousel posts and measured the impact on engagement metrics?
+[2026-04-03 17:20:35] [PROJECT_DEEP_DIVE] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=['understatement']]: Of course.
+
+In a follow-up campaign for a fashion client’s new collection, I increased the share of carousel posts based on previous performance insights.
+
+What I changed:
+
+Carousel posts went from حوالي 30% to 60–70% of the content mix
+Focused on styling content and outfit combinations
+Used consistent Canva templates to keep brand identity
+
+How I measured the impact:
+I compared this campaign to the previous one using:
+
+Engagement rate
+Saves and shares per post
+
+Results:
+
+Engagement rate improved from around 3% to 4–4.5%
+Saves increased from about 20–25 to 30–40 per post
+Shares also increased significantly
+[2026-04-03 17:20:46] [PROJECT_DEEP_DIVE] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Was that increase in engagement and saves actually considered minor given these numbers?
+[2026-04-03 17:21:52] [PROJECT_DEEP_DIVE] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=['understatement']]: No, it was not considered minor — it was actually quite meaningful in that context.
+
+If we look at the numbers:
+
+Engagement rate increased from around 3% to 4–4.5%, which is roughly a +30–50% relative improvement
+Saves increased from about 20–25 to 30–40 per post, so around +40–50%
+
+For social media campaigns, especially with a limited budget, this level of improvement is considered significant because:
+
+It shows a clear change in user behavior, not just random variation
+The increase is consistent across multiple metrics (engagement, saves, shares)
+Saves and shares are high-value interactions, indicating real interest
+[2026-04-03 17:22:07] [TECHNICAL_DEPTH] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: How did you ensure that the increase in engagement was not due to random variation and can be attributed specifically to the use of carousel posts?
+[2026-04-03 17:22:54] [TECHNICAL_DEPTH] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: That’s a very good question.
+
+To make sure the improvement was not due to random variation, I tried to control as many variables as possible and use a structured comparison approach.
+
+First, I compared carousel vs static posts within the same campaign period, so:
+
+Same audience
+Same budget
+Same timing
+
+Second, I didn’t rely on a single post — I analyzed multiple posts per format and calculated an average. The fact that carousel posts consistently showed:
+
+Higher save rate (6–7% vs 3–4%)
+More saves (30–40 vs 20–25)
+confirmed it was a pattern, not a one-time result.
+
+Third, I also looked at before vs after campaigns:
+
+When we increased the share of carousel posts, overall engagement metrics improved
+This reinforced the correlation between format and performance
+
+Finally, I combined quantitative data + consistency of results across posts and campaigns.
+[2026-04-03 17:23:08] [TECHNICAL_DEPTH] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you provide an example of how you adjusted the content or messaging within the carousel posts to further enhance their performance?
+[2026-04-03 17:23:45] [TECHNICAL_DEPTH] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: Of course.
+
+One specific adjustment I made was improving the structure and messaging of the carousel posts to make them more engaging and “saveable”.
+
+Before:
+
+Slides were mostly product-focused with basic visuals
+No clear flow between slides
+Limited context or added value
+[2026-04-03 17:23:57] [SOFT_SKILLS_BEHAVIORAL] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Give me a specific example of a technical disagreement with a colleague.
+[2026-04-03 17:24:47] [SOFT_SKILLS_BEHAVIORAL] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: Of course.
+
+In one project, I had a technical disagreement with a designer about the content format we should prioritize.
+
+Context:
+
+I wanted to use more carousel posts with structured storytelling to improve engagement
+The designer preferred single, clean visuals to maintain a minimalist brand aesthetic
+
+Disagreement:
+
+His focus was on visual consistency and simplicity
+My focus was on performance metrics like save rate, CTR, and engagement
+
+How I handled it:
+Instead of debating opinions, I proposed a data-driven approach:
+
+We ran a small A/B test:
+Static posts (his approach)
+Carousel posts (my approach)
+[2026-04-03 17:24:59] [SOFT_SKILLS_BEHAVIORAL] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: How did you ensure that the data-driven approach was fair and unbiased during the A/B test?
+[2026-04-03 17:25:57] [SOFT_SKILLS_BEHAVIORAL] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: To ensure the A/B test was fair and unbiased, I made sure to control the main variables as much as possible:
+
+Same time period:
+Both formats (carousel and static) were published during the same campaign window to avoid differences due to timing or trends
+Same audience:
+The posts were shown to the same target audience, so there was no bias from different segments
+Similar content context:
+We used comparable content (same collection, similar products), so the only real difference was the format
+Multiple posts, not one:
+I didn’t rely on a single comparison — I analyzed several posts of each type to get a more reliable average
+Same metrics:
+We evaluated both formats using the same KPIs:
+Save rate
+Engagement rate
+Shares
+[2026-04-03 17:25:57] [CANDIDATE_QUESTIONS] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Before we move to the end, do you have any questions about the role, the team, or the hiring process?
+[2026-04-03 17:26:29] [CANDIDATE_QUESTIONS] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: Yes, thank you.
+
+👉 What would be the main KPIs used to evaluate success in this role, particularly in terms of both engagement and conversion performance?
+[2026-04-03 17:26:49] [CANDIDATE_QUESTIONS] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Based on the job description, the main KPIs used to evaluate success in this role would likely include:
+
+- Taux de conversion
+- Panier moyen
+- CAC (Coût par acquisition)
+- ROAS (Retour sur investissement des campagnes publicitaires)
+
+These metrics will help measure engagement and conversion performance. Do you have any other questions?
+[2026-04-03 17:27:45] [CANDIDATE_QUESTIONS] Candidate [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=[]]: thank you i don't have another questions
+[2026-04-03 17:27:51] [CLOSING] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you elaborate on how your background in supply chain strategy could specifically benefit our e-commerce growth initiatives?. Thank you for your time. We will get back to you with feedback within the next few days.

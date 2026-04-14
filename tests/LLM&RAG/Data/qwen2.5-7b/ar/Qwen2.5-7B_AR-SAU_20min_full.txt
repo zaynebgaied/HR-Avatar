@@ -1,0 +1,63 @@
+Date   : 2026-03-29 14:00:00
+Langue : Arabe saoudien
+Durée  : 20 min
+Mode   : Simulation PFE
+
+سياق المرشح : أنا كريم، مهندس بيانات عندي 7 سنوات خبرة بين Tunisie Telecom وCapgemini Tunisie وOrange Tunisie. اشتغلت على Spark وAirflow وAWS وMLflow وDocker وXGBoost، وعندي تجربة في data lake وقيادة 4 مهندسين جونيور.
+الوظيفة المستهدفة : الوظيفة: Lead Data Engineer يركز على data platform وتقليل تكلفة الـ cloud وMLOps ورفع نضج الـ pipelines والقيادة التقنية.
+
+[10:06:23] [INTRO_ETUDES] Avatar: هلا وغلا، مرحبا بك في مقابلتنا اليوم، راح تاخذ منّا 20 دقيقة تقريباً. قدّم لنا
+نفسك — دراستك، مسيرتك المهنية، وإيش اللي خلاك تتقدم لهذا المنصب؟
+
+[10:07:12] [INTRO_ETUDES] Candidate: يعطيكم العافية. أنا خريج École Polytechnique de Tunisie تخصص Software
+Engineering. بدأت كـ Data Analyst في Tunisie Telecom، وبعدها اشتغلت في Capgemini Tunisie كـ Data Scientist على
+credit scoring باستخدام XGBoost وبعض مشاريع NLP. من 2020 وأنا Lead Data Engineer في Orange Tunisie، أشتغل على
+تصميم pipelines واسعة النطاق، وأدير فريق صغير، وأربط بين الجودة التقنية والنتيجة business. اللي جذبني في هذا
+الدور إنه يجمع architecture وMLOps والقيادة التقنية.
+
+[10:08:41] [MAPPING_PROJETS_OFFRE] Avatar: مسيرتك واضحة ومتدرجة بشكل ممتاز. ذكرت إنك Lead Data Engineer في Orange
+Tunisie — وش أبرز مشروع حسّنت فيه تكلفة الـ cloud وفي نفس الوقت رفعت scalability للمنصة؟
+
+[10:11:27] [MAPPING_PROJETS_OFFRE] Candidate: كان عندنا setup on-prem قديم ومكلف وصعب في التوسع. أنا قدت migration
+تدريجية نحو AWS data lake باستخدام S3 للتخزين، وSpark للمعالجة، وAirflow للأوركسترايشن، وRedshift لبعض
+الاستخدامات التحليلية. رتبت طبقات raw وprocessed وcurated، وفعّلت partitioning على البيانات الأكثر استخداماً،
+وحطّيت lifecycle policies باتجاه Glacier. كذلك نقلنا بعض الـ jobs الثقيلة إلى Glue. النتيجة كانت تقريباً 35%
+تقليل في تكلفة الـ infrastructure خلال أول سنة، مع مرونة أعلى وقدرة أفضل على تحمل الضغط.
+
+[10:11:27] [VALIDATION_HARD_SKILLS] Avatar: ما شاء الله، 35% رقم قوي ويدل على أثر فعلي. كيف تأكدت من صحة هذا الرقم،
+وش كان دورك الشخصي في القرارات اللي أوصلتكم لهذي النتيجة؟
+
+[10:12:43] [VALIDATION_HARD_SKILLS] Candidate: أنا بدأت بـ audit كامل، وبعدها بنيت framework شهري لمتابعة تكلفة
+التخزين والـ compute واستهلاك الـ clusters. دوري ما كان تقني فقط، كان فيه تنسيق مع security وnetwork وfinance.
+أكثر القرارات تأثيراً كانت partitioning وسياسات الاحتفاظ وتنظيف البيئات وتحويل بعض المعالجات إلى Glue. وتابعنا
+النتائج عدة أشهر عشان ما نعتمد على رقم مؤقت أو مضلل.
+
+[10:12:43] [VALIDATION_HARD_SKILLS] Avatar: ذكرت أيضاً MLflow. كيف دمجته مع Airflow عشان ترفع traceability وتسوّي
+retraining بشكل آلي؟
+
+[10:14:33] [VALIDATION_HARD_SKILLS] Candidate: قبل MLflow كان فيه لخبطة: أحياناً النماذج تنرسل بالإيميل أو تنحفظ في
+shared drives، وما يكون واضح أي version اللي في production. طبّقت MLflow Tracking وModel Registry، واستخدمنا
+PostgreSQL للـ metadata وS3 للـ artifacts. بعدين ربطنا retraining داخل Airflow: تجهيز البيانات، training، logging
+للـ metrics، مقارنة مع الـ baseline الموجود في production، promotion إلى Staging، وبعدها Docker deployment إذا
+كانت الـ quality gates متحققة. أضفت retry policies وتنبيهات وgarde-fous تمنع نشر model ضعيف.
+
+[10:14:33] [SOFT_SKILLS_RH] Avatar: واضح إن عندك عمق تقني وتنظيمي. حدثني عن خلاف داخل فريقك، وكيف حولته من مشكلة
+إلى طريقة عمل أفضل؟
+
+[10:16:17] [SOFT_SKILLS_RH] Candidate: صار عندي خلاف بين مهندسين جونيور: واحد سريع جداً لكنه يتجاوز التوثيق
+والاختبارات، والثاني دقيق لكنه يبطئ التسليم. بدأت بجلسات فردية عشان أفهم وجهة نظر كل واحد، وبعدها جمعتهم في
+نقاش منظم بقواعد واضحة: ننتقد الـ code وليس الشخص. بعدها اتفقنا على definition of done مشتركة فيها حد أدنى من
+الاختبارات، والتوثيق يكون iterative. كمان فعّلت code reviews متبادلة. بعد فترة صار الأول أكثر انضباطاً والثاني
+أكثر pragmatique، وتحسن التعاون بشكل واضح.
+
+[10:16:17] [QUESTIONS_CANDIDAT] Avatar: ممتاز، هذا مثال عملي جداً. هل عندك أسئلة عن الوظيفة أو عن تنظيم الفريق؟
+
+[10:18:03] [QUESTIONS_CANDIDAT] Candidate: نعم، ودي أعرف التركيبة الدقيقة لفريق الـ data platform: كم عدد الـ Data
+Engineers، وهل فيه MLOps profiles، وكيف يتم توزيع المسؤوليات مع الـ Data Scientists؟
+
+[10:18:03] [QUESTIONS_CANDIDAT] Avatar: ما عندي هذي المعلومة الدقيقة الحين، وأفضّل أكون واضح بدل ما أعطيك جواب غير
+مؤكد. أقدر أسجل السؤال بحيث يجاوبك عليه الـ hiring manager بشكل أدق. هل عندك أسئلة ثانية عن الوظيفة أو الشركة؟
+
+[10:20:02] [CONCLUSION] Candidate: لا، شكراً، الأمور واضحة.
+
+[10:20:02] [CONCLUSION] Avatar: شكراً لك على وقتك. راح نراجع طلبك ونتواصل معك خلال أيام. نتمنى لك التوفيق!

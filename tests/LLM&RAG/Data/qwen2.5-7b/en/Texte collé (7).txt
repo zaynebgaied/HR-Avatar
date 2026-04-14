@@ -1,0 +1,98 @@
+Hello, and thank you for joining. This interview will last around 20 minutes and will cover four areas: your background, relevant projects, technical skills, and motivation. To get started, could you briefly introduce yourself — your education, career path, and the experiences that matter most to you?
+21:38 · joy
+👤
+hello and Thank you for having me.i' m karim , I’m a Data Engineer with around seven years of experience, currently working as a Lead Data Engineer at Orange Tunisia. I hold an engineering degree in Computer Science from École Polytechnique de Tunisie, and I’m certified in AWS and Google Cloud. I started my career as a Data Analyst at Tunisie Telecom, where I worked on data exploration and dashboards. I then moved to Capgemini as a Data Scientist, working on projects like credit scoring and NLP. Over the past few years, I’ve specialized in Data Engineering. I design and maintain data pipelines using Spark and Airflow, and I build scalable data platforms on AWS. I’ve also worked on deploying machine learning models into production, collaborating closely with data science teams. What matters most in my experience is building reliable and scalable data systems, while ensuring strong collaboration between engineering and data science to deliver real business value.
+21:39
+🤖
+And how did you use AWS in your previous projects?
+21:39 · en cours…
+👤
+In my previous projects, I used AWS as the core infrastructure for building and running data pipelines. I used S3 as the central data lake for storing raw, curated, and business datasets I ran Spark jobs on EMR for large-scale data processing and transformations For orchestration, I integrated pipelines with Airflow, triggering and monitoring EMR jobs I used IAM roles and policies to manage secure access between services I also leveraged CloudWatch for monitoring and logging, to track pipeline execution and detect issues In some cases, I used Glue Data Catalog for metadata management and schema discovery Overall, AWS allowed me to build a scalable, flexible, and decoupled data platform, where storage and compute could evolve independently.
+21:40
+🤖
+What motivated your choice of using S3 as the central data lake?
+21:40 · en cours…
+👤
+I chose S3 as the central data lake mainly for its scalability, flexibility, and integration with the AWS ecosystem. First, S3 provides virtually unlimited storage, which is ideal for growing data volumes without needing to manage infrastructure It fits well with a decoupled architecture, allowing storage and compute (like Spark on EMR) to scale independently It’s also cost-effective, especially with different storage classes and lifecycle policies S3 integrates seamlessly with tools like Spark, Airflow, and Glue, which simplified the overall architecture Finally, it supports schema-on-read, which is useful for handling heterogeneous and evolving data sources Overall, it enabled a scalable, flexible, and maintainable foundation for the data platform.
+21:41
+🤖
+Here is the next question: What specific benefits did you derive from using S3 as the central data lake, and how did it impact your overall architecture?
+21:41 · en cours…
+👤
+Using S3 as the central data lake brought several key benefits that directly shaped the architecture. First, it enabled a clear separation between storage and compute, so we could run Spark jobs on EMR independently and scale resources based on workload It provided high scalability and durability, allowing us to store large volumes of data without operational overhead It also improved cost efficiency, since we only paid for storage and could use lifecycle policies for older data From an architectural perspective, it allowed us to implement a layered data lake (raw, curated, business) with consistent storage and easy data access Finally, it integrated well with the ecosystem (Spark, Airflow, Glue), which simplified data ingestion, processing, and metadata management Overall, S3 became the foundation of a modular, scalable, and flexible data platform.
+21:42
+🤖
+Which of the JD technologies do you know best, and how have you applied it?
+21:42 · en cours…
+👤
+The technology I know best is Apache Spark on AWS. I’ve used it extensively to design and run large-scale data pipelines, mainly on EMR. In my current role, I use Spark for data ingestion, transformation, and aggregation across multiple sources. For example, I’ve built pipelines for analytics and machine learning use cases, where Spark handles feature engineering and large-scale transformations. I focused on optimizing performance through efficient partitioning, join strategies, and minimizing shuffles. These jobs are orchestrated with Airflow and rely on S3 as the storage layer, forming a scalable end-to-end pipeline. Overall, Spark has been my core tool for building scalable, efficient, and production-ready data pipelines.
+21:42
+🤖
+What is the average daily volume of data processed through your Spark pipelines on AWS?
+21:42 · en cours…
+👤
+On average, the pipelines process several terabytes of data per day, depending on the use case and data sources. Some pipelines handle smaller, incremental loads, while others—especially those aggregating logs or user activity—process larger volumes. The architecture is designed to scale, so we can handle increases in data without major changes to the system.
+21:44
+🤖
+What is the specific metric or KPI that measures the success of your Spark pipelines on AWS?
+21:44 · en cours…
+👤
+The main KPI I use is pipeline execution time relative to data volume processed. It measures how efficiently the pipeline scales as data grows—so not just how fast it runs, but how performance evolves with increasing volume. I complement this with: Job success rate, to ensure reliability Cost per job/run, to track efficiency on AWS Execution time stability, to ensure consistent performance over time Together, these KPIs give a clear view of performance, scalability, and reliability.
+21:45
+🤖
+Here is the next question: What specific metrics or KPIs do you use to measure the success of your Spark pipelines on AWS, and how do these metrics inform your optimization efforts?
+21:45 · en cours…
+👤
+I use a combination of performance, cost, and reliability KPIs, and I use them directly to guide optimization decisions. Performance metrics: Execution time and stage duration in Spark Data processed vs execution time to measure efficiency → If I see long stages or poor scaling, I optimize partitioning, joins, or reduce shuffles Cost metrics: Cost per job/run on EMR Resource utilization (CPU, memory) → Low utilization indicates over-provisioning, so I adjust cluster size or auto-scaling Reliability metrics: Job success/failure rate and retry frequency Execution time stability → Frequent failures or high variance lead me to improve error handling, data validation, or pipeline design These metrics allow me to take a data-driven approach, continuously refining pipelines to improve performance, cost-efficiency, and stability.
+21:47
+🤖
+On your most relevant project, which architectural decision did you personally own?
+21:47 · en cours…
+👤
+On my most relevant project, I personally owned the decision to implement a layered data lake architecture on AWS with a clear separation between storage and compute. I structured the platform into raw, curated, and business layers, each with a specific role, to improve data organization and quality control. I also chose to use S3 as the central storage layer and Spark on EMR for processing, instead of relying on a monolithic system. In addition, I enforced standard formats like Parquet, partitioning strategies, and incremental pipelines, to ensure scalability and performance from the start. This decision enabled a modular, scalable, and reliable architecture, making it easier to integrate new data sources and support different use cases while maintaining data quality and consistency.
+21:47
+🤖
+What was the most significant challenge you faced while implementing this layered data lake architecture, and how did you overcome it?
+21:47 · en cours…
+👤
+The most significant challenge was maintaining data consistency and trust across layers while integrating heterogeneous data sources. Different sources had varying schemas, quality levels, and update patterns, which made it difficult to keep the raw, curated, and business layers aligned without introducing inconsistencies. How I addressed it: I defined clear rules for each layer (raw = immutable, curated = standardized, business = stable) Implemented schema validation and versioning to control changes Used incremental and idempotent pipelines to ensure consistent updates Added data quality checks and reconciliation between layers to detect issues early Introduced validation gates, so only trusted data moved to the next layer This approach allowed me to build a system that remained reliable and consistent, while still being flexible enough to handle new data sources and changes.
+21:48
+🤖
+Here is the next question: How did you handle data inconsistencies and trust across layers while integrating heterogeneous data sources?
+21:48 · en cours…
+👤
+I handled data inconsistencies by combining strict validation, standardization, and controlled data movement between layers. First, I kept the raw layer immutable, so we always had a reliable source of truth In the curated layer, I applied schema standardization, deduplication, and business rules to unify data from different sources I implemented schema validation and versioning to manage changes safely Added data quality checks and validation gates between layers, so inconsistent data wouldn’t propagate I also used reconciliation checks like row counts and aggregates to detect anomalies between stages Finally, I ensured pipelines were idempotent and incremental, so we could safely reprocess data and maintain consistency over time This approach helped build data trust, ensuring that downstream users rely on consistent and validated datasets.
+21:49
+🤖
+Here is the next question: How did you ensure data quality and consistency across different layers?
+21:49 · en cours…
+👤
+I ensured data quality and consistency by applying controls at each layer and strict validation between layers. In the raw layer, I kept data immutable and close to the source, ensuring traceability In the curated layer, I applied cleaning, deduplication, and schema standardization to make data consistent I enforced schema validation and versioning to control changes across the pipeline Added data quality checks as validation gates between layers, so only trusted data moved forward I used reconciliation checks like row counts and aggregates to detect data loss or anomalies Ensured pipelines were idempotent and incremental, so reprocessing wouldn’t create inconsistencies This ensured that data remained accurate, consistent, and reliable from ingestion to consumption.
+21:50
+🤖
+What concrete metric did you achieve and how was it measured?
+21:50 · en cours…
+👤
+One concrete metric I achieved was an improvement in pipeline reliability, reflected by a higher job success rate. This was measured by tracking successful vs failed runs over time in Airflow, before and after implementing improvements like data validation gates, idempotent pipelines, and better error handling. I also monitored: Retry frequency, to ensure fewer recurring issues Execution time stability, to confirm more predictable runs These metrics showed that the pipelines became more stable and consistent in production.
+21:51
+🤖
+What failed in production and how did you respond?
+21:51 · en cours…
+👤
+One failure I faced in production was a pipeline breaking due to unexpected data format and schema changes from an upstream source. The job failed during transformation, and there was a risk of inconsistent data reaching downstream layers. How I responded: I immediately stopped downstream DAGs in Airflow to contain the impact Investigated logs and identified the issue as an unhandled schema change Fixed the pipeline to handle schema evolution more robustly Cleaned the impacted partitions and reprocessed the data safely thanks to idempotent logic After that, I improved the system by: Adding schema validation at ingestion Setting up alerts for schema drift Introducing data contracts with upstream teams This allowed faster detection and prevented similar issues in the future.
+21:52
+🤖
+Here is the next question: What did you learn from that failure, and how did you improve the system to prevent similar issues in the future?
+21:52 · en cours…
+👤
+The main lesson was that schema changes and data issues should be detected as early as possible, ideally at ingestion, not during transformation. I realized that relying only on downstream checks increases the risk of pipeline failures and data inconsistencies. What I improved: Added schema validation at ingestion to catch issues immediately Implemented schema versioning and controlled evolution Introduced data contracts with upstream teams to reduce unexpected changes Strengthened data quality checks and validation gates between layers Improved monitoring and alerting for faster detection This shifted the system from a reactive approach to a proactive one, making pipelines more robust and resilient to change.
+21:53
+🤖
+Give me a specific example of how you handled a disagreement with a colleague.
+21:53 · en cours…
+👤
+One example was during the design of a transformation pipeline. A colleague preferred to implement most transformations directly in SQL within the data warehouse, while I recommended using Spark on EMR for that layer. The disagreement was mainly about simplicity vs scalability.
+21:58
+🤖
+I appreciate the productive discussion we had about my experience and skills, particularly my work on data analysis at Tunisie Telecom. Thank you for your time. We will get back to you with feedback within the next few days.
+21:58 · en cours…

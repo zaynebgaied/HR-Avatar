@@ -1,0 +1,16 @@
+HR INTERVIEW — Anglais
+Date    : 2026-04-03 14:19:02
+Duration: 20 minutes
+RAG     : Hybrid BM25+Vector (alpha=0.6) + CrossEncoder=True + SemanticChunking=True
+
+[2026-04-03 14:21:57] [OPENING] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Hello, thank you for having me. I’m glad to be here.
+
+My name is Youssef Dridi. I hold a degree in Communication Sciences, and I have around 3 years of experience as a Community Manager in a communication agency, where I managed social media accounts for multiple clients, mainly in fashion, real estate, and food industries.
+
+In my current role, I’m responsible for content creation, social media management, and Meta Ads campaigns. I work on building content calendars, creating visuals using tools like Canva and CapCut, and managing paid campaigns with a performance mindset — tracking metrics like engagement, CTR, and CPC to optimize results.
+
+What motivated me to apply for this position is my desire to move from an execution-focused agency role to a more strategic, in-house marketing role, where I can contribute directly to brand growth and business performance.
+
+I’m particularly interested in your company because of its strong positioning in fashion and its fast-growing e-commerce presence, which aligns with my experience and also with the skills I’m currently developing, especially in performance marketing and analytics.
+
+I’d be happy to go into more detail about my experience or specific projects.

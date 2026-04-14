@@ -1,0 +1,73 @@
+Date    : 2026-03-24 13:41:02
+Langue  : Anglais
+Duree   : 10 minutes
+
+[2026-03-24 13:41:02] [INTRO_ETUDES] Avatar: Hello, thank you for joining this 10-minute interview.
+[2026-03-24 13:41:51] [INTRO_ETUDES] Candidate: hello thank you so much for this opportunity
+[2026-03-24 13:41:51] [INTRO_ETUDES] Avatar: Thank you Sonia! Can you tell me more about your academic background and how it led you to a career in HR?
+[2026-03-24 13:42:37] [MAPPING_PROJETS_OFFRE] Candidate: To help you test your Avatar RH system's ability to cross-reference academic history with career pivots, here is Sonia's response in English.
+
+This transcription simulates Whisper output with realistic disfluencies and "spoken" transitions. It connects her Bachelor’s in Business Administration to her Master’s in Human Resources, as detailed in her background.
+
+🎙️ Candidate Transcription (Sonia Mrad)
+"Uh... sure, I’d be happy to. So, it actually started during my Bachelor’s in Business Administration at the Faculty of Economics and Management in Sfax. Originally... um, I was focused on general management, but I became fascinated by how the 'human element' is actually the biggest variable in a company's success.
+
+That curiosity led me to pursue my Master’s in Human Resource Management. During those two years... I realized that HR shouldn't just be about 'admin' or payroll. I wanted to understand the strategic side—how to align people's talents with a company's vision.
+
+My academic background gave me the analytical tools... like statistics and organizational behavior... which later helped me pass the SHRM-CP certification. It really taught me to look at HR through a data-driven lens. So... moving into this career felt like a natural progression from studying how businesses work to actually managing the people who make them work.
+[2026-03-24 13:42:37] [MAPPING_PROJETS_OFFRE] Avatar: Great, thank you Sonia for sharing that journey with us. Can you now tell me about one of your key projects where you implemented an HRIS system or managed a significant digital transformation initiative? How did this project impact the organization and what were the key challenges you faced?
+[2026-03-24 13:43:15] [VALIDATION_HARD_SKILLS] Candidate: Uh... yes, absolutely. One of the most significant digital transformation projects I managed was at Leoni, specifically for the three sites in Sfax. When I arrived... we were still using very manual, paper-based processes for performance reviews and onboarding.
+
+I led the implementation of SAP SuccessFactors for over four hundred and fifty collaborators. The goal was to centralize everything—from talent acquisition to the MBO tracking we discussed earlier. It was a massive shift.
+
+The biggest challenge... um, it wasn't the software itself, it was the 'change management.' Some of the older managers were very resistant to using a digital platform for evaluations. They felt it was 'too cold' or too complex. To solve this... I organized small workshops for twenty-five managers at a time to show them how the data could actually save them hours of paperwork.
+
+In the end... it was a huge success. We reached a ninety-four percent satisfaction rate from the employees. It didn't just 'digitalize' the office... it actually made our HR department a partner in the business because we finally had real-time Power BI dashboards to show the leadership exactly where our talent gaps were.
+[2026-03-24 13:43:15] [VALIDATION_HARD_SKILLS] Avatar: Thank you for sharing that project, Sonia. Can you elaborate on the specific challenges you faced during the change management process and how you overcame them? How did this digital transformation impact the organizational culture at Leoni?
+[2026-03-24 13:43:56] [SOFT_SKILLS_RH] Candidate: Uh... so, the change management was definitely the most... um, the most delicate part of the project at Leoni. The main challenge was what I call 'digital anxiety.' Many of our long-term supervisors in Sfax were used to their notebooks and Excel sheets. They feared that SAP SuccessFactors would make their jobs more rigid or that they would lose the 'human touch' in evaluations.
+
+To overcome this... I didn't just send an email with a manual. I implemented a 'Champion Program.' I identified five influential managers who were tech-savvy and trained them first. When their peers saw them saving time... it created a positive peer pressure. I also held 'Open-Door Friday' sessions where anyone could come to my office with their laptop and we would walk through the system together.
+
+Regarding the culture... it was a total shift. Before... information was siloed. After the transformation... we had a culture of transparency. Because the MBO goals were visible in the system, employees felt the process was fairer. It moved us away from a 'command and control' style to a more collaborative environment. It really proved to the leadership that digital tools, when handled with empathy, actually strengthen the bond between the employee and the company.
+[2026-03-24 13:43:56] [SOFT_SKILLS_RH] Avatar: Can you share some specific challenges you faced during the change management process at Leoni and how you overcame them? How did this digital transformation impact the organizational culture at Leoni?
+[2026-03-24 13:44:29] [QUESTIONS_CANDIDAT] Candidate: Uh... so, the change management was definitely the most... um, the most delicate part of the project at Leoni. The main challenge was what I call 'digital anxiety.' Many of our long-term supervisors in Sfax were used to their notebooks and Excel sheets. They feared that SAP SuccessFactors would make their jobs more rigid or that they would lose the 'human touch' in evaluations.
+
+To overcome this... I didn't just send an email with a manual. I implemented a 'Champion Program.' I identified five influential managers who were tech-savvy and trained them first. When their peers saw them saving time... it created a positive peer pressure. I also held 'Open-Door Friday' sessions where anyone could come to my office with their laptop and we would walk through the system together.
+
+Regarding the culture... it was a total shift. Before... information was siloed. After the transformation... we had a culture of transparency. Because the MBO goals were visible in the system, employees felt the process was fairer. It moved us away from a 'command and control' style to a more collaborative environment. It really proved to the leadership that digital tools, when handled with empathy, actually strengthen the bond between the employee and the company.
+[2026-03-24 13:44:29] [QUESTIONS_CANDIDAT] Avatar: Do you have any questions about the role or the company?
+[2026-03-24 13:46:36] [CONCLUSION] Candidate: To wrap up the simulation of Sonia Mrad's interview for your Avatar RH project, here is her final response in English.
+
+This transcription includes Whisper-style markers (fillers, slight grammatical shifts like "these role," and phonetic number spellings) to help you test if your RAG system can extract "Candidate Questions" as a specific intent.
+
+🎙️ Candidate Transcription (Sonia Mrad)
+"Uh... yes, actually, I have two or three questions. First, regarding the modernization goals for the GCT in Sfax... how does the leadership plan to integrate AI or automation into the daily HR operations over the next two years? I’m very interested in how my experience with SAP SuccessFactors and data analytics can support that vision.
+
+Second... I noticed the job offer mentions a 'Group HRD' perspective for the future. Could you tell me more about the typical career path for a Regional HR Manager within the company?
+
+And finally... uh, regarding the factory floor teams... what is the biggest challenge the site managers are facing right now with the current MBO system? I want to make sure my approach to 'Strategic Sourcing' can solve their immediate pain points. Thank you... I really appreciate the time you took today to discuss these role with me
+[2026-03-24 13:46:36] [CONCLUSION] Avatar: Pouvez-vous reformuler votre reponse ?
+[2026-03-24 13:47:47] [CONCLUSION] Candidate: Uh... yes, actually, I have two or three questions. First, regarding the modernization goals for the GCT in Sfax... how does the leadership plan to integrate AI or automation into the daily HR operations over the next two years? I’m very interested in how my experience with SAP SuccessFactors and data analytics can support that vision.
+
+Second... I noticed the job offer mentions a 'Group HRD' perspective for the future. Could you tell me more about the typical career path for a Regional HR Manager within the company?
+
+And finally... uh, regarding the factory floor teams... what is the biggest challenge the site managers are facing right now with the current MBO system? I want to make sure my approach to 'Strategic Sourcing' can solve their immediate pain points. Thank you... I really appreciate the time you took today to discuss these role with me.
+[2026-03-24 13:47:47] [CONCLUSION] Avatar: Of course, here’s how the recruiter might respond:
+
+For the integration of AI and automation in daily HR operations over the next two years: The leadership plans to leverage AI for candidate sourcing and matching, automating routine HR tasks like payroll processing, and using data analytics to inform talent development strategies. For your experience with SAP SuccessFactors and data analytics, we would look at how you can help streamline processes and improve data insights.
+
+Regarding the career path of a Regional HR Manager: Typically, after several years in regional roles, there is an opportunity for advancement into Group-level positions such as Group HR Director or Head of Human Resources. We support professional growth through internal training programs and mentorship opportunities.
+
+For the challenges faced by factory floor teams with the current MBO system: The main issue highlighted is a lack of visibility on supplier performance metrics across different factories, leading to inconsistent quality control measures. Your expertise in Strategic Sourcing could indeed help address this by establishing more comprehensive and transparent reporting mechanisms.
+[2026-03-24 13:56:25] [CONCLUSION] Candidate: That sounds like a perfect alignment with my expertise. Regarding the AI integration... I'm particularly excited about the prospect of automating payroll and sourcing, as it would allow the HR team in Sfax to focus more on high-value talent development. My experience with SAP SuccessFactors will definitely help us streamline those routine tasks and get cleaner data insights.
+
+It’s also very encouraging to hear about the Group HRD career path and the mentorship programs. I've always aimed for long-term growth within an organization.
+
+And about the factory floor challenges... the lack of visibility on supplier performance is a critical point. I’ve seen how inconsistent metrics can hurt quality control. I am confident that by implementing a more transparent reporting system through the MBO framework, we can bridge those gaps between the different factories. Thank you again... I’m really looking forward to the possibility of helping GCT with this modernization.
+[2026-03-24 13:56:25] [CONCLUSION] Avatar: Pouvez-vous reformuler votre reponse ?
+[2026-03-24 13:57:39] [CONCLUSION] Candidate: That sounds like a perfect alignment with my professional goals. Regarding the integration of AI... I am particularly excited about the prospect of automating sourcing and payroll. This would allow the HR team in Sfax to shift their focus toward high-value talent development. My experience with SAP SuccessFactors will definitely be an asset in streamlining these tasks and generating more accurate data insights.
+
+It is also very encouraging to hear about the potential career path toward a Group HRD role and the availability of mentorship programs. I have always prioritized long-term growth within an organization.
+
+Finally, regarding the challenges on the ground... the lack of visibility on supplier performance is a critical issue. I have seen how inconsistent metrics can negatively impact quality control. I am confident that by establishing a transparent reporting system within the MBO framework, we can harmonize processes across the different factories. Thank you again... I am truly looking forward to the possibility of supporting GCT in its modernization journey.
+[2026-03-24 13:57:39] [CONCLUSION] Avatar: Pouvez-vous reformuler votre reponse ?

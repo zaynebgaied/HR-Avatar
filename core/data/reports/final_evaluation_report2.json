@@ -1,0 +1,22 @@
+{
+    "score_technique": 8,
+    "score_communication": 7,
+    "competences_detectées": [
+        "Connaissance approfondie en Data Engineering",
+        "Expérience avec LLM et RAG",
+        "Compétence en Sentiment Analysis",
+        "Maîtrise des modèles Transformer",
+        "Capacité à mesurer la performance du STT"
+    ],
+    "lacunes_identifiées": [
+        "Manque de détails sur l'utilisation du reranker CrossEncoder dans le projet avec LLM et RAG",
+        "Pas d'explication sur la méthodologie pour privilégier des discussions techniques basées sur des métriques objectives lors de la gestion des conflits"
+    ],
+    "analyse_motivation": "La candidate semble motivée par les technologies avancées, notamment l'intelligence artificielle et le traitement du langage naturel. Elle montre un intérêt pour les applications pratiques de ces technologies dans le cadre d'un projet RH interactif.",
+    "points_forts": [
+        "Connaissance en Data Engineering",
+        "Expérience avec des projets avancés comme LLM et RAG",
+        "Capacité à implémenter des systèmes complexes basés sur l'IA"
+    ],
+    "verdict_final": "A REVOIR"
+}

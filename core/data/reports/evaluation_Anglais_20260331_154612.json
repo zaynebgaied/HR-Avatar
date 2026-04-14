@@ -1,0 +1,60 @@
+{
+    "meta": {
+        "date_entretien": "2026-03-31 15:39:27",
+        "langue": "Anglais",
+        "duree": "N/A",
+        "date_rapport": "2026-03-31 15:43:57",
+        "source_interview": "data/interview_20260331_153923.txt"
+    },
+    "scores_par_phase": {
+        "presentation_parcours": {
+            "obtenu": 8,
+            "max": 10,
+            "commentaire": "Candidate provided a clear and concise background but could have elaborated more on specific achievements."
+        },
+        "pertinence_projets": {
+            "obtenu": 16,
+            "max": 20,
+            "commentaire": "Candidate demonstrated good understanding of project relevance to the position but lacked depth in some areas."
+        },
+        "competences_techniques": {
+            "obtenu": 35,
+            "max": 40,
+            "commentaire": "Candidate showed strong technical skills with Spark and Airflow but could have provided more specific examples of optimization techniques."
+        },
+        "soft_skills_culture_fit": {
+            "obtenu": 18,
+            "max": 20,
+            "commentaire": "Candidate demonstrated good teamwork and communication skills but needs to show a deeper understanding of the company culture."
+        },
+        "curiosite_motivation": {
+            "obtenu": 9,
+            "max": 10,
+            "commentaire": "Candidate expressed strong motivation for the role but could have shown more enthusiasm about specific aspects of InnovateTech."
+        }
+    },
+    "score_technique": 72,
+    "score_communication": 85,
+    "score_global": 79,
+    "competences_detectees": [
+        "Data pipeline design",
+        "Spark and Airflow",
+        "Team collaboration"
+    ],
+    "lacunes_identifiees": [
+        "Lack of detailed examples in technical optimizations",
+        "Insufficient understanding of company culture fit"
+    ],
+    "analyse_motivation": "Candidate's motivation is strong but could be more specific to InnovateTech’s mission.",
+    "analyse_soft_skills": "Candidate demonstrated good soft skills, particularly in teamwork and communication, but needs to show a deeper alignment with the company culture.",
+    "points_forts": [
+        "Strong technical background",
+        "Good team collaboration experience"
+    ],
+    "points_amelioration": [
+        "Provide more detailed examples of technical optimizations",
+        "Show a stronger fit with InnovateTech’s culture"
+    ],
+    "verdict_final": "A REVOIR",
+    "recommandation_detail": "Candidate shows promise but requires further development in specific areas. Additional training or follow-up interviews could help address identified gaps."
+}

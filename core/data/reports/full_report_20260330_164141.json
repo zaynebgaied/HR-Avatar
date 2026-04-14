@@ -1,0 +1,89 @@
+{
+  "date": "2026-03-30 16:41",
+  "langue": "Anglais",
+  "duree_minutes": 20,
+  "meta": {
+    "date_entretien": "2026-03-30 16:16:21",
+    "langue": "Anglais",
+    "duree": "20 minutes",
+    "date_rapport": "2026-03-30 16:38:09",
+    "source_interview": "C:\\internship_spark\\core\\data\\interview_20260330_161621.txt"
+  },
+  "phases": [],
+  "score_total": 0,
+  "score_max": 100,
+  "pourcentage": 0,
+  "scores_par_phase": {
+    "presentation_parcours": {
+      "obtenu": 7,
+      "max": 10,
+      "statut": "ÉVALUÉ",
+      "commentaire": "Candidate provided a solid background but could have elaborated more on her experiences."
+    },
+    "pertinence_projets": {
+      "obtenu": 15,
+      "max": 20,
+      "statut": "ÉVALUÉ|NON ÉVALUÉ",
+      "commentaire": "Candidate discussed the use of Spark and EMR but did not provide details on specific challenges or solutions."
+    },
+    "competences_techniques": {
+      "obtenu": 18,
+      "max": 25,
+      "statut": "ÉVALUÉ|NON ÉVALUÉ",
+      "commentaire": "Candidate demonstrated knowledge of Spark and EMR but lacked details on specific challenges. | <NON ÉVALUÉ: Curiosité & Motivation>"
+    },
+    "soft_skills_culture_fit": {
+      "obtenu": 20,
+      "max": 30,
+      "statut": "ÉVALUÉ",
+      "commentaire": "Candidate appeared confident and professional but could have provided more examples of how she integrates with team dynamics."
+    },
+    "curiosite_motivation": {
+      "obtenu": 0,
+      "max": 15,
+      "statut": "NON ÉVALUÉ",
+      "commentaire": "Candidate did not discuss her motivation or curiosity about the role."
+    }
+  },
+  "score_technique": 62,
+  "score_communication": 73,
+  "score_global": 68,
+  "competences_detectees": [
+    "Spark",
+    "EMR",
+    "Data Lake"
+  ],
+  "lacunes_identifiees": [
+    "Lack of specific challenges and solutions in technical projects — LACUNE AVÉRÉE",
+    "No discussion on motivation or curiosity — NON ÉVALUÉ"
+  ],
+  "analyse_motivation": "Candidate appeared motivated but did not provide concrete examples of how she would contribute to the team's goals.",
+  "analyse_soft_skills": "Candidate demonstrated good communication skills but could have provided more context on her ability to work in a team environment.",
+  "points_forts": [
+    "Solid technical background",
+    "Professional and confident demeanor"
+  ],
+  "points_amelioration": [
+    "Provide specific examples of challenges faced and solutions implemented",
+    "Discuss motivation and curiosity about the role"
+  ],
+  "verdict_final": "À COMPLÉTER",
+  "recommandation_detail": "Candidate showed strong technical skills but lacked depth in discussing specific projects. A second interview would be recommended to explore her motivation and provide more context on her experiences.",
+  "recommandation": "",
+  "sources_rag": {
+    "cv": [
+      "cv.pdf"
+    ],
+    "job_offer": [
+      "offre.pdf"
+    ],
+    "company_info": []
+  },
+  "analyse_emotion_vision": {
+    "disponible": true,
+    "timeline": [],
+    "emotion_dominante": "neutre",
+    "pics_stress": [],
+    "evolution": []
+  }
+}

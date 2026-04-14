@@ -1,0 +1,60 @@
+{
+  "admin": {
+    "id": "56586ba8-87b8-40bd-97c6-b101618db3b6",
+    "name": "Administrateur",
+    "email": "admin@rh.local",
+    "password": "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
+    "role": "admin",
+    "created_at": "2026-04-12T22:04:34.024341",
+    "last_login": "2026-04-14T10:42:53.641900",
+    "login_history": [
+      {
+        "at": "2026-04-12T22:04:34.025991",
+        "ok": true
+      },
+      {
+        "at": "2026-04-14T10:05:01.511143",
+        "ok": true
+      },
+      {
+        "at": "2026-04-14T10:17:37.188707",
+        "ok": true
+      },
+      {
+        "at": "2026-04-14T10:37:56.112348",
+        "ok": true
+      },
+      {
+        "at": "2026-04-14T10:40:53.841326",
+        "ok": true
+      },
+      {
+        "at": "2026-04-14T10:42:53.641900",
+        "ok": true
+      }
+    ],
+    "is_blocked": false,
+    "session_id": null,
+    "session_status": "en_attente",
+    "poste": null,
+    "langue": null,
+    "duree": null,
+    "scheduled_at": null,
+    "scheduled_window_min": 30,
+    "access_token": null,
+    "cv_file": null,
+    "offre_file": null,
+    "report_file": null,
+    "report_read_at": null,
+    "rh_comment": "",
+    "decision_rh": "",
+    "notifications": [
+      {
+        "type": "new_candidate",
+        "message": "👤 Nouveau candidat inscrit : zayneb_gaied (@zayneb)",
+        "at": "2026-04-12T22:05:10.044173",
+        "read": true
+      }
+    ]
+  }
+}

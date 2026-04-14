@@ -1,0 +1,148 @@
+HR INTERVIEW — Anglais
+Date    : 2026-04-03 16:45:22
+Duration: 20 minutes
+RAG     : Hybrid BM25+Vector (alpha=0.6) + CrossEncoder=True + SemanticChunking=True
+
+[2026-04-03 16:48:53] [OPENING] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Hello, thank you for having me. I’m glad to be here.
+
+My name is Youssef Dridi. I hold a degree in Communication Sciences, and I have around 3 years of experience as a Community Manager in a communication agency, where I managed social media accounts for multiple clients, mainly in fashion, real estate, and food industries.
+
+In my current role, I focus on content creation, social media management, and Meta Ads campaigns. I build content calendars, create visuals using tools like Canva and CapCut, and manage paid campaigns with a performance mindset — tracking metrics like CTR, CPC, and engagement to continuously optimize results.
+
+What motivated me to apply for this position is my desire to move from an execution-focused agency role to a more strategic, in-house marketing role, where I can contribute more directly to brand growth and business performance.
+
+I’m particularly interested in your company because of its strong positioning in fashion and its growing e-commerce presence, which aligns with my experience and also with the skills I’m currently developing, especially in performance marketing and analytics.
+
+I’d be happy to go into more detail about my experience or specific projects.
+[2026-04-03 16:49:08] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you provide an example of a successful Meta Ads campaign you managed and how you optimized it to improve performance metrics?
+[2026-04-03 16:50:25] [JOB_ALIGNED_EXPLORATION] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=['understatement']]: Of course.
+
+One example is a Meta Ads campaign I managed for a fashion client during a collection launch.
+
+At the beginning, performance was average, with a CTR around 1% and relatively high CPC. To improve it, I refined the audience targeting, introduced more engaging creatives like Reels and lifestyle visuals, and ran A/B tests to compare different formats and segments. Based on the results, I reallocated budget to the best-performing ad sets.
+
+As a result, CTR increased to around 1.5%+, CPC decreased, and engagement improved by about 30–35%.
+
+This showed the impact of a data-driven approach combining testing, analysis, and continuous optimization.
+[2026-04-03 16:50:35] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: On that note, was that improvement considered significant in your previous role, given the initial low performance metrics?
+[2026-04-03 16:51:03] [JOB_ALIGNED_EXPLORATION] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=['understatement']]: Yes, it was considered significant in that context.
+
+Given the initial performance and the relatively limited budget, increasing CTR from around 1% to over 1.5% — which is about a 50% improvement — was a strong result. At the same time, reducing CPC and increasing engagement by around 30–35% showed that the campaign became both more efficient and more effective.
+
+So overall, it was not just an improvement in one metric, but a consistent positive impact across multiple KPIs, which made it meaningful from a performance perspective.
+[2026-04-03 16:51:15] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you walk me through the specific strategies or changes you implemented to achieve that significant improvement in CTR and CPC?
+[2026-04-03 16:51:46] [JOB_ALIGNED_EXPLORATION] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: Of course.
+
+To achieve that improvement, I focused on three main areas: targeting, creatives, and budget optimization.
+
+First, on targeting, I refined the audience by narrowing down interests and demographics to better match the ideal customer profile. This helped improve relevance, which directly impacted CTR.
+
+Second, on creatives, I replaced static visuals with more engaging formats like Reels and lifestyle content. I also tested different variations — visuals and messaging — to identify what attracted more attention.
+
+Third, I applied a test-and-learn approach:
+
+I ran A/B tests on creatives and audiences
+Monitored metrics like CTR and CPC
+Then reallocated budget to the best-performing ad sets
+
+By combining better targeting, stronger creatives, and continuous optimization, we were able to increase CTR and reduce CPC at the same time.
+[2026-04-03 16:52:00] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: How was this measured and implemented?
+[2026-04-03 16:56:31] [JOB_ALIGNED_EXPLORATION] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=['understatement']]: Good question.
+
+It was measured directly in Meta Ads Manager, using a before-and-after comparison within the same campaign.
+
+First, I established a baseline from the initial performance:
+
+CTR around 1%
+Higher CPC
+
+Then, after implementing the changes (targeting refinement, new creatives, A/B tests), I monitored the same metrics:
+
+CTR
+CPC
+Engagement
+
+In terms of implementation:
+
+I created separate ad sets for different audiences
+Launched multiple creative variations at the same time
+Let them run for a few days to collect data
+Then I analyzed performance per ad set and per creative
+
+Based on the results:
+
+I paused underperforming ads
+Increased budget on the best-performing ones
+[2026-04-03 16:56:43] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Was that improvement in CTR and CPC also reflected in higher engagement metrics such as impressions and clicks?
+[2026-04-03 16:57:15] [JOB_ALIGNED_EXPLORATION] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: Yes, it was reflected in other engagement metrics as well.
+
+As CTR improved, we naturally saw an increase in clicks, since a higher percentage of users who saw the ad were interacting with it.
+
+At the same time, because we were reallocating budget to better-performing ad sets, the campaign became more efficient, which helped maintain or slightly improve impressions without increasing the budget.
+
+We also observed:
+
+More link clicks
+Higher post engagement (likes, comments, shares)
+
+So the improvement wasn’t isolated to CTR and CPC — it had a positive impact on overall campaign engagement and visibility, which confirmed that the optimization was effective.
+[2026-04-03 16:57:27] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you provide specific numbers for the increase in link clicks and post engagement after implementing these changes on Canva?
+[2026-04-03 16:58:05] [JOB_ALIGNED_EXPLORATION] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=['understatement']]: Yes, of course.
+
+After implementing the changes, we observed a clear increase in both link clicks and post engagement.
+
+Link clicks increased by approximately +25–30% compared to the initial phase of the campaign
+Post engagement (likes, comments, shares) increased by around +30–35%
+
+These improvements were measured using Meta Ads Manager and Meta Business Suite, by comparing the performance before and after optimization, while keeping a similar budget.
+
+So overall, the improvements in CTR and CPC were consistent with higher user interaction and traffic, which confirmed that the campaign was performing better across multiple metrics.
+[2026-04-03 16:58:20] [PROJECT_DEEP_DIVE] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: How did you measure the post engagement specifically, and can you provide any numbers for likes, comments, and shares before and after your optimizations?
+[2026-04-03 16:58:56] [PROJECT_DEEP_DIVE] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=['understatement']]: Yes, of course.
+
+Post engagement was measured using Meta Business Suite, where I tracked total interactions broken down into likes, comments, and shares.
+
+For example, on average per post:
+
+Before optimization:
+Likes: around 80–100
+Comments: around 5–8
+Shares: around 3–5
+After optimization:
+Likes: around 110–140
+Comments: around 8–12
+Shares: around 6–8
+
+These numbers were based on comparing posts from a similar period with the same posting frequency and budget.
+[2026-04-03 16:59:07] [SOFT_SKILLS_BEHAVIORAL] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Was that increase in engagement considered significant for your client's goals at the time?
+[2026-04-03 16:59:38] [SOFT_SKILLS_BEHAVIORAL] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=['understatement']]: Yes, it was considered significant for the client’s goals at that time.
+
+The main objective of the campaign was to increase engagement and visibility for the new collection, rather than immediate conversions. In that context, seeing consistent improvements across all interaction metrics — likes, comments, and especially shares — was very positive.
+
+For example, moving from around 80–100 likes to 110–140, and doubling shares from 3–5 to 6–8, showed that the content was not only being seen but also actively interacted with and distributed.
+
+From the client’s perspective, this meant:
+
+Better brand visibility
+More interest in the collection
+Stronger audience engagement
+
+So yes, given the campaign objectives and budget, the results were considered both relevant and meaningful
+[2026-04-03 16:59:52] [SOFT_SKILLS_BEHAVIORAL] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you provide specific examples of how you measured the increase in brand visibility and audience engagement before and after your optimizations on Canva?
+[2026-04-03 17:00:31] [SOFT_SKILLS_BEHAVIORAL] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=['understatement']]: Yes, of course.
+
+To measure the increase in brand visibility and audience engagement, I used data from Meta Business Suite and Instagram Insights, comparing performance before and after the optimizations.
+
+1. Brand visibility (Reach & Impressions):
+
+Before optimization:
+Reach per post: around 2,000–2,500 users
+After optimization:
+Reach increased to حوالي 2,800–3,200 users
+
+This showed that more people were exposed to the content.
+[2026-04-03 17:00:31] [CANDIDATE_QUESTIONS] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Before we move to the end, do you have any questions about the role, the team, or the hiring process?
+[2026-04-03 17:01:01] [CANDIDATE_QUESTIONS] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: Yes, thank you.
+
+What would be the main KPIs used to evaluate success in this role, especially in terms of both campaign performance and business impact?
+[2026-04-03 17:01:12] [CANDIDATE_QUESTIONS] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you provide more details on how you would approach defining these KPIs for a new campaign?

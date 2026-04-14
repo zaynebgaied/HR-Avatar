@@ -1,0 +1,368 @@
+HR INTERVIEW — Arabe
+Date    : 2026-04-05 11:53:38
+Duration: 20 minutes
+[2026-04-05 11:57:11] [OPENING] Candidate [quality=STRONG] [behavioral=False] [decision=False] [weak_signals=[]]: هلا، يعطيكم العافية
+
+أنا كريم، Data Engineer وعندي تقريباً 7 سنوات خبرة في مجال data engineering وmachine learning pipelines. متخرج مهندس في الإعلامية من École Polytechnique de Tunisie
+
+حالياً أشتغل كـ Lead Data Engineer في Orange تونس، وأشتغل بشكل أساسي على تصميم وmaintenance لـ ETL pipelines باستخدام tools مثل Apache Spark وAirflow، ونتعامل مع حجم بيانات يوصل تقريباً 5TB يومياً
+
+اشتغلت أيضاً على بناء data lake architecture على AWS باستخدام S3 وRedshift، ونجحنا نقلل التكاليف بحوالي 35%، وهذا كان جزء مهم من شغلي في cloud optimization
+
+بالإضافة لذلك، عندي experience في ML productionization، حيث اشتغلت مع data scientists لنشر models باستخدام MLflow وDocker، واشتغلت على use case مثل churn prediction model بأداء عالي
+
+قبلها كان عندي تجربة كـ Data Scientist في Capgemini، اشتغلت على مشاريع مثل credit scoring باستخدام XGBoost وfeature engineering، وهذا عطاني understanding قوي للـend-to-end data lifecycle
+
+اللي دفعني أقدم على هذا الدور هو أني مهتم أشتغل في بيئة تركز على scalable data platforms وDataOps practices، وأشوف أن الدور فيه تركيز واضح على cloud (AWS)، orchestration، وindustrialisation of data pipelines، وهذا يتماشى جداً مع خبرتي الحالية وأهدافي المهنية إني أطور نفسي أكثر في بناء robust وproduction-grade data systems
+[2026-04-05 11:58:09] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: كيف قياس حجم البيانات اللي بتعامل معاها يوميًا في شركة أورانج تونس؟ وش المعايير اللي استخدموها لي
+
+شوف حجم البيانات اللي بتعامل معاها يوميًا في شركة أورانج تونس كم هو؟ وش المعايير اللي استخدموها ليحددو حجم البيانات اليومي؟
+[2026-04-05 11:58:56] [JOB_ALIGNED_EXPLORATION] Candidate [quality=STRONG] [behavioral=False] [decision=False] [weak_signals=['understatement']]: سؤال ممتاز، وهذا يبين فهمك للـdata engineering metrics 👌
+
+في تجربتي (مثلاً في Orange)، لما نقول إننا نتعامل مع 5TB يومياً، هذا الرقم ما يكون تقدير عشوائي، بل مبني على metrics واضحة داخل الـdata pipeline
+
+أول معيار أساسي هو data volume processed per day
+وهذا نقيسه عن طريق
+
+حجم البيانات الداخلة من المصادر (logs, transactions, events)
+حجم البيانات بعد المعالجة داخل الـpipeline
+
+عادة يتم قياسه بوحدة مثل
+GB أو TB يومياً
+
+ثاني معيار مهم هو throughput
+يعني كم كمية البيانات اللي يعالجها النظام خلال فترة زمنية معينة (مثلاً per hour أو per minute)
+وهذا يساعدنا نفهم القدرة الحقيقية للـpipeline
+
+ثالث شيء نستخدمه هو data ingestion metrics
+نراقب عدد الـrecords أو الملفات اللي تدخل يومياً من كل source
+مثلاً
+
+عدد rows processed
+أو عدد events per day
+
+وهذا يعطينا صورة دقيقة عن حجم البيانات الفعلي
+
+كذلك نستخدم monitoring tools (مثل Airflow logs أو AWS monitoring) عشان نجمع:
+
+execution logs
+حجم البيانات في S3 أو data lake
+وعدد jobs اللي تشتغل يومياً
+
+ومن ناحية المنهجية
+نحدد baseline
+يعني مثلاً
+pipeline يعالج X TB يومياً
+وبعدها نراقب أي deviation أو زيادة
+
+بشكل عام، تحديد حجم البيانات اليومي يعتمد على combination من:
+
+data volume (TB/day)
+throughput (data per time unit)
+number of records/events
+
+وهذه كلها تعتبر من أهم metrics في data pipeline monitoring لأنها تعكس قدرة النظام وكفاءته
+[2026-04-05 11:59:29] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: أعطني مثالاً عملياً على استخدامك لإحدى التقنيات الأساسية في هذا الدور؟
+[2026-04-05 11:59:55] [JOB_ALIGNED_EXPLORATION] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: أكيد
+
+خليني أعطيك مثال عملي من تجربتي في Orange باستخدام تقنية أساسية في الدور وهي Apache Airflow orchestration
+
+كان عندنا use case لمعالجة بيانات العملاء بشكل يومي من عدة sources (billing systems, network logs)، وكان الهدف هو بناء ETL pipeline scalable وautomated
+
+اللي سويته هو تصميم pipeline باستخدام Airflow DAGs بحيث:
+
+نبدأ بـ data ingestion من sources مختلفة
+بعدها مرحلة data processing باستخدام Apache Spark
+ثم تحميل البيانات إلى data lake على AWS S3 وRedshift
+
+ركّزت على تقسيم الـpipeline إلى modular tasks
+بحيث كل task يكون مستقل (extract, transform, load)، وهذا سهل علينا الـdebugging والـmaintenance
+
+كمان طبقت retry logic وmonitoring داخل Airflow
+يعني لو task فشل، يتم إعادة تشغيله تلقائياً، مع logging واضح لكل خطوة
+
+من ناحية النتائج
+
+قدرنا نضمن data availability بشكل يومي بدون manual تدخل
+وقللنا وقت المعالجة بفضل parallel processing في Spark
+وحسّنا reliability للـpipeline بشكل كبير
+
+الأهم من ذلك، أن الـpipeline كان يعالج حجم كبير من البيانات (عدة TB يومياً) بشكل stable، وهذا يتماشى مع متطلبات scalable data systems
+
+التقنية هنا مو بس Airflow أو Spark بشكل منفصل، لكن كيف نربطهم مع بعض في end-to-end data pipeline يخدم business use case بشكل عملي
+[2026-04-05 12:00:32] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: كيف قيمت الأداء disso البايلينج من ناحية الأداء والموثوقية، وش القرارات الإستراتيجية اللي اتخدها لضمان استدامة معالجة البيانات الكبيرة كل يوم؟؟
+[2026-04-05 12:01:04] [JOB_ALIGNED_EXPLORATION] Candidate [quality=STRONG] [behavioral=False] [decision=False] [weak_signals=['understatement']]: لتقييم أداء الـdata pipeline من ناحية performance وreliability، كنت أتعامل معها باستخدام مجموعة من technical metrics + monitoring practices
+
+من ناحية performance
+كنت أركز على:
+
+execution time لكل pipeline أو لكل task داخل Airflow
+throughput يعني كمية البيانات اللي تتم معالجتها خلال وقت معين
+واستهلاك الموارد مثل CPU وmemory في Spark jobs
+
+إذا لاحظت أن execution time يزيد أو فيه bottleneck، أبدأ أراجع
+
+partitioning في Spark
+أو طريقة كتابة transformations (optimizing joins, caching)
+
+أما من ناحية reliability
+كنت أتابع:
+
+failure rate للـjobs
+عدد الـretries
+ونجاح الـruns اليومية بدون تدخل يدوي
+
+واستخدمت Airflow monitoring + logs عشان أتابع كل pipeline بشكل يومي
+
+بالنسبة للقرارات الاستراتيجية لضمان الاستدامة
+
+أول قرار كان تصميم pipeline بشكل modular وdecoupled
+بحيث إذا صار فشل في جزء معين، ما يوقف كل النظام
+
+ثاني شيء تطبيق retry mechanisms + alerting
+يعني أي failure يتم التعامل معه تلقائياً، وإذا استمر يطلع alert للفريق
+
+ثالث قرار كان استخدام scalable architecture على AWS
+مثل S3 للتخزين وSpark للمعالجة
+عشان نقدر نتعامل مع زيادة حجم البيانات بدون إعادة تصميم كامل للنظام
+
+كذلك اشتغلت على data partitioning وincremental processing
+بدل ما نعيد معالجة كل البيانات كل يوم، نعالج فقط البيانات الجديدة
+
+وأخيراً، كان مهم عندي توثيق كل شيء وتطبيق
+DataOps practices مثل versioning وCI/CD
+عشان نضمن استقرار النظام على المدى الطويل
+
+بشكل عام، الهدف كان تحقيق توازن بين
+performance optimisation وsystem reliability
+عشان نضمن أن الـpipeline يشتغل بشكل يومي بدون مشاكل حتى مع data volume كبير
+[2026-04-05 12:01:38] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: ما حجم النظام اللي قمت بتطويره من ناحية عدد المهمات وال يات في أيرفлоت؟؟؟
+[2026-04-05 12:03:42] [JOB_ALIGNED_EXPLORATION] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=['understatement']]: أكيد
+
+في المشروع هذا، كنا نشتغل على Airflow setup متوسط إلى كبير نوعاً ما من ناحية scale
+
+كان عندنا تقريباً:
+
+بين 15 إلى 20 DAGs رئيسية
+وكل DAG يمثل data pipeline مختلف حسب الـdomain (مثلاً billing, customer data, network logs)
+
+داخل كل DAG، كان فيه تقريباً
+
+من 10 إلى 30 tasks حسب تعقيد الـpipeline
+
+بعض الـDAGs كانت بسيطة (ingestion + load)
+وبعضها كان أكثر تعقيد ويشمل:
+
+multi-stage transformations باستخدام Spark
+data validation
+loading إلى عدة destinations (S3 + Redshift)
+
+من ناحية الـexecution
+كان عندنا
+
+daily scheduled pipelines
+وبعض الـpipelines كانت near real-time أو hourly حسب use case
+
+اللي كان مهم بالنسبة لي مو بس العدد، لكن إدارة التعقيد
+فركزت على:
+
+تصميم reusable tasks
+استخدام task dependencies بشكل واضح
+وتقسيم الـpipelines بطريقة modular
+
+هذا خلّى النظام scalable
+وسهل علينا إضافة pipelines جديدة بدون ما نأثر على الموجودة
+
+بشكل عام، أقدر أقول إننا كنا ندير production-grade Airflow environment فيه عشرات الـpipelines ومئات الـtasks يومياً، مع monitoring مستمر لضمان الاستقرار
+[2026-04-05 12:04:12] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: كم كان عدد المهام الفعلية اللي سويت يوميًا في بيئه Airflow؟ وليش قيم الكفاءة دي؟؟
+[2026-04-05 12:04:55] [JOB_ALIGNED_EXPLORATION] Candidate [quality=STRONG] [behavioral=False] [decision=False] [weak_signals=[]]: بشكل يومي، البيئة كانت تشغّل مئات الـtasks، لأن عندنا تقريباً من 15 إلى 20 DAGs رئيسية، وكل DAG فيه عدد مختلف من tasks حسب تعقيد الـpipeline، وغالباً يتراوح بين 10 و30 tasks. لذلك على مستوى التشغيل اليومي، كنا نتعامل مع volume تشغيلي كبير وموزع على أكثر من domain
+
+بالنسبة لي، ما كنت أقيس الكفاءة بعدد الـtasks فقط، لأن هذا الرقم لحاله ما يعطي صورة حقيقية. كنت أقيس الكفاءة من خلال ثلاث زوايا أساسية
+
+أولاً success rate
+يعني كم نسبة الـtasks والـDAG runs اللي تكتمل بنجاح بدون تدخل يدوي. هذا مهم لأنه يعكس reliability
+
+ثانياً execution time
+كنت أراقب هل الـpipeline يخلص داخل الـSLA المطلوب أو لا، لأن الهدف مو تشغيل عدد كبير من الـtasks فقط، لكن تشغيلها بالوقت المناسب عشان البيانات تكون جاهزة للاستخدام
+
+ثالثاً retry rate وfailures
+إذا زاد عدد الـretries أو الـfailed tasks، فهذا يعني فيه مشكلة في design أو resource usage أو dependencies، حتى لو العدد الإجمالي للـtasks كبير
+
+فلو أبغى أجاوب بشكل مهني في المقابلة، أقول إن بيئة Airflow كانت تشغّل مئات الـtasks يومياً، لكن تقييم الكفاءة كان مبني على success rate، execution time، stability، وability to process large daily volumes أكثر من مجرد العدد نفسه، خصوصاً أننا كنا نعالج حوالي 5 TB يومياً باستخدام Spark وAirflow
+[2026-04-05 12:05:34] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: كيفك تقيس استقرار النظم وتواصل تنفيذ ديجي في بيئةك؟ وش أمثلة على قراراتك الاستراتيجية اللي أخليت من خلالها هذه الخصائص؟؟
+[2026-04-05 12:06:08] [JOB_ALIGNED_EXPLORATION] Candidate [quality=STRONG] [behavioral=False] [decision=False] [weak_signals=['understatement']]: لقياس system stability وpipeline continuity في بيئة زي Airflow + Spark، كنت أتعامل مع الموضوع بشكل data-driven + monitoring-based
+
+أول شيء، من ناحية القياس
+
+كنت أركز على مجموعة core metrics
+
+DAG success rate
+يعني نسبة الـruns اللي تكتمل بدون failure
+هذا يعطيني مؤشر مباشر على استقرار النظام
+Task failure & retry rate
+إذا لاحظت زيادة في retries أو failures، أعرف أن فيه instability سواء من code أو infrastructure
+SLA adherence
+هل الـpipelines تخلص في الوقت المطلوب أو لا
+لأن التأخير حتى بدون failure يعتبر مشكلة في الاستقرار
+data freshness
+هل البيانات توصل في الوقت المتوقع للـbusiness teams
+
+ثانياً، من ناحية القرارات الاستراتيجية
+
+أول قرار مهم كان تطبيق idempotent pipelines
+يعني أي task يقدر يعيد التشغيل بدون ما يسبب duplication أو data corruption
+هذا مهم جداً في حال وجود retries
+
+ثاني شيء، اعتمدت على incremental processing
+بدل ما نعيد معالجة كل البيانات يومياً، نعالج فقط البيانات الجديدة
+هذا يقلل الضغط على النظام ويحسن الاستقرار
+
+ثالث قرار كان تصميم fault-tolerant architecture
+مثلاً
+
+استخدام Airflow retries + backoff strategy
+فصل الـpipelines إلى tasks مستقلة (decoupling)
+عشان failure في جزء ما يوقف كل النظام
+
+رابع شيء، تطبيق monitoring وalerting system
+باستخدام logs + alerts
+أي failure أو delay يتم اكتشافه بسرعة
+وهذا يقلل downtime
+
+خامس قرار مهم كان تحسين resource management في Spark
+مثل tuning للـpartitions وmemory usage
+عشان نتجنب crashes أو slowdowns مع data حجمها كبير
+
+بشكل عام، الفكرة كانت بناء system يعتمد على
+resilience + observability + scalability
+
+وهذا اللي خلانا نحافظ على تشغيل يومي مستقر حتى مع حجم بيانات كبير (~5TB/day) بدون مشاكل تشغيلية كبيرة
+[2026-04-05 12:06:34] [PROJECT_DEEP_DIVE] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: كيف يمكن تطبيق هذه الاستراتيجيات في بيئات البيانات الضخمة الأخرى غير أواي إس، مثل جيه سي بي أو أزر؟؟
+[2026-04-05 12:07:17] [PROJECT_DEEP_DIVE] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=['understatement']]: نفس الاستراتيجيات اللي ذكرتها قابلة للتطبيق بشكل مباشر في أي cloud environment مثل GCP أو Azure، لأن المفهوم الأساسي هو architecture + best practices مو مرتبط بـAWS فقط
+
+أولاً، بالنسبة لـorchestration وpipeline management
+
+في AWS كنا نستخدم Airflow
+وفي GCP ممكن نستخدم
+Cloud Composer (managed Airflow)
+
+وفي Azure
+Azure Data Factory أو Azure Synapse Pipelines
+
+نفس فكرة
+DAGs، task dependencies، retries، monitoring
+تتطبق بدون تغيير كبير
+
+ثانياً، من ناحية data storage وprocessing
+
+في AWS استخدمنا S3 + Spark
+في GCP المكافئ يكون
+Google Cloud Storage + Dataflow أو Dataproc (Spark)
+
+وفي Azure
+Azure Data Lake Storage + Azure Databricks
+
+فمفهوم
+data lake + distributed processing
+يبقى نفسه
+
+ثالثاً، بالنسبة لـmonitoring وobservability
+
+في AWS عندنا CloudWatch
+في GCP نستخدم
+Cloud Monitoring + Logging
+
+وفي Azure
+Azure Monitor + Log Analytics
+
+نفس المبدأ
+tracking للـjobs، alerts، SLA monitoring
+
+رابعاً، بالنسبة لـDataOps وCI/CD
+
+في AWS نستخدم أدوات مثل CodePipeline
+في GCP نستخدم Cloud Build
+في Azure نستخدم Azure DevOps
+
+نفس فكرة
+versioning، automated deployment، testing pipelines
+
+خامساً، الاستراتيجيات الأساسية نفسها تبقى ثابتة
+
+Idempotent pipelines
+Incremental processing
+fault-tolerant design
+resource optimization
+
+الاختلاف فقط في الأدوات، لكن الـdesign principles واحدة
+
+بشكل عام، أنا أشوف أن أي Data Engineer قوي لازم يكون
+cloud-agnostic في التفكير
+
+يعني يفهم
+architecture + patterns
+مو بس tools
+
+وهذا يخليه يقدر ينتقل بسهولة بين AWS وGCP وAzure بدون مشكلة
+[2026-04-05 12:07:55] [SOFT_SKILLS_BEHAVIORAL] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: كيف
+
+شوف كيف حطيت هذه الاستراتيجية في مشروعك اللي كنت فيه مع أورنج تونس، كان البيئة فيها مقتصرة على أيواي؟ شوف كيف؟
+[2026-04-05 12:08:31] [SOFT_SKILLS_BEHAVIORAL] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: أكيد
+
+في مشروعي مع Orange تونس، البيئة كانت فعلياً AWS-based بشكل أساسي، لكن لما أتكلم عن تطبيق الاستراتيجيات، أنا ما كنت أفكر بالأدوات نفسها، كنت أفكر في design patterns اللي تنطبق على أي cloud
+
+مثلاً في جانب orchestration
+استخدمنا Airflow، لكن الطريقة اللي صممت فيها الـDAGs كانت قائمة على
+
+decoupling بين الـtasks
+وidempotency
+
+وهذا يخلي نفس التصميم قابل للنقل مباشرة إلى
+Cloud Composer في GCP أو Data Factory في Azure بدون تغيير كبير
+
+في جانب data storage وprocessing
+استخدمنا S3 + Spark (EMR)
+لكن حرصت أن الـpipelines تعتمد على
+
+partitioned data
+وincremental loads
+
+وهذه نفس المفاهيم تقدر تطبقها في
+GCS + BigQuery أو ADLS + Databricks
+
+كذلك في monitoring
+اعتمدنا على logs وalerts داخل Airflow وAWS
+لكن كنت أركز على metrics مثل
+success rate
+execution time
+SLA
+
+وهذه نفس الـmetrics تقدر تراقبها في أي cloud باستخدام أدوات مختلفة
+
+من ناحية القرارات العملية اللي سويتها
+
+حرصت أن:
+
+ما أربط الـlogic مباشرة بخدمات AWS (مثلاً avoid hard dependency على service معينة داخل الكود)
+أعتمد على configurable pipelines بحيث نقدر نغير environment بسهولة
+وأفصل بين compute وstorage
+
+فالبيئة كانت AWS، لكن الـarchitecture نفسه كان
+portable وscalable
+
+وهذا ساعدنا لو احتجنا نوسع أو نغير cloud مستقبلاً بدون إعادة بناء النظام من الصفر
+[2026-04-05 12:09:12] [SOFT_SKILLS_BEHAVIORAL] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: كيف قيمت استقرار النظام وموثوقية معالجة البيانات الكبيرة اليومية في بيئتي أواي إس، وما القرارات العملية اللي اتخذتها لضمان عدم التوقف عن العمل خلال الصيانة؟؟
+[2026-04-05 12:10:04] [SOFT_SKILLS_BEHAVIORAL] Candidate [quality=STRONG] [behavioral=False] [decision=False] [weak_signals=[]]: أكيد
+
+في بيئة AWS كنت أقيس system stability وreliability من خلال مجموعة مؤشرات تشغيلية واضحة، أهمها DAG success rate في Airflow، ومدة تنفيذ الـpipelines، ونسبة الـfailures والـretries، بالإضافة إلى data freshness وهل البيانات توصل في الوقت المطلوب للفرق اللي تعتمد عليها. بالنسبة لنا، الاستقرار ما كان يعني فقط أن الـjob يشتغل، لكن أنه يشتغل بشكل يومي ضمن الـSLA وبدون تدخل يدوي متكرر، خصوصاً أننا كنا نتعامل مع حجم يقارب 5 TB يومياً على Spark وAirflow فوق بنية مبنية على AWS S3 وRedshift.
+
+عملياً، أول قرار مهم اتخذته كان تصميم الـpipelines بشكل modular وdecoupled. يعني كل مرحلة، من ingestion إلى transformation إلى load، تكون منفصلة وواضحة. هذا الشيء كان يقلل أثر أي failure، لأن تعطل جزء واحد ما يطيح كامل الـworkflow. القرار الثاني كان تطبيق idempotent processing، بحيث لو صار rerun أو retry ما يسبب duplicate data ولا data corruption. هذا كان أساسي جداً للحفاظ على الموثوقية في التشغيل اليومي.
+
+كذلك اعتمدت على incremental processing بدل إعادة معالجة كامل البيانات كل يوم. هذا القرار خفف الضغط على الـcompute resources وقلل وقت التشغيل ورفع الاستقرار العام. ومعه اشتغلت على partitioning في التخزين والمعالجة، وهذا ساعدنا نحافظ على أداء ثابت حتى مع ازدياد حجم البيانات. على مستوى Spark, كنت أراجع resource allocation وjoin strategy وpartition size حتى أتجنب الـbottlenecks والـmemory issues اللي غالباً تسبب تأخير أو failure في الـjobs.
+
+أما لضمان عدم التوقف أثناء الصيانة، فكنت أعتمد على أكثر من إجراء عملي. أولاً، أي تغيير في الـpipeline أو الـinfrastructure ما يروح مباشرة على الـproduction، بل يمر عبر staged deployment وvalidation قبل الإطلاق. ثانياً، كنت أرتب الصيانة خارج أوقات التشغيل الحرجة وأضمن وجود fallback plan وrollback path إذا ظهر أي issue. ثالثاً، وجود retry mechanisms وalerting داخل Airflow كان يقلل احتمال الانقطاع الكامل، لأن كثير من المشاكل العابرة كانت تُحل تلقائياً بدون تأثير على التسليم النهائي للبيانات.
+
+وأيضاً، بما أن الشغل كان على data lake في S3 مع تحميل إلى Redshift، فصلنا بين storage وcompute بشكل واضح، وهذا ساعد كثير في أعمال الصيانة، لأنك تقدر تعالج أو تعيد تشغيل جزء من الـcompute بدون ما تعرض طبقة التخزين نفسها للخطر. من وجهة نظري، هذا النوع من القرارات هو اللي يصنع فرق حقيقي بين pipeline تشتغل نظرياً، وplatform تقدر تعتمد عليها كل يوم في production. بالإضافة إلى ذلك، خبرتي في بناء data lake على AWS وتقليل التكاليف بنسبة 35% كانت مرتبطة أيضاً بتحسين الاستقرار وكفاءة التشغيل، لأن architecture المنظم عادة يكون أكثر قابلية للصيانة وأقل عرضة للتوقفات.
+[2026-04-05 12:10:04] [CANDIDATE_QUESTIONS] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: قبل ما نكمل للنهاية، هل عندك أي أسئلة عن الدور أو الفريق أو خطوات التوظيف؟
+[2026-04-05 12:10:39] [CANDIDATE_QUESTIONS] Candidate [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=[]]: لا، شكراً.
+[2026-04-05 12:10:48] [CLOSING] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: شكراً لوقتك. راح نرجع لك بالتغذية الراجعة خلال الأيام القادمة.

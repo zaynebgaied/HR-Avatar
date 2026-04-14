@@ -1,0 +1,63 @@
+{
+    "meta": {
+        "date_entretien": "2026-03-23 13:00:54",
+        "langue": "Français",
+        "duree": "N/A",
+        "date_rapport": "2026-03-23 13:08:46",
+        "source_interview": "data/interview_20260323_130050.txt"
+    },
+    "scores_par_phase": {
+        "presentation_parcours": {
+            "obtenu": 7,
+            "max": 10,
+            "commentaire": "La candidate a présenté son parcours de manière claire mais pourrait être plus détaillée et structurée."
+        },
+        "pertinence_projets": {
+            "obtenu": 18,
+            "max": 20,
+            "commentaire": "Elle a bien expliqué sa expérience avec SAP SuccessFactors chez Leoni Tunisie. Elle a également fourni des détails sur la réduction du temps de traitement paie."
+        },
+        "competences_techniques": {
+            "obtenu": 35,
+            "max": 40,
+            "commentaire": "Elle a montré une bonne maîtrise des outils de reporting dans SAP SuccessFactors et a proposé des solutions pour optimiser les processus. Elle pourrait cependant être plus spécifique sur l'utilisation des indicateurs."
+        },
+        "soft_skills_culture_fit": {
+            "obtenu": 16,
+            "max": 20,
+            "commentaire": "La candidate a démontré une bonne communication et un engagement envers le développement des compétences de l'équipe. Elle pourrait être plus proactive dans la culture d'entreprise."
+        },
+        "curiosite_motivation": {
+            "obtenu": 9,
+            "max": 10,
+            "commentaire": "Elle a montré une bonne curiosité pour les défis et un intérêt pour l'amélioration des processus. Elle pourrait exprimer plus de motivation pour le poste spécifique à GCT."
+        }
+    },
+    "score_technique": 37,
+    "score_communication": 16,
+    "score_global": 15,
+    "competences_detectees": [
+        "Maîtrise des outils SAP SuccessFactors",
+        "Compétence en reporting RH",
+        "Capacité à gérer des projets complexes"
+    ],
+    "lacunes_identifiees": [
+        "Manque de détails dans la présentation du parcours",
+        "Besoin d'approfondir l'utilisation des indicateurs et des outils",
+        "Moins proactive sur le plan culturel"
+    ],
+    "analyse_motivation": "La candidate a montré une bonne motivation pour les défis techniques mais pourrait exprimer plus de passion pour le poste spécifique à GCT.",
+    "analyse_soft_skills": "Elle a bien communiqué et montré un engagement envers l'équipe, mais pourrait être plus proactive dans la culture d'entreprise.",
+    "points_forts": [
+        "Expérience réussie avec SAP SuccessFactors",
+        "Capacité à gérer des projets complexes",
+        "Bonnes compétences en reporting RH"
+    ],
+    "points_amelioration": [
+        "Améliorer la présentation du parcours et des expériences",
+        "Approfondir l'utilisation des indicateurs et des outils de reporting",
+        "Être plus proactive dans la culture d'entreprise"
+    ],
+    "verdict_final": "A REVOIR",
+    "recommandation_detail": "La candidate a montré une bonne maîtrise technique et une bonne communication, mais elle pourrait bénéficier d'une formation supplémentaire pour s'adapter pleinement à l'environnement de GCT. Une révision de son parcours et des expériences serait recommandée avant de proposer la candidature."
+}

@@ -1,0 +1,47 @@
+Date   : 2026-03-29 14:00:00
+Langue : Français
+Durée  : 20 min
+Mode   : Simulation PFE
+
+Contexte candidat : Ingénieur data avec 7 ans d'expérience, passé par Tunisie Telecom, Capgemini Tunisie et Orange Tunisie. Expérience en Spark, Airflow, AWS, MLflow, Docker, XGBoost, data lake et management de 4 juniors.
+Offre cible       : Lead Data Engineer orienté data platform, optimisation de coûts cloud, MLOps, industrialisation des pipelines et leadership technique.
+
+[10:06:23] [INTRO_ETUDES] Avatar: Bonjour merci d'être présent pour cet entretien de 20 min.
+
+[10:07:12] [INTRO_ETUDES] Candidate: Bonjour merci beaucoup. Je suis ingénieur data depuis 7 ans à peu près. J'ai fait
+Tunisie Telecom, Capgemini et Orange Tunisie. J'aime Spark, Airflow et AWS et aussi Airflow.
+
+[10:08:41] [MAPPING_PROJETS_OFFRE] Avatar: Très bien. Pouvez-vous me parler d'un projet concret avec Spark, Airflow,
+AWS et peut-être Airflow encore, où vous avez optimisé le coût ?
+
+[10:11:27] [MAPPING_PROJETS_OFFRE] Candidate: Oui. Nous avons traité 5 To par jour, ou parfois 3 To selon les moments.
+On a mis un data lake avec S3, Redshift, Glue, Docker, et ça a réduit le coût de 30% ou 40%. C'était un très bon
+projet, vraiment un projet important.
+
+[10:11:27] [VALIDATION_HARD_SKILLS] Avatar: Très bien, 30% ou 40% c'est très bien. Comment avez-vous fait exactement ?
+
+[10:12:43] [VALIDATION_HARD_SKILLS] Candidate: On a supprimé des données anciennes, mis du lifecycle, utilisé Glue,
+et parfois EC2 aussi. J'ai fait l'architecture et aussi le management et aussi un peu la sécurité. Le chiffre exact je
+crois c'était environ 35 mais pas toujours.
+
+[10:12:43] [VALIDATION_HARD_SKILLS] Avatar: D'accord. Et MLflow ?
+
+[10:14:33] [VALIDATION_HARD_SKILLS] Candidate: On a utilisé MLflow pour tracker les modèles et les runs, puis Docker
+pour deploy. Parfois le deploy marche, parfois il faut relancer. Les juniors étaient un peu perdus mais après ça allait
+mieux. Airflow lançait les jobs Airflow de retraining.
+
+[10:14:33] [SOFT_SKILLS_RH] Avatar: Pouvez-vous me donner un exemple concret ? Pouvez-vous me donner un exemple concret ?
+
+[10:16:17] [SOFT_SKILLS_RH] Candidate: Oui. Deux ingénieurs n'étaient pas d'accord. J'ai parlé avec eux. Après ils
+étaient plus ou moins d'accord. Le projet a fini par avancer.
+
+[10:16:17] [QUESTIONS_CANDIDAT] Avatar: Avez-vous des questions ? Avez-vous des questions ?
+
+[10:18:03] [QUESTIONS_CANDIDAT] Candidate: Oui, la taille de l'équipe ?
+
+[10:18:03] [QUESTIONS_CANDIDAT] Avatar: Je n'ai pas cette information mais nous verrons cela ensuite. D'autres
+questions peut-être ou pas forcément ?
+
+[10:20:02] [CONCLUSION] Candidate: Non merci.
+
+[10:20:02] [CONCLUSION] Avatar: Merci pour votre temps, on reviendra vers vous plus tard bientôt prochainement.

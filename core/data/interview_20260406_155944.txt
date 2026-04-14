@@ -1,0 +1,17 @@
+HR INTERVIEW — Anglais
+Date    : 2026-04-06 15:59:44
+Duration: 20 minutes
+[2026-04-06 16:06:35] [OPENING] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Hello, thank you for the opportunity.
+
+My name is Mehdi Trabelsi. I hold a degree in Industrial Maintenance Engineering from ISET Sousse, and I have around eight years of experience in the manufacturing industry, mainly in mechanical and textile sectors.
+
+I started my career as a Senior Maintenance Technician at Leoni Wiring, where I worked on preventive and corrective maintenance for automated cable assembly lines. During that time, I developed strong skills in troubleshooting, especially on Siemens PLCs and ABB drives.
+
+Then, I progressed to a Maintenance Team Leader role at Nexans Tunisia Cables, where I supervised a team of five technicians and worked on highly automated production lines such as extrusion and winding. I was also involved in a SMED project, which helped reduce changeover times by about 25%.
+
+Currently, I am working as a Maintenance Manager at Groupe Sopal, where I lead a team of 10 technicians across mechanical, electrical, and automation disciplines. My main responsibilities include implementing preventive maintenance strategies using SAP PM, managing a maintenance budget, and driving continuous improvement initiatives. One of my key achievements was reducing equipment breakdowns by 32% over two years and improving MTTR by 20%.
+
+What motivated me to apply for this position is the opportunity to take on a larger scope, especially managing maintenance across multiple sites and contributing to performance improvement in a structured industrial environment like yours. I am particularly interested in roles where I can combine technical expertise, team management, and continuous improvement—especially using methodologies like AMDEC and RCM, which I already apply in my current role.
+
+I believe my experience aligns well with your expectations, especially in terms of SAP PM usage, team leadership, and improving equipment reliability and performance.
+[2026-04-06 16:08:17] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Building on that, what metrics did you use to track this improvement?

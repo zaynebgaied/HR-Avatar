@@ -1,0 +1,17 @@
+HR INTERVIEW — Anglais
+Date    : 2026-04-01 23:14:58
+Duration: 20 minutes
+RAG     : Hybrid BM25+Vector (alpha=0.6) + CrossEncoder=True + SemanticChunking=True
+
+[2026-04-01 23:18:44] [OPENING] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: hello and Thank you for having me.
+
+I hold a Bachelor’s degree in Communication from ISCOM Tunis, and I have around three years of experience working as a Community Manager in a communication agency. In this role, I managed social media accounts for multiple clients across industries such as fashion, food, and real estate.
+
+My responsibilities included content creation using tools like Canva and CapCut, planning editorial calendars, and managing campaigns on Meta Ads with small to متوسط budgets. I also handled performance tracking through Meta Business Suite and provided monthly reports with basic analysis and recommendations.
+
+Before that, I completed a long internship as a Communication Assistant at Tunisair, where I supported internal communication, worked on newsletters, and contributed to content for the company’s intranet.
+
+What motivated me to apply for this position is the opportunity to move from an execution-focused role to a more strategic one, especially in an e-commerce environment. I’m particularly interested in developing a broader digital marketing skill set, including Google Ads, SEO, and email marketing, and taking ownership of end-to-end marketing performance.
+
+I believe my hands-on experience with content and audience engagement gives me a strong foundation, and I’m motivated to scale that impact in a more structured and performance-driven environment.
+[2026-04-01 23:20:21] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: How did you leverage your experience with Meta Ads to drive conversions and optimize budgets for your clients?

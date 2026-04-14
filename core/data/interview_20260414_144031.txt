@@ -1,0 +1,11 @@
+HR INTERVIEW — Français
+Date    : 2026-04-14 14:40:31
+Duration: 20 minutes
+[2026-04-14 14:43:23] [OPENING] Candidat [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: Bonjour, merci beaucoup pour cette opportunité. Je me présente à Inapgate, étudiant en 3e année ingénierie de 20 et système décisionnel et j'aime beaucoup contribuer à votre entreprise.
+[2026-04-14 14:43:54] [JOB_ALIGNED_EXPLORATION] Recruteur [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Pouvez-vous me parler de votre expérience avec Python dans le cadre de projets d'apprentissage automatique et science des données ?
+[2026-04-14 14:44:12] [JOB_ALIGNED_EXPLORATION] Candidat [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=[]]: Sous-titrage ST' 501
+[2026-04-14 14:44:29] [JOB_ALIGNED_EXPLORATION] Recruteur [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Comment ces compétences pourraient-elles s'appliquer au développement de l'avatar RH interactif ?
+[2026-04-14 14:51:17] [JOB_ALIGNED_EXPLORATION] Candidat [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=['understatement']]: Ah, c'est un peu d'oeuvres.
+[2026-04-14 14:51:32] [JOB_ALIGNED_EXPLORATION] Recruteur [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Pouvez-vous développer un exemple de votre travail avec des technologies similaires à celles requises pour cet avatar RH interactif ?
+[2026-04-14 14:52:00] [JOB_ALIGNED_EXPLORATION] Candidat [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=[]]: Qu'est-ce que tu as l'espoiré ?
+[2026-04-14 14:52:14] [JOB_ALIGNED_EXPLORATION] Recruteur [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Pouvez-vous me décrire vos expériences avec les technologies STT/TTS et NLU que vous avez utilisées dans vos projets précédents ?

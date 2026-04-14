@@ -1,0 +1,9 @@
+HR INTERVIEW — Français
+Date    : 2026-04-14 12:06:59
+Duration: 20 minutes
+[2026-04-14 12:10:28] [OPENING] Candidat [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: Bonjour, merci beaucoup pour cette opportunité. Je me présente, Sainé Gaïd, étudiant ton troisième année à ingénieur et données, c'est un décisionnel à l'Enecum, l'école d'électronique et télécommunications et je viens beaucoup contribuer à votre entreprise.
+[2026-04-14 12:11:01] [JOB_ALIGNED_EXPLORATION] Recruteur [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Pouvez-vous me décrire votre expérience avec Python dans le cadre de vos projets précédents ?
+[2026-04-14 12:11:31] [JOB_ALIGNED_EXPLORATION] Candidat [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=[]]: ...
+[2026-04-14 12:11:42] [JOB_ALIGNED_EXPLORATION] Recruteur [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Donnez-moi un exemple concret d'utilisation d'une technologie clé de ce poste.
+[2026-04-14 12:12:14] [JOB_ALIGNED_EXPLORATION] Candidat [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=[]]: Merci.
+[2026-04-14 12:12:29] [JOB_ALIGNED_EXPLORATION] Recruteur [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Quelle technologie du poste maîtrisez-vous le mieux ?

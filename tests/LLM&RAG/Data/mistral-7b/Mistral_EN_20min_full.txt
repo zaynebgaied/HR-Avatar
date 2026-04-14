@@ -1,0 +1,45 @@
+Date   : 2026-03-29 14:00:00
+Language : English
+Duration : 20 min
+Mode     : PFE simulation
+
+Candidate context : Data Engineer with 7 years of experience across Tunisie Telecom, Capgemini Tunisia and Orange Tunisia. Hands-on work with Spark, Airflow, AWS, MLflow, Docker, XGBoost, data lake design and mentoring 4 junior engineers.
+Target role       : Lead Data Engineer focused on data platform, cloud cost optimization, MLOps, pipeline industrialization and technical leadership.
+
+[10:06:23] [INTRO] Interviewer: Hello, thank you for joining. Could you introduce yourself briefly?
+
+[10:07:12] [INTRO] Candidate: Hello. I am a Data Engineer with around seven years of experience across telecom,
+consulting and platform engineering. I currently work on data pipelines, cloud architecture and some mentoring.
+
+[10:08:41] [MAPPING] Interviewer: Can you tell me about a recent project involving Spark, Airflow and AWS?
+
+[10:11:27] [MAPPING] Candidate: Yes. We built a data lake on AWS using S3, Spark and Airflow to centralize pipelines
+and improve scalability. We also aimed to reduce infrastructure cost by optimizing storage and compute usage.
+
+[10:11:27] [VALIDATION] Interviewer: What kind of cost reduction did you achieve, and how did you validate it?
+
+[10:12:43] [VALIDATION] Candidate: It was around 30 to 35% depending on the comparison period. We mainly used lifecycle
+policies, removed some expensive jobs and improved partitioning. I was leading the project and coordinating the
+different teams.
+
+[10:12:43] [VALIDATION] Interviewer: How did you use MLflow in that environment?
+
+[10:14:33] [VALIDATION] Candidate: We used MLflow for experiment tracking and model versioning. Before that, sharing
+models was not structured enough. After implementation, we had better traceability and juniors were able to follow a
+clearer process.
+
+[10:14:33] [SOFT] Interviewer: Tell me about a people challenge or conflict in your team.
+
+[10:16:17] [SOFT] Candidate: Two team members disagreed on quality expectations before delivery. I met them separately,
+then together, and we clarified the process. It improved the collaboration afterwards.
+
+[10:16:17] [QUESTIONS] Interviewer: Do you have any questions for us?
+
+[10:18:03] [QUESTIONS] Candidate: Yes, is the team working more in a product mode or in a project mode?
+
+[10:18:03] [QUESTIONS] Interviewer: I don't have the exact answer with me now, but we can confirm it later. Any other
+question?
+
+[10:20:02] [CONCLUSION] Candidate: No, thank you.
+
+[10:20:02] [CONCLUSION] Interviewer: Thank you for your time. We will get back to you soon.

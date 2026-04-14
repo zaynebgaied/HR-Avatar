@@ -1,0 +1,4 @@
+HR INTERVIEW — Français
+Date    : 2026-04-13 23:14:21
+Duration: 20 minutes
+[2026-04-13 23:17:10] [OPENING] Candidat [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: Bonjour, tout d'abord merci beaucoup pour cette communauté. Je me présente Diana Key, je suis en troisième année à ingénierie de données et de système des données à l'Enecum, école d'électronique et télécommunication à l'Axe.

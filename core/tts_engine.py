@@ -13,7 +13,11 @@ if sys.platform == "win32":
 # =============================================================================
 OUTPUT_DIR      = "temp_audio"
 MAX_CACHE_FILES = 20
-MAX_CHARS       = 500
+# MAX_CHARS : seuil de troncature du texte envoyé à edge-tts.
+# 500 chars tronquait les réponses longues de l'avatar (bug observé en prod).
+# 1200 chars ≈ 90 secondes de parole — largement suffisant pour une réplique d'entretien.
+# edge-tts gère sans problème des textes de cette taille.
+MAX_CHARS       = 1200
 
 # Voix edge-tts par langue.
 # Liste complète : `edge-tts --list-voices`

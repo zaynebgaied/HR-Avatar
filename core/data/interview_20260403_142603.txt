@@ -1,0 +1,191 @@
+HR INTERVIEW — Anglais
+Date    : 2026-04-03 14:26:03
+Duration: 20 minutes
+RAG     : Hybrid BM25+Vector (alpha=0.6) + CrossEncoder=True + SemanticChunking=True
+
+[2026-04-03 14:28:25] [OPENING] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Hello, thank you for having me. I’m glad to be here.
+
+My name is Youssef Dridi. I hold a degree in Communication Sciences, and I have around 3 years of experience as a Community Manager in a communication agency, where I managed social media accounts for multiple clients, mainly in fashion, real estate, and food industries.
+
+In my current role, I’m responsible for content creation, social media management, and Meta Ads campaigns. I work on building content calendars, creating visuals using tools like Canva and CapCut, and managing paid campaigns with a performance mindset — tracking metrics like engagement, CTR, and CPC to optimize results.
+
+What motivated me to apply for this position is my desire to move from an execution-focused agency role to a more strategic, in-house marketing role, where I can contribute directly to brand growth and business performance.
+
+I’m particularly interested in your company because of its strong positioning in fashion and its fast-growing e-commerce presence, which aligns with my experience and also with the skills I’m currently developing, especially in performance marketing and analytics.
+
+I’d be happy to go into more detail about my experience or specific projects.
+[2026-04-03 14:28:42] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you provide an example of a Google Ads campaign you managed and how you optimized it to improve performance metrics such as CTR or CPC?
+[2026-04-03 14:29:42] [JOB_ALIGNED_EXPLORATION] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Thank you for the question.
+
+I’d like to be transparent — I haven’t yet had the opportunity to directly manage a Google Ads campaign in my previous roles. My hands-on experience has mainly been with Meta Ads (Facebook & Instagram).
+
+However, I can explain how I would approach a Google Ads campaign based on my current knowledge and what I’m actively learning:
+
+I would start by structuring campaigns based on intent (Search campaigns), focusing on relevant keywords related to the product or service
+I would use keyword match types and negative keywords to improve targeting and avoid irrelevant traffic
+For optimization, I would monitor key metrics such as:
+CTR → to evaluate ad relevance
+CPC → to control cost efficiency
+Conversion rate → to measure performance beyond clicks
+Then I would optimize by:
+Improving ad copy to better match user intent
+Refining keyword targeting based on performance
+Adjusting bids to focus on high-performing keywords
+
+Even though I don’t have direct hands-on experience yet, I’m currently learning Google Ads and I’m highly motivated to quickly become operational, especially because I understand how important it is for an e-commerce business like yours.
+[2026-04-03 14:29:56] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you walk me through a specific example of how you've improved the performance of a Meta Ads campaign using similar strategies you mentioned for Google Ads?
+[2026-04-03 14:30:55] [JOB_ALIGNED_EXPLORATION] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=['understatement']]: In one Meta Ads campaign for a fashion client, the initial performance was average, with CTR around 1% and relatively high CPC.
+
+I optimized it by:
+
+Refining the audience targeting
+Replacing static visuals with more engaging video content (Reels)
+Running A/B tests on creatives
+Reallocating budget to the best-performing ads
+
+As a result:
+
+CTR increased to around 1.5%+
+CPC decreased
+Engagement improved by about 35%
+
+This showed the impact of a data-driven optimization approach, similar to what I would apply in Google Ads
+[2026-04-03 14:31:07] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you provide more details on the A/B tests you ran and how you determined which creatives performed better?
+[2026-04-03 14:31:33] [JOB_ALIGNED_EXPLORATION] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: For the A/B tests, I mainly tested different creatives and formats:
+
+Static image vs Reel video
+Different visuals (product focus vs lifestyle content)
+Slight variations in captions
+
+To determine the best-performing creatives, I compared them using key metrics in Meta Ads Manager:
+
+CTR → to measure attractiveness
+Engagement rate → to evaluate interaction
+CPC → to assess cost efficiency
+
+For example, the Reel video consistently had higher engagement and lower CPC compared to the static post.
+[2026-04-03 14:31:44] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you describe how you measured the impact of refining the audience targeting on the overall campaign performance?
+[2026-04-03 14:32:21] [JOB_ALIGNED_EXPLORATION] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: To measure the impact of audience refinement, I compared performance before and after the changes within the same campaign.
+
+I focused on key metrics:
+
+CTR → to see if the new audience was more interested
+CPC → to check if targeting became more cost-efficient
+Engagement rate → to evaluate content relevance
+
+After refining the audience (more specific interests and segments), I noticed:
+
+Higher CTR
+Lower CPC
+Better overall engagement
+
+Since the creatives and budget were similar, I could clearly attribute the improvement to better audience targeting
+[2026-04-03 14:32:32] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you give a specific number for the percentage increase in CTR after refining the audience targeting?
+[2026-04-03 14:32:56] [JOB_ALIGNED_EXPLORATION] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=['understatement']]: After refining the audience targeting, the CTR increased from around 1% to approximately 1.5%, which represents about a +50% improvement.
+[2026-04-03 14:33:11] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Give me a concrete example of how you used one of the core technologies for this role?
+[2026-04-03 14:33:47] [JOB_ALIGNED_EXPLORATION] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: A concrete example would be my use of Meta Ads Manager to build and optimize a campaign for a fashion client.
+
+Instead of simply boosting posts, I created a structured campaign with:
+
+Clear objectives (traffic and engagement)
+Multiple ad sets targeting different audience segments
+Several creatives (Reels and carousels) for testing
+
+I then monitored key metrics like CTR, CPC, and engagement rate, and optimized by:
+
+Pausing low-performing creatives
+Allocating more budget to the best-performing ones
+[2026-04-03 14:34:00] [PROJECT_DEEP_DIVE] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you walk me through how you determined which audience segments were performing better and allocated more budget accordingly?
+[2026-04-03 14:34:47] [PROJECT_DEEP_DIVE] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: CTR → to see which audience was more interested
+CPC → to identify cost efficiency
+Engagement rate → to evaluate interaction quality
+[2026-04-03 14:34:59] [PROJECT_DEEP_DIVE] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: What architectural decision did you own personally on that project?
+[2026-04-03 14:35:23] [PROJECT_DEEP_DIVE] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Good question.
+
+One key architectural decision I owned was to move from simple post boosting to a structured campaign architecture in Meta Ads Manager.
+
+Instead of running one general audience, I designed the campaign with:
+
+Multiple ad sets segmented by audience (interests, age groups)
+Different creatives per segment
+Clear separation between testing and scaling phases
+
+I also made sure to structure the campaign in a way that allowed easy comparison between ad sets, so we could quickly identify top-performing segments.
+[2026-04-03 14:35:36] [PROJECT_DEEP_DIVE] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: How did you measure the performance differences between the different ad sets to decide which segments were performing better?
+[2026-04-03 14:36:14] [PROJECT_DEEP_DIVE] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: I measured the performance differences by comparing each ad set inside Meta Ads Manager using the same time period and budget conditions.
+
+I focused on key metrics:
+
+CTR → to see which audience was more responsive
+CPC → to evaluate cost efficiency
+Engagement rate → to measure interaction quality
+
+By analyzing these metrics side by side, I could clearly identify which audience segment was performing better.
+
+For example, the best-performing ad set had:
+
+Higher CTR
+Lower CPC
+More engagement
+
+Based on that, I allocated more budget to that segment and reduced or paused the others
+[2026-04-03 14:36:30] [TECHNICAL_DEPTH] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you provide an example of a specific ad set where you significantly increased its budget based on your analysis, and what was the resulting impact on the campaign's overall performance?
+[2026-04-03 14:37:34] [TECHNICAL_DEPTH] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=['understatement']]: In one campaign, I had an ad set targeting women aged 20–35 interested in fashion and online shopping, and another broader audience with less specific interests.
+
+After a few days of analysis, I noticed that this specific segment had:
+
+Higher CTR (around 1.6% vs ~1.1%)
+Lower CPC
+Better engagement rate
+[2026-04-03 14:37:45] [TECHNICAL_DEPTH] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Was that improvement in metrics significant enough to justify reallocating budget away from the broader audience?
+[2026-04-03 14:38:10] [TECHNICAL_DEPTH] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: Yes, it was significant enough to justify the decision.
+
+Even though the broader audience was generating some results, the more targeted segment was clearly more efficient and more responsive:
+
+Higher CTR → better interest
+Lower CPC → better cost efficiency
+Stronger engagement → better content fit
+
+When you see a consistent difference across multiple key metrics, it indicates that the audience is more qualified, not just randomly performing better.
+[2026-04-03 14:38:22] [TECHNICAL_DEPTH] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you provide an example of a specific metric or KPI that helped you make this decision to reallocate budget?
+[2026-04-03 14:38:49] [TECHNICAL_DEPTH] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=['understatement']]: A key metric that helped me make that decision was CPC (Cost per Click).
+
+For example:
+
+The broader audience had a CPC of around 0.6 TND
+The more targeted audience had a CPC closer to 0.4 TND
+
+At the same time, the targeted audience also had a higher CTR, which confirmed that users were more interested
+[2026-04-03 14:39:02] [SOFT_SKILLS_BEHAVIORAL] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Was the difference in CPC between the broader and targeted audiences significant enough to warrant a substantial reallocation of budget?
+[2026-04-03 14:39:41] [SOFT_SKILLS_BEHAVIORAL] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: Yes, the difference was strong enough to justify a progressive budget shift, because it improved overall campaign efficiency and return on spend
+[2026-04-03 14:39:53] [SOFT_SKILLS_BEHAVIORAL] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you provide an example of how you measured the overall campaign efficiency before reallocating the budget?
+[2026-04-03 14:40:21] [SOFT_SKILLS_BEHAVIORAL] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Before reallocating the budget, I measured overall campaign efficiency using a combination of key metrics in Meta Ads Manager:
+
+Average CPC → to understand cost efficiency
+Overall CTR → to measure how attractive the campaign was
+Total engagement (interactions) → to evaluate audience response
+
+I also looked at performance at campaign level vs ad set level, to see which segments were driving results and which were underperforming.
+
+For example:
+
+If the overall campaign had a relatively high CPC and average CTR, but one ad set was clearly outperforming the others, it indicated an opportunity to optimize.
+[2026-04-03 14:40:33] [CANDIDATE_QUESTIONS] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Could you give me a concrete example related to this?
+[2026-04-03 14:41:04] [CANDIDATE_QUESTIONS] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: his comparison between campaign-level and ad set-level metrics helped me identify inefficiencies and take the right decision
+[2026-04-03 14:41:17] [CANDIDATE_QUESTIONS] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Could you walk me through how you used Google Analytics 4 to complement your analysis of the ad sets' performance?
+[2026-04-03 14:41:58] [CANDIDATE_QUESTIONS] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: I’d like to be transparent — I haven’t yet had hands-on experience using Google Analytics 4 (GA4) in my previous roles. Most of my analysis has been done through Meta Ads Manager and Meta Business Suite.
+
+However, I understand how GA4 can complement ad performance analysis, especially in an e-commerce
+[2026-04-03 14:42:12] [CANDIDATE_QUESTIONS] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you explain how you would approach integrating Google Analytics 4 data with your current analysis tools to optimize ad performance in an e-commerce setting?
+[2026-04-03 14:42:46] [CANDIDATE_QUESTIONS] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Even though my hands-on experience with GA4 is still developing, my approach would be to combine it with Meta Ads Manager to get a full view of performance — from click to conversion.
+[2026-04-03 14:42:58] [CANDIDATE_QUESTIONS] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: How do you plan to integrate data from different sources when using both Meta Ads Manager and Google Analytics 4?
+[2026-04-03 14:43:24] [CANDIDATE_QUESTIONS] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: My approach would be to integrate data from Meta Ads Manager and GA4 in a structured and consistent way to have a full funnel view.
+[2026-04-03 14:43:34] [FINAL_CHECK] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Before we close, is there anything you'd like to add that we have not covered?
+[2026-04-03 14:44:11] [FINAL_CHECK] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: hank you for the opportunity.
+
+I’d just like to add that I’m very aware of the gap between my current experience and the full scope of this role, especially in areas like Google Ads, GA4, and email marketing.
+
+However, what I bring is a strong foundation in social media and Meta Ads, a data-driven mindset, and most importantly, a strong willingness to learn and grow quickly. I’ve already started developing these missing skills through self-learning and practical exploration.
+
+I’m particularly motivated by the opportunity to move into a more strategic, in-house role, where I can contribute not only to execution but also to performance and business impact, especially in an e-commerce environment like yours.
+[2026-04-03 14:44:17] [CLOSING] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you share how your design and analytics skills would complement managing a Google Ads campaign if given the chance?. Thank you for your time. We will get back to you with feedback within the next few days.

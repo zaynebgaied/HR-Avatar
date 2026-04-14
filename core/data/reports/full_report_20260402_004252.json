@@ -1,0 +1,82 @@
+{
+  "date": "2026-04-02 00:42",
+  "langue": "Anglais",
+  "duree_minutes": 20,
+  "meta": {
+    "date_entretien": "2026-04-02 00:21:48",
+    "langue": "N/A",
+    "duree": "N/A",
+    "date_rapport": "2026-04-02 00:39:34",
+    "source_interview": "C:\\internship_spark\\core\\data\\interview_20260402_002148.txt"
+  },
+  "phases": [],
+  "score_total": 0,
+  "score_max": 100,
+  "pourcentage": 0,
+  "scores_par_phase": {
+    "presentation_parcours": {
+      "obtenu": 0,
+      "max": 10,
+      "statut": "NON ÉVALUÉ",
+      "commentaire": "Sujet non couvert par l'entretien"
+    },
+    "pertinence_projets": {
+      "obtenu": 0,
+      "max": 20,
+      "statut": "NON ÉVALUÉ",
+      "commentaire": "Sujet non couvert par l'entretien"
+    },
+    "competences_techniques": {
+      "obtenu": 0,
+      "max": 25,
+      "statut": "NON ÉVALUÉ",
+      "commentaire": "Sujet non couvert par l'entretien"
+    },
+    "soft_skills_culture_fit": {
+      "obtenu": 0,
+      "max": 30,
+      "statut": "NON ÉVALUÉ",
+      "commentaire": "Sujet non couvert par l'entretien"
+    },
+    "curiosite_motivation": {
+      "obtenu": 0,
+      "max": 15,
+      "statut": "NON ÉVALUÉ",
+      "commentaire": "Sujet non couvert par l'entretien"
+    }
+  },
+  "score_technique": 0,
+  "score_communication": 0,
+  "score_global": 0,
+  "competences_detectees": [],
+  "lacunes_identifiees": [
+    "Présentation & Parcours — NON ÉVALUÉ",
+    "Pertinence des Projets — NON ÉVALUÉ",
+    "Compétences Techniques — NON ÉVALUÉ",
+    "Soft Skills & Culture Fit — NON ÉVALUÉ",
+    "Curiosité & Motivation — NON ÉVALUÉ"
+  ],
+  "analyse_motivation": "Motivation non évaluée car aucun sujet lié à la motivation n'a été abordé.",
+  "analyse_soft_skills": "Soft skills non évaluées car aucune question sur ce sujet n'a été posée.",
+  "points_forts": [],
+  "points_amelioration": [],
+  "verdict_final": "À COMPLÉTER",
+  "recommandation_detail": "Évaluation partielle — le candidat n'a pas eu l'occasion d'évoquer sa présentation, ses projets, ses compétences techniques, ses soft skills et son adaptation culturelle. Un deuxième entretien est recommandé pour couvrir ces domaines.",
+  "recommandation": "",
+  "sources_rag": {
+    "cv": [
+      "cv.pdf"
+    ],
+    "job_offer": [
+      "offre.pdf"
+    ],
+    "company_info": []
+  },
+  "analyse_emotion_vision": {
+    "disponible": true,
+    "timeline": [],
+    "emotion_dominante": "neutre",
+    "pics_stress": [],
+    "evolution": []
+  }
+}

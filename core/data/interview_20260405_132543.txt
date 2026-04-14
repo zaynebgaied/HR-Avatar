@@ -1,0 +1,17 @@
+HR INTERVIEW — Anglais
+Date    : 2026-04-05 13:25:43
+Duration: 20 minutes
+[2026-04-05 13:28:25] [OPENING] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Thank you, happy to be here.
+
+My name is Mehdi Trabelsi, and I’m a maintenance engineer with around eight years of experience in industrial environments, mainly in mechanical and textile manufacturing.
+
+I hold a Bachelor’s degree in Industrial Maintenance from ISET Sousse, and I’ve complemented my academic background with certifications in Siemens TIA Portal, as well as training in AMDEC, RCM, and Lean Maintenance.
+
+Currently, I am working as a Maintenance Manager at Groupe Sopal, where I lead a team of 10 technicians across mechanical, electrical, and automation domains. My main responsibilities include implementing preventive and predictive maintenance strategies using SAP PM, managing maintenance budgets, and improving equipment reliability. One of my key achievements was reducing breakdowns by 32% and improving MTTR through structured maintenance and continuous improvement initiatives.
+
+Before that, I worked as a Maintenance Team Leader at Tunisie Cables, where I supervised maintenance on automated production lines and contributed to performance improvement projects like SMED. I also started my career as a senior technician, which gave me strong hands-on experience in troubleshooting and industrial systems.
+
+What motivated me to apply for this position is the strong alignment between my background and your needs. The role involves managing maintenance activities, improving equipment availability, leading teams, and working with SAP PM and continuous improvement methodologies — all areas where I have solid experience and where I’m motivated to bring value.
+
+I’m particularly interested in contributing to your objectives in reliability and performance, while continuing to grow in a structured industrial environment like yours.
+[2026-04-05 13:28:43] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you provide more details on how you measured the 32% reduction in breakdowns and the improvements in MTTR?

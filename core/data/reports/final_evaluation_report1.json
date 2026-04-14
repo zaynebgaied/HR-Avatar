@@ -1,0 +1,21 @@
+{
+    "score_technique": 75,
+    "score_communication": 80,
+    "competences_detectees": [
+        "Connaissance en Vector Database",
+        "Compétence en NLU accuracy",
+        "Expérience avec FastAPI et LLM",
+        "Gestion de Docker deployment"
+    ],
+    "lacunes_identifiees": [
+        "Manque d'explication sur la gestion des erreurs dans le Docker deployment",
+        "Pas de mention sur l'utilisation de GPU pour inference autre que lorsqu'il a été question par le candidat"
+    ],
+    "analyse_motivation": "Le candidat semble motivé par son expérience technique et sa connaissance approfondie du domaine. Il n'a pas montré d'enthousiasme particulier pour le poste d'Avatar RH, mais il a répondu de manière professionnelle aux questions.",
+    "points_forts": [
+        "Connaissances techniques solides",
+        "Réactivité dans la réponse aux questions",
+        "Compétences en gestion de projets complexes"
+    ],
+    "verdict_final": "A REVOIR"
+}

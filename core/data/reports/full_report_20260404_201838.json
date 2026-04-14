@@ -1,0 +1,39 @@
+{
+  "date": "2026-04-04 20:18",
+  "langue": "Anglais",
+  "duree_minutes": 20,
+  "meta": {},
+  "phases": [],
+  "score_total": 0,
+  "score_max": 100,
+  "pourcentage": 0,
+  "scores_par_phase": {},
+  "score_technique": 0,
+  "score_communication": 0,
+  "score_global": 0,
+  "competences_detectees": [],
+  "lacunes_identifiees": [],
+  "analyse_motivation": "",
+  "analyse_soft_skills": "",
+  "points_forts": [],
+  "points_amelioration": [],
+  "verdict_final": "",
+  "recommandation_detail": "",
+  "recommandation": "",
+  "sources_rag": {
+    "cv": [
+      "cv.pdf"
+    ],
+    "job_offer": [
+      "offre.pdf"
+    ],
+    "company_info": []
+  },
+  "analyse_emotion_vision": {
+    "disponible": true,
+    "timeline": [],
+    "emotion_dominante": "neutre",
+    "pics_stress": [],
+    "evolution": []
+  }
+}

@@ -1,0 +1,143 @@
+HR INTERVIEW — Anglais
+Date    : 2026-04-04 20:02:34
+Duration: 20 minutes
+[2026-04-04 20:06:07] [OPENING] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Hello, thank you for the opportunity.
+
+I am currently a final-year engineering student in Data Science at ENET’Com. My academic background started with a preparatory program in mathematics and physics, which gave me a strong foundation in analytical thinking and problem solving.
+
+Throughout my experiences, I have mainly worked on applied AI projects, especially in NLP, machine learning, and real-time systems. For example, during my most recent internship, I developed a conversational agent for a video game where I integrated a RAG system with a LLaMA model to generate multilingual responses. I also worked on speech recognition using Whisper and text-to-speech, and handled the orchestration and deployment using FastAPI and Docker .
+
+In another project, I built a sales prediction and recommendation system using models like XGBoost, ARIMA, and reinforcement learning, along with an interactive dashboard using Streamlit. These experiences allowed me to work across the full pipeline, from data preprocessing to modeling and deployment.
+
+What really attracted me to this position is the opportunity to work on an interactive AI-powered HR avatar. It combines several areas I am passionate about, such as speech processing, LLMs, real-time interaction, and intelligent evaluation systems . I’m especially interested in the challenge of integrating these components into a coherent and efficient system.
+
+Finally, I am a fast learner, proactive, and I enjoy working in teams. I also take initiative outside of academics, for example through my involvement in the Google Developer Student Club, where I helped organize technical events.
+[2026-04-04 20:06:41] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Building on that, can you describe your experience with integrating natural language generation models like LLaMA into real-time applications using FastAPI?
+[2026-04-04 20:07:18] [JOB_ALIGNED_EXPLORATION] Candidate [quality=STRONG] [behavioral=False] [decision=False] [weak_signals=['understatement']]: Yes, of course.
+
+In my last internship, I worked on integrating a LLaMA-based model into a real-time conversational system for a video game. The main objective was to generate context-aware and multilingual responses dynamically, based on player input.
+
+From an architectural perspective, I designed the system around a FastAPI backend that handled incoming requests from the game interface. The pipeline started with speech-to-text using Whisper, then the transcribed input was passed into a RAG pipeline, where we retrieved relevant context before feeding everything into the LLaMA model for response generation .
+
+One of the key challenges was ensuring low latency. To address this, I optimized the inference flow by:
+
+Preloading the model and keeping it in memory
+Using asynchronous FastAPI endpoints to handle concurrent requests
+Structuring the pipeline so that retrieval and generation were efficiently chained
+
+I also implemented prompt engineering techniques to control the output format, especially since the responses needed to include not just dialogue, but also structured interpretations like intent or action triggers.
+
+After generation, the response was sent to a text-to-speech module and returned to the frontend in near real-time. Docker was used to containerize the whole system, which made deployment and reproducibility much easier.
+
+Overall, this experience gave me a solid understanding of how to integrate LLMs like LLaMA into production-like environments, especially in scenarios where responsiveness and system orchestration are critical.
+[2026-04-04 20:07:34] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: How did you balance these requirements with the system's overall performance?
+[2026-04-04 20:09:24] [JOB_ALIGNED_EXPLORATION] Candidate [quality=STRONG] [behavioral=False] [decision=True] [weak_signals=[]]: Balancing real-time responsiveness with overall system performance was one of the main challenges of the project, especially because we were combining multiple heavy components like STT, retrieval, LLM inference, and TTS in a single pipeline.
+
+To manage this, I focused on optimization at different levels:
+
+First, at the architecture level, I designed the pipeline to be modular and asynchronous. Using FastAPI’s async capabilities allowed us to handle multiple requests concurrently without blocking the system, which was essential for maintaining responsiveness under load.
+
+Second, at the model level, we made trade-offs between model size and latency. For example, instead of always using the largest LLaMA variant, we selected a version that provided a good balance between response quality and inference time. We also kept the model loaded in memory to avoid cold-start delays.
+
+Third, for the RAG component, I optimized retrieval by limiting the context size and using efficient indexing, so that we only passed the most relevant information to the model. This reduced both latency and unnecessary computation.
+
+Another important aspect was pipeline optimization. Some components, like speech recognition and response generation, were structured to minimize sequential bottlenecks. In certain cases, we could prepare parts of the prompt or context in advance to save time during inference.
+
+Finally, I used Docker and monitoring to test performance under different scenarios and identify bottlenecks. This helped us iteratively improve response time while keeping the system stable
+[2026-04-04 20:09:40] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Given that context, can you walk me through any specific challenges you faced during the optimization process and how you overcame them?
+[2026-04-04 20:11:10] [JOB_ALIGNED_EXPLORATION] Candidate [quality=STRONG] [behavioral=False] [decision=False] [weak_signals=[]]: One key challenge was high end-to-end latency due to the full pipeline (STT → RAG → LLaMA → TTS). To solve this, I first identified bottlenecks and focused on optimizing the most critical parts.
+
+For LLM inference, I kept the model loaded in memory and reduced prompt size to speed up generation. For the RAG component, I limited and filtered retrieved context to reduce unnecessary tokens and improve relevance.
+
+I also improved system concurrency using asynchronous FastAPI endpoints to avoid blocking requests, and used prompt engineering to ensure more structured and consistent outputs.
+
+Overall, I handled the challenge by making practical trade-offs between speed and quality, and by optimizing the system holistically rather than focusing on a single component.
+[2026-04-04 20:11:26] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you provide a specific number for the reduction in latency you achieved and how it was measured?
+[2026-04-04 20:12:22] [JOB_ALIGNED_EXPLORATION] Candidate [quality=STRONG] [behavioral=False] [decision=False] [weak_signals=['understatement']]: Yes, during the optimization phase, I tracked latency using end-to-end response time—from the moment the user input was received to the final audio/text response sent back.
+
+Initially, the average latency was around 3.5 to 4 seconds, which was too high for a smooth real-time interaction.
+
+After optimizations—mainly reducing prompt size, improving retrieval filtering, keeping the model in memory, and using async FastAPI endpoints—we were able to bring it down to approximately 1.8 to 2.2 seconds on average, so roughly a 40–50% reduction in latency.
+
+I measured this by:
+
+Logging timestamps at each stage of the pipeline (STT, retrieval, generation, TTS)
+Computing average response time over multiple test runs
+Testing under different scenarios to ensure consistency, not just best-case performance
+
+This allowed us to both quantify improvements and clearly identify where further optimizations were needed.
+[2026-04-04 20:12:38] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: On that note, give me a concrete example of how you used one of the core technologies for this role?
+[2026-04-04 20:13:51] [JOB_ALIGNED_EXPLORATION] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=['understatement']]: One of the most relevant projects I worked on is a real-time AI-powered conversational agent using LLaMA and RAG…In my internship, I implemented a FastAPI backend that served as the central orchestrator of the application. For each user interaction, the API handled the full pipeline: it received input (text or speech), processed it through Whisper for transcription, then passed it into a RAG pipeline where relevant context was retrieved, and finally sent everything to a LLaMA model to generate a response .
+
+One specific feature I built was intent-aware response generation. Instead of just generating free text, I structured the prompts so that the LLaMA output included both:
+
+a natural language response
+and an interpreted intent (for example, an action or sentiment)
+
+This allowed the system to not only “talk” but also trigger actions in the game environment, which is very similar to the requirement of evaluating candidates or generating structured reports in your project .
+
+Technically, I used:
+
+FastAPI for async endpoints and real-time handling
+Docker for deployment
+Prompt engineering + RAG to control output quality and relevance
+
+This experience is directly aligned with your needs, especially around integrating LLMs, managing real-time interactions, and producing structured, actionable outputs.
+[2026-04-04 20:14:08] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Which of the role's key tools do you know best, and what have you built with it?
+[2026-04-04 20:14:46] [JOB_ALIGNED_EXPLORATION] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: A tool I’m most comfortable with is FastAPI, especially for building and orchestrating AI-driven backends.
+
+For example, I used FastAPI as the core framework in a real-time AI conversational system. I built an API that handled the full pipeline: receiving user input, processing it through speech-to-text, passing it into a RAG pipeline, and then generating responses with a LLaMA model .
+
+What I specifically implemented was:
+
+Asynchronous endpoints to handle multiple real-time requests efficiently
+Pipeline orchestration between STT, retrieval, LLM, and TTS modules
+Structured responses, where the API returned not only generated text but also interpreted information like intent or sentiment
+
+I also containerized the application using Docker to ensure reproducibility and easier deployment.
+
+Through this, I didn’t just use FastAPI for simple APIs—I used it to coordinate complex AI components in a real-time system, which I believe is very aligned with the requirements of this role.
+[2026-04-04 20:15:02] [PROJECT_DEEP_DIVE] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you provide more details on how you handled the asynchronous endpoints to ensure efficient processing of multiple real-time requests?
+[2026-04-04 20:16:15] [PROJECT_DEEP_DIVE] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Yes.
+
+In that project, I used FastAPI asynchronous endpoints to keep the pipeline responsive when several requests arrived close together. Since the application combined speech recognition, retrieval, LLaMA-based generation, and text-to-speech, I had to make sure one request would not unnecessarily block the others. This work is directly related to my internship experience building a conversational AI backend with FastAPI, Docker, Whisper, RAG, and LLaMA .
+
+My approach was mainly based on three points:
+
+First, I kept the API layer lightweight and non-blocking. The endpoint was responsible for receiving the request, validating the input, and coordinating the pipeline, rather than putting too much logic directly inside the route. That made the service easier to scale and reduced waiting time at the API level.
+
+Second, I used async handling for I/O-bound parts of the workflow, especially when the request involved communication between modules or waiting for intermediate results. This helped the backend continue serving other incoming requests instead of freezing on one interaction.
+
+Third, I organized the system in a modular pipeline, so each step had a clear role:
+
+input reception
+speech-to-text
+retrieval
+response generation
+text-to-speech/output formatting
+
+This structure made it easier to identify bottlenecks and optimize the slowest stage without affecting the whole application.
+[2026-04-04 20:16:32] [SOFT_SKILLS_BEHAVIORAL] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: How did you manage it?
+[2026-04-04 20:17:22] [SOFT_SKILLS_BEHAVIORAL] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: I managed it by keeping the workflow modular and lightweight.
+
+In practice, the FastAPI endpoint only handled the request reception and orchestration. Then I separated the pipeline into clear stages: STT, retrieval, LLM generation, and TTS. This made it easier to see where the blocking points were and optimize them one by one.
+
+For efficiency, I used async endpoints mainly for the I/O-bound parts, so the API could keep serving new requests while waiting for intermediate processing. I also avoided unnecessary overhead by keeping heavy components loaded in memory and by reducing the amount of context sent to the model.
+
+So overall, I managed it through three things:
+clear pipeline separation, async handling for non-blocking execution, and optimization of the heaviest steps.
+
+That helped the system stay responsive when multiple real-time requests came in.
+[2026-04-04 20:17:39] [SOFT_SKILLS_BEHAVIORAL] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you provide an example of a situation where you had to handle a conflict or disagreement within your team?
+[2026-04-04 20:18:05] [SOFT_SKILLS_BEHAVIORAL] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=['unanchored_comparison']]: Yes, of course.
+
+During one of my internships, we had a disagreement within the team regarding the choice of model for the recommendation system. One part of the team wanted to use a more complex deep learning approach, while I suggested starting with models like XGBoost combined with time-series methods, because they were more interpretable and faster to deploy.
+
+The conflict came from different priorities: some focused on achieving the highest possible performance, while I was more concerned about practical constraints like latency, data size, and deployment complexity.
+
+To handle this, I proposed a data-driven approach instead of debating opinions. We agreed to test both approaches on a subset of the data and compare them using clear metrics like accuracy, training time, and inference speed.
+
+After running the experiments, we found that the simpler models performed very competitively while being much more efficient. This helped us align as a team and move forward with a solution that balanced performance and practicality.
+[2026-04-04 20:18:05] [CANDIDATE_QUESTIONS] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Before we move to the end, do you have any questions about the role, the team, or the hiring process?
+[2026-04-04 20:18:29] [CANDIDATE_QUESTIONS] Candidate [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=[]]: no thank you
+[2026-04-04 20:18:35] [CLOSING] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Thank you for your time. We will get back to you with feedback within the next few days.

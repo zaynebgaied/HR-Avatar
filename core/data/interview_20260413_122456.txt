@@ -1,0 +1,5 @@
+HR INTERVIEW — Anglais
+Date    : 2026-04-13 12:24:56
+Duration: 20 minutes
+[2026-04-13 12:29:14] [OPENING] Candidate [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=[]]: hello thank you so much for this opportunity
+[2026-04-13 12:30:23] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Can you provide a specific example of how you used Python to develop or maintain a data pipeline in your previous role at Orange Tunisie?

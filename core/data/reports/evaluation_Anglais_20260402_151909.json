@@ -1,0 +1,97 @@
+{
+    "meta": {
+        "date_entretien": "2026-04-02 14:55:50",
+        "langue": "Anglais",
+        "duree": "20 minutes",
+        "date_rapport": "2026-04-02 15:15:44",
+        "source_interview": "C:\\internship_spark\\core\\data\\interview_20260402_145550.txt"
+    },
+    "scores_par_phase": {
+        "presentation_parcours": {
+            "obtenu": 0,
+            "max": 10,
+            "statut": "NON ÉVALUÉ",
+            "commentaire": "Non testé.",
+            "avg_tour": 0.0,
+            "nb_tours": 0
+        },
+        "pertinence_projets": {
+            "obtenu": 0,
+            "max": 20,
+            "statut": "NON ÉVALUÉ",
+            "commentaire": "Non testé.",
+            "avg_tour": 0.0,
+            "nb_tours": 0
+        },
+        "competences_techniques": {
+            "obtenu": 0,
+            "max": 25,
+            "statut": "NON ÉVALUÉ",
+            "commentaire": "Non testé.",
+            "avg_tour": 0.0,
+            "nb_tours": 0
+        },
+        "soft_skills_culture_fit": {
+            "obtenu": 0,
+            "max": 30,
+            "statut": "NON ÉVALUÉ",
+            "commentaire": "Non testé.",
+            "avg_tour": 0.0,
+            "nb_tours": 0
+        },
+        "curiosite_motivation": {
+            "obtenu": 0,
+            "max": 15,
+            "statut": "NON ÉVALUÉ",
+            "commentaire": "Non testé.",
+            "avg_tour": 0.0,
+            "nb_tours": 0
+        }
+    },
+    "score_technique": 0,
+    "score_communication": 0,
+    "score_global": 0,
+    "taux_couverture": 0,
+    "evaluation_partielle": true,
+    "competences_detectees": [],
+    "lacunes_identifiees": [
+        "Non testé — LACUNE AVÉRÉE"
+    ],
+    "analyse_motivation": "The candidate showed no clear motivation or interest in the projects and role. Their lack of engagement during the interview suggests a low level of enthusiasm for the position.",
+    "analyse_soft_skills": "Soft skills were not demonstrated, indicating a potential mismatch with our company culture. The candidate appeared to be unprepared and did not show any adaptability or flexibility.",
+    "points_forts": [],
+    "points_amelioration": [
+        "Improve preparation for the interview",
+        "Enhance understanding of the projects and role"
+    ],
+    "verdict_final": "À COMPLÉTER",
+    "recommandation_detail": "The candidate's profile is promising, but further testing in all relevant areas is necessary to fully assess their fit. Additional interviews or assessments should be conducted to cover the missing dimensions.",
+    "turn_scores_summary": {
+        "total_turns": 0,
+        "avg_relevance": 0,
+        "avg_depth": 0,
+        "avg_experience": 0,
+        "off_topic_count": 0,
+        "vague_count": 0,
+        "with_metrics": 0,
+        "star_count": 0
+    },
+    "qualite_entretien": {
+        "taux_couverture_pct": 0,
+        "desequilibres_detectes": [
+            "All dimensions were not covered"
+        ],
+        "sujets_cv_non_exploites": [
+            "No topics from the candidate's CV were discussed"
+        ],
+        "domaines_non_interroges": [
+            "Présentation & Parcours",
+            "Pertinence des Projets",
+            "Compétences Techniques",
+            "Soft Skills & Culture Fit",
+            "Curiosité & Motivation"
+        ],
+        "recommandation_recruteur": "The candidate should be given a second chance with a more comprehensive interview to address the missing areas."
+    },
+    "turn_scores_detail": []
+}

@@ -1,0 +1,5 @@
+HR INTERVIEW — Français
+Date    : 2026-04-14 15:18:20
+Duration: 20 minutes
+[2026-04-14 15:21:34] [OPENING] Candidat [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: Bonjour, je vous remercie beaucoup pour cette opportunité. Bonjour, je vous remercie beaucoup pour cette opportunité.
+[2026-04-14 15:22:08] [JOB_ALIGNED_EXPLORATION] Recruteur [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Pouvez-vous me décrire un projet où vous avez utilisé Python pour intégrer des modules STT/TTS dans une application d'interaction vocale ?

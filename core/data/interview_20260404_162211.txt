@@ -1,0 +1,44 @@
+HR INTERVIEW — Anglais
+Date    : 2026-04-04 16:22:11
+Duration: 20 minutes
+RAG     : Hybrid BM25+Vector (alpha=0.6) + CrossEncoder=True + SemanticChunking=True
+
+[2026-04-04 16:24:47] [OPENING] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Hello, thank you for having me. I’m really happy to be here.
+
+My name is Zayneb Gaied. I’m currently in my final year of an engineering degree in Data Science and Decision Systems at ENET’Com.
+
+During my studies, I developed strong skills in machine learning, deep learning, and data engineering, using tools like Python, TensorFlow, and SQL.
+
+I’ve also completed several internships where I worked on real-world AI projects. For example, I developed a conversational AI system using LLaMA and RAG, and also built a sales prediction and recommendation system using models like XGBoost and Prophet.
+
+What motivated me to apply for this position is that it combines both AI engineering and real business impact, especially in a context like HR innovation. The project of building an AI-driven HR avatar for recruitment really interests me, because it involves NLP, real-time interaction, and system architecture — which aligns well with my experience.
+
+بصراحة، هذا النوع من المشاريع “AI applied to real use cases” هو اللي يحمسني أكثر، especially when it has a direct impact on users.
+
+I’d be happy to go deeper into any of my projects or technical experience 👍
+
+Building on that, how did you handle real-time interaction and sentiment analysis in that
+[2026-04-04 16:24:47] [OPENING] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: On python — what's a concrete technical decision you made, and why did you make it?
+[2026-04-04 16:26:37] [OPENING] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Of course.
+
+One concrete technical decision I made in Python was to implement the system using an asynchronous architecture (async/await) with FastAPI instead of a synchronous approach.
+
+Why I made this decision:
+
+The project involved multiple steps (STT → LLM → TTS) that could be slow if executed sequentially
+Using async allowed the system to handle requests without blocking, especially during LLM inference
+It improved the system’s ability to manage real-time interactions
+[2026-04-04 16:26:37] [OPENING] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: You've worked with python — what's the most complex thing you built with it, and what broke?
+[2026-04-04 16:26:51] [OPENING] Candidate [quality=STRONG] [behavioral=False] [decision=False] [weak_signals=[]]: The most complex thing I built in Python was a real-time conversational AI system combining STT (Whisper), LLM (LLaMA + RAG), sentiment analysis, and TTS, all orchestrated through a FastAPI backend.
+
+What broke:
+The main issue was with latency and pipeline synchronization.
+
+Sometimes the system would delay responses because one module (like STT or LLM) was slower
+In some cases, responses were generated out of sync with user input
+Also, when the RAG retrieval returned too much data, it caused slow or less relevant responses
+[2026-04-04 16:26:51] [OPENING] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: What's the largest scale at which you've used python, and what was the first bottleneck?
+[2026-04-04 16:27:41] [OPENING] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: Of course.
+
+The largest scale I worked with was during the sales prediction and recommendation system, where I handled data extracted from a MySQL database with several thousands of records and built predictive models like XGBoost and Prophet.
+[2026-04-04 16:27:41] [OPENING] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: On python — what's a concrete technical decision you made, and why did you make it?

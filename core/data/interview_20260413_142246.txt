@@ -1,0 +1,13 @@
+HR INTERVIEW — Anglais
+Date    : 2026-04-13 14:22:46
+Duration: 20 minutes
+[2026-04-13 14:25:43] [OPENING] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Hello, thank you for the opportunity.
+
+My name is Youssef Dridi. I hold a Bachelor’s degree in Communication Sciences from ISCOM Tunis, and I have about three years of experience as a Community Manager in a communication agency based in Sousse.
+
+In my current role at Creativ’360, I manage social media accounts for several SME clients across sectors like fashion, real estate, and food. My responsibilities include creating visual content using Canva and CapCut, planning editorial calendars, writing captions in both French and Arabic, and managing Meta Ads campaigns with monthly budgets ranging from 500 to 2,000 TND. I also handle basic performance tracking and reporting through Meta Business Suite.
+
+Before that, I completed a long-term internship at Tunisair, where I supported internal communication through newsletters, intranet content, and event coordination. That experience helped me build a solid foundation in structured communication and teamwork.
+
+What motivated me to apply for this position is my strong interest in moving from an execution-focused role to a more strategic marketing position, especially within a growing brand like yours in the fashion and e-commerce space. I’m particularly excited by the opportunity to work on full-funnel marketing topics — from acquisition to conversion and retention — and to manage larger-scale campaigns while developing my skills in areas like performance marketing, email automation, and analytics.
+[2026-04-13 14:25:49] [JOB_ALIGNED_EXPLORATION] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Give me a concrete example of how you used one of the core technologies for this role?

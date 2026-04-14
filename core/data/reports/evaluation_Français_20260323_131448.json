@@ -1,0 +1,59 @@
+{
+    "meta": {
+        "date_entretien": "2026-03-22 15:33:48",
+        "langue": "Français",
+        "duree": "N/A",
+        "date_rapport": "2026-03-23 13:12:02",
+        "source_interview": "/app/core/data/interview_20260322_153340.txt"
+    },
+    "scores_par_phase": {
+        "presentation_parcours": {
+            "obtenu": 8,
+            "max": 10,
+            "commentaire": "Le candidat a bien présenté son parcours académique et professionnel, mais aurait pu être plus détaillé sur ses expériences antérieures."
+        },
+        "pertinence_projets": {
+            "obtenu": 15,
+            "max": 20,
+            "commentaire": "Les projets présentés sont pertinents pour le poste, mais manquent de profondeur et d'innovation."
+        },
+        "competences_techniques": {
+            "obtenu": 35,
+            "max": 40,
+            "commentaire": "Le candidat a démontré une bonne maîtrise des compétences techniques requises, mais a besoin de développer davantage sa polyvalence."
+        },
+        "soft_skills_culture_fit": {
+            "obtenu": 18,
+            "max": 20,
+            "commentaire": "Le candidat montre de bonnes soft skills et une bonne culture fit, mais aurait pu s'adapter plus rapidement aux méthodes de travail de l'équipe."
+        },
+        "curiosite_motivation": {
+            "obtenu": 9,
+            "max": 10,
+            "commentaire": "Le candidat montre une certaine curiosité et motivation pour le poste, mais aurait pu exprimer plus d'enthousiasme lors de l'entretien."
+        }
+    },
+    "score_technique": 35,
+    "score_communication": 82,
+    "score_global": 74,
+    "competences_detectees": [
+        "Maîtrise des outils techniques",
+        "Capacité d'analyse"
+    ],
+    "lacunes_identifiees": [
+        "Manque de profondeur dans les projets",
+        "Besoin de développement en polyvalence technique"
+    ],
+    "analyse_motivation": "Le candidat semble motivé pour le poste, mais pourrait exprimer plus d'enthousiasme et d'intérêt lors des discussions.",
+    "analyse_soft_skills": "Les soft skills du candidat sont satisfaisantes, mais il aurait pu montrer une meilleure adaptabilité aux méthodes de travail de l'équipe.",
+    "points_forts": [
+        "Bonnes compétences techniques",
+        "Capacité d'analyse"
+    ],
+    "points_amelioration": [
+        "Développer la profondeur et l'innovation dans les projets",
+        "Améliorer la polyvalence technique"
+    ],
+    "verdict_final": "A REVOIR",
+    "recommandation_detail": "Le candidat montre de bonnes compétences techniques et une bonne motivation, mais nécessite quelques améliorations en termes de profondeur des projets et de polyvalence. Il est recommandé d'organiser un second entretien pour évaluer davantage ses capacités et sa culture fit."
+}

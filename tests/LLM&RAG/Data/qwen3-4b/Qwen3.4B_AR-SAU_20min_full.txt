@@ -1,0 +1,40 @@
+Date   : 2026-03-29 14:00:00
+Langue : Arabe saoudien
+Durée  : 20 min
+Mode   : Simulation PFE
+
+سياق المرشح : أنا كريم، مهندس بيانات عندي 7 سنوات خبرة بين Tunisie Telecom وCapgemini Tunisie وOrange Tunisie. اشتغلت على Spark وAirflow وAWS وMLflow وDocker وXGBoost، وعندي تجربة في data lake وقيادة 4 مهندسين جونيور.
+الوظيفة المستهدفة : الوظيفة: Lead Data Engineer يركز على data platform وتقليل تكلفة الـ cloud وMLOps ورفع نضج الـ pipelines والقيادة التقنية.
+
+[10:06:23] [INTRO] Avatar: مرحبا، عرف نفسك.
+
+[10:07:12] [INTRO] Candidate: أنا مهندس بيانات عندي 7 سنوات تقريباً. اشتغلت في Tunisie Telecom وCapgemini وOrange
+Tunisie. أشتغل على Spark وAirflow وAWS وأيضاً Airflow بشكل كبير.
+
+[10:08:41] [MAPPING] Avatar: ممتاز. وش أبرز مشروع عندك في Spark وAirflow وAWS وتقليل التكلفة؟
+
+[10:11:27] [MAPPING] Candidate: سوينا data lake على AWS، ونعالج تقريباً 5TB يومياً أو أحياناً 3TB حسب الفترة.
+خفضنا التكلفة 30% أو 40% تقريباً باستخدام S3 وGlue وRedshift. كان مشروع ممتاز ومهم جداً.
+
+[10:11:27] [VALIDATION] Avatar: طيب 30% أو 40% رقم ممتاز. كيف سويت كذا بالضبط؟
+
+[10:12:43] [VALIDATION] Candidate: حذفنا البيانات القديمة، وحطينا lifecycle، واستخدمنا Glue وأحياناً EC2. أنا سويت
+architecture والإدارة وبعض الأمن. الرقم الحقيقي تقريباً 35 لكن مو دائم.
+
+[10:12:43] [VALIDATION] Avatar: وماذا عن MLflow؟
+
+[10:14:33] [VALIDATION] Candidate: استخدمنا MLflow للتتبع وDocker للنشر. أحياناً النشر ينجح وأحياناً يحتاج إعادة.
+Airflow يشغل jobs في Airflow لإعادة التدريب.
+
+[10:14:33] [SOFT] Avatar: ممكن تعطيني مثال ملموس؟ ممكن تعطيني مثال ملموس؟
+
+[10:16:17] [SOFT] Candidate: نعم، اختلف اثنان من المهندسين. تكلمت معهم، وبعدها صار الوضع أفضل وتحرك المشروع.
+
+[10:16:17] [QUESTIONS] Avatar: هل عندك أسئلة؟ هل عندك أسئلة؟
+
+[10:18:03] [QUESTIONS] Candidate: نعم، كم حجم الفريق؟
+
+[10:18:03] [QUESTIONS] Avatar: ما عندي هذه المعلومة بالضبط الآن، ويمكن نرجع لها لاحقاً.
+
+[10:20:02] [CONCLUSION] Candidate: شكراً.
+[10:20:02] [CONCLUSION] Avatar: شكراً وراح نرجع لك قريباً لاحقاً إن شاء الله.

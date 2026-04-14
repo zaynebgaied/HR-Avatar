@@ -1,0 +1,476 @@
+{
+  "admin": {
+    "id": "8b84aa6b-acce-47ee-97be-f79fce70a19a",
+    "name": "Administrateur",
+    "email": "admin@rh.local",
+    "password": "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
+    "role": "admin",
+    "created_at": "2026-04-09T09:50:17.615145",
+    "last_login": "2026-04-10T13:55:44.081292",
+    "login_history": [
+      {
+        "at": "2026-04-09T14:34:38.946137",
+        "ok": true
+      },
+      {
+        "at": "2026-04-09T14:35:55.495273",
+        "ok": true
+      },
+      {
+        "at": "2026-04-09T15:30:40.001120",
+        "ok": true
+      },
+      {
+        "at": "2026-04-09T15:32:34.596199",
+        "ok": true
+      },
+      {
+        "at": "2026-04-09T15:40:10.100318",
+        "ok": true
+      },
+      {
+        "at": "2026-04-09T16:17:44.627461",
+        "ok": true
+      },
+      {
+        "at": "2026-04-09T21:29:05.374054",
+        "ok": true
+      },
+      {
+        "at": "2026-04-09T21:40:30.908394",
+        "ok": true
+      },
+      {
+        "at": "2026-04-09T21:42:58.472137",
+        "ok": true
+      },
+      {
+        "at": "2026-04-09T21:44:34.964569",
+        "ok": true
+      },
+      {
+        "at": "2026-04-09T21:59:38.560699",
+        "ok": true
+      },
+      {
+        "at": "2026-04-09T22:39:17.190067",
+        "ok": true
+      },
+      {
+        "at": "2026-04-10T11:16:58.749909",
+        "ok": true
+      },
+      {
+        "at": "2026-04-10T11:23:42.457031",
+        "ok": true
+      },
+      {
+        "at": "2026-04-10T12:14:32.544163",
+        "ok": true
+      },
+      {
+        "at": "2026-04-10T13:55:44.081292",
+        "ok": true
+      }
+    ],
+    "is_blocked": false,
+    "session_id": null,
+    "session_status": "en_attente",
+    "poste": null,
+    "langue": null,
+    "duree": null,
+    "report_file": null,
+    "report_read_at": null,
+    "rh_comment": "",
+    "decision_rh": "",
+    "notifications": [
+      {
+        "type": "new_candidate",
+        "message": "👤 Nouveau candidat inscrit : zayneb gaied (@gaied)",
+        "at": "2026-04-09T14:35:10.034111",
+        "read": false
+      },
+      {
+        "type": "new_candidate",
+        "message": "👤 Nouveau candidat inscrit : zayneb_gaied (@zayneb)",
+        "at": "2026-04-09T15:39:37.680691",
+        "read": false
+      }
+    ],
+    "scheduled_at": null,
+    "scheduled_window_min": 30,
+    "access_token": null,
+    "cv_file": null,
+    "offre_file": null
+  },
+  "gaied": {
+    "id": "eb7222da-5da8-4bfc-b84f-8bc87373b7e1",
+    "name": "zayneb gaied",
+    "email": "gaiedzaineb17@gmail.com",
+    "password": "1d21dcfe45e4e784f0ca48cf9b48c1364bb5da9956bbc5cd8471c7d3e41707e6",
+    "role": "user",
+    "created_at": "2026-04-09T14:35:10.034111",
+    "last_login": "2026-04-09T14:35:26.353255",
+    "login_history": [
+      {
+        "at": "2026-04-09T14:35:26.353255",
+        "ok": true
+      }
+    ],
+    "is_blocked": false,
+    "session_id": "09725b4e8e5247358d8902ea75119266",
+    "session_status": "configure",
+    "poste": "Stage AI",
+    "langue": "Français",
+    "duree": 15,
+    "report_file": null,
+    "report_read_at": null,
+    "rh_comment": "",
+    "decision_rh": "",
+    "notifications": [
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre session d'entretien est prête ! Poste : Stage AI | Langue : Français",
+        "at": "2026-04-09T14:40:55.871981",
+        "read": false,
+        "session_id": "C29F62F8-698"
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre session d'entretien est prête ! Poste : Stage AI | Langue : Français",
+        "at": "2026-04-09T14:41:33.689045",
+        "read": false,
+        "session_id": "0299EEE0-717"
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre session d'entretien est prête ! Poste : Stage AI | Langue : Français",
+        "at": "2026-04-09T14:44:27.035336",
+        "read": false,
+        "session_id": "C47427DF-675"
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre session d'entretien est prête ! Poste : Stage AI | Langue : Français",
+        "at": "2026-04-09T14:44:32.433246",
+        "read": false,
+        "session_id": "37661A7F-E4B"
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : Stage AI | Langue : Français",
+        "at": "2026-04-09T16:18:29.728479",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : Stage AI | Langue : Français",
+        "at": "2026-04-09T16:18:34.341992",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : Stage AI | Langue : Français | 📅 2026-04-09 16:20",
+        "at": "2026-04-09T16:19:32.749937",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : Stage AI | Langue : Français | 📅 2026-04-09 21:30",
+        "at": "2026-04-09T21:29:49.755945",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : Stage AI | Langue : Français | 📅 2026-04-09 21:50",
+        "at": "2026-04-09T21:41:35.595774",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : Stage AI | Langue : Français | 📅 2026-04-09 21:50",
+        "at": "2026-04-09T21:43:44.609617",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : Stage AI | Langue : Français | 📅 2026-04-09 21:50",
+        "at": "2026-04-09T21:45:17.841793",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : Stage AI | Langue : Français | 📅 2026-04-09 21:50",
+        "at": "2026-04-09T21:45:23.806788",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : Stage AI | Langue : Français | 📅 2026-04-09 22:00",
+        "at": "2026-04-09T22:00:23.305339",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : Stage AI | Langue : Français | 📅 2026-04-09 22:00",
+        "at": "2026-04-09T22:00:23.421051",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : Stage AI | Langue : Français | 📅 2026-04-09 22:00",
+        "at": "2026-04-09T22:00:23.482598",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : Stage AI | Langue : Français | 📅 2026-04-09 22:00",
+        "at": "2026-04-09T22:00:24.810856",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : Stage AI | Langue : Français | 📅 2026-04-09 22:00",
+        "at": "2026-04-09T22:00:25.713485",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : Stage AI | Langue : Français | 📅 2026-04-10 11:25",
+        "at": "2026-04-10T11:24:41.149002",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : Stage AI | Langue : Français | 📅 2026-04-10 11:25",
+        "at": "2026-04-10T13:56:31.890390",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : Stage AI | Langue : Français | 📅 2026-04-10 11:25",
+        "at": "2026-04-10T13:56:32.002858",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : Stage AI | Langue : Français | 📅 2026-04-10 11:25",
+        "at": "2026-04-10T13:56:35.984539",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : Stage AI | Langue : Français | 📅 2026-04-10 11:25",
+        "at": "2026-04-10T13:56:39.167891",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : Stage AI | Langue : Français | 📅 2026-04-10 11:25",
+        "at": "2026-04-10T13:56:39.231168",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : Stage AI | Langue : Français | 📅 2026-04-10 11:25",
+        "at": "2026-04-10T13:56:39.663363",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : Stage AI | Langue : Français | 📅 2026-04-10 11:25",
+        "at": "2026-04-10T13:56:48.694429",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : Stage AI | Langue : Français | 📅 2026-04-10 11:25",
+        "at": "2026-04-10T13:56:54.326617",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : Stage AI | Langue : Français | 📅 2026-04-10 11:25",
+        "at": "2026-04-10T13:57:10.786356",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : Stage AI | Langue : Français | 📅 2026-04-10 11:25",
+        "at": "2026-04-10T13:57:20.121270",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "📅 Votre fenêtre d'entretien a été mise à jour — nouveau créneau : 2026-04-10 14:00",
+        "at": "2026-04-10T13:59:06.112987",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : Stage AI | Langue : Français | 📅 2026-04-10 11:25",
+        "at": "2026-04-10T13:59:08.306610",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : Stage AI | Langue : Français | 📅 2026-04-10 11:25",
+        "at": "2026-04-10T13:59:08.557125",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : Stage AI | Langue : Français | 📅 2026-04-10 11:25",
+        "at": "2026-04-10T13:59:08.606346",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : Stage AI | Langue : Français | 📅 2026-04-10 11:25",
+        "at": "2026-04-10T13:59:09.098433",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : Stage AI | Langue : Français | 📅 2026-04-10 11:25",
+        "at": "2026-04-10T13:59:13.568383",
+        "read": false
+      }
+    ],
+    "scheduled_at": "2026-04-10T11:25:00",
+    "scheduled_window_min": 15,
+    "access_token": "ea25722519ae4b1cb2be7a452a00258a",
+    "cv_file": "cv_gaied.pdf",
+    "offre_file": "offre_gaied.pdf"
+  },
+  "zayneb": {
+    "id": "fabb28a4-a9c3-4c33-a844-0ebc06748095",
+    "name": "zayneb_gaied",
+    "email": "zaynebgaied@gmail.com",
+    "password": "6e891c664a897398a85026ed3adbb3b6d60b6d33e51ee3a2e9470673368615be",
+    "role": "user",
+    "created_at": "2026-04-09T15:39:37.680691",
+    "last_login": null,
+    "login_history": [],
+    "is_blocked": false,
+    "session_id": "04b7923d07c542b08103bc4fae1d7d90",
+    "session_status": "configure",
+    "poste": "marketing",
+    "langue": "Français",
+    "duree": 15,
+    "report_file": null,
+    "report_read_at": null,
+    "rh_comment": "",
+    "decision_rh": "",
+    "notifications": [
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre session d'entretien est prête ! Poste : marketing | Langue : Français",
+        "at": "2026-04-09T15:41:14.040493",
+        "read": false,
+        "session_id": "DBD7DC66-E9F"
+      },
+      {
+        "type": "session_ready",
+        "message": "📧 Lien d'entretien envoyé à zaynebgaied@gmail.com",
+        "at": "2026-04-09T15:41:54.193273",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : marketing | Langue : Français | 📅 2026-04-10 22:40",
+        "at": "2026-04-09T22:40:52.249621",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : marketing | Langue : Français | 📅 2026-04-10 22:40",
+        "at": "2026-04-09T22:40:52.304557",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : marketing | Langue : Français | 📅 2026-04-10 22:40",
+        "at": "2026-04-09T22:40:52.366381",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : marketing | Langue : Français | 📅 2026-04-10 22:40",
+        "at": "2026-04-09T22:40:52.407855",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : marketing | Langue : Français | 📅 2026-04-10 22:40",
+        "at": "2026-04-09T22:40:52.452732",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : marketing | Langue : Français | 📅 2026-04-10 22:40",
+        "at": "2026-04-09T22:40:55.837697",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : marketing | Langue : Français | 📅 2026-04-10 22:40",
+        "at": "2026-04-09T22:40:58.658280",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : marketing | Langue : Français | 📅 2026-04-10 22:40",
+        "at": "2026-04-09T22:40:59.498877",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "📅 Votre fenêtre d'entretien a été mise à jour — nouveau créneau : 2026-04-10 12:15",
+        "at": "2026-04-10T12:15:52.895456",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : marketing | Langue : Français | 📅 2026-04-10 12:15",
+        "at": "2026-04-10T12:16:23.617234",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : marketing | Langue : Français | 📅 2026-04-10 12:15",
+        "at": "2026-04-10T12:16:23.690072",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : marketing | Langue : Français | 📅 2026-04-10 12:15",
+        "at": "2026-04-10T12:16:23.875238",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : marketing | Langue : Français | 📅 2026-04-10 12:15",
+        "at": "2026-04-10T12:16:24.631957",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : marketing | Langue : Français | 📅 2026-04-10 12:15",
+        "at": "2026-04-10T12:16:25.495265",
+        "read": false
+      },
+      {
+        "type": "session_ready",
+        "message": "🎤 Votre entretien est planifié ! Poste : marketing | Langue : Français | 📅 2026-04-10 12:15",
+        "at": "2026-04-10T12:16:26.403339",
+        "read": false
+      }
+    ],
+    "scheduled_at": "2026-04-10T12:15:00",
+    "scheduled_window_min": 30,
+    "access_token": "5f1edc59357d476ea3b94e5bb110c17d",
+    "cv_file": "cv_zayneb.pdf",
+    "offre_file": "offre_zayneb.pdf"
+  }
+}
