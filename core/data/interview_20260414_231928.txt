@@ -1,0 +1,5 @@
+HR INTERVIEW — Français
+Date    : 2026-04-14 23:19:28
+Duration: 20 minutes
+[2026-04-14 23:24:55] [OPENING] Candidat [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=[]]: Sous-titrage ST' 501
+[2026-04-14 23:25:25] [JOB_ALIGNED_EXPLORATION] Recruteur [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Pouvez-vous me détailler vos responsabilités et les technologies utilisées lors de votre stage chez Inherited Games ?

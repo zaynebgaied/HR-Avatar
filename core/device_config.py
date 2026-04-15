@@ -4,11 +4,11 @@
 # VRAM budget estimé RTX 2050 (4 Go) :
 #   SentenceTransformer  float16  ≈ 0.3 Go
 #   Whisper large-v3     float16  ≈ 1.5 Go
-#   CrossEncoder                  ≈ 0.1 Go  (sur CPU pour économiser)
+#   CrossEncoder                  ≈ 0.0 Go  (désactivé par défaut)
 #   Ollama qwen2.5:7b    q4       ≈ 1.5 Go  (géré par Ollama directement)
 #   DeepFace Emotion (TF)         ≈ 0.2 Go
 #   ─────────────────────────────────────────
-#   Total estimé                  ≈ 3.6 Go  ✅ dans les limites
+#   Total estimé                  ≈ 3.5 Go  ✅ dans les limites
 #
 import os
 import torch
@@ -48,7 +48,7 @@ def _gpu_profile(forced: bool = False) -> dict:
     # RTX 2050 = 4 Go → lite_mode activé pour protéger la VRAM
     lite_mode = vram_gb < 5.0
     if lite_mode:
-        print(f"[DEVICE]    → Mode LITE activé (VRAM < 5 Go) : CrossEncoder sur CPU")
+        print(f"[DEVICE]    → Mode LITE activé (VRAM < 5 Go) : CrossEncoder désactivé pour réduire la latence")
 
     return {
         # ── Identité GPU ───────────────────────────────────────────────────
@@ -62,9 +62,9 @@ def _gpu_profile(forced: bool = False) -> dict:
         "st_batch_size":   64,
 
         # ── CrossEncoder (RAG re-ranking) ─────────────────────────────────
-        # Sur CPU pour RTX 2050 : modèle léger, pas besoin de VRAM
+        # Désactivé par défaut sur RTX 2050 pour réduire la latence
         "cross_encoder_device":  "cpu",
-        "disable_cross_encoder": False,
+        "disable_cross_encoder": True,
 
         # ── Whisper STT ───────────────────────────────────────────────────
         "whisper_device":       "cuda",
@@ -73,7 +73,7 @@ def _gpu_profile(forced: bool = False) -> dict:
 
         # ── Ollama LLM ────────────────────────────────────────────────────
         "ollama_num_gpu": 20,           # charge TOUTES les layers sur GPU
-        "ollama_num_ctx": 2048,
+        "ollama_num_ctx": 1536,
 
         # ── DeepFace / TensorFlow (VisionEngine) ──────────────────────────
         # use_gpu=True → vision_engine.py active tf.config memory_growth
@@ -93,14 +93,14 @@ def _cpu_profile() -> dict:
         "st_batch_size":   32,
 
         "cross_encoder_device":  "cpu",
-        "disable_cross_encoder": False,
+        "disable_cross_encoder": True,
 
         "whisper_device":       "cpu",
         "whisper_compute_type": "int8",
         "whisper_beam_size":    5,
 
         "ollama_num_gpu": 0,
-        "ollama_num_ctx": 2048,
+        "ollama_num_ctx": 1536,
     }
 
 

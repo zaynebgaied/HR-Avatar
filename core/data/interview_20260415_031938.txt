@@ -1,0 +1,4 @@
+HR INTERVIEW — Français
+Date    : 2026-04-15 03:19:38
+Duration: 20 minutes
+[2026-04-15 03:21:20] [OPENING] Candidat [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: D'abord, merci beaucoup pour cette opportunité. Je me présente Saïna Keïd, étudiante en troisième année d'ingénierie de données et systèmes décisionnels à l'ENETAM, école d'électronique et télécommunications à SACS. Mon parcours académique et mes expériences professionnelles m'ont permis d'acquérir des compétences en machine learning, learning, NLP ou Zaki El Tiney. J'ai fait beaucoup de projets, que ce soit des projets académiques, des projets professionnels et même des projets personnels. Et j'aime beaucoup contribuer à votre entrée.

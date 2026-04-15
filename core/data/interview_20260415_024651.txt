@@ -1,0 +1,4 @@
+HR INTERVIEW — Français
+Date    : 2026-04-15 02:46:51
+Duration: 20 minutes
+[2026-04-15 02:48:15] [OPENING] Candidat [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Tout d'abord, merci beaucoup pour m'inviter. Je me présente Zainab Gaye, situé en troisième année en ingénierie de données et système décisionnel à l'ENETA, école d'électronique et télécommunications à SAC. Mon parcours académique et mes expériences professionnelles m'ont permis d'acquérir des compétences en machine learning, deep learning, l'étang et intelligence artificielle. J'ai fait beaucoup de projets, que ce soit des projets académiques, des projets professionnels et même des projets personnels. Et j'aime beaucoup contribuer à votre entreprise.

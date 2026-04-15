@@ -25,6 +25,7 @@ sentence-transformers>=2.7.0
 ollama>=0.2.0
 chromadb>=0.5.0
 pandas>=2.2.1
+rank-bm25>=0.2.2
 
 # --- STT ---
 faster-whisper>=1.0.1
@@ -35,6 +36,7 @@ scipy>=1.12.0
 deepface>=0.0.93
 opencv-python>=4.9.0
 mediapipe>=0.10.11
+tensorflow>=2.16.1
 tf-keras>=2.16.0
 
 # --- Utils ---

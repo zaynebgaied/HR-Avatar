@@ -1,0 +1,4 @@
+HR INTERVIEW — Français
+Date    : 2026-04-15 02:27:26
+Duration: 20 minutes
+[2026-04-15 02:28:49] [OPENING] Candidat [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Merci beaucoup pour cette opportunité. Je me présente Zainé Labgué, étudiant en 3ème année d'ingénierie des données et systèmes décisionnels à l'Inetum, école d'électronique et télécommunication à Saxe. Mon parcours académique et mes expériences professionnelles m'ont permis d'adapter des compétences en machine learning, deep learning, NLP et la vision par ordinateur. J'ai fait beaucoup de projets, que ce soit des projets académiques, des projets professionnels ou des projets personnels. Et j'aime beaucoup contribuer à votre entreprise.

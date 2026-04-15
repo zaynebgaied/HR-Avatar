@@ -51,7 +51,6 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .field-group select,.field-group input[type="number"]{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:var(--rs);color:var(--text);font-family:var(--fb);font-size:1rem;padding:.75rem 1rem;outline:none;transition:border-color .2s,box-shadow .2s;appearance:none}
 .field-group select:focus,.field-group input[type="number"]:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(79,142,255,.15)}
 
-/* Drop zones CV / Offre */
 .drop-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
 @media(max-width:600px){.drop-row{grid-template-columns:1fr}}
 
@@ -65,7 +64,6 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .dropzone .dz-status{margin-top:.5rem;font-size:.78rem;color:var(--accent3);font-weight:500;display:none}
 .dropzone.uploaded .dz-status{display:block}
 
-/* KB entreprise */
 .kb-section{margin-top:1.5rem;border-top:1px solid var(--border);padding-top:1.5rem}
 .kb-title{font-size:.78rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}
 .kb-pill{background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.25);color:var(--accent2);border-radius:99px;padding:1px 8px;font-size:.68rem}
@@ -95,7 +93,6 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .ext-badge.docx{background:rgba(79,142,255,.15);color:var(--accent)}
 .ext-badge.txt{background:rgba(251,191,36,.15);color:var(--warn)}
 
-/* ═══ ÉVALUATION POINTS — TECHNIQUE & COMMUNICATION ═══════════ */
 .eval-point-row{display:flex;align-items:flex-start;gap:.75rem;padding:.6rem .75rem;border-radius:var(--rs);margin-bottom:.4rem;background:var(--surface2);border:1px solid var(--border);transition:background .2s}
 .eval-point-row:hover{background:rgba(255,255,255,.03)}
 .eval-status-icon{font-size:1.1rem;flex-shrink:0;margin-top:.05rem;line-height:1}
@@ -175,14 +172,12 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .mic-status.active{background:rgba(52,211,153,.15);border-color:rgba(52,211,153,.5);color:var(--accent3)}
 .mic-status.speaking{background:rgba(52,211,153,.28);border-color:rgba(52,211,153,.8);color:#fff}
 .mic-status.transcribing{background:rgba(251,191,36,.12);border-color:rgba(251,191,36,.5);color:var(--warn)}
-/* dot d'animation */
 .mic-dot{width:7px;height:7px;border-radius:50%;background:currentColor;display:inline-block;flex-shrink:0}
 .mic-status.active     .mic-dot{animation:micPulse 1.2s ease-in-out infinite}
 .mic-status.speaking   .mic-dot{animation:micPulse .5s ease-in-out infinite}
 .mic-status.transcribing .mic-dot{animation:micSpin .8s linear infinite}
 @keyframes micPulse{0%,100%{opacity:.4;transform:scale(.75)}50%{opacity:1;transform:scale(1.25)}}
 @keyframes micSpin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
-/* barre de niveau sonore */
 #rms-bar-wrap{width:40px;height:4px;background:rgba(255,255,255,.08);border-radius:99px;overflow:hidden;display:none}
 .mic-status.active #rms-bar-wrap,.mic-status.speaking #rms-bar-wrap{display:block}
 #rms-bar{height:100%;width:0%;background:var(--accent3);border-radius:99px;transition:width .08s linear}
@@ -215,7 +210,6 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .th-dot:nth-child(3){animation-delay:.4s}
 @keyframes thinkDot{0%,80%,100%{opacity:.2;transform:scale(.8)}40%{opacity:1;transform:scale(1.2)}}
 
-/* ═══ MASQUER L'INPUT TEXTE ═══════════════════════════════════ */
 .chat-input-area{display:none !important;}
 
 /* ═══ SCREEN 3 — REPORT ═══════════════════════════════════════ */
@@ -241,6 +235,12 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .phase-bar-bg{flex:1;height:6px;background:var(--surface2);border-radius:99px;overflow:hidden}
 .phase-bar-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:99px;width:0;transition:width 1s .3s ease}
 .phase-row-score{font-size:.78rem;color:var(--text);font-weight:600;width:60px;text-align:right}
+.msg-tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.45rem}
+.msg-tag{display:inline-flex;align-items:center;gap:.32rem;padding:.24rem .55rem;border-radius:999px;border:1px solid var(--border);background:var(--surface2);font-size:.68rem;color:var(--muted);font-weight:600}
+.msg-tag.eval-strong{border-color:rgba(34,197,94,.35);color:#22c55e}
+.msg-tag.eval-good{border-color:rgba(59,130,246,.35);color:#60a5fa}
+.msg-tag.eval-incomplete{border-color:rgba(245,158,11,.35);color:#f59e0b}
+.msg-tag.eval-vague,.msg-tag.eval-off-topic,.msg-tag.eval-evaded,.msg-tag.eval-incorrect{border-color:rgba(239,68,68,.35);color:#f87171}
 
 .tags-wrap{display:flex;flex-wrap:wrap;gap:.5rem}
 .tag{font-size:.75rem;padding:4px 12px;border-radius:99px;border:1px solid var(--border);background:var(--surface2);color:var(--text)}
@@ -264,10 +264,8 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .btn-restart{padding:.85rem 2.5rem;background:var(--surface2);border:1px solid var(--border);border-radius:var(--rs);color:var(--text);font-family:var(--fh);font-size:.9rem;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:.05em}
 .btn-restart:hover{border-color:var(--accent);color:var(--accent)}
 
-/* ═══ ANIMATIONS ══════════════════════════════════════════════ */
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 
-/* ═══ TOAST ═══════════════════════════════════════════════════ */
 .toast{position:fixed;bottom:2rem;right:2rem;background:var(--surface2);border:1px solid var(--border);border-radius:var(--rs);padding:.8rem 1.2rem;font-size:.85rem;z-index:9999;transform:translateY(80px);opacity:0;transition:all .35s cubic-bezier(.34,1.56,.64,1);max-width:340px;box-shadow:0 8px 32px rgba(0,0,0,.4)}
 .toast.show{transform:translateY(0);opacity:1}
 .toast.success{border-color:rgba(52,211,153,.4);color:var(--accent3)}
@@ -346,7 +344,6 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 <!-- ═══════════════ SCREEN 2 : INTERVIEW ═══════════════ -->
 <div id="screen-interview" class="screen">
 
-  <!-- Panel avatar -->
   <div class="panel-avatar">
     <div class="avatar-container">
       <div class="avatar-ring"></div>
@@ -388,7 +385,6 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
       <div class="timer-bar-bg"><div class="timer-bar" id="timer-bar"></div></div>
     </div>
 
-    <!-- Webcam candidat -->
     <div id="vision-preview-wrap" style="display:none;width:100%;position:relative;border-radius:var(--r);overflow:hidden;background:#000;border:1px solid var(--border);aspect-ratio:1/1">
       <video id="vision-preview" autoplay muted playsinline style="width:100%;height:100%;object-fit:cover;display:block"></video>
       <div id="candidate-emotion-wrap" style="display:none;position:absolute;bottom:0;left:0;right:0;padding:.5rem .75rem;background:linear-gradient(transparent,rgba(0,0,0,.72));backdrop-filter:blur(2px)">
@@ -413,7 +409,6 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
     </div>
   </div>
 
-  <!-- Panel chat -->
   <div class="panel-chat">
     <div class="chat-header">
       <div class="chat-header-title">Entretien en cours</div>
@@ -438,13 +433,11 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
       </div>
     </div>
 
-    <!-- Zone de transcript live (texte en cours de reconnaissance) -->
     <div id="live-transcript" style="display:none;margin:0 1rem .5rem;padding:.6rem 1rem;background:rgba(79,142,255,.08);border:1px solid rgba(79,142,255,.2);border-radius:10px;font-size:.85rem;color:var(--accent);font-style:italic;min-height:2rem;transition:opacity .2s;">
       <span style="font-size:.7rem;opacity:.6;display:block;margin-bottom:2px;">🎤 En cours…</span>
       <span id="live-transcript-text"></span>
     </div>
 
-    <!-- L'input text est masqué via CSS, on garde les éléments pour compatibilité JS -->
     <div class="chat-input-area" style="display:none;">
       <textarea id="user-input" placeholder="Tapez votre réponse ou utilisez le micro…" rows="1"></textarea>
       <button class="btn-icon btn-mic" id="btn-mic" title="Micro">🎤</button>
@@ -503,32 +496,23 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
     <div class="tags-wrap" id="r-amelio"></div>
   </div>
 
-  <!-- ═══ ÉVALUATION TECHNIQUE DÉTAILLÉE ═══ -->
   <div class="report-card" id="r-eval-tech-card">
     <h3>Évaluation technique — Points couverts</h3>
-    <p style="font-size:.78rem;color:var(--muted);margin-bottom:1rem">
-      Chaque compétence/outil attendu par le poste est évalué selon la profondeur de la réponse du candidat.
-    </p>
+    <p style="font-size:.78rem;color:var(--muted);margin-bottom:1rem">Chaque compétence/outil attendu par le poste est évalué selon la profondeur de la réponse du candidat.</p>
     <div id="r-eval-tech-points"></div>
   </div>
 
-  <!-- ═══ ÉVALUATION COMMUNICATION DÉTAILLÉE ═══ -->
   <div class="report-card" id="r-eval-comm-card">
     <h3>Évaluation communication — Points couverts</h3>
-    <p style="font-size:.78rem;color:var(--muted);margin-bottom:1rem">
-      Évaluation de la qualité de communication du candidat durant l'entretien.
-    </p>
+    <p style="font-size:.78rem;color:var(--muted);margin-bottom:1rem">Évaluation de la qualité de communication du candidat durant l'entretien.</p>
     <div id="r-eval-comm-points"></div>
   </div>
 
-  <!-- ═══ SYNTHÈSE POINTS DÉTECTÉS / MANQUANTS ═══ -->
   <div class="report-card">
     <h3>✅ Points détectés <span id="r-detectes-count" style="font-size:.75rem;color:var(--accent3);font-weight:400"></span></h3>
     <div class="tags-wrap" id="r-points-detectes" style="margin-bottom:1.5rem"></div>
     <h3>❌ Points manquants <span id="r-manquants-count" style="font-size:.75rem;color:var(--danger);font-weight:400"></span></h3>
-    <p style="font-size:.78rem;color:var(--muted);margin-bottom:.75rem">
-      Points que le candidat n'a pas abordés ou n'a pas répondu à la question posée.
-    </p>
+    <p style="font-size:.78rem;color:var(--muted);margin-bottom:.75rem">Points que le candidat n'a pas abordés ou n'a pas répondu à la question posée.</p>
     <div class="tags-wrap" id="r-points-manquants"></div>
   </div>
 
@@ -547,43 +531,56 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   <button class="btn-restart" onclick="restartApp()">↩ Nouvel entretien</button>
 </div>
 
-<!-- Toast -->
 <div class="toast" id="toast"></div>
 
 <script>
 /* ══════════════════════════════════════════════
-   STATE — Version vocale automatique
+   STATE
 ══════════════════════════════════════════════ */
 const state = {
-  sessionId:     null,
-  lang:          'Français',
-  duration:      20,
-  totalDuration: 20,
-  isRecording:   false,
-  isTalking:     false,
-  mediaRecorder: null,
-  audioChunks:   [],
-  timerInterval: null,
-  currentAudio:  null,
-  cvUploaded:    false,
-  offreUploaded: false,
-  ragSources:    { cv: [], job_offer: [], company_docs: [] },
-  ws:            null,
-  wsSTT:         null,
-  wsVision:      null,
-  visionActive:  false,
-  wsStreamBuf:   '',
-  wsStreamEl:    null,
-  audioQueue:    [],
-  audioPlaying:  false,
-  audioCtx:      null,
-  audioProcessor: null,
-  audioSource:   null,
-  vadSilenceMs:  0,
-  vadSpeaking:   false,
-  vadTimer:      null,
-  waitingForResponse: false,   // Nouveau : vrai pendant que le LLM répond
+  sessionId:          null,
+  lang:               'Français',
+  duration:           20,
+  totalDuration:      20,
+  isRecording:        false,
+  isTalking:          false,
+  mediaRecorder:      null,
+  audioChunks:        [],
+  timerInterval:      null,
+  currentAudio:       null,
+  cvUploaded:         false,
+  offreUploaded:      false,
+  ragSources:         { cv: [], job_offer: [], company_docs: [] },
+  ws:                 null,
+  wsSTT:              null,
+  wsVision:           null,
+  visionActive:       false,
+  wsStreamBuf:        '',
+  wsStreamEl:         null,
+  audioQueue:         [],
+  audioPlaying:       false,
+  audioCtx:           null,
+  audioProcessor:     null,
+  audioSource:        null,
+  vadSilenceMs:       0,
+  vadSpeaking:        false,
+  vadTimer:           null,
+  waitingForResponse: false,
+  avatarSpeaking:     false,
+  ended:              false,
+  sttLang:            'fr',
+  liveEmotion:        'neutre',
+  liveEmotionConfidence: 0,
+  lastUserMsgEl:      null,
 };
+
+/* ══ Guards globaux anti-boucle STT ══ */
+let _micBootInProgress = false;
+/* _sttPending : posé à true dès l'envoi de 'end' au serveur STT,
+   levé uniquement à la réception du message final (succès ou silence).
+   Bloque startAutoMic() pendant que la transcription est en vol,
+   ce qui supprime la boucle écouter↔transcrire. */
+let _sttPending = false;
 
 /* ══════════════════════════════════════════════
    UTILS
@@ -613,7 +610,7 @@ function extMini(filename) {
 }
 
 /* ══════════════════════════════════════════════
-   AVATAR — ÉMOTION & PHASE
+   AVATAR
 ══════════════════════════════════════════════ */
 function setEmotion(emotion) {
   const map = {
@@ -663,8 +660,8 @@ function updateTimer(timeLeft) {
 }
 
 function updateMicStatus(state_str) {
-  const el   = document.getElementById('mic-status');
-  const txt  = document.getElementById('mic-status-text');
+  const el  = document.getElementById('mic-status');
+  const txt = document.getElementById('mic-status-text');
   if (!el || !txt) return;
   el.classList.remove('active', 'speaking', 'transcribing');
   if (state_str === 'active' || state_str === true) {
@@ -684,10 +681,8 @@ function updateMicStatus(state_str) {
 function _setRmsBar(rms) {
   const bar = document.getElementById('rms-bar');
   if (!bar) return;
-  // rms est typiquement entre 0 et 0.1 ; on normalise sur 100%
   const pct = Math.min(100, Math.round(rms * 1200));
   bar.style.width = pct + '%';
-  bar.style.background = pct > 70 ? 'var(--accent3)' : pct > 35 ? 'var(--accent)' : 'var(--accent3)';
 }
 
 /* ══════════════════════════════════════════════
@@ -799,12 +794,8 @@ async function uploadCompanyFiles(fileList) {
     const data = await res.json();
     let ok = 0;
     for (const r of data.uploaded) {
-      if (r.status === 'ok') {
-        ok++;
-        addKbDocItem(r.filename, r.size_kb);
-      } else {
-        toast(`❌ ${r.filename} : ${r.error}`, 'error');
-      }
+      if (r.status === 'ok') { ok++; addKbDocItem(r.filename, r.size_kb); }
+      else toast(`❌ ${r.filename} : ${r.error}`, 'error');
     }
     if (ok) toast(`✓ ${ok} doc(s) KB ajouté(s)`, 'success');
     updateKbCountBadge();
@@ -827,10 +818,7 @@ function addKbDocItem(filename, sizeKb) {
   item.className = 'kb-doc-item';
   item.id = `kbdoc-${filename}`;
   item.innerHTML = `
-    <div class="doc-name">
-      ${extBadge(filename)}
-      <span title="${filename}">${filename}</span>
-    </div>
+    <div class="doc-name">${extBadge(filename)}<span title="${filename}">${filename}</span></div>
     <div style="display:flex;align-items:center;gap:.5rem">
       <span class="doc-size">${sizeKb} Ko</span>
       <button class="doc-del" onclick="deleteKbDoc('${filename.replace(/'/g,"\\'")}',this)" title="Supprimer">✕</button>
@@ -849,9 +837,7 @@ async function deleteKbDoc(filename, btn) {
       if (!list.querySelector('.kb-doc-item'))
         list.innerHTML = '<div class="kb-empty" id="kb-empty">Aucun document entreprise chargé</div>';
       updateKbCountBadge();
-    } else {
-      toast('Erreur suppression', 'error');
-    }
+    } else { toast('Erreur suppression', 'error'); }
   } catch { toast('Erreur suppression', 'error'); }
 }
 
@@ -872,6 +858,7 @@ document.getElementById('btn-start').addEventListener('click', async () => {
   state.lang          = document.getElementById('sel-lang').value;
   state.duration      = parseInt(document.getElementById('inp-duration').value) || 20;
   state.totalDuration = state.duration;
+  state.ended         = false;
 
   const btn = document.getElementById('btn-start');
   btn.disabled    = true;
@@ -887,27 +874,25 @@ document.getElementById('btn-start').addEventListener('click', async () => {
     const data = await res.json();
 
     if (data.session_id) {
-      state.sessionId = data.session_id;
+      state.sessionId          = data.session_id;
+      state.avatarSpeaking     = true;
+      state.audioPlaying       = true;
+      state.waitingForResponse = true;
+
       showScreen('screen-interview');
       updateTimer(data.time_left || state.duration);
       setPhase(data.phase || 'INTRO_ETUDES');
       updateRagIndicators(data.rag_sources || { cv: [], job_offer: [], company_docs: [] });
-      connectWebSocket();       // WebSocket LLM/entretien
-      connectVisionWebSocket(); // WebSocket vision émotions
+
+      connectWebSocket();
+      connectVisionWebSocket();
       appendMessage('avatar', data.greeting, 'joy');
       if (data.audio_url) playAudio(data.audio_url, data.duration_s);
 
       const kbDocs = (data.rag_sources || {}).company_docs || [];
-      if (kbDocs.length === 0) {
-        toast('⚠️ Aucune KB entreprise — RAG limité à CV + Offre', 'warn');
-      } else {
-        toast(`🏢 KB injectée : ${kbDocs.length} doc(s)`, 'success');
-      }
+      if (kbDocs.length === 0) toast('⚠️ Aucune KB entreprise — RAG limité à CV + Offre', 'warn');
+      else toast(`🏢 KB injectée : ${kbDocs.length} doc(s)`, 'success');
 
-      // Démarrer automatiquement le micro après le greeting
-      if (!state.ended && !state.waitingForResponse) {
-        startAutoMic();
-      }
     } else {
       toast(data.error || 'Erreur démarrage session', 'error');
       btn.disabled    = false;
@@ -934,9 +919,51 @@ function appendMessage(role, text, emotion) {
     <div>
       <div class="msg-bubble">${text}</div>
       <div class="msg-meta">${now}${emotion ? ' · ' + emotion : ''}</div>
+      <div class="msg-tags"></div>
     </div>`;
   container.insertBefore(div, typing);
   container.scrollTop = container.scrollHeight;
+  return div;
+}
+
+function _formatLiveEmotionMeta() {
+  if (!state.liveEmotion) return '';
+  const conf = Math.round(state.liveEmotionConfidence || 0);
+  return conf > 0 ? `émotion: ${state.liveEmotion} (${conf}%)` : `émotion: ${state.liveEmotion}`;
+}
+
+function _assessmentClass(quality) {
+  const q = String(quality || '').toUpperCase();
+  if (q === 'STRONG') return 'eval-strong';
+  if (q === 'GOOD') return 'eval-good';
+  if (q === 'INCOMPLETE') return 'eval-incomplete';
+  if (q === 'OFF_TOPIC') return 'eval-off-topic';
+  if (q === 'EVADED') return 'eval-evaded';
+  if (q === 'ANSWERED_INCORRECTLY') return 'eval-incorrect';
+  return 'eval-vague';
+}
+
+function renderCandidateAssessment(assessment) {
+  if (!assessment || !state.lastUserMsgEl) return;
+  const tagsWrap = state.lastUserMsgEl.querySelector('.msg-tags');
+  const metaEl   = state.lastUserMsgEl.querySelector('.msg-meta');
+  if (!tagsWrap || !metaEl) return;
+
+  const quality = assessment.answer_quality || 'N/A';
+  const emotion = assessment.emotion || state.liveEmotion || 'neutre';
+  const conf    = Math.round(assessment.emotion_confidence || state.liveEmotionConfidence || 0);
+  const weak    = Array.isArray(assessment.weak_signals) ? assessment.weak_signals : [];
+
+  metaEl.textContent = `${metaEl.textContent.split(' · ')[0]} · émotion: ${emotion}${conf ? ` (${conf}%)` : ''}`;
+
+  const chips = [];
+  chips.push(`<span class="msg-tag ${_assessmentClass(quality)}">évaluation: ${quality}</span>`);
+  chips.push(`<span class="msg-tag">émotion: ${emotion}${conf ? ` ${conf}%` : ''}</span>`);
+  if (assessment.stress_flag) chips.push(`<span class="msg-tag eval-incomplete">stress: ${Math.round((assessment.stress_score || 0) * 100)}%</span>`);
+  if (assessment.behavioral_story_detected) chips.push('<span class="msg-tag">STAR détectée</span>');
+  if (assessment.decision_reasoning_detected) chips.push('<span class="msg-tag">décision structurée</span>');
+  if (weak.length) chips.push(`<span class="msg-tag">signaux faibles: ${weak.slice(0, 2).join(', ')}</span>`);
+  tagsWrap.innerHTML = chips.join('');
 }
 
 function showTyping(show) {
@@ -948,9 +975,8 @@ function showTyping(show) {
 async function sendMessage(text) {
   if (!text.trim() || !state.sessionId) return;
 
-  appendMessage('user', text);
+  state.lastUserMsgEl = appendMessage('user', text, _formatLiveEmotionMeta());
   document.getElementById('user-input').value  = '';
-  // Désactiver les boutons (bien que cachés)
   document.getElementById('btn-send').disabled = true;
   document.getElementById('btn-mic').disabled  = true;
 
@@ -959,31 +985,25 @@ async function sendMessage(text) {
     state.wsStreamEl  = appendStreamingBubble();
     showTyping(false);
 
-    state._wsWatchdog = setTimeout(() => {
-      console.warn('[WS] Watchdog: aucun token reçu en 120s');
-      if (state.wsStreamEl) {
-        state.wsStreamEl.textContent = '⚠️ Le modèle prend du temps à répondre…';
-      }
-      document.getElementById('btn-send').disabled = false;
-      document.getElementById('btn-mic').disabled  = false;
-      // Réactiver le micro après timeout
-      if (!state.ended) startAutoMic();
-    }, 120_000);
+    /* Délai initial : arabe = 2 appels LLM successifs → 90s, autres → 60s.
+       Le watchdog sera relancé automatiquement à chaque paquet 'progress'
+       reçu du backend, donc il ne se déclenchera jamais à tort.           */
+    const _wdInitDelay = (state.lang || '').toLowerCase().includes('ar') ? 90_000 : 60_000;
+    _wdStart(_wdInitDelay);
 
     state.ws.send(JSON.stringify({ action: 'text_message', text }));
     return;
   }
 
-  // Fallback HTTP (rare)
   showTyping(true);
   try {
     const fd = new FormData();
     fd.append('user_text', text);
     const res  = await fetch(`/session/${state.sessionId}/respond`, { method: 'POST', body: fd });
     const data = await res.json();
-
     showTyping(false);
     appendMessage('avatar', data.text);
+    if (data.candidate_assessment) renderCandidateAssessment(data.candidate_assessment);
     setPhase(data.phase);
     updateTimer(data.time_left);
     if (data.audio_url) playAudio(data.audio_url, data.duration_s);
@@ -999,243 +1019,238 @@ async function sendMessage(text) {
 }
 
 /* ══════════════════════════════════════════════
-   MICROPHONE / STT — Version vocale automatique
+   STT — Architecture corrigée (anti-boucle)
+   Ordre strict : getUserMedia → connectSTTWebSocket → attachAudioPipeline
+   onclose ne relance JAMAIS le micro
 ══════════════════════════════════════════════ */
+
 async function startAutoMic() {
-  if (!state.sessionId) return;
-  if (state.waitingForResponse) return;
-  if (state.isRecording) return;
-  if (state.ended) return;
-  await startRecording();
+  if (!state.sessionId)            return;
+  if (state.waitingForResponse)    return;
+  if (state.avatarSpeaking)        return;
+  if (state.audioPlaying)          return;
+  if (_activeNodes.length > 0)     return;
+  if (state.isRecording)           return;
+  if (state.ended)                 return;
+  if (_micBootInProgress)          return;
+  if (_sttPending)                 return;  /* transcription en vol — ne pas relancer */
+
+  _micBootInProgress = true;
+  try {
+    await _bootMic();
+  } finally {
+    _micBootInProgress = false;
+  }
 }
 
-// Connexion WebSocket STT — retourne une Promise résolue quand le WS est prêt
-function connectSTTWebSocket() {
-  // Fermer proprement toute connexion précédente
-  if (state.wsSTT) {
-    if (state.wsSTT.readyState === WebSocket.OPEN || state.wsSTT.readyState === WebSocket.CONNECTING) {
-      state.wsSTT.onclose = null;
-      state.wsSTT.close();
-    }
-    state.wsSTT = null;
+/* Étape 1 : micro d'abord, WS ensuite */
+async function _bootMic() {
+  if (state.isRecording || state.avatarSpeaking || state.audioPlaying) return;
+
+  let stream;
+  try {
+    stream = await navigator.mediaDevices.getUserMedia({
+      audio: { sampleRate: 16000, channelCount: 1, echoCancellation: true, noiseSuppression: true }
+    });
+  } catch (e) {
+    toast('Micro inaccessible : ' + e.message, 'error');
+    updateMicStatus(false);
+    return;
   }
 
-  const wsUrl   = `ws://${location.host}/ws/stt/${state.sessionId}`;
-  state.wsSTT   = new WebSocket(wsUrl);
-  state.wsSTT.binaryType = 'arraybuffer';
+  /* Étape 2 : WS STT seulement si le micro est OK */
+  try {
+    await connectSTTWebSocket();
+  } catch (err) {
+    stream.getTracks().forEach(t => t.stop());
+    toast('STT indisponible : ' + err.message, 'warn');
+    updateMicStatus(false);
+    /* Réessayer automatiquement dans 3s si la session est toujours active */
+    if (!state.ended && !state.waitingForResponse) {
+      setTimeout(() => startAutoMic(), 3000);
+    }
+    return;
+  }
+
+  /* Étape 3 : brancher le pipeline audio */
+  await _attachAudioPipeline(stream);
+}
+
+/* Étape 3 : pipeline VAD + AudioWorklet/ScriptProcessor */
+async function _attachAudioPipeline(stream) {
+  state.audioCtx    = new (window.AudioContext || window.webkitAudioContext)({ sampleRate: 16000 });
+  state.audioSource = state.audioCtx.createMediaStreamSource(stream);
+  state._micStream  = stream;
+
+  const VAD_SILENCE_MS = 900;
+  const RMS_THRESHOLD  = 0.01;
+  const MIN_SPEECH_MS  = 200;
+  let   speechStartTime = null;
+
+  const onSample = (samples) => {
+    if (!state.isRecording) return;
+    let sum = 0;
+    for (let i = 0; i < samples.length; i++) sum += samples[i] * samples[i];
+    const rms     = Math.sqrt(sum / samples.length);
+    const isVoice = rms > RMS_THRESHOLD;
+    _setRmsBar(rms);
+
+    if (isVoice) {
+      if (!state.vadSpeaking) {
+        updateMicStatus('speaking');
+        speechStartTime = Date.now();
+      }
+      state.vadSpeaking = true;
+      clearTimeout(state.vadTimer); state.vadTimer = null;
+      if (state.wsSTT && state.wsSTT.readyState === WebSocket.OPEN)
+        state.wsSTT.send(samples.buffer);
+    } else if (state.vadSpeaking && !state.vadTimer) {
+      updateMicStatus('active');
+      state.vadTimer = setTimeout(() => {
+        if (!state.isRecording || !state.vadSpeaking) return;
+        const spokenMs = speechStartTime ? Date.now() - speechStartTime : 0;
+        if (spokenMs >= MIN_SPEECH_MS) {
+          triggerTranscription();
+        } else {
+          state.vadSpeaking = false;
+          if (state.wsSTT && state.wsSTT.readyState === WebSocket.OPEN)
+            state.wsSTT.send('cancel');
+        }
+      }, VAD_SILENCE_MS);
+    }
+  };
+
+  const workletCode = `
+    class VadProcessor extends AudioWorkletProcessor {
+      constructor() { super(); this._buf = []; }
+      process(inputs) {
+        const ch = inputs[0][0];
+        if (!ch) return true;
+        this._buf.push(ch.slice());
+        if (this._buf.length >= 2) {
+          const merged = new Float32Array(this._buf.reduce((a,b)=>a+b.length,0));
+          let off = 0;
+          for (const b of this._buf) { merged.set(b, off); off += b.length; }
+          this.port.postMessage(merged.buffer, [merged.buffer]);
+          this._buf = [];
+        }
+        return true;
+      }
+    }
+    registerProcessor('vad-processor', VadProcessor);
+  `;
+  const blob    = new Blob([workletCode], { type: 'application/javascript' });
+  const blobUrl = URL.createObjectURL(blob);
+
+  try {
+    await state.audioCtx.audioWorklet.addModule(blobUrl);
+    URL.revokeObjectURL(blobUrl);
+    const workletNode = new AudioWorkletNode(state.audioCtx, 'vad-processor');
+    state.audioProcessor = workletNode;
+    workletNode.port.onmessage = (e) => onSample(new Float32Array(e.data));
+    state.audioSource.connect(workletNode);
+  } catch {
+    URL.revokeObjectURL(blobUrl);
+    const processor = state.audioCtx.createScriptProcessor(4096, 1, 1);
+    state.audioProcessor = processor;
+    processor.onaudioprocess = (e) => onSample(e.inputBuffer.getChannelData(0).slice());
+    state.audioSource.connect(processor);
+    processor.connect(state.audioCtx.destination);
+  }
+
+  state.isRecording = true;
+  state.vadSpeaking = false;
+  state.vadTimer    = null;
+  document.getElementById('btn-mic').classList.add('recording');
+  document.getElementById('btn-mic').textContent = '⏹';
+  updateMicStatus('active');
+  toast('🎤 Parlez — arrêt automatique après silence');
+}
+
+/* ── connectSTTWebSocket — onclose ne relance PAS le micro ── */
+function connectSTTWebSocket() {
+  if (state.avatarSpeaking || state.audioPlaying || _activeNodes.length > 0)
+    return Promise.reject(new Error('Avatar parle — STT bloqué'));
+
+  if (state.wsSTT) {
+    state.wsSTT.onclose = null;
+    state.wsSTT.onerror = null;
+    if (state.wsSTT.readyState <= WebSocket.OPEN) state.wsSTT.close();
+    state.wsSTT = null;
+  }
+  /* Fermer aussi le pipeline micro si encore actif */
+  if (state.isRecording) { _closeMic(); state.isRecording = false; }
 
   const langMap = { 'Français':'fr','Anglais':'en','Arabe':'ar','French':'fr','English':'en','Arabic':'ar' };
   const sttLang = langMap[state.lang] || 'fr';
   state.sttLang = sttLang;
 
-  // ── handlers permanents ───────────────────────────────────────────────────
-  state.wsSTT.onmessage = (event) => {
+  const ws = new WebSocket(`ws://${location.host}/ws/stt/${state.sessionId}`);
+  ws.binaryType = 'arraybuffer';
+  state.wsSTT   = ws;
+
+  ws.onmessage = (event) => {
     try {
       const data = JSON.parse(event.data);
       if (data.success && data.text?.trim()) {
         _showLiveTranscript(data.text, !!data.final);
         if (data.final) {
-          showTyping(false);
+          _sttPending = false;   /* transcription terminée avec succès */
           _hideLiveTranscript();
+          showTyping(false);
           sendMessage(data.text);
-          toast('✅ Transcrit : "' + data.text.substring(0, 50) + (data.text.length > 50 ? '…"' : '"'), 'success');
+          toast('Transcrit : "' + data.text.substring(0, 50) + (data.text.length > 50 ? '…"' : '"'), 'success');
+        }
+      } else if (data.final && !data.success) {
+        _sttPending = false;     /* silence ou échec — cycle terminé */
+        if (data.is_silence) {
+          _showLiveTranscript(data.display_text || '[silence]', true);
+          toast('Silence détecté — rien envoyé au recruteur', 'info');
+          setTimeout(() => _hideLiveTranscript(), 900);
+        } else {
+          _hideLiveTranscript();
+        }
+        showTyping(false);
+        state.waitingForResponse = false;
+        /* Transcription vide → relancer le micro après délai,
+           mais uniquement si l'avatar ne parle pas */
+        if (!state.ended && !state.avatarSpeaking && _activeNodes.length === 0) {
+          setTimeout(() => startAutoMic(), 800);
         }
       } else if (data.error && !data.final) {
         toast(data.error, 'warn');
-      } else if (data.final && !data.success) {
-        // Transcription finale vide — réactiver le micro sans envoyer au LLM
-        _hideLiveTranscript();
-        showTyping(false);
-        updateMicStatus('active');
-        state.waitingForResponse = false;
-        if (!state.ended) startAutoMic();
       }
     } catch {}
   };
 
-  state.wsSTT.onerror = () => {
-    console.error('[STT] WebSocket erreur');
-    toast('STT WebSocket erreur', 'warn');
-    state.wsSTT = null;
-  };
+  /* CRITIQUE : onclose ne relance JAMAIS le micro */
+  ws.onclose = () => { _sttPending = false; state.wsSTT = null; };
+  ws.onerror = () => { _sttPending = false; state.wsSTT = null; };
 
-  state.wsSTT.onclose = () => { state.wsSTT = null; };
-
-  // ── Promise résolue à l'ouverture (pour await dans startRecording) ────────
   return new Promise((resolve, reject) => {
-    const deadline = setTimeout(() => reject(new Error('STT WebSocket timeout')), 3000);
-    state.wsSTT.onopen = () => {
+    const deadline = setTimeout(() => {
+      ws.onclose = null; ws.onerror = null;
+      reject(new Error('STT WebSocket timeout'));
+    }, 8000);
+
+    ws.onopen = () => {
       clearTimeout(deadline);
-      state.wsSTT.send(JSON.stringify({ action: 'set_lang', lang: sttLang }));
+      ws.send(JSON.stringify({ action: 'set_lang', lang: sttLang }));
       resolve();
     };
-    // Surcharger onerror pour rejeter aussi la promesse
-    const baseOnerror = state.wsSTT.onerror;
-    state.wsSTT.onerror = (e) => {
+
+    ws.onerror = (e) => {
       clearTimeout(deadline);
-      if (baseOnerror) baseOnerror(e);
+      state.wsSTT = null;
       reject(new Error('STT WebSocket erreur'));
     };
   });
 }
 
-// ── Démarrage enregistrement avec VAD ────────────────────────────────────────
-async function startRecording() {
-  if (!state.sessionId) return;
-  if (state.waitingForResponse) return;
-  if (state.isRecording) return;
+/* Alias de compatibilité */
+async function startRecording() { await startAutoMic(); }
 
-  // Attendre que le WebSocket STT soit prêt avant de démarrer l'audio
-  try {
-    await connectSTTWebSocket();
-  } catch (err) {
-    toast('Connexion STT impossible : ' + err.message, 'error');
-    return;
-  }
-
-  try {
-    const stream   = await navigator.mediaDevices.getUserMedia({
-      audio: { sampleRate: 16000, channelCount: 1, echoCancellation: true, noiseSuppression: true }
-    });
-
-    state.audioCtx    = new (window.AudioContext || window.webkitAudioContext)({ sampleRate: 16000 });
-    state.audioSource = state.audioCtx.createMediaStreamSource(stream);
-
-    const VAD_SILENCE_MS  = 900;   // 900ms de silence avant de déclencher (comme ancienne version)
-    const RMS_THRESHOLD   = 0.01;  // seuil permissif — capte les voix douces et arabophones
-    const MIN_SPEECH_MS   = 200;   // durée minimale de parole avant d'envoyer à Whisper
-    let   speechStartTime = null;  // timestamp début de parole en cours
-
-    const workletCode = `
-      class VadProcessor extends AudioWorkletProcessor {
-        constructor() {
-          super();
-          this._buf = [];
-        }
-        process(inputs) {
-          const ch = inputs[0][0];
-          if (!ch) return true;
-          this._buf.push(ch.slice());
-          if (this._buf.length >= 2) {
-            const merged = new Float32Array(this._buf.reduce((a,b)=>a+b.length,0));
-            let off = 0;
-            for (const b of this._buf) { merged.set(b, off); off += b.length; }
-            this.port.postMessage(merged.buffer, [merged.buffer]);
-            this._buf = [];
-          }
-          return true;
-        }
-      }
-      registerProcessor('vad-processor', VadProcessor);
-    `;
-    const blob    = new Blob([workletCode], { type: 'application/javascript' });
-    const blobUrl = URL.createObjectURL(blob);
-
-    try {
-      await state.audioCtx.audioWorklet.addModule(blobUrl);
-      URL.revokeObjectURL(blobUrl);
-
-      const workletNode = new AudioWorkletNode(state.audioCtx, 'vad-processor');
-      state.audioProcessor = workletNode;
-
-      workletNode.port.onmessage = (e) => {
-        if (!state.isRecording) return;
-        const samples = new Float32Array(e.data);
-        let sum = 0;
-        for (let i = 0; i < samples.length; i++) sum += samples[i] * samples[i];
-        const rms = Math.sqrt(sum / samples.length);
-        const isVoice = rms > RMS_THRESHOLD;
-
-        _setRmsBar(rms);
-
-        if (isVoice) {
-          if (!state.vadSpeaking) {
-            updateMicStatus('speaking');
-            speechStartTime = Date.now();
-          }
-          state.vadSpeaking = true;
-          clearTimeout(state.vadTimer);
-          state.vadTimer = null;
-          if (state.wsSTT && state.wsSTT.readyState === WebSocket.OPEN) {
-            state.wsSTT.send(samples.buffer);
-          }
-        } else {
-          if (state.vadSpeaking && !state.vadTimer) {
-            updateMicStatus('active');
-            state.vadTimer = setTimeout(() => {
-              if (!state.isRecording || !state.vadSpeaking) return;
-              // N'envoyer à Whisper que si la parole a duré MIN_SPEECH_MS
-              const spokenMs = speechStartTime ? Date.now() - speechStartTime : 0;
-              if (spokenMs >= MIN_SPEECH_MS) {
-                triggerTranscription();
-              } else {
-                // Trop court — probablement un bruit, réinitialiser sans transcrire
-                state.vadSpeaking = false;
-                if (state.wsSTT && state.wsSTT.readyState === WebSocket.OPEN)
-                  state.wsSTT.send('cancel');
-              }
-            }, VAD_SILENCE_MS);
-          }
-        }
-      };
-
-      state.audioSource.connect(workletNode);
-    } catch (workletErr) {
-      // Fallback ScriptProcessor
-      console.warn('[Audio] AudioWorklet non supporté, fallback ScriptProcessor:', workletErr);
-      const processor = state.audioCtx.createScriptProcessor(4096, 1, 1);  // 4096 comme ancienne version
-      state.audioProcessor = processor;
-      processor.onaudioprocess = (e) => {
-        if (!state.isRecording) return;
-        const samples = e.inputBuffer.getChannelData(0);
-        let sum = 0;
-        for (let i = 0; i < samples.length; i++) sum += samples[i] * samples[i];
-        const rms = Math.sqrt(sum / samples.length);
-        const isVoice = rms > RMS_THRESHOLD;
-        _setRmsBar(rms);
-        if (isVoice) {
-          if (!state.vadSpeaking) {
-            updateMicStatus('speaking');
-            speechStartTime = Date.now();
-          }
-          state.vadSpeaking = true;
-          clearTimeout(state.vadTimer); state.vadTimer = null;
-          if (state.wsSTT && state.wsSTT.readyState === WebSocket.OPEN)
-            state.wsSTT.send(samples.buffer);
-        } else if (state.vadSpeaking && !state.vadTimer) {
-          updateMicStatus('active');
-          state.vadTimer = setTimeout(() => {
-            if (!state.isRecording || !state.vadSpeaking) return;
-            const spokenMs = speechStartTime ? Date.now() - speechStartTime : 0;
-            if (spokenMs >= MIN_SPEECH_MS) {
-              triggerTranscription();
-            } else {
-              state.vadSpeaking = false;
-              if (state.wsSTT && state.wsSTT.readyState === WebSocket.OPEN)
-                state.wsSTT.send('cancel');
-            }
-          }, VAD_SILENCE_MS);
-        }
-      };
-      state.audioSource.connect(processor);
-      processor.connect(state.audioCtx.destination);
-    }
-
-    state.isRecording  = true;
-    state.vadSpeaking  = false;
-    state.vadTimer     = null;
-    state._micStream = stream;
-
-    const btn = document.getElementById('btn-mic');
-    btn.classList.add('recording');
-    btn.textContent = '⏹';
-    updateMicStatus('active');
-    toast('🎤 Parlez — arrêt automatique après silence');
-  } catch(e) {
-    toast('Micro inaccessible : ' + e.message, 'error');
-  }
-}
-
+/* ── Live transcript ── */
 function _showLiveTranscript(text, isFinal) {
   const box  = document.getElementById('live-transcript');
   const span = document.getElementById('live-transcript-text');
@@ -1247,29 +1262,26 @@ function _showLiveTranscript(text, isFinal) {
 
 function _hideLiveTranscript() {
   const box = document.getElementById('live-transcript');
-  if (box) { box.style.display = 'none'; }
+  if (box) box.style.display = 'none';
   const span = document.getElementById('live-transcript-text');
   if (span) span.textContent = '';
 }
 
+/* ── triggerTranscription : ferme le micro AVANT d'envoyer 'end' ── */
 async function triggerTranscription() {
   if (!state.isRecording) return;
   state.vadSpeaking = false;
-  clearTimeout(state.vadTimer);
-  state.vadTimer = null;
+  clearTimeout(state.vadTimer); state.vadTimer = null;
 
   if (state.wsSTT && state.wsSTT.readyState === WebSocket.OPEN) {
-    // ① Fermer le mic D'ABORD pour forcer le flush des derniers chunks audio
     _closeMic();
     state.isRecording = false;
-    const btn = document.getElementById('btn-mic');
-    btn.classList.remove('recording');
-    btn.textContent = '🎤';
+    document.getElementById('btn-mic').classList.remove('recording');
+    document.getElementById('btn-mic').textContent = '🎤';
 
-    // ② Attendre 150ms pour laisser les derniers messages WebSocket partir
-    await new Promise(r => setTimeout(r, 150));
+    await new Promise(r => setTimeout(r, 300));
 
-    // ③ Envoyer 'end' seulement après — tous les chunks sont arrivés au serveur
+    _sttPending = true;   /* bloquer tout nouveau cycle jusqu'à réponse finale STT */
     state.wsSTT.send('end');
     showTyping(true);
     updateMicStatus('transcribing');
@@ -1282,50 +1294,44 @@ async function triggerTranscription() {
 
 function _closeMic() {
   _setRmsBar(0);
-  if (state.audioProcessor) {
-    state.audioProcessor.disconnect();
-    state.audioProcessor = null;
-  }
-  if (state.audioSource) {
-    state.audioSource.disconnect();
-    state.audioSource = null;
-  }
-  if (state.audioCtx) {
-    state.audioCtx.close();
-    state.audioCtx = null;
-  }
-  if (state._micStream) {
+  if (state.audioProcessor) { state.audioProcessor.disconnect(); state.audioProcessor = null; }
+  if (state.audioSource)    { state.audioSource.disconnect();    state.audioSource    = null; }
+  if (state.audioCtx)       { state.audioCtx.close();            state.audioCtx       = null; }
+  if (state._micStream)     {
     state._micStream.getTracks().forEach(t => t.stop());
     state._micStream = null;
   }
 }
 
-// Fonction appelée après la réponse du LLM pour réactiver le micro
 function reactivateMicAfterResponse() {
   if (state.ended) return;
   state.waitingForResponse = false;
+  state.avatarSpeaking     = false;
+  state.audioPlaying       = false;
+  if (_activeNodes.length > 0) {
+    console.log('[MIC] reactivate différé — nodes TTS encore actifs:', _activeNodes.length);
+    return;
+  }
   updateMicStatus('active');
-  startAutoMic();
+  setTimeout(() => startAutoMic(), 300);
 }
 
 /* ══════════════════════════════════════════════
-   AUDIO PLAYBACK (sans gap)
+   AUDIO PLAYBACK
 ══════════════════════════════════════════════ */
 let _actx          = null;
 let _nextStartTime = 0;
 let _activeNodes   = [];
 let _userInteracted = false;
 let _pendingQueue   = [];
+
 function _markInteracted() {
   if (_userInteracted) return;
   _userInteracted = true;
   const q = _pendingQueue.splice(0);
   q.forEach(item => {
-    if (item.__fetchPromise) {
-      item.__fetchPromise.then(buf => _decodeAndSchedule(buf)).catch(() => {});
-    } else if (item.arrayBuf) {
-      _decodeAndSchedule(item.arrayBuf);
-    }
+    if (item.__fetchPromise) item.__fetchPromise.then(buf => _decodeAndSchedule(buf)).catch(() => {});
+    else if (item.arrayBuf)  _decodeAndSchedule(item.arrayBuf);
   });
 }
 document.addEventListener('click',      _markInteracted, { capture: true });
@@ -1333,47 +1339,53 @@ document.addEventListener('keydown',    _markInteracted, { capture: true });
 document.addEventListener('touchstart', _markInteracted, { capture: true });
 
 function _getACtx() {
-  if (!_actx || _actx.state === 'closed') {
+  if (!_actx || _actx.state === 'closed')
     _actx = new (window.AudioContext || window.webkitAudioContext)();
-  }
   if (_actx.state === 'suspended') _actx.resume();
   return _actx;
 }
 
 async function _decodeAndSchedule(arrayBuf) {
+  state.avatarSpeaking = true;
+  state.audioPlaying   = true;
+
   const ctx = _getACtx();
   let buffer;
   try {
     buffer = await ctx.decodeAudioData(arrayBuf);
   } catch(e) {
     console.error('[Audio] Décodage échoué :', e);
+    if (_activeNodes.length === 0) {
+      state.avatarSpeaking = false;
+      state.audioPlaying   = false;
+      if (!state.ended) setTimeout(() => reactivateMicAfterResponse(), 500);
+    }
     return;
   }
 
   const now      = ctx.currentTime;
   const startAt  = Math.max(now + 0.03, _nextStartTime);
   _nextStartTime = startAt + buffer.duration;
-  state.audioPlaying = true;
 
   const source = ctx.createBufferSource();
   source.buffer = buffer;
   source.connect(ctx.destination);
   _activeNodes.push(source);
 
-  const pulse         = document.getElementById('avatar-pulse');
-  const msUntilStart  = Math.max(0, (startAt - ctx.currentTime) * 1000);
-  const msDuration    = buffer.duration * 1000;
-
+  const pulse        = document.getElementById('avatar-pulse');
+  const msUntilStart = Math.max(0, (startAt - ctx.currentTime) * 1000);
   setTimeout(() => { pulse.classList.add('talking'); animateLipSync(true); }, msUntilStart);
-  setTimeout(() => {
-    if (ctx.currentTime >= _nextStartTime - 0.08) {
-      pulse.classList.remove('talking');
-      animateLipSync(false);
-      state.audioPlaying = false;
-    }
-  }, msUntilStart + msDuration);
 
-  source.onended = () => { _activeNodes = _activeNodes.filter(n => n !== source); };
+  source.onended = () => {
+    _activeNodes = _activeNodes.filter(n => n !== source);
+    if (_activeNodes.length === 0) {
+      state.avatarSpeaking = false;
+      state.audioPlaying   = false;
+      document.getElementById('avatar-pulse')?.classList.remove('talking');
+      animateLipSync(false);
+      reactivateMicAfterResponse();
+    }
+  };
   source.start(startAt);
 }
 
@@ -1383,9 +1395,7 @@ async function _fetchAndSchedule(url) {
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     const buf = await resp.arrayBuffer();
     await _decodeAndSchedule(buf);
-  } catch(e) {
-    console.error('[Audio] fetch échoué :', url, e);
-  }
+  } catch(e) { console.error('[Audio] fetch échoué :', url, e); }
 }
 
 function enqueueAudio(url, durationS) {
@@ -1431,46 +1441,33 @@ let _visionVideo    = null;
 
 async function connectVisionWebSocket() {
   if (!state.sessionId) return;
-
   try {
     const stream = await navigator.mediaDevices.getUserMedia({ video: { width:320, height:240 } });
     _visionVideo = document.getElementById('vision-preview');
     _visionVideo.srcObject = stream;
     document.getElementById('vision-preview-wrap').style.display = 'block';
-
     _visionCanvas = document.createElement('canvas');
     _visionCanvas.width  = 320;
     _visionCanvas.height = 240;
-
-    await new Promise(resolve => {
-      _visionVideo.oncanplay = resolve;
-      _visionVideo.play().catch(() => {});
-    });
-
+    await new Promise(resolve => { _visionVideo.oncanplay = resolve; _visionVideo.play().catch(() => {}); });
     state.visionActive = true;
   } catch {
-    console.info('Vision : accès webcam refusé ou indisponible — analyse désactivée.');
+    console.info('Vision : accès webcam refusé — analyse désactivée.');
     return;
   }
 
   const proto  = location.protocol === 'https:' ? 'wss:' : 'ws:';
-  const wsUrl  = `${proto}//${location.host}/ws/vision/${state.sessionId}`;
-  state.wsVision = new WebSocket(wsUrl);
+  state.wsVision = new WebSocket(`${proto}//${location.host}/ws/vision/${state.sessionId}`);
 
   state.wsVision.onopen = () => {
-    console.info('Vision WebSocket ouvert');
     _visionInterval = setInterval(() => _captureAndSendFrame(), 2500);
   };
-
   state.wsVision.onmessage = (ev) => {
     try {
       const d = JSON.parse(ev.data);
-      if (d.valid && d.emotion) {
-        _updateCandidateEmotionBadge(d.emotion, d.confidence);
-      }
+      if (d.emotion) _updateCandidateEmotionBadge(d.emotion, d.confidence);
     } catch {}
   };
-
   state.wsVision.onclose = () => {
     if (_visionInterval) { clearInterval(_visionInterval); _visionInterval = null; }
   };
@@ -1480,13 +1477,11 @@ function _captureAndSendFrame() {
   if (!_visionCanvas || !_visionVideo || !state.wsVision
       || state.wsVision.readyState !== WebSocket.OPEN) return;
   try {
-    const ctx = _visionCanvas.getContext("2d");
+    const ctx = _visionCanvas.getContext('2d');
     ctx.drawImage(_visionVideo, 0, 0, 320, 240);
-    const b64 = _visionCanvas.toDataURL("image/jpeg", 0.6).split(",")[1];
+    const b64 = _visionCanvas.toDataURL('image/jpeg', 0.6).split(',')[1];
     state.wsVision.send(JSON.stringify({ frame: b64 }));
-  } catch (e) {
-    console.warn("Vision capture erreur:", e);
-  }
+  } catch(e) { console.warn('Vision capture erreur:', e); }
 }
 
 function _updateCandidateEmotionBadge(emotion, confidence) {
@@ -1498,50 +1493,75 @@ function _updateCandidateEmotionBadge(emotion, confidence) {
     'détendu':   { icon: '😊', color: '#22c55e',  glow: 'rgba(34,197,94,.35)' },
     'neutre':    { icon: '😐', color: '#6b7280',  glow: 'transparent' },
   };
-  const e = map[emotion] || map['neutre'];
+  const e    = map[emotion] || map['neutre'];
   const conf = Math.round(confidence || 0);
-
   const wrap = document.getElementById('candidate-emotion-wrap');
   if (wrap) wrap.style.display = 'block';
   const vw = document.getElementById('vision-preview-wrap');
   if (vw && vw.style.display === 'none') vw.style.display = 'block';
-
   const iconEl  = document.getElementById('candidate-emotion-icon');
   const labelEl = document.getElementById('candidate-emotion-label');
   const confEl  = document.getElementById('candidate-emotion-conf');
   const dotEl   = document.getElementById('candidate-emotion-dot');
-
+  state.liveEmotion = emotion || 'neutre';
+  state.liveEmotionConfidence = conf;
   if (iconEl)  iconEl.textContent  = e.icon;
   if (labelEl) { labelEl.textContent = emotion; labelEl.style.color = e.color; }
   if (confEl)  confEl.textContent  = conf + '%';
-  if (dotEl)   {
-    dotEl.style.background = e.color;
-    dotEl.style.boxShadow  = `0 0 6px ${e.glow}`;
-  }
+  if (dotEl)   { dotEl.style.background = e.color; dotEl.style.boxShadow = `0 0 6px ${e.glow}`; }
 }
 
 /* ══════════════════════════════════════════════
    WEBSOCKET LLM
 ══════════════════════════════════════════════ */
+let _ttsCurrentChunks = null;
+let _ttsCurrentIndex  = -1;
+
+/* Watchdog global : utilisé par sendMessage() et connectWebSocket() */
+function _wdClear() {
+  if (state._wsWatchdog) {
+    clearTimeout(state._wsWatchdog);
+    state._wsWatchdog = null;
+  }
+}
+
+function _wdStart(delayMs) {
+  _wdClear();
+  state._wsWatchdog = setTimeout(() => {
+    console.warn(`[WS] Watchdog: aucun signe de vie en ${delayMs/1000}s`);
+    if (state.wsStreamEl) {
+      state.wsStreamEl.textContent = '⚠️ Le recruteur prend plus de temps que prévu, mais la session reste active…';
+    }
+    state.waitingForResponse = false;
+    state.avatarSpeaking     = false;
+    state.audioPlaying       = false;
+    document.getElementById('btn-send').disabled = false;
+    document.getElementById('btn-mic').disabled  = false;
+    if (!state.ended) startAutoMic();
+  }, delayMs);
+}
+
 function connectWebSocket() {
   if (state.ws) { state.ws.close(); state.ws = null; }
-
-  const wsUrl = `ws://${location.host}/ws/${state.sessionId}`;
-  const ws    = new WebSocket(wsUrl);
+  const proto = location.protocol === 'https:' ? 'wss:' : 'ws:';
+  const ws = new WebSocket(`${proto}//${location.host}/ws/${state.sessionId}`);
   ws.binaryType = 'arraybuffer';
-  state.ws    = ws;
+  state.ws = ws;
 
   ws.onopen = () => {
-    console.log('🔌 WebSocket connecté');
+    console.log('🔌 WebSocket LLM connecté');
     toast('🔌 Connexion temps réel active', 'success');
     state.timerInterval = setInterval(() => {
       if (ws.readyState === WebSocket.OPEN)
         ws.send(JSON.stringify({ action: 'ping' }));
     }, 5000);
+    /* PAS de startAutoMic() ici — le micro démarre après la fin du TTS greeting */
   };
 
   ws.onmessage = (event) => {
     if (event.data instanceof ArrayBuffer || event.data instanceof Blob) {
+      /* Paquet binaire TTS = preuve de vie → annuler le watchdog définitivement */
+      _wdClear();
       if (_ttsCurrentChunks !== null) {
         const blobify = event.data instanceof Blob
           ? event.data
@@ -1551,9 +1571,18 @@ function connectWebSocket() {
       return;
     }
 
-    if (state._wsWatchdog) { clearTimeout(state._wsWatchdog); state._wsWatchdog = null; }
-
     const msg = JSON.parse(event.data);
+
+    /* Pour les paquets progress : relancer le watchdog avec le délai restant
+       (arabe = 60s supplémentaires, autres = 45s) afin de rester actif
+       tant que le LLM génère, sans bloquer l'UI indéfiniment.            */
+    if (msg.type === 'progress') {
+      const _wdExtend = (state.lang || '').toLowerCase().includes('ar') ? 60_000 : 45_000;
+      _wdStart(_wdExtend);
+    } else {
+      /* Tout autre message JSON = génération terminée → annuler le watchdog */
+      _wdClear();
+    }
 
     if (msg.type === 'token') {
       if (state.wsStreamEl && state.wsStreamEl.dataset.thinking === 'true') {
@@ -1564,9 +1593,18 @@ function connectWebSocket() {
       state.wsStreamBuf += msg.token;
       if (state.wsStreamEl) {
         state.wsStreamEl.textContent = state.wsStreamBuf;
-        const c = document.getElementById('chat-messages');
-        c.scrollTop = c.scrollHeight;
+        document.getElementById('chat-messages').scrollTop = 9999;
       }
+    }
+
+    else if (msg.type === 'progress') {
+      if (state.wsStreamEl && (!state.wsStreamBuf || state.wsStreamBuf.trim() === '')) {
+        state.wsStreamEl.dataset.thinking = 'true';
+        state.wsStreamEl.classList.add('thinking-bubble');
+        state.wsStreamEl.textContent = '⚠️ ' + (msg.detail || 'Le recruteur prépare sa relance…');
+      }
+      const metaEl = state.wsStreamEl?.closest('.msg')?.querySelector('.msg-meta');
+      if (metaEl) metaEl.textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) + ' · en cours…';
     }
 
     else if (msg.type === 'stream_done') {
@@ -1602,24 +1640,38 @@ function connectWebSocket() {
         state.wsStreamEl  = null;
         state.wsStreamBuf = '';
       }
-      if (msg.phase)     setPhase(msg.phase);
+      if (msg.phase)               setPhase(msg.phase);
       if (msg.time_left !== undefined) updateTimer(msg.time_left);
-      if (msg.scores)    updateScores(msg.scores);
+      if (msg.scores)              updateScores(msg.scores);
+      if (msg.candidate_assessment) renderCandidateAssessment(msg.candidate_assessment);
       showTyping(false);
       document.getElementById('btn-send').disabled = false;
       document.getElementById('btn-mic').disabled  = false;
 
-      if (!msg.interview_ended) {
-        // Réactiver le micro après la réponse du LLM
-        reactivateMicAfterResponse();
+      /* Le micro sera réactivé par source.onended → reactivateMicAfterResponse()
+         NE PAS appeler reactivateMicAfterResponse() ici directement.
+         Exception : si pas de TTS du tout (cas rare). */
+      if (!msg.interview_ended && _activeNodes.length === 0
+          && !state.avatarSpeaking && _ttsCurrentChunks === null) {
+        setTimeout(() => reactivateMicAfterResponse(), 400);
       }
 
-      if (msg.interview_ended) setTimeout(() => endInterview(null), 1500);
+      if (msg.interview_ended) {
+        state.ended = true;
+        setTimeout(() => endInterview(null), 1500);
+      }
     }
 
     else if (msg.type === 'pong') {
       if (msg.time_left !== undefined) updateTimer(msg.time_left);
       if (msg.phase) setPhase(msg.phase);
+    }
+
+    else if (msg.type === 'done') {
+      /* Le serveur a terminé l'envoi complet — libérer le cycle si aucun TTS en cours */
+      if (_activeNodes.length === 0 && !state.avatarSpeaking) {
+        setTimeout(() => reactivateMicAfterResponse(), 300);
+      }
     }
 
     else if (msg.type === 'report') { endInterview(msg); }
@@ -1634,19 +1686,15 @@ function connectWebSocket() {
   };
 
   ws.onerror = (err) => {
-    console.error('WebSocket error', err);
+    console.error('WebSocket LLM error', err);
     toast('⚠️ WebSocket déconnecté — bascule HTTP', 'warn');
   };
 
   ws.onclose = () => {
     clearInterval(state.timerInterval);
     state.ws = null;
-    console.log('🔌 WebSocket fermé');
   };
 }
-
-let _ttsCurrentChunks = null;
-let _ttsCurrentIndex  = -1;
 
 function appendStreamingBubble() {
   const container = document.getElementById('chat-messages');
@@ -1658,13 +1706,14 @@ function appendStreamingBubble() {
   bubble.className = 'msg-bubble streaming-bubble thinking-bubble';
   bubble.dataset.thinking = 'true';
   bubble.innerHTML = '<span class="th-dot"></span><span class="th-dot"></span><span class="th-dot"></span>';
+  const wrap = document.createElement('div');
   div.innerHTML = `<div class="msg-av">🤖</div>`;
-  div.appendChild(document.createElement('div'));
-  div.lastChild.appendChild(bubble);
+  div.appendChild(wrap);
+  wrap.appendChild(bubble);
   const meta = document.createElement('div');
   meta.className = 'msg-meta';
   meta.textContent = now + ' · en cours…';
-  div.lastChild.appendChild(meta);
+  wrap.appendChild(meta);
   container.insertBefore(div, typing);
   container.scrollTop = container.scrollHeight;
   return bubble;
@@ -1681,8 +1730,12 @@ function updateScores(scores) {
    FIN ENTRETIEN → RAPPORT
 ══════════════════════════════════════════════ */
 async function endInterview(inlineReport) {
+  state.ended = true;
   clearInterval(state.timerInterval);
+  if (state.isRecording) { _closeMic(); state.isRecording = false; }
+  if (state.wsSTT) { state.wsSTT.onclose = null; state.wsSTT.close(); state.wsSTT = null; }
   toast('Génération du rapport NLU…');
+
   let report = inlineReport;
   if (!report) {
     try {
@@ -1693,12 +1746,10 @@ async function endInterview(inlineReport) {
   }
   if (report) renderReport(report);
   showScreen('screen-report');
-  // Arrêter le micro définitivement
-  if (state.isRecording) _closeMic();
 }
 
 /* ══════════════════════════════════════════════
-   RENDER REPORT (identique à l'original)
+   RENDER REPORT
 ══════════════════════════════════════════════ */
 function renderReport(r) {
   const meta = r.meta || {};
@@ -1753,19 +1804,14 @@ function renderReport(r) {
     d.className = 'rag-source-item';
     d.innerHTML = `
       <div class="rag-dot ${active ? 'on' : 'off'}"></div>
-      <div>
-        <span class="rag-source-label">${label}</span>
-        <span class="rag-source-sub">${sub}</span>
-      </div>`;
+      <div><span class="rag-source-label">${label}</span><span class="rag-source-sub">${sub}</span></div>`;
     ragEl.appendChild(d);
   }
   addRagRow('CV candidat', cvDocs);
   addRagRow("Offre d'emploi", jobDocs);
-  if (Array.isArray(kbDocs) && kbDocs.length > 0) {
+  if (Array.isArray(kbDocs) && kbDocs.length > 0)
     kbDocs.forEach(d => addRagRow(`KB : ${d}`, [d]));
-  } else {
-    addRagRow('KB entreprise', []);
-  }
+  else addRagRow('KB entreprise', []);
 
   renderTags('r-competences', r.competences_detectees || [], 'green');
   renderTags('r-lacunes',     r.lacunes_identifiees   || [], 'red');
@@ -1779,17 +1825,14 @@ function renderReport(r) {
     techPoints.forEach(pt => {
       const row = document.createElement('div');
       row.className = 'eval-point-row';
-      const icon = pt.status === 'answered' ? '✅' : pt.status === 'partial' ? '⚠️' : '❌';
+      const icon       = pt.status === 'answered' ? '✅' : pt.status === 'partial' ? '⚠️' : '❌';
       const badgeLabel = pt.status === 'answered' ? 'Répondu' : pt.status === 'partial' ? 'Partiel' : 'Manquant';
-      const detail = pt.explored_by_interviewer
-        ? (pt.mentioned_by_candidate ? 'Exploré et abordé par le candidat' : 'Questionné mais non répondu')
-        : 'Non abordé durant l\'entretien';
+      const detail     = pt.explored_by_interviewer
+        ? (pt.mentioned_by_candidate ? 'Exploré et abordé' : 'Questionné mais non répondu')
+        : "Non abordé durant l'entretien";
       row.innerHTML = `
         <div class="eval-status-icon">${icon}</div>
-        <div style="flex:1">
-          <div class="eval-point-label">${pt.point}</div>
-          <div class="eval-point-detail">${detail}</div>
-        </div>
+        <div style="flex:1"><div class="eval-point-label">${pt.point}</div><div class="eval-point-detail">${detail}</div></div>
         <div class="eval-status-badge ${pt.status}">${badgeLabel}</div>`;
       evalTechEl.appendChild(row);
     });
@@ -1805,14 +1848,11 @@ function renderReport(r) {
     commPoints.forEach(pt => {
       const row = document.createElement('div');
       row.className = 'eval-point-row';
-      const icon = pt.status === 'answered' ? '✅' : pt.status === 'partial' ? '⚠️' : '❌';
+      const icon       = pt.status === 'answered' ? '✅' : pt.status === 'partial' ? '⚠️' : '❌';
       const badgeLabel = pt.status === 'answered' ? 'Répondu' : pt.status === 'partial' ? 'Partiel' : 'Manquant';
       row.innerHTML = `
         <div class="eval-status-icon">${icon}</div>
-        <div style="flex:1">
-          <div class="eval-point-label">${pt.point}</div>
-          <div class="eval-point-detail">${pt.detail || ''}</div>
-        </div>
+        <div style="flex:1"><div class="eval-point-label">${pt.point}</div><div class="eval-point-detail">${pt.detail || ''}</div></div>
         <div class="eval-status-badge ${pt.status}">${badgeLabel}</div>`;
       evalCommEl.appendChild(row);
     });
@@ -1823,15 +1863,14 @@ function renderReport(r) {
 
   const pointsDetectes  = r.points_detectes  || [];
   const pointsManquants = r.points_manquants || [];
-
-  document.getElementById('r-detectes-count').textContent = `(${pointsDetectes.length})`;
+  document.getElementById('r-detectes-count').textContent  = `(${pointsDetectes.length})`;
   document.getElementById('r-manquants-count').textContent = `(${pointsManquants.length})`;
 
   const detectesEl = document.getElementById('r-points-detectes');
   detectesEl.innerHTML = pointsDetectes.length
     ? pointsDetectes.map(p => {
         const isPartial = p.includes('(~)');
-        const label = p.replace(' ✓', '').replace(' (~)', '');
+        const label = p.replace(' ✓','').replace(' (~)','');
         return `<span class="tag ${isPartial ? '' : 'green'}" style="${isPartial ? 'border:1px solid rgba(251,191,36,.4);color:var(--warn);background:rgba(251,191,36,.08)' : ''}">${label}${isPartial ? ' ⚠️' : ' ✓'}</span>`;
       }).join('')
     : '<span style="color:var(--muted);font-size:.8rem">Aucun point détecté</span>';
@@ -1841,27 +1880,26 @@ function renderReport(r) {
     ? pointsManquants.map(p => `<span class="tag red">${p}</span>`).join('')
     : '<span style="color:var(--accent3);font-size:.8rem">✓ Aucun point manquant — excellent !</span>';
 
-  document.getElementById('r-motivation').textContent = r.analyse_motivation || '—';
-  document.getElementById('r-softskills').textContent = r.analyse_soft_skills || '';
+  document.getElementById('r-motivation').textContent  = r.analyse_motivation  || '—';
+  document.getElementById('r-softskills').textContent  = r.analyse_soft_skills || '';
 
-  const verdict = r.verdict_final || (
+  const verdictRaw = r.verdict_final || r.verdict || (
     (r.pourcentage || 0) >= 65 ? 'EMBAUCHE' :
     (r.pourcentage || 0) >= 45 ? 'A REVOIR' : 'REJET'
   );
-  const vEl   = document.getElementById('r-verdict');
+  const verdictMap = { HIRE:'EMBAUCHE', RECONSIDER:'A REVOIR', TO_COMPLETE:'A COMPLETER', NOT_RETAINED:'REJET' };
+  const verdict = verdictMap[verdictRaw] || verdictRaw;
+  const vEl = document.getElementById('r-verdict');
   vEl.textContent = verdict;
-  vEl.className   = 'verdict-box ' + (
-    verdict === 'EMBAUCHE' ? 'EMBAUCHE' : verdict === 'REJET' ? 'REJET' : 'default'
-  );
-  document.getElementById('r-reco').textContent =
-    r.recommandation_detail || r.recommandation || '';
+  vEl.className   = 'verdict-box ' + (verdict === 'EMBAUCHE' ? 'EMBAUCHE' : verdict === 'REJET' ? 'REJET' : 'default');
+  document.getElementById('r-reco').textContent = r.recommandation_detail || r.recommandation || '';
 
   const vis = r.analyse_emotion_vision;
   if (vis && vis.disponible && vis.nb_frames > 0) {
     document.getElementById('r-vision-card').style.display = 'block';
-    document.getElementById('r-emotion-dom').textContent  = vis.emotion_dominante || '—';
-    document.getElementById('r-vision-conf').textContent  = (vis.confiance_globale ?? '—') + (vis.confiance_globale != null ? '%' : '');
-    document.getElementById('r-emotion-evo').textContent  = vis.evolution || '—';
+    document.getElementById('r-emotion-dom').textContent   = vis.emotion_dominante || '—';
+    document.getElementById('r-vision-conf').textContent   = (vis.confiance_globale ?? '—') + (vis.confiance_globale != null ? '%' : '');
+    document.getElementById('r-emotion-evo').textContent   = vis.evolution || vis.etat_global || '—';
     const picsEl = document.getElementById('r-stress-pics');
     picsEl.innerHTML = '';
     if (vis.pics_stress && vis.pics_stress.length > 0) {
@@ -1890,22 +1928,33 @@ function restartApp() {
   if (_visionVideo && _visionVideo.srcObject) {
     _visionVideo.srcObject.getTracks().forEach(t => t.stop());
     _visionVideo.srcObject = null;
-    const pw = document.getElementById('vision-preview-wrap'); if(pw) pw.style.display = 'none';
+    const pw = document.getElementById('vision-preview-wrap');
+    if (pw) pw.style.display = 'none';
   }
   const candidateWrap = document.getElementById('candidate-emotion-wrap');
   if (candidateWrap) candidateWrap.style.display = 'none';
   state.visionActive = false;
+  state.liveEmotion = 'neutre';
+  state.liveEmotionConfidence = 0;
+  state.lastUserMsgEl = null;
 
   clearInterval(state.timerInterval);
 
-  if (state.wsSTT) { state.wsSTT.close(); state.wsSTT = null; }
-  if (state.isRecording) _closeMic();
+  if (state.wsSTT) {
+    state.wsSTT.onclose = null;
+    state.wsSTT.onerror = null;
+    state.wsSTT.close();
+    state.wsSTT = null;
+  }
+  if (state.isRecording) { _closeMic(); }
 
   stopAvatarAudio();
   _pendingQueue  = [];
   _nextStartTime = 0;
   if (_actx && _actx.state !== 'closed') { _actx.close(); _actx = null; }
-  _userInteracted = false;
+  _userInteracted    = false;
+  _micBootInProgress = false;
+  _sttPending        = false;
 
   Object.assign(state, {
     sessionId: null, isRecording: false, isTalking: false,
@@ -1914,25 +1963,28 @@ function restartApp() {
     ragSources: { cv: [], job_offer: [], company_docs: [] },
     vadSpeaking: false, vadTimer: null,
     waitingForResponse: false,
+    avatarSpeaking: false,
+    audioPlaying: false,
+    ended: false,
   });
 
   document.getElementById('chat-messages').innerHTML =
     '<div class="typing-indicator" id="typing"><span></span><span></span><span></span></div>';
-  ['dz-cv', 'dz-offre'].forEach(id => document.getElementById(id).classList.remove('uploaded'));
+  ['dz-cv','dz-offre'].forEach(id => document.getElementById(id).classList.remove('uploaded'));
   document.getElementById('cv-status').textContent    = '✓ Chargé';
   document.getElementById('offre-status').textContent = '✓ Chargée';
   document.getElementById('btn-start').disabled       = true;
   document.getElementById('btn-start').textContent    = "Démarrer l'entretien →";
   document.getElementById('user-input').value         = '';
-  ['src-cv', 'src-job', 'src-kb'].forEach(id =>
-    document.getElementById(id)?.classList.remove('active'));
+  ['src-cv','src-job','src-kb'].forEach(id => document.getElementById(id)?.classList.remove('active'));
   document.getElementById('kb-company-list').style.display = 'none';
-  ['hdr-cv', 'hdr-job', 'hdr-kb'].forEach(id => {
+  ['hdr-cv','hdr-job','hdr-kb'].forEach(id => {
     const el = document.getElementById(id);
-    if (el) { el.classList.remove('on'); }
+    if (el) el.classList.remove('on');
   });
-  document.getElementById('hdr-kb').textContent = 'KB';
+  document.getElementById('hdr-kb').textContent       = 'KB';
   document.getElementById('src-kb-label').textContent = 'KB entreprise';
+  updateMicStatus(false);
 
   showScreen('screen-setup');
 }

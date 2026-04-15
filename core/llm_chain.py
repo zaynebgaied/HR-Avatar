@@ -46,6 +46,7 @@ import time
 import random
 import glob
 import queue
+import asyncio
 import datetime as dt
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -992,7 +993,7 @@ class HRInteractiveBrain:
         self.duration_minutes = int(duration_minutes)
         self.model_name = self._select_model(self.target_lang)
 
-        self._ot_agent = OrchestrateurTraducteur(self.client, self.model_name)  # ← APRÈS client et model_name
+        self._ot_agent = OrchestrateurTraducteur(self.client, self.model_name, device_config=DEVICE_CONFIG)  # ← APRÈS client et model_name
 
         self.steps = KNOWN_PHASES.copy()
         self.current_step_index = 0
@@ -1137,6 +1138,7 @@ class HRInteractiveBrain:
         ts = dt.datetime.now().strftime("%Y%m%d_%H%M%S")
         self.log_file = str(LOGS_DIR / f"interview_{ts}.txt")
         self._write_log_header()
+        self._hot_streaming_mode = False
 
     # =========================================================================
     # Public API
@@ -1313,6 +1315,7 @@ class HRInteractiveBrain:
             "Utilisez await generate_response_async(...)."
         )
 
+
     async def generate_response_stream(self, user_text: str):
         if self.ended:
             final = self._localized_closure("already_finished")
@@ -1320,82 +1323,130 @@ class HRInteractiveBrain:
                 yield ev
             return
 
-        self._ensure_llm_analysis()
+        yield {
+            "type": "progress",
+            "stage": "turn_received",
+            "detail": "Analyse de votre réponse en cours…",
+        }
 
-        clean_user = self._clean_candidate_answer(user_text)
-        candidate_sentiment = self._estimate_sentiment(clean_user)
-        answer_quality = self._classify_answer_quality(clean_user)
-        self._answer_quality_history.append(answer_quality)
-        self._answer_quality_history = self._answer_quality_history[-10:]
+        self._hot_streaming_mode = True
+        try:
+            clean_user = self._clean_candidate_answer(user_text)
+            candidate_sentiment = self._estimate_sentiment(clean_user)
+            answer_quality = self._classify_answer_quality(clean_user)
+            self._answer_quality_history.append(answer_quality)
+            self._answer_quality_history = self._answer_quality_history[-10:]
 
-        current_phase_for_claims = self.steps[self.current_step_index]
-        if current_phase_for_claims != "OPENING":
-            signal_validated = self._detect_and_register_claims(clean_user)
-            weak_sigs = self._detect_weak_signals(clean_user)
-        else:
-            signal_validated = False
-            weak_sigs = []
+            current_phase_for_claims = self.steps[self.current_step_index]
+            if current_phase_for_claims != "OPENING":
+                signal_validated = False
+                weak_sigs = self._detect_weak_signals(clean_user)
+            else:
+                signal_validated = False
+                weak_sigs = []
 
-        behavioral_detected = self._detect_behavioral_story(clean_user)
-        decision_detected = self._detect_decision_reasoning(clean_user)
-        leadership_signals = self._detect_leadership_signals(clean_user)
+            behavioral_detected = self._detect_behavioral_story(clean_user)
+            decision_detected = self._detect_decision_reasoning(clean_user)
+            leadership_signals = self._detect_leadership_signals(clean_user)
 
-        if behavioral_detected:
-            self._behavioral_stories_count += 1
-        if decision_detected:
-            self._decision_shown_per_phase[self.steps[self.current_step_index]] = True
-        if leadership_signals:
-            self._leadership_signals.extend(leadership_signals)
-            self._leadership_score = min(10, self._leadership_score + len(leadership_signals))
+            if behavioral_detected:
+                self._behavioral_stories_count += 1
+            if decision_detected:
+                self._decision_shown_per_phase[self.steps[self.current_step_index]] = True
+            if leadership_signals:
+                self._leadership_signals.extend(leadership_signals)
+                self._leadership_score = min(10, self._leadership_score + len(leadership_signals))
 
-        self._turns_since_metrics_probe += 1
+            self._turns_since_metrics_probe += 1
 
-        self._append_turn(
-            self.steps[self.current_step_index],
-            self._candidate_speaker_label(),
-            clean_user,
-            answer_quality=answer_quality,
-            signal_validated=signal_validated,
-            behavioral_story_detected=behavioral_detected,
-            decision_reasoning_detected=decision_detected,
-            weak_signals_detected=weak_sigs,
-        )
-        self._update_dynamic_state(clean_user, candidate_sentiment)
-        self._update_scores(clean_user)
-        self._update_coverage_matrix(clean_user)
+            self._append_turn(
+                self.steps[self.current_step_index],
+                self._candidate_speaker_label(),
+                clean_user,
+                answer_quality=answer_quality,
+                signal_validated=signal_validated,
+                behavioral_story_detected=behavioral_detected,
+                decision_reasoning_detected=decision_detected,
+                weak_signals_detected=weak_sigs,
+            )
+            self._update_dynamic_state(clean_user, candidate_sentiment)
+            self._update_scores(clean_user)
+            self._update_coverage_matrix(clean_user)
 
-        current_phase = self.steps[self.current_step_index]
-        if current_phase in ("CANDIDATE_QUESTIONS", "FINAL_CHECK"):
-            if self._detecting_question_decline(clean_user):
-                self._candidate_declined_questions = True
-                # Forcer passage immédiat à CLOSING sans aucune autre question
-                self.current_step_index = self.steps.index("CLOSING")
-                self.ended = True
+            current_phase = self.steps[self.current_step_index]
+            if current_phase in ("CANDIDATE_QUESTIONS", "FINAL_CHECK"):
+                if self._detecting_question_decline(clean_user):
+                    self._candidate_declined_questions = True
+                    self.current_step_index = self.steps.index("CLOSING")
+                    self.ended = True
 
-        if self._should_end_interview():
-            self.ended = True
-            next_text = self._build_closing()
-        else:
-            next_text = self._build_next_question(clean_user, candidate_sentiment, answer_quality)
-            # Garde-fou : si entre-temps ended est devenu True, on écrase avec la conclusion seule
-            if self.ended:
-                next_text = self._build_closing()
+            current_phase = self.steps[self.current_step_index]
+            use_live_llm_preview = (
+                not self._should_end_interview()
+                and current_phase not in ("CANDIDATE_QUESTIONS", "FINAL_CHECK", "CLOSING")
+                and self.target_lang != "Arabe"
+            )
 
-        self._append_turn(
-            self.steps[self.current_step_index],
-            self._recruiter_speaker_label(),
-            next_text,
-            emotion=self.vision_emotion_label if self.vision_stress_flag else "neutre",
-        )
-        for ev in self._yield_text_stream(
-            next_text,
-            candidate_sentiment=candidate_sentiment,
-            interview_ended=self.ended,
-        ):
-            yield ev
+            if use_live_llm_preview:
+                yield {
+                    "type": "progress",
+                    "stage": "retrieval",
+                    "detail": "Le recruteur prépare sa relance…",
+                }
+                briefing = self._build_agent_brief(current_phase, clean_user, candidate_sentiment, answer_quality)
+                raw_parts: List[str] = []
+                async for piece in self._iter_llm_text_async(
+                    briefing,
+                    phase=current_phase,
+                    include_few_shot=True,
+                ):
+                    raw_parts.append(piece)
+                    yield {"type": "token", "token": piece}
 
+                llm_raw = "".join(raw_parts).strip()
+                next_text = self._extract_final_question(llm_raw)
+                next_text = self._postprocess_question(next_text, current_phase)
+                next_text = self._strip_praise(next_text)
+                next_text = self._humanize_question(next_text, clean_user, candidate_sentiment)
+                next_text = self._ensure_human_quality(next_text, current_phase, clean_user)
+
+                if current_phase == "JOB_ALIGNED_EXPLORATION" and self._current_tool_focus:
+                    self._tool_followup_count[self._current_tool_focus] = (
+                        self._tool_followup_count.get(self._current_tool_focus, 0) + 1
+                    )
+                    if self._tool_followup_count[self._current_tool_focus] >= MAX_TOOL_FOLLOWUPS:
+                        self._tools_fully_done.add(self._current_tool_focus)
+                        self._current_tool_focus = ""
+
+                self._mark_jd_tool_why_asked(next_text)
+                self._update_vague_retry_state(clean_user, answer_quality)
+            else:
+                if self._should_end_interview():
+                    self.ended = True
+                    next_text = self._build_closing()
+                else:
+                    next_text = self._build_next_question(clean_user, candidate_sentiment, answer_quality)
+                    if self.ended:
+                        next_text = self._build_closing()
+
+            self._append_turn(
+                self.steps[self.current_step_index],
+                self._recruiter_speaker_label(),
+                next_text,
+                emotion=self.vision_emotion_label if self.vision_stress_flag else "neutre",
+            )
+            for ev in self._yield_text_stream(
+                next_text,
+                candidate_sentiment=candidate_sentiment,
+                interview_ended=self.ended,
+                emit_tokens=not use_live_llm_preview,
+            ):
+                yield ev
+        finally:
+            self._hot_streaming_mode = False
 
     # =========================================================================
+
     def _split_cv_sections(self, text: str) -> List[Dict[str, str]]:
         """
         Découpe le CV en sections nommées.
@@ -2603,6 +2654,8 @@ class HRInteractiveBrain:
         return score
 
     def _ensure_human_quality(self, question: str, phase: str, user_text: str) -> str:
+        if getattr(self, "_hot_streaming_mode", False):
+            return question
         score = self._score_question_humanness(question)
         drift = self._detect_language_drift(question)
 
@@ -2642,13 +2695,14 @@ class HRInteractiveBrain:
     # FIX-AR-1: _call_llm — inject system-level language message
     # =========================================================================
 
-    def _call_llm(
+    def _iter_llm_text(
         self,
         prompt: str,
         system_override: Optional[str] = None,
         phase: Optional[str] = None,
         include_few_shot: bool = True,
-    ) -> str:
+    ) -> Generator[str, None, None]:
+        """Stream raw text chunks from Ollama without changing recruiter logic."""
         system_msg = system_override or self._build_system_prompt(
             phase=phase,
             include_few_shot=include_few_shot,
@@ -2664,21 +2718,19 @@ class HRInteractiveBrain:
             "num_ctx": DEVICE_CONFIG.get("ollama_num_ctx", 4096),
         }
 
-        def _collect_stream(stream_iter) -> str:
-            parts = []
+        def _yield_chunks(stream_iter):
             deadline = time.time() + 90
             for chunk in stream_iter:
                 if time.time() > deadline:
                     print("WARNING _call_llm: timeout 90s — reponse partielle retournee")
                     break
+                piece = ""
                 if hasattr(chunk, "message"):
-                    parts.append(chunk.message.content or "")
+                    piece = chunk.message.content or ""
                 elif isinstance(chunk, dict):
-                    parts.append(
-                        chunk.get("message", {}).get("content", "")
-                        or chunk.get("response", "")
-                    )
-            return "".join(parts).strip()
+                    piece = chunk.get("message", {}).get("content", "") or chunk.get("response", "")
+                if piece:
+                    yield piece
 
         if system_msg:
             try:
@@ -2691,7 +2743,8 @@ class HRInteractiveBrain:
                     options=opts,
                     stream=True,
                 )
-                return _collect_stream(stream)
+                yield from _yield_chunks(stream)
+                return
             except Exception as e:
                 print(f"WARNING _call_llm chat stream: {e} — fallback generate")
                 combined = f"{system_msg}\n\n{prompt}"
@@ -2702,10 +2755,11 @@ class HRInteractiveBrain:
                         options=opts,
                         stream=True,
                     )
-                    return _collect_stream(stream)
+                    yield from _yield_chunks(stream)
+                    return
                 except Exception as e2:
                     print(f"WARNING _call_llm generate stream: {e2}")
-                    return ""
+                    return
         else:
             try:
                 stream = self.client.generate(
@@ -2714,10 +2768,62 @@ class HRInteractiveBrain:
                     options=opts,
                     stream=True,
                 )
-                return _collect_stream(stream)
+                yield from _yield_chunks(stream)
+                return
             except Exception as e:
                 print(f"WARNING _call_llm generate stream: {e}")
-                return ""
+                return
+
+    def _call_llm(
+        self,
+        prompt: str,
+        system_override: Optional[str] = None,
+        phase: Optional[str] = None,
+        include_few_shot: bool = True,
+    ) -> str:
+        return "".join(
+            self._iter_llm_text(
+                prompt,
+                system_override=system_override,
+                phase=phase,
+                include_few_shot=include_few_shot,
+            )
+        ).strip()
+
+    async def _iter_llm_text_async(
+        self,
+        prompt: str,
+        phase: Optional[str] = None,
+        include_few_shot: bool = True,
+    ):
+        """
+        Version async-safe de _iter_llm_text.
+        Exécute l'appel Ollama (bloquant) dans un thread séparé via run_in_executor
+        pour ne pas bloquer la boucle asyncio principale.
+        Les tokens arrivent par morceaux dans une queue asyncio.
+        """
+        loop = asyncio.get_running_loop()
+        token_q: asyncio.Queue = asyncio.Queue()
+        _SENTINEL = object()
+
+        def _run_sync():
+            try:
+                for piece in self._iter_llm_text(prompt, phase=phase, include_few_shot=include_few_shot):
+                    loop.call_soon_threadsafe(token_q.put_nowait, piece)
+            except Exception as exc:
+                loop.call_soon_threadsafe(token_q.put_nowait, exc)
+            finally:
+                loop.call_soon_threadsafe(token_q.put_nowait, _SENTINEL)
+
+        loop.run_in_executor(None, _run_sync)
+
+        while True:
+            item = await token_q.get()
+            if item is _SENTINEL:
+                break
+            if isinstance(item, Exception):
+                raise item
+            yield item
     # =========================================================================
     # FIX-AR-10: _postprocess_question — adds drift detection
     # =========================================================================
@@ -4062,6 +4168,8 @@ class HRInteractiveBrain:
         Source boosts are passed to both BM25 and dense search during fusion.
         """
         self.ensure_embeddings_ready()
+        retrieval_top_k = 6 if getattr(self, "_hot_streaming_mode", False) else RETRIEVAL_TOP_K
+        max_chunks = 4 if getattr(self, "_hot_streaming_mode", False) else MAX_RETRIEVED_CHUNKS
         source_boost = {
             "cv":           1.15 if phase in {"OPENING", "PROJECT_DEEP_DIVE"} else 1.0,
             "job_offer":    1.20 if phase in {"JOB_ALIGNED_EXPLORATION", "TECHNICAL_DEPTH"} else 1.0,
@@ -4069,8 +4177,8 @@ class HRInteractiveBrain:
         }
         q = self._craft_retrieval_query(query, phase)
         # SimpleVectorStore.search() now does hybrid BM25+dense + cross-encoder re-rank
-        chunks = self.vector_store.search(q, top_k=RETRIEVAL_TOP_K, source_boost=source_boost)
-        reranked = self._rerank_chunks(chunks, phase, query)[:MAX_RETRIEVED_CHUNKS]
+        chunks = self.vector_store.search(q, top_k=retrieval_top_k, source_boost=source_boost)
+        reranked = self._rerank_chunks(chunks, phase, query)[:max_chunks]
         cv_blocks = []
         jd_blocks = []
         other_blocks = []
@@ -4318,7 +4426,7 @@ class HRInteractiveBrain:
             f.write(f"Duration: {self.duration_minutes} minutes\n")
             f"RAG     : Hybrid BM25+Vector (alpha={HYBRID_ALPHA}) + CrossEncoder={USE_CROSS_ENCODER} "
             f"+ StructuredChunking=CV_sections+JD_sections + SemanticFallback={USE_SEMANTIC_CHUNKING}\n\n"
-    def _yield_text_stream(self, text: str, candidate_sentiment: str, interview_ended: bool):
+    def _yield_text_stream(self, text: str, candidate_sentiment: str, interview_ended: bool, emit_tokens: bool = True):
         tokens = re.findall(r"\S+\s*", text) or [text]
         sentence_buffer = []
         sentence_idx = 0
@@ -4326,7 +4434,8 @@ class HRInteractiveBrain:
         for tok in tokens:
             full_text += tok
             sentence_buffer.append(tok)
-            yield {"type": "token", "token": tok}
+            if emit_tokens:
+                yield {"type": "token", "token": tok}
             if tok.strip().endswith((".", "?", "!", "؟")):
                 sentence = "".join(sentence_buffer).strip()
                 if sentence:

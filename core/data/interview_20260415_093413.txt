@@ -1,0 +1,8 @@
+HR INTERVIEW — Anglais
+Date    : 2026-04-15 09:34:13
+Duration: 7 minutes
+[2026-04-15 09:35:18] [OPENING] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: For this opportunity, I'm Zainab Gade, finally an engineering student at the Department of Artificial Intelligence, and I want to get to build a dual-campaign.
+[2026-04-15 09:36:34] [OPENING] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Walk me through the experience in your background most relevant to this role.
+[2026-04-15 09:37:47] [OPENING] Candidate [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=[]]: Thank you. Thank you. Thank you.
+[2026-04-15 09:39:03] [OPENING] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Which project from your past work best shows your technical depth?
+[2026-04-15 09:40:57] [OPENING] Candidate [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=[]]: Thank you very much. Thank you very much.

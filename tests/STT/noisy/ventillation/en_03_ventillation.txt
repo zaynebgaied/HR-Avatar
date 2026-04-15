@@ -1,1 +1,0 @@
-I have extensive experience with FastAPI and asynchronous programming.

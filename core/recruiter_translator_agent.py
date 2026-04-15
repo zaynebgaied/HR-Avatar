@@ -192,25 +192,33 @@ class OrchestrateurTraducteur:
             question = self._ot_agent.generate(briefing, phase=phase)
     """
 
-    MAX_DRIFT_RETRIES: int = 3  # porté à 3 pour mieux absorber les dérives CJK
+    MAX_DRIFT_RETRIES: int = 2  # réduit à 2 pour éviter les délais excessifs
 
-    def __init__(self, client: Client, model_name: str):
+    # ── Timeout par appel LLM ──────────────────────────────────────────────────
+    # Recruiter + Translator = 2 appels × 45s = 90s max au lieu de 180s
+    _LLM_TIMEOUT: float = 45.0
+
+    def __init__(self, client: Client, model_name: str, device_config: Optional[dict] = None):
         self.client     = client
         self.model_name = model_name
+        # Récupérer la config GPU si disponible (évite le fallback CPU lent)
+        dc = device_config or {}
         self._base_opts = {
             "temperature":    0.3,
             "top_p":          0.9,
-            "num_predict":    300,
+            "num_predict":    200,   # réduit de 300→200 : les questions sont courtes
             "repeat_penalty": 1.1,
             "top_k":          40,
+            "num_gpu":        dc.get("ollama_num_gpu", 20) if dc.get("use_gpu") else 0,
+            "num_ctx":        dc.get("ollama_num_ctx", 2048),  # contexte réduit pour accélérer
         }
 
     # ── Private helpers ───────────────────────────────────────────────────────
 
-    def _stream_collect(self, stream_iter, timeout: float = 90.0) -> str:
+    def _stream_collect(self, stream_iter, timeout: Optional[float] = None) -> str:
         """Collecte une réponse streamée en une seule chaîne."""
         parts: list[str] = []
-        deadline = time.time() + timeout
+        deadline = time.time() + (timeout if timeout is not None else self._LLM_TIMEOUT)
         for chunk in stream_iter:
             if time.time() > deadline:
                 break
@@ -221,6 +229,10 @@ class OrchestrateurTraducteur:
                     chunk.get("message", {}).get("content", "")
                     or chunk.get("response", "")
                 )
+            # Arrêt anticipé si on a déjà une question complète (؟ ou ?) pour éviter le délai
+            collected = "".join(parts)
+            if len(collected) > 30 and (collected.rstrip().endswith("؟") or collected.rstrip().endswith("?")):
+                break
         return "".join(parts).strip()
 
     def _call(self, system: str, user: str) -> str:

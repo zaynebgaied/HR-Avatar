@@ -1,1 +1,0 @@
-My expertise lies in building RAG systems with ChromaDB and LangChain.

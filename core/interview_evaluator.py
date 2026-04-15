@@ -232,7 +232,20 @@ REDIRECT_TO_TEAM_RE = re.compile(
     re.IGNORECASE
 )
 
-TOO_SHORT_THRESHOLD = 12  # mots — en dessous = réponse probablement incomplète
+TOO_SHORT_THRESHOLD = 18  # mots — en dessous = réponse probablement incomplète
+
+LOW_SUBSTANCE_PATTERNS = re.compile(
+    r"\b(etc\.?|and so on|whatever|things like that|you know|more or less|basically|just that|"
+    r"voilà|comme ça|ce genre de choses|des trucs comme ça|bref|"
+    r"وكذا|يعني|أشياء من هذا القبيل)\b",
+    re.IGNORECASE
+)
+
+QUESTION_SPLIT_RE = re.compile(
+    r"\?|\b(?:and|also|plus|as well as|et|ainsi que|puis|ensuite|ou|or|"
+    r"وكذلك|وأيضاً|ثم|أو)\b",
+    re.IGNORECASE
+)
 
 # ── Patterns de multi-questions (pour CompletenessAnalyzer) ──────────────────
 
@@ -963,11 +976,19 @@ class AnswerStatusDetector:
                 )
                 return result
 
-        # ── 5. ANSWERED_PARTIALLY : réponse trop courte ou llm_chain signal ──
+        # ── 5. ANSWERED_PARTIALLY : réponse trop courte ou faible densité ───
+        low_substance_hits = LOW_SUBSTANCE_PATTERNS.findall(answer)
         if result.too_short and not has_substance:
             result.status     = "ANSWERED_PARTIALLY"
-            result.confidence = 0.75
+            result.confidence = 0.8
             result.explanation = f"Answer too short ({result.word_count} words) with no concrete substance"
+            return result
+
+        # Réponse longue mais creuse: beaucoup de remplissage, pas d'exemple, pas de métrique
+        if len(low_substance_hits) >= 2 and not has_substance and len(VAGUENESS_RE.findall(answer)) >= 2:
+            result.status     = "ANSWERED_PARTIALLY"
+            result.confidence = 0.72
+            result.explanation = "Answer contains filler language and lacks concrete evidence"
             return result
 
         # ── 6. ANSWERED_FULLY : tout le reste ────────────────────────────────
@@ -992,20 +1013,47 @@ class CompletenessAnalyzer:
     def analyze(self, question: str, answer: str) -> CompletenessResult:
         result = CompletenessResult()
 
-        # Compter les sous-questions
+        # Détecter plusieurs parties: plusieurs '?' OU connecteurs de sous-questions
         q_marks = len(re.findall(r"\?", question))
-        result.n_question_parts = max(1, q_marks)
+        raw_parts = [sq.strip(" .,:;") for sq in QUESTION_SPLIT_RE.split(question) if len(sq.strip()) >= 6]
+        if q_marks > 1:
+            sub_questions = [sq.strip() for sq in re.split(r"\?", question) if sq.strip()]
+        else:
+            sub_questions = raw_parts[:]
+
+        if not sub_questions:
+            sub_questions = [question.strip()]
+
+        # Dédupliquer en conservant l'ordre
+        deduped = []
+        for sq in sub_questions:
+            if sq and sq not in deduped:
+                deduped.append(sq)
+        sub_questions = deduped
+
+        result.n_question_parts = max(1, len(sub_questions))
         result.is_multi_part    = result.n_question_parts > 1
 
         if not result.is_multi_part:
-            result.n_parts_addressed     = 1
-            result.completeness_ratio    = 1.0
-            result.completeness_score_raw = 10
+            # Même question simple: pénaliser un peu les réponses très courtes et peu substantielles
+            answer_lower = answer.lower()
+            q_kw = set(re.findall(r"\b\w{4,}\b", question.lower())) - {
+                "what", "when", "where", "which", "that", "this", "your",
+                "vous", "votre", "quel", "pour", "comment",
+                "وش", "كيف", "ليش", "عندك",
+            }
+            matched = sum(1 for k in q_kw if k in answer_lower)
+            if len(answer.split()) < TOO_SHORT_THRESHOLD and matched < max(1, len(q_kw) // 4 if q_kw else 1):
+                result.n_parts_addressed = 0
+                result.completeness_ratio = 0.5
+                result.completeness_score_raw = 5
+            else:
+                result.n_parts_addressed     = 1
+                result.completeness_ratio    = 1.0
+                result.completeness_score_raw = 10
             return result
 
         # Pour les multi-questions : heuristique de couverture
-        # On split la question sur ses "?" et on cherche des indices dans la réponse
-        sub_questions = [sq.strip() for sq in re.split(r"\?", question) if sq.strip()]
         n_addressed = 0
         missing = []
 
@@ -1301,6 +1349,94 @@ Return ONLY this exact JSON (no text before/after):
             ts.depth = max(ts.depth, 7)
         elif candidate_turn.answer_quality in ("VAGUE", "INCOMPLETE") and ts.vagueness_penalty > 5:
             ts.vagueness_penalty = min(ts.vagueness_penalty, 4)
+
+    def _apply_rigorous_calibration(
+        self,
+        ts: TurnScore,
+        signals: dict,
+        candidate_turn: ParsedTurn,
+        comp_result: CompletenessResult,
+        status_result: AnswerStatusResult,
+    ) -> None:
+        """Durcit le scoring après le LLM pour éviter les faux positifs généreux."""
+        answer_words = len(ts.answer.split())
+        low_substance = (
+            answer_words < 40
+            and not ts.has_metrics
+            and not ts.has_real_example
+            and not ts.strong_ownership
+        )
+
+        # 1) Forcer le statut quand la complétude ou la justesse contredisent un FULLY
+        if ts.answer_status == "ANSWERED_FULLY" and comp_result.completeness_ratio < 0.8:
+            ts.answer_status = "ANSWERED_PARTIALLY"
+        if ts.answer_status == "ANSWERED_FULLY" and (ts.correctness_score <= 4 or ts.technical_accuracy <= 4):
+            ts.answer_status = "ANSWERED_INCORRECTLY"
+
+        # 2) llm_chain + heuristiques faibles => partiel même si le LLM est trop généreux
+        if ts.answer_status == "ANSWERED_FULLY":
+            if candidate_turn.answer_quality in ("VAGUE", "INCOMPLETE") and low_substance:
+                ts.answer_status = "ANSWERED_PARTIALLY"
+            elif status_result.too_short and low_substance:
+                ts.answer_status = "ANSWERED_PARTIALLY"
+
+        # 3) Si la réponse est manifestement incorrecte, verrouiller le statut
+        if ts.answer_status not in ("NOT_ANSWERED", "EVADED", "OFF_TOPIC"):
+            if ts.correctness_score <= 3 or ts.technical_accuracy <= 3:
+                ts.answer_status = "ANSWERED_INCORRECTLY"
+
+        # 4) Synchroniser les flags et le score de statut
+        status_to_score = {
+            "ANSWERED_FULLY": 10,
+            "ANSWERED_PARTIALLY": 5,
+            "ANSWERED_INCORRECTLY": 3,
+            "EVADED": 2,
+            "NOT_ANSWERED": 0,
+            "OFF_TOPIC": 2,
+        }
+        ts.answer_status_score = status_to_score.get(ts.answer_status, ts.answer_status_score)
+        ts.was_answered  = ts.answer_status in ("ANSWERED_FULLY", "ANSWERED_PARTIALLY")
+        ts.was_evaded    = ts.answer_status == "EVADED"
+        ts.was_incorrect = ts.answer_status == "ANSWERED_INCORRECTLY" or ts.correctness_score <= 3
+        ts.was_partial   = ts.answer_status == "ANSWERED_PARTIALLY"
+        ts.is_off_topic  = ts.is_off_topic or ts.answer_status == "OFF_TOPIC"
+
+        # 5) Caps stricts par statut
+        if ts.answer_status == "ANSWERED_PARTIALLY":
+            ts.completeness_score = min(ts.completeness_score, 6)
+            ts.depth = min(ts.depth, 6)
+            ts.experience_proof = min(ts.experience_proof, 6)
+            if low_substance:
+                ts.relevance = min(ts.relevance, 6)
+                ts.clarity = min(ts.clarity, 6)
+        elif ts.answer_status == "OFF_TOPIC":
+            ts.relevance = min(ts.relevance, 2)
+            ts.completeness_score = min(ts.completeness_score, 2)
+            ts.job_alignment = min(ts.job_alignment, 3)
+        elif ts.answer_status == "ANSWERED_INCORRECTLY":
+            ts.technical_accuracy = min(ts.technical_accuracy, 3)
+            ts.correctness_score = min(ts.correctness_score, 3)
+            ts.depth = min(ts.depth, 4)
+            ts.relevance = min(ts.relevance, 6)
+
+        if candidate_turn.answer_quality in ("VAGUE", "INCOMPLETE"):
+            ts.vagueness_penalty = min(ts.vagueness_penalty, 4)
+            if not ts.has_real_example:
+                ts.experience_proof = min(ts.experience_proof, 5)
+            if not ts.has_metrics:
+                ts.quantification = min(ts.quantification, 3)
+
+        # 6) Verdict texte par défaut si absent
+        if not ts.answer_verdict:
+            verdict_map = {
+                "ANSWERED_FULLY": "The candidate answered the question clearly and with enough substance.",
+                "ANSWERED_PARTIALLY": "The candidate addressed the question only partially and left important gaps.",
+                "ANSWERED_INCORRECTLY": "The candidate attempted an answer but included important inaccuracies.",
+                "EVADED": "The candidate avoided the specific question instead of answering it directly.",
+                "NOT_ANSWERED": "The candidate did not answer the question in a usable way.",
+                "OFF_TOPIC": "The candidate answered something else rather than the asked question.",
+            }
+            ts.answer_verdict = verdict_map.get(ts.answer_status, "The answer quality is mixed.")
 
         # Cohérence : si NOT_ANSWERED/EVADED → plafonner les dimensions de contenu
         if ts.answer_status in ("NOT_ANSWERED", "EVADED"):

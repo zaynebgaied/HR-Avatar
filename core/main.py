@@ -30,6 +30,8 @@ from vision_engine       import VisionEngine
 from device_config       import DEVICE_CONFIG, log_device_config
 
 from contextlib import asynccontextmanager
+import contextlib
+import re
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -97,6 +99,29 @@ stt_engine.vision_engine = vision_engine_global   # Injection
 
 sessions:        dict[str, HRInteractiveBrain] = {}
 sessions_vision: dict[str, VisionEngine]       = {}
+
+WS_EVENT_POLL_S = 0.5
+WS_PROGRESS_INTERVAL_S = 1.5
+WS_FIRST_TOKEN_SOFT_TIMEOUT_S = 6.0
+WS_LLM_HARD_TIMEOUT_S = 75.0
+
+
+async def _warmup_brain_runtime(brain: HRInteractiveBrain) -> None:
+    loop = asyncio.get_running_loop()
+
+    def _do() -> None:
+        try:
+            brain.ensure_embeddings_ready()
+        except Exception as exc:
+            print(f"⚠️ Warmup embeddings failed: {exc}")
+        try:
+            brain._ensure_llm_analysis()
+        except Exception as exc:
+            print(f"⚠️ Warmup brain analysis failed: {exc}")
+
+    await loop.run_in_executor(None, _do)
+
+
 
 @app.get("/favicon.ico", include_in_schema=False)
 async def favicon():
@@ -232,6 +257,8 @@ async def candidate_interview_link(token: str):
     for doc in sorted(COMPANY_INFO_DIR.iterdir()):
         if doc.suffix.lower() in COMPANY_EXTS:
             brain.ingest_document(str(doc), "company_info", build_embeddings=False)
+
+    asyncio.create_task(_warmup_brain_runtime(brain))
 
     session_id = uuid.uuid4().hex
     sessions[session_id]        = brain
@@ -530,6 +557,8 @@ async def start_session(
         if doc.suffix.lower() in COMPANY_EXTS:
             brain.ingest_document(str(doc), "company_info", build_embeddings=False)
 
+    asyncio.create_task(_warmup_brain_runtime(brain))
+
     sessions[session_id] = brain
 
     mapping_file = DATA_DIR / "session_users.json"
@@ -589,6 +618,37 @@ async def start_session(
 # =============================================================================
 # HELPER : RAPPORT FINAL
 # =============================================================================
+def _build_live_candidate_assessment(session_id: str, brain: HRInteractiveBrain) -> dict:
+    ve = sessions_vision.get(session_id)
+    live_vision = ve.get_live_snapshot() if ve else {
+        "valid": False,
+        "emotion": getattr(brain, "vision_emotion_label", "neutre") or "neutre",
+        "confidence": 0.0,
+        "stress_score": float(getattr(brain, "vision_stress_score", 0.0) or 0.0),
+        "stress_flag": bool(getattr(brain, "vision_stress_flag", False)),
+    }
+
+    last_candidate_turn = None
+    for turn in reversed(getattr(brain, "turns", [])):
+        speaker = getattr(turn, "speaker", "") or ""
+        if "candidate" in speaker.lower() or "candidat" in speaker.lower():
+            last_candidate_turn = turn
+            break
+
+    return {
+        "emotion": live_vision.get("emotion", "neutre"),
+        "emotion_confidence": live_vision.get("confidence", 0.0),
+        "stress_score": live_vision.get("stress_score", 0.0),
+        "stress_flag": live_vision.get("stress_flag", False),
+        "answer_quality": getattr(last_candidate_turn, "answer_quality", "N/A") if last_candidate_turn else "N/A",
+        "behavioral_story_detected": bool(getattr(last_candidate_turn, "behavioral_story_detected", False)) if last_candidate_turn else False,
+        "decision_reasoning_detected": bool(getattr(last_candidate_turn, "decision_reasoning_detected", False)) if last_candidate_turn else False,
+        "weak_signals": list(getattr(last_candidate_turn, "weak_signals_detected", []) or []) if last_candidate_turn else [],
+        "phase": getattr(last_candidate_turn, "phase", brain.steps[brain.current_step_index]) if last_candidate_turn else brain.steps[brain.current_step_index],
+        "timestamp": getattr(last_candidate_turn, "timestamp", None),
+        "text_preview": (getattr(last_candidate_turn, "text", "") or "")[:180] if last_candidate_turn else "",
+    }
+
 def _build_vision_analysis(session_id: str) -> dict:
     ve = sessions_vision.get(session_id)
     if not ve:
@@ -640,58 +700,119 @@ async def _build_full_report(
     import datetime as _dt
 
     base = inline_report or {}
-    nlu  = {}
+    vision_analysis = _build_vision_analysis(session_id)
 
+    if not base and hasattr(brain, "_build_inline_report"):
+        try:
+            base = brain._build_inline_report() or {}
+        except Exception as e:
+            print(f"⚠️  Impossible de générer le rapport inline : {e}")
+            base = {}
+
+    nlu = {}
     try:
-        evaluator       = InterviewEvaluator()
-        raw_text, file_path = evaluator.load_latest_interview(
-            specific_file=getattr(brain, "log_file", None)
-        )
-        parsed = evaluator.parse_interview(raw_text)
-        nlu    = evaluator.run_nlu_assessment(parsed, brain_scores=brain.scores)
-        evaluator.save_json_report(nlu, source_file=file_path)
-        print("NLU Evaluator : rapport généré.")
+        evaluator = InterviewEvaluator()
+        evaluator.set_job_context(getattr(brain, "job_offer_text", "") or "")
+        evaluator.set_vision_data(vision_analysis)
+        log_file = getattr(brain, "log_file", None)
+        if log_file and Path(log_file).exists():
+            nlu = evaluator.evaluate_file(str(log_file))
+        else:
+            nlu = evaluator.evaluate_latest()[0]
+        print("✅ NLU Evaluator : rapport généré.")
     except Exception as e:
-        print(f"NLU Evaluator indisponible : {e}")
+        print(f"⚠️ NLU Evaluator indisponible : {e}")
+        nlu = {}
+
+    score_total = nlu.get("score_total", base.get("score_total", 0))
+    score_global = nlu.get("score_total", nlu.get("score_global", base.get("pourcentage", score_total)))
+    score_technique = nlu.get("score_technical", nlu.get("score_technique", base.get("pourcentage", 0)))
+    score_behavioral = nlu.get("score_behavioral", base.get("pourcentage", 0))
+    score_communication = nlu.get("score_communication", 0)
+
+    scores_by_phase_nlu = nlu.get("scores_by_phase", {})
+    scores_par_phase = {}
+    for key, val in scores_by_phase_nlu.items():
+        scores_par_phase[key] = {
+            "obtenu": val.get("obtained", 0),
+            "max": val.get("max", 0),
+            "avg_turn": val.get("avg_turn", 0),
+            "n_turns": val.get("n_turns", 0),
+            "status": val.get("status", ""),
+            "commentaire": val.get("comment", ""),
+        }
+
+    emotion_analysis = nlu.get("emotion_analysis", {})
+    if emotion_analysis and emotion_analysis.get("available"):
+        vision_analysis = {
+            "disponible": True,
+            "emotion_dominante": emotion_analysis.get("dominant_fr") or emotion_analysis.get("dominant_emotion") or vision_analysis.get("emotion_dominante", "neutre"),
+            "pics_stress": [
+                f"{p.get('phase','?')} @ {p.get('timestamp','?')}"
+                for p in emotion_analysis.get("stress_peaks", [])
+            ] or vision_analysis.get("pics_stress", []),
+            "confiance_globale": vision_analysis.get("confiance_globale"),
+            "evolution": " → ".join(emotion_analysis.get("emotional_evolution", [])) if emotion_analysis.get("emotional_evolution") else vision_analysis.get("evolution", ""),
+            "nb_frames": emotion_analysis.get("n_frames", vision_analysis.get("nb_frames", 0)),
+            "timeline": vision_analysis.get("timeline", []),
+            "etat_global": emotion_analysis.get("overall_emotional_state", ""),
+            "correlation_reponses": emotion_analysis.get("emotion_answer_correlation", ""),
+        }
 
     merged = {
-        "username":          getattr(brain, "candidate_username", None),
-        "date":              base.get("date", _dt.datetime.now().strftime("%Y-%m-%d %H:%M")),
-        "langue":            base.get("langue", brain.target_lang),
-        "duree_minutes":     base.get("duree_minutes", brain.duration_minutes),
-        "meta":              nlu.get("meta", {}),
-        "phases":            base.get("phases", []),
-        "score_total":       base.get("score_total", 0),
-        "score_max":         base.get("score_max", 100),
-        "pourcentage":       base.get("pourcentage", 0),
-        "scores_par_phase":            nlu.get("scores_par_phase",            {}),
-        "score_technique":             nlu.get("score_technique",             base.get("pourcentage", 0)),
-        "score_communication":         nlu.get("score_communication",         0),
-        "score_global":                nlu.get("score_global",                base.get("pourcentage", 0)),
-        "competences_detectees":       nlu.get("competences_detectees",       []),
-        "lacunes_identifiees":         nlu.get("lacunes_identifiees",         []),
-        "analyse_motivation":          nlu.get("analyse_motivation",          ""),
-        "analyse_soft_skills":         nlu.get("analyse_soft_skills",         ""),
-        "points_forts":                nlu.get("points_forts",                base.get("points_forts",   [])),
-        "points_amelioration":         nlu.get("points_amelioration",         base.get("points_faibles", [])),
-        "verdict_final":               nlu.get("verdict_final",               base.get("recommandation", "")),
-        "recommandation_detail":       nlu.get("recommandation_detail",       base.get("recommandation", "")),
-        "recommandation":              base.get("recommandation", ""),
-        "sources_rag":                 base.get("sources_rag", brain.ingested_docs),
-        "analyse_emotion_vision":      _build_vision_analysis(session_id),
-        "evaluation_technique_points":     base.get("evaluation_technique_points",     []),
+        "username": getattr(brain, "candidate_username", None),
+        "date": base.get("date", _dt.datetime.now().strftime("%Y-%m-%d %H:%M")),
+        "langue": base.get("langue", brain.target_lang),
+        "duree_minutes": base.get("duree_minutes", brain.duration_minutes),
+        "meta": nlu.get("meta", {
+            "date_entretien": base.get("date", _dt.datetime.now().strftime("%Y-%m-%d %H:%M")),
+            "langue": base.get("langue", brain.target_lang),
+            "duree": f"{base.get('duree_minutes', brain.duration_minutes)} min",
+        }),
+        "phases": base.get("phases", []),
+        "score_total": score_total,
+        "score_max": base.get("score_max", 100),
+        "pourcentage": base.get("pourcentage", score_global),
+        "score_global": score_global,
+        "score_technique": score_technique,
+        "score_behavioral": score_behavioral,
+        "score_communication": score_communication,
+        "scores_by_phase": scores_by_phase_nlu,
+        "scores_par_phase": scores_par_phase,
+        "coverage_rate_pct": nlu.get("coverage_rate_pct"),
+        "is_partial_evaluation": nlu.get("is_partial_evaluation", False),
+        "competences_detectees": nlu.get("competencies_detected", nlu.get("competences_detectees", [])),
+        "lacunes_identifiees": nlu.get("gaps_identified", nlu.get("lacunes_identifiees", [])),
+        "analyse_motivation": nlu.get("motivation_analysis", nlu.get("analyse_motivation", "")),
+        "analyse_soft_skills": nlu.get("soft_skills_analysis", nlu.get("analyse_soft_skills", "")),
+        "points_forts": nlu.get("strengths", nlu.get("points_forts", base.get("points_forts", []))),
+        "points_amelioration": nlu.get("improvement_areas", nlu.get("points_amelioration", base.get("points_faibles", []))),
+        "verdict": nlu.get("verdict", ""),
+        "verdict_final": nlu.get("verdict", nlu.get("verdict_final", base.get("recommandation", ""))),
+        "recommandation_detail": nlu.get("recommendation_detail", nlu.get("recommandation_detail", base.get("recommandation", ""))),
+        "recommandation": base.get("recommandation", nlu.get("recommendation_detail", "")),
+        "sources_rag": base.get("sources_rag", brain.ingested_docs),
+        "analyse_emotion_vision": vision_analysis,
+        "emotion_analysis": emotion_analysis,
+        "evaluation_technique_points": base.get("evaluation_technique_points", []),
         "evaluation_communication_points": base.get("evaluation_communication_points", []),
-        "points_detectes":  base.get("points_detectes",  []),
+        "points_detectes": base.get("points_detectes", []),
         "points_manquants": base.get("points_manquants", []),
+        "answer_by_answer": nlu.get("answer_by_answer", []),
+        "answer_status_distribution": nlu.get("answer_status_distribution", {}),
+        "turns_summary": nlu.get("turns_summary", {}),
+        "raw_nlu_report": nlu,
     }
 
     try:
-        ts           = _dt.datetime.now().strftime("%Y%m%d_%H%M%S")
+        ts = _dt.datetime.now().strftime("%Y%m%d_%H%M%S")
         username_tag = f"_{merged.get('username','')}" if merged.get("username") else ""
-        path         = DATA_DIR / "reports" / f"full_report_{ts}{username_tag}.json"
+        path = DATA_DIR / "reports" / f"full_report_{ts}{username_tag}.json"
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(json.dumps(merged, ensure_ascii=False, indent=2), encoding="utf-8")
-        print(f"📄  Rapport complet sauvegardé : {path}")
+        merged["report_file"] = path.name
+        merged["report_path"] = str(path)
+        print(f"📄 Rapport complet sauvegardé : {path}")
 
         if merged.get("username"):
             try:
@@ -699,19 +820,16 @@ async def _build_full_report(
                 users_file = DATA_DIR / "users.json"
                 if users_file.exists():
                     users_data = _json.loads(users_file.read_text(encoding="utf-8"))
-                    uname      = merged["username"]
+                    uname = merged["username"]
                     if uname in users_data:
                         users_data[uname]["session_status"] = "termine"
-                        users_data[uname]["report_file"]    = path.name
-                        users_file.write_text(
-                            _json.dumps(users_data, ensure_ascii=False, indent=2),
-                            encoding="utf-8",
-                        )
-                        print(f"✅  users.json mis à jour pour {uname} → terminé")
+                        users_data[uname]["report_file"] = path.name
+                        users_file.write_text(_json.dumps(users_data, ensure_ascii=False, indent=2), encoding="utf-8")
+                        print(f"✅ users.json mis à jour pour {uname} → terminé")
             except Exception as e:
-                print(f"⚠️  Mise à jour users.json échouée : {e}")
+                print(f"⚠️ Mise à jour users.json échouée : {e}")
     except Exception as e:
-        print(f"⚠️  Sauvegarde rapport échouée : {e}")
+        print(f"⚠️ Sauvegarde rapport échouée : {e}")
 
     return merged
 
@@ -744,6 +862,7 @@ async def respond(session_id: str, user_text: str = Form(...)):
             "phase":           result.get("phase", brain.steps[brain.current_step_index]),
             "time_left":       result.get("time_left", brain.get_time_remaining()),
             "interview_ended": result.get("interview_ended", False),
+            "candidate_assessment": _build_live_candidate_assessment(session_id, brain),
             "report":          final_report,
         }
     except Exception as e:
@@ -797,15 +916,17 @@ async def transcribe_audio(session_id: str, audio: UploadFile = File(...)):
 # =============================================================================
 @app.get("/session/{session_id}/evaluate")
 async def evaluate_session(session_id: str):
-    if session_id not in sessions:
+    brain = sessions.get(session_id)
+    if not brain:
         return JSONResponse({"error": "Session introuvable."}, status_code=404)
-    evaluator = InterviewEvaluator()
     try:
-        raw_text, file_path = evaluator.load_latest_interview()
-        parsed              = evaluator.parse_interview(raw_text)
-        report              = evaluator.run_nlu_assessment(parsed)
-        out_path            = evaluator.save_json_report(report, source_file=file_path)
-        return {"status": "ok", "report": report, "report_path": out_path}
+        report = await _build_full_report(brain, None, session_id)
+        return {
+            "status": "ok",
+            "report": report,
+            "report_path": report.get("report_path"),
+            "report_file": report.get("report_file"),
+        }
     except FileNotFoundError as e:
         return JSONResponse({"error": str(e)}, status_code=404)
     except Exception as e:
@@ -823,6 +944,7 @@ async def session_status(session_id: str):
         "phase":     brain.steps[brain.current_step_index],
         "time_left": brain.get_time_remaining(),
         "scores":    brain.scores,
+        "vision":    _build_live_candidate_assessment(session_id, brain),
         "rag_sources": {
             "cv":           brain.ingested_docs.get("cv",           []),
             "job_offer":    brain.ingested_docs.get("job_offer",    []),
@@ -885,8 +1007,8 @@ async def vision_websocket(websocket: WebSocket, session_id: str):
                 continue
             if not frame_b64:
                 continue
-            ve.push_frame(frame_b64)
-            await websocket.send_json({"received": True})
+            snapshot = ve.process_frame_now(frame_b64)
+            await websocket.send_json(snapshot)
     except WebSocketDisconnect:
         pass
     except Exception as e:
@@ -971,10 +1093,17 @@ async def stt_websocket(websocket: WebSocket, session_id: str):
 
                 # ── Fin de parole → transcription complète ────────────────────
                 elif raw_text == "end":
+                    # APRÈS — ajouter final: True pour que le JS sache que c'est terminé
+                    # mais success: False pour qu'il ne tente pas d'envoyer au LLM
                     if len(audio_buffer) < 1600:
                         await websocket.send_json({
-                            "text": "", "language": session_lang or "fr",
-                            "success": False, "error": "Audio trop court",
+                            "text": "",
+                            "display_text": "[silence]",
+                            "is_silence": True,
+                            "language": session_lang or "fr",
+                            "success": False,
+                            "error": "Audio trop court",
+                            "final": True,
                         })
                         audio_buffer = np.array([], dtype=np.float32)
                         continue
@@ -993,24 +1122,31 @@ async def stt_websocket(websocket: WebSocket, session_id: str):
                             lang_hint = _lang_map.get(brain.target_lang)
 
                         def _do_transcribe():
-                            segs, lang = stt_engine.transcribe_stream(buf_copy, language=lang_hint)
-                            return " ".join(s.text.strip() for s in segs).strip(), lang
+                            result = stt_engine.get_full_text(buf_copy, language=lang_hint)
+                            return result["text"].strip(), result["language"]
 
                         text, detected_lang = await loop.run_in_executor(None, _do_transcribe)
 
                         print(f"[STT] ✅ Final : {text[:80]}{'…' if len(text)>80 else ''}")
                         await websocket.send_json({
-                            "text":     text,
+                            "text": text,
+                            "display_text": text if text else "[silence]",
+                            "is_silence": not bool(text),
                             "language": detected_lang,
-                            "success":  bool(text),
-                            "final":    True,
+                            "success": bool(text),
+                            "final": True,
                         })
 
                     except Exception as e:
                         print(f"[STT] ❌ Transcription error : {e}")
                         await websocket.send_json({
-                            "text": "", "language": session_lang or "fr",
-                            "success": False, "error": str(e), "final": True,
+                            "text": "",
+                            "display_text": "[silence]",
+                            "is_silence": True,
+                            "language": session_lang or "fr",
+                            "success": False,
+                            "error": str(e),
+                            "final": True,
                         })
 
                 # ── Annulation ────────────────────────────────────────────────
@@ -1025,6 +1161,203 @@ async def stt_websocket(websocket: WebSocket, session_id: str):
 # =============================================================================
 # WEBSOCKET LLM (streaming)
 # =============================================================================
+
+async def _ws_drain_control_messages(websocket: WebSocket, inbox: asyncio.Queue, brain: HRInteractiveBrain) -> bool:
+    interrupted = False
+    buffered = []
+    while True:
+        try:
+            item = inbox.get_nowait()
+        except asyncio.QueueEmpty:
+            break
+
+        action = item.get("action")
+        if action == "interrupt":
+            interrupted = True
+        elif action == "ping":
+            await websocket.send_json({
+                "type": "pong",
+                "time_left": brain.get_time_remaining(),
+                "phase": brain.steps[brain.current_step_index],
+            })
+        else:
+            buffered.append(item)
+
+    for item in buffered:
+        await inbox.put(item)
+    return interrupted
+
+
+async def _ws_send_progress(websocket: WebSocket, brain: HRInteractiveBrain, stage: str, detail: str) -> None:
+    await websocket.send_json({
+        "type": "progress",
+        "stage": stage,
+        "detail": detail,
+        "phase": brain.steps[brain.current_step_index],
+        "time_left": brain.get_time_remaining(),
+    })
+
+
+async def _ws_stream_brain_response(websocket: WebSocket, inbox: asyncio.Queue, brain: HRInteractiveBrain, user_text: str):
+    event_q: asyncio.Queue = asyncio.Queue()
+
+    async def _producer():
+        try:
+            async for event in brain.generate_response_stream(user_text):
+                await event_q.put(("event", event))
+        except asyncio.CancelledError:
+            raise
+        except Exception as exc:
+            await event_q.put(("error", exc))
+        finally:
+            await event_q.put(("eof", None))
+
+    producer = asyncio.create_task(_producer())
+
+    speech_text = ""
+    meta_event = {}
+    interview_ended = False
+    sentence_idx = 0
+    first_token_seen = False
+    started_at = time.monotonic()
+    last_activity = started_at
+    last_progress = 0.0
+
+    try:
+        while True:
+            if await _ws_drain_control_messages(websocket, inbox, brain):
+                producer.cancel()
+                with contextlib.suppress(asyncio.CancelledError):
+                    await producer
+                await websocket.send_json({"type": "interrupted"})
+                return {
+                    "speech_text": speech_text,
+                    "meta_event": meta_event,
+                    "interview_ended": False,
+                    "sentence_idx": sentence_idx,
+                    "interrupted": True,
+                }
+
+            try:
+                kind, payload = await asyncio.wait_for(event_q.get(), timeout=WS_EVENT_POLL_S)
+            except asyncio.TimeoutError:
+                now = time.monotonic()
+                if now - started_at >= WS_LLM_HARD_TIMEOUT_S:
+                    producer.cancel()
+                    with contextlib.suppress(asyncio.CancelledError):
+                        await producer
+
+                    phase = brain.steps[brain.current_step_index]
+                    fallback_text = brain._fallback_question(phase=phase, avoid_repeat=True)
+                    try:
+                        brain._append_turn(
+                            phase,
+                            brain._recruiter_speaker_label(),
+                            fallback_text,
+                            emotion=brain.vision_emotion_label if brain.vision_stress_flag else "neutre",
+                        )
+                    except Exception:
+                        pass
+
+                    await _ws_send_progress(
+                        websocket,
+                        brain,
+                        "timeout_fallback",
+                        "Le modèle a pris trop de temps. Relance de secours envoyée.",
+                    )
+                    for tok in (re.findall(r"\S+\s*", fallback_text) or [fallback_text]):
+                        await websocket.send_json({"type": "token", "token": tok})
+                    await websocket.send_json({"type": "tts_start", "index": 0, "text": fallback_text})
+                    try:
+                        async for chunk in tts_engine.stream_speech(fallback_text, brain.target_lang):
+                            await websocket.send_bytes(chunk)
+                    except Exception as exc:
+                        print(f"[TTS stream timeout fallback] erreur : {exc}")
+                    await websocket.send_json({"type": "tts_end", "index": 0})
+                    meta_event = {
+                        "candidate_sentiment": "neutre",
+                        "phase": brain.steps[brain.current_step_index],
+                        "time_left": brain.get_time_remaining(),
+                        "interview_ended": False,
+                    }
+                    return {
+                        "speech_text": fallback_text,
+                        "meta_event": meta_event,
+                        "interview_ended": False,
+                        "sentence_idx": 1,
+                        "interrupted": False,
+                    }
+
+                if now - last_progress >= WS_PROGRESS_INTERVAL_S:
+                    stage = "llm_waiting" if not first_token_seen else "streaming_keepalive"
+                    detail = (
+                        "Le recruteur prépare sa relance…"
+                        if not first_token_seen
+                        else "Réponse en cours de génération…"
+                    )
+                    await _ws_send_progress(websocket, brain, stage, detail)
+                    last_progress = now
+
+                if (not first_token_seen) and (now - started_at >= WS_FIRST_TOKEN_SOFT_TIMEOUT_S) and (now - last_progress >= 0.8):
+                    await _ws_send_progress(
+                        websocket,
+                        brain,
+                        "first_token_delayed",
+                        "Le modèle répond lentement, mais la session reste active.",
+                    )
+                    last_progress = now
+                continue
+
+            if kind == "error":
+                raise payload
+
+            if kind == "eof":
+                break
+
+            event = payload
+            last_activity = time.monotonic()
+
+            if event["type"] == "token":
+                first_token_seen = True
+                await websocket.send_json({"type": "token", "token": event["token"]})
+
+            elif event["type"] == "sentence":
+                phrase = event["text"].strip()
+                idx = event["index"]
+                if phrase:
+                    await websocket.send_json({"type": "tts_start", "index": idx, "text": phrase})
+                    try:
+                        async for chunk in tts_engine.stream_speech(phrase, brain.target_lang):
+                            await websocket.send_bytes(chunk)
+                    except Exception as exc:
+                        print(f"[TTS stream phrase {idx}] erreur : {exc}")
+                    await websocket.send_json({"type": "tts_end", "index": idx})
+                    sentence_idx += 1
+
+            elif event["type"] == "stream_done":
+                speech_text = event.get("full_text", "")
+
+            elif event["type"] == "progress":
+                await websocket.send_json(event)
+
+            elif event["type"] == "meta":
+                meta_event = event
+                interview_ended = event.get("interview_ended", False)
+
+        return {
+            "speech_text": speech_text,
+            "meta_event": meta_event,
+            "interview_ended": interview_ended,
+            "sentence_idx": sentence_idx,
+            "interrupted": False,
+        }
+    finally:
+        if not producer.done():
+            producer.cancel()
+            with contextlib.suppress(asyncio.CancelledError):
+                await producer
+
+
 @app.websocket("/ws/{session_id}")
 async def websocket_endpoint(websocket: WebSocket, session_id: str):
     await websocket.accept()
@@ -1082,44 +1415,14 @@ async def websocket_endpoint(websocket: WebSocket, session_id: str):
                         await websocket.send_json({"type": "error", "message": "Texte vide reçu."})
                         continue
 
-                    speech_text     = ""
-                    meta_event      = {}
-                    interview_ended = False
-                    sentence_idx    = 0
+                    result = await _ws_stream_brain_response(websocket, _inbox, brain, user_text)
+                    speech_text = result["speech_text"]
+                    meta_event = result["meta_event"]
+                    interview_ended = result["interview_ended"]
+                    sentence_idx = result["sentence_idx"]
 
-                    async for event in brain.generate_response_stream(user_text):
-                        if not _inbox.empty():
-                            peek = await _inbox.get()
-                            if peek.get("action") == "interrupt":
-                                await websocket.send_json({"type": "interrupted"})
-                                break
-                            else:
-                                await _inbox.put(peek)
-
-                        if event["type"] == "token":
-                            await websocket.send_json({"type": "token", "token": event["token"]})
-
-                        elif event["type"] == "sentence":
-                            phrase = event["text"].strip()
-                            idx    = event["index"]
-                            if phrase:
-                                await websocket.send_json({
-                                    "type": "tts_start", "index": idx, "text": phrase,
-                                })
-                                try:
-                                    async for chunk in tts_engine.stream_speech(phrase, brain.target_lang):
-                                        await websocket.send_bytes(chunk)
-                                except Exception as e:
-                                    print(f"[TTS stream phrase {idx}] erreur : {e}")
-                                await websocket.send_json({"type": "tts_end", "index": idx})
-                                sentence_idx += 1
-
-                        elif event["type"] == "stream_done":
-                            speech_text = event.get("full_text", "")
-
-                        elif event["type"] == "meta":
-                            meta_event      = event
-                            interview_ended = event.get("interview_ended", False)
+                    if result.get("interrupted"):
+                        continue
 
                     if sentence_idx == 0 and speech_text.strip():
                         await websocket.send_json({"type": "tts_start", "index": 0, "text": speech_text})
@@ -1137,6 +1440,7 @@ async def websocket_endpoint(websocket: WebSocket, session_id: str):
                         "phase":               meta_event.get("phase", brain.steps[brain.current_step_index]),
                         "time_left":           meta_event.get("time_left", brain.get_time_remaining()),
                         "interview_ended":     interview_ended,
+                        "candidate_assessment": _build_live_candidate_assessment(session_id, brain),
                     })
                     await websocket.send_json({"type": "done"})
 

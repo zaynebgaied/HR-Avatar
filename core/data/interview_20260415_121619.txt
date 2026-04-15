@@ -1,0 +1,20 @@
+HR INTERVIEW — Anglais
+Date    : 2026-04-15 12:16:19
+Duration: 20 minutes
+[2026-04-15 12:17:56] [OPENING] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Thank you so much for this opportunity. I'm Zyna Gaid, finally engineering science and artificial intelligence, with a strong passion for artificial intelligence and building practical impact solutions. I have experience in designing and development of machine learning and learning models, as well as full stack application involving data analysis, computer vision, and natural language processing. I'm eager to leverage my technical skills and creativity to contribute to innovative projects and deliver great value in personal environment.
+[2026-04-15 12:19:11] [OPENING] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Walk me through the experience in your background most relevant to this role.
+[2026-04-15 12:20:16] [OPENING] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: In this internship at Enhanced Games, I developed an intelligent conversation agent for the feature game environment. I implemented speech recognition using whispers and degraded retrieval of the government-generation rack system with the LAMA model to generate multi-language responses and prevalent sentiment analysis. I also worked on the extraction interpretation using prompt engineering, technical and implemented extra speech functionality.
+[2026-04-15 12:21:31] [OPENING] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Which project from your past work best shows your technical depth?
+[2026-04-15 12:22:01] [OPENING] Candidate [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=[]]: I didn't understand your question.
+[2026-04-15 12:23:17] [OPENING] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Walk me through the experience in your background most relevant to this role.
+[2026-04-15 12:23:51] [OPENING] Candidate [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=[]]: Thank you very much.
+[2026-04-15 12:25:06] [OPENING] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Which project from your past work best shows your technical depth?
+[2026-04-15 12:25:50] [OPENING] Candidate [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=[]]: I love it.
+[2026-04-15 12:27:05] [OPENING] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Walk me through the experience in your background most relevant to this role.
+[2026-04-15 12:27:55] [OPENING] Candidate [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=[]]: I'm going to take a look at the camera.
+[2026-04-15 12:29:10] [OPENING] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Which project from your past work best shows your technical depth?
+[2026-04-15 12:30:34] [OPENING] Candidate [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=[]]: Thank you.
+[2026-04-15 12:31:49] [OPENING] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Walk me through the experience in your background most relevant to this role.
+[2026-04-15 12:33:15] [OPENING] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: Thank you. I'm going to take a look at the camera. Thank you.
+[2026-04-15 12:34:31] [OPENING] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Which project from your past work best shows your technical depth?
+[2026-04-15 12:36:29] [OPENING] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: I wish I had a friend. Thank you. Thank you so much for joining us. Oh, oh, oh, oh, oh.

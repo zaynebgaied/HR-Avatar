@@ -1,0 +1,11 @@
+HR INTERVIEW — Français
+Date    : 2026-04-14 22:37:13
+Duration: 20 minutes
+[2026-04-14 22:40:34] [OPENING] Candidat [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Le candidat parle de son expérience, ses compétences, ses compétences, ses compétences, ses compétences, ses compétences, ses compétences, ses compétences, ses compétences, ses compétences, ses compétences, ses compétences, ses compétences, ses compétences, ses compétences, ses compétences, ses compétences, ses compétences, ses compétences, ses compétences, ses compétences, ses compétences, ses compétences, ses compétences. C'est parti.
+[2026-04-14 22:42:46] [JOB_ALIGNED_EXPLORATION] Recruteur [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Donnez-moi un exemple concret d'utilisation d'une technologie clé de ce poste.
+[2026-04-14 22:43:32] [JOB_ALIGNED_EXPLORATION] Candidat [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: Un agent conversationnel pour un jeu vidéo. J'ai aussi utilisé Vitant pour un projet qui prévoit les prix de vente en temps réel en utilisant des séries temporelles et dans beaucoup d'autres projets.
+[2026-04-14 22:43:49] [JOB_ALIGNED_EXPLORATION] Recruteur [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Pouvez-vous me détailler votre expérience avec Vitant dans le projet de prévision des prix de vente en temps réel ?
+[2026-04-14 22:45:05] [JOB_ALIGNED_EXPLORATION] Candidat [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=[]]: C'est parti !
+[2026-04-14 22:45:21] [JOB_ALIGNED_EXPLORATION] Recruteur [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Pouvez-vous me parler de votre expérience avec la reconnaissance vocale et la génération de réponses multilingues lors de votre stage chez Diva Software?
+[2026-04-14 22:45:40] [JOB_ALIGNED_EXPLORATION] Candidat [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=[]]: Sous-titrage ST' 501
+[2026-04-14 22:45:52] [JOB_ALIGNED_EXPLORATION] Recruteur [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Pouvez-vous me donner plus de détails sur votre expérience avec le sous-titrage multilingue ?

@@ -1,0 +1,12 @@
+HR INTERVIEW — Anglais
+Date    : 2026-04-15 11:53:12
+Duration: 20 minutes
+[2026-04-15 11:54:59] [OPENING] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: I have a strong passion for artificial intelligence and practical, impactful solutions. I have experience in designing and developing machine learning and deep learning models, as well as full-stack applications involving data analysis, computer vision, and natural English processing. I am eager to leverage my technical skills and creativity to contribute to innovative projects can deliver real value in a personal environment.
+[2026-04-15 11:56:15] [OPENING] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Walk me through the experience in your background most relevant to this role.
+[2026-04-15 11:57:23] [OPENING] Candidate [quality=GOOD] [behavioral=False] [decision=False] [weak_signals=[]]: At InhertyThemes, I developed an intelligent conversational agent for a video game environment. I implemented speech recognition using wither-and-decorated retrieval of augmented generation. I had a text system with LAMA model to generate material-language responses and perform sentiment panels. I also worked on text-to-action interpretation using from engineering technology and implemented text-to-speech functionality.
+[2026-04-15 11:58:38] [OPENING] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Which project from your past work best shows your technical depth?
+[2026-04-15 11:59:18] [OPENING] Candidate [quality=INCOMPLETE] [behavioral=False] [decision=False] [weak_signals=[]]: Implementing stress forecasting, I created Dashwell using three times, using deep learning models.
+[2026-04-15 12:00:33] [OPENING] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Walk me through the experience in your background most relevant to this role.
+[2026-04-15 12:00:58] [OPENING] Candidate [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=[]]: Thank you very much.
+[2026-04-15 12:02:13] [OPENING] Recruiter [quality=N/A] [behavioral=False] [decision=False] [weak_signals=None]: Which project from your past work best shows your technical depth?
+[2026-04-15 12:03:08] [OPENING] Candidate [quality=VAGUE] [behavioral=False] [decision=False] [weak_signals=[]]: Thank you.
